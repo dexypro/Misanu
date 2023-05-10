@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dizajn Paterni</title>
+  </head>
+
+<body>
+<p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/LZeMj5Ku7So7d6pLz_1675983590878.gif" alt="" width="600" height="200" /></p>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 393: (DizajnPaternAdapter)</strong></p>
+<pre style="text-align: justify;">
+Kreirati dizajn patern: <b style="color: #720082;">Adapter</b>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: teal;">Interfejs:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public interface Curka {
+
+  public void curlice();
+
+  public void leti();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: teal;">Interfejs:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public interface Patka {
+
+  public void kvace();
+
+  public void leti();
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+<strong style="color:rgb(0, 162, 76)">/* 1. Prvo se implementira interfejs tipa prema kojem se vrsi prilagodjavanje
+  * to je interfejs koji klijent ocekuje */</strong>
+public class CurkaAdapter implements Patka {
+
+  Curka curka;
+
+  <strong style="color:rgb(0, 162, 76)">/*2. Dobiti referencu na objekat koji prilagodjavamo*/</strong>
+
+  public CurkaAdapter(Curka curka) {
+    this.curka = curka;
+  }
+
+  <strong style="color:rgb(0, 162, 76)"> /*3. Implementacija metoda u interfejsu */
+
+  /* Prevodjenje kvace()* u metodu curlice()  izmedju klasa */</strong>
+  public void kvace() {
+    ka.curlice();
+  }
+
+  public void leti() {
+    for (int i = 0; i < 5; i++) {
+        curka.leti();
+    }
+  }
+
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public class DivljaCurka implements Curka {
+
+  public void curlice() {
+    System.out.println("Curlice");
+  }
+
+  public void leti() {
+    System.out.println("Leti kratka rastojanja");
+  }
+
+}
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public class DivljaPatka implements Patka {
+
+  public void kvace() {
+    System.out.println("Kvace");
+  }
+
+  public void leti() {
+  System.out.println("Leti");
+  }
+
+}
+
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Curka: 
+Curlice
+Leti kratka rastojanja
+Patka: 
+Kvace
+Leti
+AdapterCurka
+Curlice
+Leti kratka rastojanja
+Leti kratka rastojanja
+Leti kratka rastojanja
+Leti kratka rastojanja
+Leti kratka rastojanja</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public class Main {
+
+  static void testPatka(Patka patka) {
+    patka.kvace();
+    patka.leti();
+  }
+
+  public static void main(String[] args) {
+    DivljaPatka patka = new DivljaPatka();
+    Curka curka = new DivljaCurka();
+
+    <strong style="color:rgb(0, 162, 76)">/* Umotavamo Curku u CurkaAdapter, zahvaljujuci kome ce izgledati kao Patka */</strong>
+    Patka curkaAdapter = new CurkaAdapter(curka);
+
+    System.out.println("Curka: ");
+    curka.curlice();
+    curka.leti();
+
+    System.out.println("Patka: ");
+    testPatka(patka);
+
+    <strong style="color:rgb(0, 162, 76)"> /* Pokusavamo da poturimo Curku kao Patku */</strong>
+    System.out.println("AdapterCurka");
+    testPatka(curkaAdapter); <strong style="color:rgb(0, 162, 76)">/* ne zna da je dobila Curku prerusenu u Patku */</strong>
+  }
+
+}</pre>
+  </div>
+
+<div style="clear:both;float: left; width: 50%;">
+
+</div>
+</div>
+  
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 394: (Enum01)</strong></p>
+<pre style="text-align: justify;">Definisati enum <strong style="color: orange;">Boje</strong> i u njoj:
+- konstante "CRVENA, ZELENA, PLAVA, CRNA, BELA, NARANDZASTA, ZUTA".
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj testrati enum <b>Boje</b> primenom <i>Switch / Case</i>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e1;
+
+  <strong style="color:azure">// nabrajanje se definise pomocu rezervisane reci Enum
+  // nabrajanje moze imati konstruktore, metode i promenljive instanci</strong>
+
+  public enum Boje {
+
+  CRVENA, ZELENA, PLAVA, CRNA, BELA, NARANDZASTA, ZUTA
+  <strong style="color:azure">// indentifikatori odnosno konstante nabrajanja</strong>
+
+}
+
+<strong style="color:azure">// Nabrajanje se ne pravi pomocu kljucne reci new 
+// Promenljiva nabrojivog tipa ili Enum tipa deklarise se i koristi se kao prost tip podataka </strong></pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Boja je: CRVENA
+Plava
+Plava
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e1;
+<strong style="color:azure"></strong>// Nabrajenje je lista imenovanih vrednosti koje definisu nov tip 
+// podataka i njegove dozvoljene vrednosti
+// To znaci da nabrajanje moze da sadrzi samo neku od vrednosti koje su navedene na listi. Druge vrednosti 
+// nisu dozvoljene</strong>
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Boje b; // int a;
+		
+		b = Boje.CRVENA; // a = 5;
+		
+		System.out.println("Boja je: " + b);
+		
+		b = Boje.PLAVA;
+		
+		if(b == Boje.PLAVA) {
+			System.out.println("Plava");
+		}
+		
+		switch(b) {
+		case CRVENA:{
+			System.out.println("Crvena");
+			break;
+		}
+		case ZELENA:{
+			System.out.println("Zelena");
+			break;
+		}
+		case PLAVA:{
+			System.out.println("Plava");
+			break;
+		}
+		case CRNA:{
+			System.out.println("Crna");
+			break;
+		}
+		case BELA:{
+			System.out.println("Bela");
+			break;
+		}
+		case ZUTA:{
+			System.out.println("Zuta");
+			break;
+		}
+		case NARANDZASTA:{
+			System.out.println("Narandzasta");
+			break;
+		}
+		default:
+			System.out.println("Nema boje");
+		}
+	}
+}</pre>
+
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 395: (Enum02)</strong></p>
+<pre style="text-align: justify;">Definisati enum <strong style="color: orange;">Boje</strong> i u njoj:
+- konstante "Crvena, Zelena, Plava, Crna, Bela, Narandzasta, Zuta".
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj testrati enum <b>Boje</b> primenom <i>unapređenom for petljom</i>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e2;
+
+public enum Boje {
+
+  Crvena, Zelena, Plava, Crna, Bela, Narandzasta, Zuta
+
+}<strong style="color:azure">// Nabrajanje se ne pravi pomocu kljucne reci new 
+// Promenljiva nabrojivog tipa ili Enum tipa deklarise se i koristi se kao prost tip podataka </strong></pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Boje: 
+Crvena Zelena Plava Crna Bela Narandzasta Zuta 
+Trazena boja: Bela  
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e2;
+
+public class Main {
+
+  public static void main(String[] args) {
+    <strong style="color:azure">//Sva nabrajanja imaju dve unapred definisane metode:
+    // values() - vraca niz koji sadrzi listu konstanti definisanih u nabrajanju
+    // valuesOf() - vraca konstantu iz nabrajanja cija vrednost 
+    // odgovara znakovnom nizu prosledjenom u argumentu</strong>
+
+    Boje b;
+
+    System.out.println("Boje: ");
+
+    Boje nizBoja[] = Boje.values();
+
+    for (Boje bb : nizBoja) {
+        System.out.print(bb + " ");
+    }
+
+    Boje c1;
+
+    c1 = Boje.valueOf("Bela");  <strong style="color:azure">
+    // vraca vrednost iz nabrajanja koja odgovara imenu zadate konstante</strong>
+
+    System.out.println("\nTrazena boja: " + c1);
+
+  }
+}
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 396: (Enum03)</strong></p>
+<pre style="text-align: justify;">Definisati enum <strong style="color: orange;">Boje</strong> i u njoj:
+- konstante "Crvena(200), Zelena(150), Plava(100), Crna(250), Bela(179), Zuta(124)".
+- parametarizovan konstruktor za unos promenjivu <b>udeo</b> tipa <b>int</b>.
+- odgovarajuću <b>get</b> metodu.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj testrati enum <b>Boje</b> primenom <i>unapređenom for petljom</i> i pozivanjem <b>getUdeo</b> metode.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e3;
+
+public enum Boje {
+
+  Crvena(200), Zelena(150), Plava(100), Crna(250), Bela(179), Zuta(124);
+
+  private int udeo;
+
+  Boje(int u) {
+    udeo = u;
+  }
+
+  int getUdeo() {
+    return udeo;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+public class Main {
+
+  public static void main(String[] args) {
+    Boje b;
+    
+    System.out.println("Udeo Zelene boje: " + Boje.Zelena.getUdeo());
+    
+    System.out.println("Sve boje: ");
+    for(Boje bb : Boje.values()) {
+      System.out.println(bb + " " + bb.getUdeo());
+    }
+  }
+}
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Boje: 
+Crvena Zelena Plava Crna Bela Narandzasta Zuta 
+Trazena boja: Bela
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 397: (Enum04)</strong></p>
+<pre style="text-align: justify;">Definisati enum <strong style="color: orange;">Boje</strong> i u njoj:
+- konstante "Crvena, Zelena, Plava, Crna, Bela, Narandzasta, Zuta".
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- testrati enum <b>Boje</b> primenom metoda <strong style="color: green">equals, compareTo, values, ordinal</strong>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e4;
+public enum Boje {
+  Crvena, Zelena, Plava, Crna, Bela, Narandzasta, Zuta
+
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Boja - redni broj
+Crvena 0
+Zelena 1
+Plava 2
+Crna 3
+Bela 4
+Narandzasta 5
+Zuta 6
+
+Crvena dolazi pre Zelena
+Crvena jednako Crvena
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e4;
+
+public class Main {
+
+<strong style="color:azure">  
+// ordinal() - dobija redni broj tj. polozaj date konstante na listi 
+konstanti u nabrajanju. Redni brojevi pocinju od 0.
+
+// compareTo() - poredi redne brojeve dveju konstanti iz istog nabrajanja. 
+Ako je redni broj pozivajuce konstante manji od rednog broja konstante
+// metoda compareTo() vraca negativan broj. Ukoliko su redni brojevi jednaki 
+metoda comareTo() vraca 0. Ukoliko pozivajuca konstanta ima redni broj veci od 
+rednog broja konstante metoda compareTo() vraca pozitivan broj
+
+// equals() - poredi se jednakost konstante iz nabrajanja sa svakim drugim objektom </strong>
+
+  public static void main(String[] args) {
+
+    System.out.println("Boja - redni broj");
+
+    for (Boje bb : Boje.values()) {
+        System.out.println(bb + " " + bb.ordinal());
+    }
+
+    System.out.println();
+
+    Boje b1, b2, b3, b4;
+
+    b1 = Boje.Crvena;
+    b2 = Boje.Zelena;
+    b3 = Boje.Plava;
+    b4 = Boje.Crvena;
+
+    if (b1.compareTo(b2) < 0) {
+        System.out.println(b1 + " dolazi pre " + b2);
+    }
+    if (b1.compareTo(b2) > 0) {
+        System.out.println(b2 + " dolazi pre " + b1);
+    }
+    if (b1.compareTo(b1) == 0) {
+        System.out.println(b1 + " jednako " + b1);
+    }
+
+    if (b1.equals(b2)) {
+        System.out.println("Greska");
+    }
+    if (b1.equals(b3)) {
+        System.out.println(b1 + " jednako " + b3);
+    }
+    if (b1 == b3) {
+        System.out.println(b1 + " jednako " + b3);
+    }
+  }
+}
+</pre>
+</div>
+</div>
+
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 398: (Enum05)</strong></p>
+<pre style="text-align: justify;">Definisati javni enum <strong style="color: orange;">Odgovori</strong> i u njoj:
+- konstante "DA, NE, MOZDA, KASNIJE, USKORO, NIKAD".
+
+Definisati klasu <strong style="color: #0984e3;">EnumPrikaz</strong> i u njoj:
+- <i>Switch / Case </i> u kojoj se se za svaku konstantu iz navedenog enuma ispisuje njen naziv.
+
+Definisati klasu <strong style="color: #0984e3;">Pitanje</strong> i u njoj:
+- metodu <strong style="color:green">odg</strong> enuma <b>Odgovori</b> kojom se proverava koja se konstanta ispisuje na osnovu inicijalizovane vrednosti od 15.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- kreirati objekat klase <strong style="color: #0984e3;">Pitanje</strong> i pozvati metodu <strong style="color:green">odg</strong> tri puta.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e5;
+
+public enum Odgovori {
+
+    DA, NE, MOZDA, KASNIJE, USKORO, NIKAD
+
+}
+</pre>
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e5;
+
+import java.util.Random;
+
+public class Pitanje {
+
+  Random rand = new Random();
+
+  Odgovori odg() {
+
+    int vrednost = (int) (rand.nextDouble() * 100);
+
+    if (vrednost < 15) {
+        return Odgovori.MOZDA;
+    } else if (vrednost < 30) {
+        return Odgovori.DA;
+    } else if (vrednost < 60) {
+        return Odgovori.NE;
+    } else if (vrednost < 75) {
+        return Odgovori.KASNIJE;
+    } else if (vrednost < 95) {
+        return Odgovori.USKORO;
+    } else
+        return Odgovori.NIKAD;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e5;
+
+public class EnumPrikaz {
+
+    static void odgovor(Odgovori odg) {
+
+  switch (odg) {
+  case NE: {
+      System.out.println("NE");
+      break;
+  }
+  case DA: {
+      System.out.println("DA");
+      break;
+  }
+  case MOZDA: {
+      System.out.println("MOZDA");
+      break;
+  }
+  case KASNIJE: {
+      System.out.println("KASNIJE");
+      break;
+  }
+  case USKORO: {
+      System.out.println("USKORO");
+      break;
+  }
+  case NIKAD: {
+      System.out.println("NIKAD");
+      break;
+  }
+  default:
+      System.out.println("GRESKA");
+  }
+
+    }
+
+}</pre>
+  </div>
+  
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package e5;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    Pitanje p = new Pitanje();
+
+    System.out.println(p.odg());
+    System.out.println(p.odg());
+    System.out.println(p.odg());
+
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+DA
+USKORO
+DA
+</pre>
+</div>
+</div>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p>&nbsp;</p>
+<div style="clear: both; width: 100%; text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+</div>
+
+</body>
+</html>

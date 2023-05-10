@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obrada Izuzetaka</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/kNx7NPfmJ78jfSPDi_1673823838656.jpg" alt="" width="648" height="244" /></p>
+<p>&nbsp;</p>
+<div style="clear: both;">&nbsp;</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 332: (X_Exceptions.I_Aritmetic)</strong></p>
+<pre style="text-align: justify;">Napisati program koji izbacuje izuzetak '<strong style="color: #e33109;"> java.lang.ArithmeticException: / by zero</strong>'.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package X_Exceptions.I_Aritmetic;
+
+public class Main {
+
+    public static void main(String[] args) {
+  int d = 0;
+  int a = 10 / d;
+    }
+
+}
+<span style="color: azure;">
+/* Izuzetak jeste znak da se desio problem prilikom izvr&scaron;enja programa.
+  * Upravljanje izuzetaka predstavlja hvatanje i obradu izuzetaka.
+  * Neki izuzeci se mogu obraditi tako da program neometano nastavi sa radom,
+  * dok drugi zahtevaju prekid rada programa.
+  *   
+  * */</span>
+  
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;"><span style="color: #c23616;">Exception in thread "main" <span style="color: #00a8ff;">java.lang.ArithmeticException</span>: / by zero
+at X_Exceptions.II_PrimerIzuzetka.Main.main(<span style="color: #00a8ff;">Main.java:7)</span></span> 
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 333: (X_Exceptions.II_AritmeticObrada)</strong></p>
+<pre style="text-align: justify;">Napisati program koji obrađuje izuzetak '<strong style="color: #e33109;"> java.lang.ArithmeticException: / by zero</strong>' kako bi se omogućilo
+dalje izvr&scaron;avanje programa. 
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package X_Exceptions.II_AritmeticObrada;
+
+public class Main {
+
+    public static void main(String[] args) {
+      int d, a;
+
+      try {<span style="color: azure;">/* U try blocku se stavljaju naredbe koje mogu baciti izuzetak 
+            kao i one naredbe koje se neće izvr&scaron;iti ako dođe do izuzetka.
+            */</span>
+          d = 0;
+          a = 10 / d;
+          System.out.println("Ova poruka nece biti odstampana! ");
+      } catch (ArithmeticException e) {
+          System.out.println("Deljenje nulom se desilo. ");
+      }
+      System.out.println("Program nastavlja sa izvrsenjem! ");
+
+    }
+
+}
+<span style="color: azure;">
+/*Hijerarhija izuzetaka
+  * 
+  * Svi izuzeci izvedeni su iz klase Throwable.
+  * Klasa Throwable ima dva direktna naslednika (potomka): Error i Exception.
+  * 
+  * Klasa Error opisuje fatalne greske. (greske na koje ne mozemo uticati).
+  * Za greske tog tipa nije potrebno navoditi try / catch blokove. 
+  * 
+  * Klasa Exception jeste klasa iz koje se izvode klase koje pripadaju
+  * neproverenim tipovima izuzetaka.
+  * 
+  * Exception {RuntimeException, IOException}
+  * 
+  * RuntimeException{IndexOutOfBoundsException, ArithmeticException}
+  * 
+  * */</span>
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Deljenje nulom se desilo. 
+Program nastavlja sa izvrsenjem! 
+  </pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 334: (X_Exceptions.III_IndexOutOfBounds)</strong></p>
+<pre style="text-align: justify;">Napisati program koji obrađuje izuzetak '<strong style="color: #e33109;"> java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 1 </strong>' kako bi se omogućilo
+dalje izvr&scaron;avanje programa. 
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package X_Exceptions.III_IndexOutOfBounds;
+
+public class Main {
+
+    public static void main(String[] args) {
+      try {
+          int c[] = { 1 }; /* Jedan od nacina inicijalizacije niza */
+          c[10] = 100;
+      } catch (ArrayIndexOutOfBoundsException e) {
+          System.out.println("Nepostojeci index unutar niza.");
+      }
+      System.out.println("Dalje izvr&scaron;avanje programa...");
+    }
+
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Nepostojeci index unutar niza.
+Dalje izvr&scaron;avanje programa...
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 335: (X_Exceptions.IV_AritmeticOrIndexOfBounds)</strong></p>
+<pre style="text-align: justify;">Napisati program koji obrađuje izuzetke: 
+1. <strong style="color: #e33109;"> java.lang.ArithmeticException: / by zero</strong>.
+2. <strong style="color: #e33109;"> java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 1 </strong>.
+i ispisuje koji je od navedenih izuzetaka 'uhvatio'.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.IV_AritmeticOrIndexOfBounds;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      try {
+          int a = 0;
+          System.out.println("a = " + a);
+
+          int b = 10 / a;
+          int c[] = { 1 };
+          c[10] = 100;
+      } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
+          System.out.println("Uhvacen exception. " + e.getMessage()); /* prikazuje koji je Exception */
+      }
+
+      System.out.println("Program nastavlja sa izvršenjem...");
+
+    }
+
+}    
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+a = 0
+Uhvacen exception. / by zero
+Nakon try / catch bloka.
+
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 336: (X_Exceptions.V_Razlomak;)</strong></p>
+<pre style="text-align: justify;">Napisati program koji omogućava korisniku da unese <b>brojilac</b> i <b>imenilac</b> i koji pokrece metodu <strong style="color: #44bd32;">kolicnik</strong>.
+Obraditi izuzetak <strong style="color: #e33109;">ArithmeticException</strong>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.V_Razlomak;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    /* Napisati metodu za racunanje kolicnika razlomka */
+    public static int kolicnik(int im, int br) {
+      return br / im;
+    }
+
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+
+      System.out.println("Unesite brojilac razlomka: ");
+      int brojilac = sc.nextInt();
+      System.out.println("Unesite imenilac razlomka: ");
+      int imenilac = sc.nextInt();
+
+      try {
+          int rezultat = kolicnik(imenilac, brojilac);
+          System.out.println("Kolicnik iznosi: " + rezultat);
+      } catch (ArithmeticException e) {
+          System.out.println("Deljenje nulom: " + e);
+      }
+      sc.close();
+
+    }
+
+}
+     
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite brojilac razlomka: 
+<span style="color: azure;">8</span>
+Unesite imenilac razlomka: 
+<span style="color: azure;">0</span>
+Deljenje nulom: <b style="color:#00a8ff">java.lang.ArithmeticException:</b> / by zero
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 337: (X_Exceptions.VI_AritmeticOrInputMismatch)</strong></p>
+  <pre style="text-align: justify;">Napisati program koji omogućava korisniku da unese <b>brojilac</b> i <b>imenilac</b> i koji pokrece metodu <strong style="color: #44bd32;">kolicnik</strong>.
+Obraditi sledeće izuzetke:
+1. <strong style="color: #e33109;"> java.lang.ArithmeticException: / by zero</strong>.
+2. <strong style="color: #e33109;"> java.util.InputMismatchException </strong>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.VI_AritmeticOrInputMismatch;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+
+  <span style="color: azure;">/* throws (kljucna rec) koristi se u zaglavlju metode da naznaci tip/tipove izuzetka koje ta metoda moze da baci*/;</span>
+    public static int kolicnik(int im, int br) throws ArithmeticException {
+	    return br / im;
+    }
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+
+      try {
+          System.out.println("Unesite brojilac razlomka: ");
+          int brojilac = sc.nextInt();
+          System.out.println("Unesite imenilac razlomka: ");
+          int imenilac = sc.nextInt();
+          int rezultat = kolicnik(imenilac, brojilac);
+
+          System.out.println("Rezultat: " + rezultat);
+      } catch (ArithmeticException e) {
+          System.out.println("Izuzetak.  " + e.fillInStackTrace());
+      } catch (InputMismatchException e) {
+          System.out.println("Unesite celobrojnu vrednost! " + e);
+      }
+    }
+
+}
+      
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite brojilac razlomka: 
+<span style="color: azure;">8</span>
+Unesite imenilac razlomka: 
+<span style="color: azure;">2.0</span>
+Unesite celobrojnu vrednost! <b style="color:#00a8ff">java.util.InputMismatchException</b>
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 338: (X_Exceptions.VIII_SameCatchBlocks)</strong></p>
+<pre style="text-align: justify;">
+Napisati program koji proverava za izuzetak <strong style="color: #e33109;"> java.lang.ArithmeticException: / by zero</strong> i simulirati isti catch block istog tipa izuzetka.
+
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.VII_SameCatchBlocks;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      try {
+          int a = 0;
+          int b = 10 / a;
+      } catch (ArithmeticException e) {
+          System.out.println("Izuzetak" + e);
+      } <span style="color: azure;">/* catch (ArithemticException e) {
+            System.out.println("Izuzetak1");
+        }*/
+      /* Ukoliko postoji vise catch blokova ciji tip parametra odgovara tipu
+        * bacenog izuzetka, izvrsava se samo prvi takav catch blok.
+        * Greska je navesti dva catch bloka sa istim tipom parametra. */</span>
+
+    }
+
+}      
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Izuzetak <b style="color:#00a8ff">java.lang.ArithmeticException</b>: / by zero
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 339: (X_Exceptions.VIII_InsideOutsideCatchBlock)</strong></p>
+<pre style="text-align: justify;">
+Napisati zadatak u kome se inicijalizuju <i>integer</i> <b>a</b> na vrednost 1 ili 2, a <i>integer</i> <b>b</b> na 10 i obraditi sledece izuzetke:
+1. <strong style="color: #e33109;"> java.lang.ArrayIndexOutOfBoundsException </strong>.
+2. <strong style="color: #e33109;"> java.lang.ArithmeticException </strong>.
+
+Za sledece uslove:
+ako je a = 1 onda izracunati <i>a = a / (a-a)</i>;
+ako je a = 2 onda kreirati niz <i>integer</i> <b>c</b> = {1}; 
+- postaviti vrednost desetog elementa niza <b>c</b> na 100.
+
+
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.VIII_InsideOutsideCatchBlock;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      try {
+          int a = 1;
+          int b = 10 / a; /* ovde je rizicna operacija */
+          System.out.println("a = " + a);
+
+          try {
+        if (a == 1)
+            a = a / (a - a);
+        if (a == 2) {
+            int c[] = { 1 };
+            c[10] = 100;
+        }
+          } catch (ArrayIndexOutOfBoundsException e) {
+        // unutrasnji catch block
+        System.out.println("Greska sa indexom! " + e);
+          }
+
+      } catch (ArithmeticException e) {
+          // spoljasnji catch block
+          System.out.println("Greska prilikom deljenja! " + e);
+      }
+
+    }
+
+}
+      </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+a = 2
+Greska sa indexom. <b style="color:#00a8ff"></b>java.lang.ArrayIndexOutOfBoundsException</b>: Index 10 out of bounds for length 1
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 340: (X_Exceptions.X_FinallyBlock)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">finallyBlockWithException</strong> i u njoj:
+- statičku metodu <strong style="color: #44bd32;">procA</strong> koja simulira <strong style="color: #44bd32;">RuntimeException</strong> i sadrži <b>try</b>, <b>catch</b> i <b>finally</b> block.
+- statičku metodu <strong style="color: #44bd32;">procB</strong> koja sadrži <b>try</b>, <b>catch</b> i <b>finally</b> block.
+- statičku metodu <strong style="color: #44bd32;">procC</strong> koja sadrži <b>try</b>, <b>catch</b> i <b>finally</b> block.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">finallyBlockWithException</strong> pod nazivom <strong>fbwe</strong>.
+- u <b>try</b> / <b>catch</b> bloku pokrenuti metodu <strong style="color: #44bd32;">procA</strong> objekta <b>fbwe</b>.
+- pokrenuti ostale dve metode <strong style="color: #44bd32;">procB</strong> i <strong style="color: #44bd32;">procC</strong> objekta <b>fbwe</b>.
+
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.X_FinallyBlock;
+
+public class finallyBlockWithException {
+
+  <span style="color: azure;">// Throught an exception out of the method</span>
+
+    static void procA() {
+      try {
+          System.out.println("inside procA");
+          throw new RuntimeException("demo"); <span style="color: azure;">// throws je uzglavlju metode</span>
+          // throw koriste se za bacanje izuzteaka u telu metode</span>
+      } finally { <span style="color: azure;">/* finally block se izvrasav bez obzira da li je ili nije doslo do izuzetka*/</span>
+          System.out.println("procA");
+      }
+    }
+
+    static void procB() {
+      try {
+          System.out.println("procB");
+          return; <span style="color: azure;">/* break, continue, System.exit(0) */</span>
+      } finally {
+          System.out.println("procB's finally");
+      }
+    }
+
+    <span style="color: azure;">// Execute a try block normally.</span>
+    static void procC() {
+      try {
+          System.out.println("inside procC");
+      } finally {
+          System.out.println("procC's finally");
+      }
+    }
+}
+</pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.X_FinallyBlock;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      finallyBlockWithException fbwe = new finallyBlockWithException();
+
+      try {
+          fbwe.procA();
+      } catch (Exception e) {
+          System.out.println("Exception caught");
+      }
+
+      fbwe.procB();
+      fbwe.procC();
+
+    }
+
+}
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+inside procA
+procA
+Exception caught
+procB
+procB's finally
+inside procC
+procC's finally
+</pre>
+  </div>
+  </div>
+
+
+
+  <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 341: (X_Exceptions.XII_UserDefineException)</strong></p>
+  <pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">InvalidAgeException</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Throwable</strong> i u njoj:
+  - privatno polje <b>age</b>.
+  - parametarizovan konstuktor koji prima promenljivu <b>a</b>.
+  - javnu metodu <strong style="color: #44bd32;">toString</strong> koja ispisuje da <b>age</b> nije validan broj godina. (ispod 0 ili iznad 100)
+  
+  
+  Definisati pokretačku klasu <strong style="color: #0984e3;">Exception</strong> i u njoj:
+  - javnu statičku metodu <strong style="color: #44bd32;">checkAge</strong> koja proverava da li je <b>age</b> manje od 0 ili vece od 100.
+  - u <b>try</b>/<b>catch</b> bloku pokrenuti metodu <strong style="color: #44bd32;">checkAge</strong> sa unosom od 25 i unosom od -5.
+  - u <b>catch</b> bloku baciti <b>ArithmeticException</b>.
+    
+  </pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XII_UserDefineException;
+
+public class InvalidAgeException extends Throwable {
+
+      private int age;
+
+      InvalidAgeException(int a) {
+        age = a;
+          }
+
+          public String toString() {
+        return "Age: " + age + " is not a valid age.";
+    }
+}
+
+  </pre>
+    </div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XII_UserDefineException;
+
+public class Exception {
+
+  public static void checkAge(int age) throws InvalidAgeException {
+
+    System.out.println("Checking age Vlidity: (" + age + ")");
+        if (age < 0 || age > 100) {
+            throw new InvalidAgeException(age);
+        }
+        System.out.println("Age: " + age + " is a valid age.");
+          }
+
+          public static void main(String[] args) {
+
+        try {
+            checkAge(25);
+            checkAge(-5);
+
+        } catch (InvalidAgeException e) {
+            throw new ArithmeticException("Ovo je vezani exception");
+
+        }
+      }
+
+      <span style="color: azure;">// UserDefineException, ChainedException</span>
+
+      <span style="color: azure;">// Throws se koristi u zaglavlju metode da naznaci tipove izuzetaka koje baca metoda</span>
+      <span style="color: azure;">// Throw se koristi za bacanje izuzetka u telu metode</span>
+}
+  </pre>
+  <div style="clear:both;float: left; width: 50%;">
+
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Checking age Vlidity: (25)
+Age: 25 is a valid age.
+Checking age Vlidity: (-5)
+<strong style="color:#e33109">Exception in thread "main" <b style="color:#00a8ff">java.lang.ArithmeticException</b>: Ovo je vezani exception
+at X_Exceptions.XII_UserDefineException.Exception.main(<b style="color:#00a8ff">Exception.java:21</b>)</strong>
+</pre>
+    </div>
+    </div>
+    </div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 342: (X_Exceptions.XIV_Automobil)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Automobil</strong> i u njoj:
+- podatak <b>naziv</b> tipa String,
+- podatak <b>proizvodjac</b> tipa String,
+- podatak <b>godiste</b> tipa int,
+- podatak <b>potrosnja</b> tipa double, 
+- metodu <strong style="color: #44bd32;">unetiNazivAutomobila</strong> za unos naziva automobila,
+- metodu <strong style="color: #44bd32;">unetiProizvodjacaAutomobila</strong> za unos proizvođača automobila,
+- metodu <strong style="color: #44bd32;">unetiGodisteAutomobila</strong> za unos godišta automobila, pri čemu se ponavlja unos dok se ne unese ceo broj,
+- metodu <strong style="color: #44bd32;">unetiPotrosnjuAutomobila</strong> za unos potrošnje goriva automobila na pređenih 100 km, pri čemu se ponavlja unos dok se ne unese ispravno realan broj,
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> klase <strong style="color: #0984e3;">Object</strong> koja vraća jedan String. Ovaj String sadrži podatke o automobilu.
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestAutomobil</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Automobil</strong>, uneti odgovarajuće podatke i prikazati ih.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XIV_Automobil;
+
+import java.io.*;
+
+public class Automobil { /* Deklarisanje podataka */
+        String naziv;
+        String proizvodjac;
+        int godiste;
+        double potrosnja; /* Metoda za unos naziva automobila */
+
+        void unetiNazivAutomobila() throws IOException {
+          BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+          System.out.println("Unesite naziv automobila: ");
+          naziv = ulaz.readLine();
+        } <span style="color: azure;">/* Metoda za unos proizvodjača automobila */</span>
+
+        void unetiProizvodjacaAutomobila() throws IOException {
+          BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+          System.out.println("Unesite proizvodjača automobila: ");
+          proizvodjac = ulaz.readLine();
+        } <span style="color: azure;">/* Metoda za unos godišta automobila */</span>
+
+        void unetiGodisteAutomobila() {
+          try {
+              BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+              System.out.println("Unesite godište automobila: ");
+              godiste = Integer.parseInt(ulaz.readLine());
+          } catch (Exception e) {
+              System.out.println("Niste dobro uneli broj");
+              unetiGodisteAutomobila();
+          }
+        } <span style="color: azure;">/* Metoda za unos potrošnje automobila */</span>
+
+        void unetiPotrosnjuAutomobila() {
+          while (true) {
+              try {
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Unesite potrošnju automobila na 100 km: ");
+            potrosnja = Double.parseDouble(ulaz.readLine());
+            break;
+              } catch (Exception e) {
+            System.out.println("Niste ispravno uneli potrošnju automobila");
+              }
+          }
+        } <span style="color: azure;">/* Redefinisana metoda */</span>
+
+        public String toString() {
+         return "Naziv: " + naziv + "\nProizvodjač: " + proizvodjac + "\nGodište: " + godiste + "\nPotrošnja: "
+        + potrosnja;
+    }
+}
+  
+</pre>
+  </div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XIV_Automobil;
+
+import java.io.*;
+
+public class TestAutomobil {
+    public static void main(String[] args) throws IOException { 
+      Automobil auto = new Automobil();
+      auto.unetiProizvodjacaAutomobila();
+      auto.unetiGodisteAutomobila();
+      auto.unetiPotrosnjuAutomobila();
+      System.out.println("\nUneti podaci o automobilu su: ");
+      System.out.println(auto.toString());
+    }
+}
+    
+  </pre>
+  <div style="clear:both;float: left; width: 50%;">
+  
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite naziv automobila: 
+<span style="color: azure;">Kuga</span>
+Unesite proizvodjača automobila: 
+<span style="color: azure;">Ford</span>
+Unesite godište automobila: 
+<span style="color: azure;">2010</span>
+Unesite potrošnju automobila na 100 km: 
+<span style="color: azure;">7.2</span>
+
+Uneti podaci o automobilu su: 
+Naziv: Kuga
+Proizvodjač: Ford
+Godište: 2010
+Potrošnja: 7.2   
+  </pre>
+      </div>
+      </div>
+      </div>
+
+
+      <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 343: (X_Exceptions.XV_Student)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Student</strong> i u njoj:
+- podatak <b>imePrezime</b> tipa String,
+- podatak <b>brojIndeksa</b> tipa int,
+- podatak <b>prosecnaOcena</b> tipa double koji predstavlja prosečnu ocenu tokom studiranja,
+- metodu <strong style="color: #44bd32;">getImePrezime</strong> koja vraća trenutnu vrednost podatka <b>imePrezime</b>,
+- metodu <strong style="color: #44bd32;">setImePrezime</strong> koja kao ulazni argument dobija novu vrednost za podatak <b>imePrezime</b> i vrši dodelu te vrednosti,
+- metodu <strong style="color: #44bd32;">getBrojIndeksa</strong> koja vraća trenutnu vrednost podatka <b>brojIndeksa</b>,
+- metodu <strong style="color: #44bd32;">setBrojIndeksa</strong> koja kao ulazni argument dobija novu vrednost za podatak <b>brojIndeksa</b> i vrši dodelu te vrednosti,
+- metodu <strong style="color: #44bd32;">getProsecnaOcena</strong> koja vraća trenutnu vrednost podatka <b>prosecnaOcena</b>,
+- metodu <strong style="color: #44bd32;">setProsecnaOcena</strong> koja kao ulazni argument dobija novu vrednost za podatak <b>prosecnaOcena</b> i vrši dodelu te vrednosti. ,
+
+Definisati klasu <strong style="color: #0984e3;">Izuzetak</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Exception</strong> i sadrži:
+- privatni podatak <b>indeksStudenta</b> tipa int,
+- podrazumevani konstruktor za inicijalizaciju podatka <b>indeksStudenta</b>,
+- konstruktor sa parametrom <b>indeksStudenta</b> koji poziva konstruktor klase <strong style="color: #0984e3;">Exception</strong> i daje informaciju o izuzetku koji se desio
+- metodu <strong style="color: #44bd32;">getIndeksStudenta</strong> koja vraća indeks studenta koji dovodi do izuzetka.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestIzuzetak</strong> u kojoj se unose podaci o studentu. 
+Ukoliko dođe do pojave izuzetka prikazati stack trace metodom <strong style="color: #44bd32;">printStackTrace</strong> i korišćenjem niza čiji elementi potiču iz stack trace-a.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XV_Student;
+
+public class Student { /* Deklarisanje podataka */
+        String imePrezime;
+        int brojIndeksa;
+        double prosecnaOcena; /* Metoda za pristup podatku imePrezime */
+
+        public String getImePrezime() {
+          return imePrezime;
+        } /* Metoda za postavljanje podatka imePrezime */
+
+        public void setImePrezime(String imePrezime) {
+          this.imePrezime = imePrezime;
+        } /* Metoda za pristup podatku brojIndeksa */
+
+        public int getBrojIndeksa() {
+          return brojIndeksa;
+        } /* Metoda za postavljanje podatka brojIndeksa */
+
+        public void setBrojIndeksa(int brojIndeksa) {
+          this.brojIndeksa = brojIndeksa;
+        } /* Metoda za pristup podatku prosecnaOcena */
+
+        public double getProsecnaOcena() {
+          return prosecnaOcena;
+        } /* Metoda za postavljanje podatka prosecnaOcena */
+
+        public void setProsecnaOcena(double prosecnaOcena) {
+          if (prosecnaOcena >= 6.0 && prosecnaOcena <= 10.0)
+            this.prosecnaOcena = prosecnaOcena;
+    }
+}   
+    
+  </pre>
+    </div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XV_Student;
+
+public class Izuzetak extends Exception { /* Indeks studenta koji dovodi do izuzetka */
+      private int indeksStudenta; /* Podrazumevani konstruktor */
+
+      public Izuzetak() {
+        indeksStudenta = -1;
+      }
+
+      public Izuzetak(int indeksStudenta) {
+        super("Desio se izuzetak: broj indeksa studenta je veci od 100");
+        this.indeksStudenta = indeksStudenta;
+      } /* Uzimanje indeksa studenta za koji se desila greška */
+
+      public int getIndeksStudenta() {
+        return indeksStudenta;
+      }
+}
+
+
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XV_Student;
+
+import java.io.*;
+
+public class TestStudent {
+    public static void main(String[] args) throws Exception { /* Deklarisanje podataka */
+      String imePrezime;
+      int brojIndeksa;
+      double prosecnaOcena;
+      BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+      try { /* Unos podataka o studentu */
+          System.out.print("Unesite ime i prezime studenta: ");
+          imePrezime = ulaz.readLine();
+          System.out.print("Unesite broj indeksa studenta: ");
+          brojIndeksa = Integer.parseInt(ulaz.readLine());
+          System.out.print("Unesite prosečnu ocenu studenta: ");
+          prosecnaOcena = Double.parseDouble(ulaz.readLine()); /* Kreiranje objekta klase Student */
+          Student s = new Student(); /* Postavljanje podataka o studentu */
+          s.setImePrezime(imePrezime);
+          s.setBrojIndeksa(brojIndeksa);
+          s.setProsecnaOcena(prosecnaOcena); /* Štampanje podataka o studentu */
+          System.out.println("\nPodaci o studentu su: ");
+          System.out.println("Ime i prezime: " + s.getImePrezime() + "\nBroj indeksa: " + s.getBrojIndeksa()
+            + "\nProsecna ocena: " + s.getProsecnaOcena());
+      } catch (Throwable e) { /* Štampanje informacije o izuzetku metodom printStackTrace */
+          System.out.println("Štampanje informacije o izuzetku metodom printStackTrace");
+          e.printStackTrace(); /* Kreiranje stack trace-a */
+          StackTraceElement stack[] = e.getStackTrace(); /* Unos elemenata */
+          for (int i = 0; i < stack.length; i++) {
+            String fileName = stack[i].getFileName();
+            String className = stack[i].getClassName();
+            String methodName = stack[i].getMethodName();
+            boolean isNativeMethod = stack[i].isNativeMethod();
+            int line = stack[i].getLineNumber();
+          } /* Štampanje informacije o izuzetku iz stack trace-a */
+          System.out.println("\nŠtampanje informacije o izuzetku iz stack trace-a");
+          for (int i = 0; i < stack.length; i++)
+        System.out.println(stack[i]);
+      }
+    }
+
+}
+
+  
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite ime i prezime studenta: <span style="color: azure;">Petar Peric</span>
+Unesite broj indeksa studenta: <span style="color: azure;">258</span>
+Unesite prosečnu ocenu studenta: <span style="color: azure;">8.5</span>
+
+Podaci o studentu su: 
+Ime i prezime: Petar Peric
+Broj indeksa: 258
+Prosecna ocena: 8.5  
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 344: (X_Exceptions.XVI_Artikal)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Artikal</strong> i u njoj:
+- podatak <b>naziv</b> tipa String,
+- podatak <b>proizvodjac</b> tipa String,
+- podatak <b>barkod</b> tipa String,
+- podatak <b>cena</b> tipa double,
+- podatak <b>potrosnja</b> tipa double, 
+- metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong> metode za ove podatke.
+ <i>Podatak <b>cena</b> mora biti veća od nule, a podaci tipa String ne smeju biti null. U slučaju unosa neke od ovih vrednosti, potrebno je baciti izuzetak klase <strong style="color: #0984e3;">IzuzetakArtikal</strong>.
+</i> 
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> klase <strong style="color: #0984e3;">Object</strong>. 
+ <i>Ova metoda treba da vraća String koji sadrži vrednosti svih podataka artikla.</i>
+
+Definisati klasu <strong style="color: #0984e3;">IzuzetakArtikal</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Exception</strong> i sadrži:
+- konstruktor koji kao ulazni argument prima poruku greške i poziva odgovarajući konstruktor nadklase prosleđujući mu ulazni argument.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestArtikal</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">Artikal</strong>, u koji unosi odgovarajuće vrednosti i ispisuje sve podatke o artiklu na ekranu. 
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVI_Artikal;
+
+public class Artikal { /* Deklarisanje podataka */
+        String naziv;
+        String proizvodjac;
+        String barkod;
+        double cena; /* Metoda za pristup podatku naziv */
+    
+        public String getNaziv() {
+          return naziv;
+        } /* Metoda za postavljanje podatka naziv */
+    
+        public void setNaziv(String naziv) throws IzuzetakArtikal {
+          if (naziv.isBlank() || naziv.isEmpty())
+              throw new IzuzetakArtikal("Naziv artikla ne sme biti null");
+          this.naziv = naziv;
+        } /* Metoda za pristup podatku proizvodjač */
+    
+        public String getProizvodjac() {
+          return proizvodjac;
+        } /* Metoda za postavljanje podatka proizvodjač */
+    
+        public void setProizvodjac(String proizvodjac) throws IzuzetakArtikal {
+          if (proizvodjac.isBlank() || proizvodjac.isEmpty())
+            throw new IzuzetakArtikal("Proizvodjač artikla ne sme biti null");
+          this.proizvodjac = proizvodjac;
+        } /* Metoda za pristup podatku barkod */
+    
+        public String getBarkod() {
+          return barkod;
+        } /* Metoda za postavljanje podatka barkod */
+    
+        public void setBarkod(String barkod) throws IzuzetakArtikal {
+          if (barkod.isBlank() || barkod.isEmpty())
+              throw new IzuzetakArtikal("Barkod artikla ne sme biti null");
+          this.barkod = barkod;
+        } /* Metoda za pristup podatku cena */
+    
+        public double getCena() {
+          return cena;
+        } /* Metoda za postavljanje podatka cena */
+    
+        public void setCena(double cena) throws IzuzetakArtikal {
+          if (cena <= 0)
+              throw new IzuzetakArtikal("Cena mora biti veća od nule");
+          this.cena = cena;
+        } /* Metoda za ispisivanje podataka o artiklu */
+    
+        public String toString() {
+          return "Naziv: " + naziv + "\nProizvodjač: " 
+          + proizvodjac + "\nBarkod: " + barkod + "\nCena: " + cena;
+    }
+}   
+  </pre>
+    </div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVI_Artikal;
+
+public class IzuzetakArtikal extends Exception {
+    /* Parametarizovan konstruktor*/
+    public IzuzetakArtikal(String poruka) {
+      super(poruka);
+    }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVI_Artikal;
+
+import java.io.*;
+
+public class TestArtikal {
+    public static void main(String[] args) throws Exception {
+      BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); 
+      System.out.println("Unesite naziv artikla: ");
+      String naziv = ulaz.readLine();
+      System.out.println("Unesite proizvodjača artikla: ");
+      String proizvodjac = ulaz.readLine();
+      System.out.println("Unesite barkod artikla: ");
+      String barkod = ulaz.readLine();
+      System.out.println("Unesite cenu artikla: ");
+      double cena = Double.parseDouble(ulaz.readLine()); 
+      Artikal a = new Artikal();
+      try { 
+          a.setNaziv(naziv);
+          a.setProizvodjac(proizvodjac);
+          a.setBarkod(barkod);
+          a.setCena(cena); /* Štampanje podataka o artiklu */
+          System.out.println("\nUneti podaci o artiklu su: ");
+          System.out.println(a.toString());
+      } catch (IzuzetakArtikal e) {
+          System.out.println("Greška: " + e.getMessage());
+      }
+    }
+}  
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite naziv artikla: 
+<span style="color: azure;">Jabuka</span>
+Unesite proizvodjača artikla: 
+<span style="color: azure;">Indonezija</span>
+Unesite barkod artikla: 
+<span style="color: azure;">28134565</span>
+Unesite cenu artikla: 
+<span style="color: azure;">-6.5</span>
+Greška: Cena mora biti veća od nule
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 345: (X_Exceptions.XVII_Motor)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Motor</strong> i u njoj:
+- podatak <b>marka</b> tipa String,
+- podatak <b>kubikaza</b> tipa double,
+- podatak <b>potrosnja</b> tipa double, 
+- metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong>.
+  <i>Nedozvoljene vrednosti za podatak <b>marka</b> je null string, a kubikaža mora biti veća od 50 i manja od 2000 kubika. 
+  U slučaju unosa ovih vrednosti, potrebno je baciti izuzetak sa odgovarajućom porukom.</i> 
+- metodu <strong style="color: #44bd32;">ispisi</strong> za ispisivanje podataka o motoru. 
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestMotor</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">Motor</strong>, , u njega unosi odgovarajuće vrednosti i na ekranu ispisuje sve podatke o motoru.
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+  package X_Exceptions.XVII_Motor;
+
+  public class Motor { /* Deklarisanje podataka */
+      String marka;
+      double kubikaza; /* Metoda za pristup podatku marka */
+  
+      public String getMarka() {
+        return marka;
+      } /* Metoda za postavljanje podatka marka */
+  
+      public void setMarka(String marka) throws IzuzetakMotor {
+        if (marka.isBlank() || marka.isEmpty())
+        throw new IzuzetakMotor("Marka motora ne sme biti null");
+        this.marka = marka;
+      } /* Metoda za pristup podatku kubikaža */
+  
+      public double getKubikaza() {
+        return kubikaza;
+      } /* Metoda za postavljanje podatka kubikaža */
+  
+      public void setKubikaza(double kubikaza) throws IzuzetakMotor {
+        if (kubikaza > 50 && kubikaza < 2000)
+            this.kubikaza = kubikaza;
+        else
+        throw new IzuzetakMotor("Kubikaža mora biti veća od 50 i manja od 2000");
+      } /* Metoda za ispisivanje podataka o motoru */
+  
+      public void ispisi() {
+        System.out.println("Marka: " + marka + "\nKubikaža: " + kubikaza);
+      }
+  }
+  
+  </pre>
+    </div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVII_Motor;
+
+public class IzuzetakMotor extends Exception { // Parametrizovan konstruktor 
+    public IzuzetakMotor(String poruka) {
+     super(poruka);
+    }
+}
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVII_Motor;
+
+import java.io.*;
+
+public class TestMotor {
+    public static void main(String[] args) throws Exception {
+      BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); /* Unos podataka o motoru */
+      System.out.println("Unesite marku motora: ");
+      String marka = ulaz.readLine();
+      System.out.println("Unesite kubikažu motora: ");
+      double kubikaza = Double.parseDouble(ulaz.readLine()); /* Kreiranje objekat klase Motor */
+      Motor a = new Motor();
+      try { /* Postavljanje podataka o motoru */
+          a.setMarka(marka);
+          a.setKubikaza(kubikaza); /* Štampanje podataka o motoru */
+          System.out.println("\nUneti podaci o motoru su: ");
+          a.ispisi();
+      } catch (IzuzetakMotor e) {
+          System.out.println("Greška: " + e.getMessage());
+      }
+    }
+
+}
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite marku motora: 
+<span style="color: azure;">YAMAHA</span>
+Unesite kubikažu motora: 
+<span style="color: azure;">2500</span>
+Greška: Kubikaža mora biti veća od 50 i manja od 2000
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 346: (X_Exceptions.XVIII_Casopis)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Casopis</strong> i u njoj:
+- podatak <b>naslov</b> tipa String,
+- podatak <b>izdavalac</b> tipa String koji sadrži naziv izdavača časopisa,
+- podatak <b>brojCasopisa</b> tipa int,
+- podatak <b>cena</b> tipa double, 
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong>.
+  <i>Nedozvoljene vrednosti za podatke tipa String su null stringovi, a za podatak tipa double sve negativne vrednosti. 
+    U slučaju unosa nedozvoljenih vrednosti za bilo koji podatak, potrebno je baciti izuzetak sa odgovarajućom porukom.
+  </i> 
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> klase <strong style="color: #0984e3;">Objekat</strong> koja vraća jedan String. Ovaj string sadrži podatke o časopisu.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestCasopis</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">Casopis</strong>, unosi u njega odgovarajuće vrednosti za naslov časopisa, naziv izdavača, 
+broj časopisa i cenu i ispisuje na ekranu sve podatke o časopisu
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVIII_Casopis;
+
+public class Casopis { /* Deklarisanje podataka */
+    String naslov;
+    String izdavac;
+    int brojCasopisa;
+    double cena; /* Metoda za pristup podatku naslov */
+
+    public String getNaslov() {
+	    return naslov;
+    } /* Metoda za postavljanje podatka naslov */
+
+    public void setNaslov(String naslov) throws IzuzetakCasopis {
+      if (naslov.isBlank() || naslov.isEmpty())
+          throw new IzuzetakCasopis("Naslov časopisa ne sme biti null");
+      this.naslov = naslov;
+    } /* Metoda za pristup podatku izdavač */
+
+    public String getIzdavac() {
+	    return izdavac;
+    } /* Metoda za postavljanje podatka izdavač */
+
+    public void setIzdavac(String izdavac) throws IzuzetakCasopis {
+      if (izdavac.isBlank() || izdavac.isEmpty())
+          throw new IzuzetakCasopis("Izdavač časopisa ne sme biti null");
+      this.izdavac = izdavac;
+    } /* Metoda za pristup podatku broj časopisa */
+
+    public int getBrojCasopisa() {
+	    return brojCasopisa;
+    } /* Metoda za postavljanje podatka broj časopisa */
+
+    public void setBrojCasopisa(int brojCasopisa) {
+	    this.brojCasopisa = brojCasopisa;
+    } /* Metoda za pristup podatku cena */
+
+    public double getCena() {
+	    return cena;
+    } /* Metoda za postavljanje podatka cena */
+
+    public void setCena(double cena) throws IzuzetakCasopis {
+      if (cena <= 0)
+          throw new IzuzetakCasopis("Cena mora biti veća od nule");
+      this.cena = cena;
+    } /* Metoda za ispisivanje podataka o časopisu */
+
+    public String toString() {
+	    return "Naslov: " + naslov + "\nIzdavač: " + izdavac + 
+      "\nBroj časopisa: " + brojCasopisa + "\nCena: " + cena;
+    }
+}
+  </pre>
+    </div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVIII_Casopis;
+
+public class IzuzetakCasopis extends Exception { 
+    public IzuzetakCasopis(String poruka) {
+      super(poruka);
+    }
+}
+  
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XVIII_Casopis;
+
+import java.io.*;
+
+public class TestCasopis {
+    public static void main(String[] args) throws Exception {
+      BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); 
+      System.out.println("Unesite naslov časopisa: ");
+      String naslov = ulaz.readLine();
+      System.out.println("Unesite izdavač časopisa: ");
+      String izdavac = ulaz.readLine();
+      System.out.println("Unesite broj časopisa: ");
+      int brojCasopisa = Integer.parseInt(ulaz.readLine());
+      System.out.println("Unesite cenu časopisa: ");
+      double cena = Double.parseDouble(ulaz.readLine()); 
+      Casopis c = new Casopis();
+      try { /* Postavljanje podataka o časopisu */
+          c.setNaslov(naslov);
+          c.setIzdavac(izdavac);
+          c.setBrojCasopisa(brojCasopisa);
+          c.setCena(cena); /* Štampanje podataka o časopisu */
+          System.out.println("\nUneti podaci o časopisu su: ");
+          System.out.println(c.toString());
+      } catch (IzuzetakCasopis e) {
+          System.out.println("Greška: " + e.getMessage());
+      }
+    }
+}
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite naslov časopisa: 
+<span style="color: azure;">Zabavnik</span>
+Unesite izdavač časopisa: 
+<span style="color: azure;">Politika</span>
+Unesite broj časopisa: 
+<span style="color: azure;">125</span>
+Unesite cenu časopisa: 
+<span style="color: azure;">300</span>
+
+Uneti podaci o časopisu su: 
+Naslov: Zabavnik
+Izdavač: Politika
+Broj časopisa: 125
+Cena: 300.0
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 347: (X_Exceptions.XX_TelefonskiRacun)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">TelefonskiRacun</strong> i u njoj:
+- privatni podatak <b>brojTelefona</b> tipa String,
+- privatni podatak <b>vlasnik</b> tipa String koji predstavlja ime vlasnika telefona,
+- privatni podatak <b>dugovanje</b> tipa double koji predstavlja iznos telefonskog računa, 
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong>.
+  <i>Podatak <b>dugovanje</b> ne sme biti manje od nule, dok podaci <b>brojTelefona</b> i <b>vlasnik</b> ne smeju imati null vrednost. 
+  U slučaju unosa bilo kojih od ovih nedozvoljenih vrednosti potrebno je baciti izuzetak klase <strong style="color: #0984e3;">IzuzetakTelefonskiRacun</strong>.
+
+  </i> 
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> klase <strong style="color: #0984e3;">Objekat</strong>. Ova metoda treba da vraća String koji sadrži vrednosti svih podataka.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestTelefonskiRacun</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">TelefonskiRacun</strong>, u njega unosi odgovarajuće vrednosti i ispisuje sve podatke o telefonskom računu na ekranu. 
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XX_TelefonskiRacun;
+
+public class TelefonskiRacun { 
+    String brojTelefona;
+    private String vlasnik;
+    private double dugovanje; 
+
+    public String getBrojTelefona() {
+      return brojTelefona;
+    } 
+
+    public void setBrojTelefona(String brojTelefona) {
+  if (brojTelefona.isBlank() || brojTelefona.isEmpty())
+      throw new IzuzetakTelefonskiRacun("Broj telefona ne sme biti null");
+  this.brojTelefona = brojTelefona;
+    } /* Metoda za pristup podatku dugovanje */
+
+    public double getDugovanje() {
+  return dugovanje;
+    } /* Metoda za postavljanje podatka dugovanje */
+
+    public void setDugovanje(double dugovanje) {
+      if (dugovanje <= 0)
+          throw new IzuzetakTelefonskiRacun("Dugovanje mora biti veće od nule");
+      this.dugovanje = dugovanje;
+    } /* Metoda za pristup podatku vlasnik */
+
+    public String getVlasnik() {
+      return vlasnik;
+    } /* Metoda za postavljanje podatka vlasnik */
+
+    public void setVlasnik(String vlasnik) {
+      if (vlasnik.isBlank() || vlasnik.isEmpty())
+          throw new IzuzetakTelefonskiRacun("Ime i prezime vlasnika telefona ne sme biti null");
+      this.vlasnik = vlasnik;
+    } /* Redefinisana metoda */
+
+    public String toString() {
+      return "Broj telefona: " + brojTelefona + "\nVlasnik: " 
+      + vlasnik + "\nDugovanje: " + dugovanje;
+    }
+} 
+</pre>
+</div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XX_TelefonskiRacun;
+
+public class IzuzetakTelefonskiRacun extends RuntimeException { 
+    public IzuzetakTelefonskiRacun(String poruka) {
+      super(poruka);
+    }
+} 
+  
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+  package X_Exceptions.XX_TelefonskiRacun;
+
+  import java.io.*;
+  
+  public class TestTelefonskiRacun {
+      public static void main(String[] args) throws Exception {
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); 
+        TelefonskiRacun tr = new TelefonskiRacun();
+        try { /* Unos podataka o telefonskom računu */
+            System.out.println("Unesite broj telefona: ");
+            String brojTelefona = ulaz.readLine();
+            System.out.println("Unesite ime i prezime vlasnika telefona: ");
+            String vlasnik = ulaz.readLine();
+            System.out.println("Unesite iznos telefonskog računa: ");
+            double racun = Double.parseDouble(ulaz.readLine()); 
+            tr.setBrojTelefona(brojTelefona);
+            tr.setVlasnik(vlasnik);
+            tr.setDugovanje(racun);
+            System.out.println("\nUneti podaci o telefonskom računu su: ");
+            System.out.println(tr.toString());
+        } catch (Exception e) {
+            System.out.println("Greška: " + e.getMessage());
+        } finally {
+            System.out.println("Hvala što koristite naše usluge!");
+        }
+      }
+  }
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite broj telefona: 
+<span style="color: azure;">060587897</span>
+Unesite ime i prezime vlasnika telefona: 
+<span style="color: azure;">Mika Mikic</span>
+Unesite iznos telefonskog računa: 
+<span style="color: azure;">-1235</span>
+Greška: Dugovanje mora biti veće od nule
+Hvala što koristite naše usluge!</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 348: (X_Exceptions.XXI_TekuciRacun)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">TekuciRacun</strong> i u njoj:
+- privatni podatak <b>brojTekucegRacuna</b> tipa String,
+- privatni podatak <b>vlasnik</b> tipa String koji predstavlja ime vlasnika tekućeg računa,
+- privatni podatak <b>iznosNaRacunu</b> tipa double koji predstavlja trenutni iznos novca na tekućem računu, 
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong>.
+  <i>Iznos na računu ne sme biti veći od 25000, dok broj tekućeg računa i vlasnik ne smeju imati null vrednost. 
+  U slučaju unosa bilo kojih od ovih nedozvoljenih vrednosti potrebno je baciti izuzetak klase <strong style="color: #0984e3;">IzuzetakTekuciRacun</strong>.</i> 
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> klase <strong style="color: #0984e3;">Objekat</strong>. Ova metoda treba da vraća String koji sadrži vrednosti svih podataka.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestTekuciRacun</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">TekuciRacun</strong>, u njega unosi odgovarajuće vrednosti i ispisuje sve podatke o tekućem računu na ekranu.
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XXI_TekuciRacun;
+
+public class TekuciRacun { 
+    private String brojTekucegRacuna;
+    private String vlasnikRacuna;
+    private double iznosNaRacunu; 
+
+    public String getBrojTekucegRacuna() {
+      return brojTekucegRacuna;
+    } // Metoda za postavljanje podatka brojTelefona 
+
+    public void setBrojTekucegRacuna(String brojTekucegRacuna) {
+      if (brojTekucegRacuna.isBlank() || brojTekucegRacuna.isEmpty())
+          throw new IzuzetakTekuciRacun("Broj tekućeg računa ne sme biti null");
+      this.brojTekucegRacuna = brojTekucegRacuna;
+    } // Metoda za pristup podatku iznosNaRacunu 
+
+    public double getIznosNaRacunu() {
+      return iznosNaRacunu;
+    } //Metoda za postavljanje podatka dugovanje 
+
+    public void setIznosNaRacunu(double iznosNaRacunu) {
+      if (iznosNaRacunu > 25000)
+          throw new IzuzetakTekuciRacun("Iznos na računu ne sme biti veći od 25000");
+      this.iznosNaRacunu = iznosNaRacunu;
+    } //Metoda za pristup podatku vlasnik računa 
+
+    public String getVlasnikRacuna() {
+      return vlasnikRacuna;
+    } //Metoda za postavljanje podatka vlasnik računa 
+
+    public void setVlasnikRacuna(String vlasnikRacuna) {
+      if (vlasnikRacuna.isBlank() || vlasnikRacuna.isEmpty())
+          throw new IzuzetakTekuciRacun("Ime i prezime vlasnika računa ne sme biti null");
+      this.vlasnikRacuna = vlasnikRacuna;
+    } //Redefinisana metoda 
+
+    public String toString() {
+      return "Broj tekućeg računa: " + brojTekucegRacuna 
+    + "\nVlasnik računa: " + vlasnikRacuna
+    + "\nIznos na računu: " + iznosNaRacunu;
+    }
+}
+</pre>
+</div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XXI_TekuciRacun;
+
+public class IzuzetakTekuciRacun extends RuntimeException {
+    public IzuzetakTekuciRacun(String poruka) {
+      super(poruka);
+    }
+}  
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package X_Exceptions.XXI_TekuciRacun;
+
+import java.io.*;
+
+public class TestTekuciRacun {
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(
+      new InputStreamReader(System.in)); /* Kreiranje objekta klase TekuciRacun */
+    TekuciRacun tr = new TekuciRacun();
+    try { /* Unos podataka o tekućem računu */
+        System.out.println("Unesite broj tekućeg računa: ");
+        String brojTekucegRacuna = ulaz.readLine();
+        System.out.println("Unesite ime i prezime vlasnika računa: ");
+        String vlasnikRacuna = ulaz.readLine();
+        System.out.println("Unesite iznos na tekućem računu: ");
+        double iznos = Double.parseDouble(ulaz.readLine()); /* Postavljanje podataka o tekućem računu */
+        tr.setBrojTekucegRacuna(brojTekucegRacuna);
+        tr.setVlasnikRacuna(vlasnikRacuna);
+        tr.setIznosNaRacunu(iznos); /* Štampanje podataka o tekućem računu */
+        System.out.println("\nUneti podaci o tekućem računu su: ");
+        System.out.println(tr.toString());
+    } catch (Exception e) {
+        System.out.println("Greška: " + e.getMessage());
+    }
+      }
+}  
+</pre>
+</div>
+<div style="float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite broj tekućeg računa: 
+<span style="color: azure;">160-2000-00</span>
+Unesite ime i prezime vlasnika računa: 
+<span style="color: azure;">Pera Peric</span>
+Unesite iznos na tekućem računu: 
+<span style="color: azure;">26000</span>
+Greška: Iznos na računu ne sme biti veći od 25000</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 349: (Knjiga)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Knjiga</strong> i u njoj:
+- podatak <b>naziv</b> tipa String,
+- podatak <b>autor</b> tipa String,
+- podatak <b>izdavac</b> tipa String,
+- metodu <strong style="color: #44bd32;">unetiNazivKnjige</strong> za unos naziva knjige, pri čemu se ponavlja unos dok se ne unese string koji ima vrednost različitu od null,
+- metodu <strong style="color: #44bd32;">unetiAutoraKnjige</strong> za unos autora knjige, pri čemu se ponavlja unos dok se ne unese ispravno string koji ima vrednost različitu od null,
+- metodu <strong style="color: #44bd32;">unetiIzdavacaKnjige</strong> za unos naziva izdavača knjige,
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestKnjiga</strong> koja:
+- kreira jedan objekat klase <strong style="color: #0984e3;">Knjiga</strong>, i uneti podatke.
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package Knjiga;
+
+import java.io.*;
+
+public class Knjiga {
+    String naziv;
+    String autor;
+    String izdavac;
+
+    void unetiNazivKnjige() throws IOException {
+
+      while (true) {
+          BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    
+          System.out.println("Unesite naziv knjige: ");
+          naziv = ulaz.readLine();
+          if (naziv.isEmpty() || naziv.isBlank()) {
+            System.out.println("Naziv knjige ne sme biti null.");
+          } else
+        break;
+        }
+        }
+    
+        void unetiAutoraKnjige() {
+          try {
+              BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+              System.out.println("Unesite autora knjige: ");
+              autor = ulaz.readLine();
+              if (autor.isEmpty() || autor.isBlank()) {
+            throw new Exception("Autor knjige mora imati ime!");
+          }
+    
+      } catch (Exception e) {
+          System.out.println("Greska: " + e.getMessage());
+          unetiAutoraKnjige();
+      }
+        }
+    
+        void unetiIzdavacaKnjige() throws IOException {
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Unesite izdavaca knjige: ");
+        izdavac = ulaz.readLine();
+    }
+} 
+</pre>
+</div>
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package Knjiga;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class TestKnjiga {
+
+    public static void main(String[] args) throws IOException {
+      Knjiga knjiga = new Knjiga();
+    
+      knjiga.unetiNazivKnjige();
+      knjiga.unetiAutoraKnjige();
+      knjiga.unetiIzdavacaKnjige();
+    
+      System.out.println("\nPodaci o knjizi su: ");
+      System.out.println("Naziv: " + knjiga.naziv + "\nAutor: " 
+      + knjiga.autor + "\nIzdavac: " + knjiga.izdavac);
+
+    }
+
+}
+  
+</pre>
+</div>
+<div style="clear:both;float:left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite naziv knjige: 
+<span style="color: azure;">Na Drini Cuprija</span>
+Unesite autora knjige: 
+<span style="color: azure;">Ivo Andric</span>
+Unesite izdavaca knjige: 
+<span style="color: azure;">Vulkan</span>
+
+Podaci o knjizi su: 
+Naziv: Na Drini Cuprija
+Autor: Ivo Andric
+Izdavac: Vulkan</pre>
+</div>
+</div>
+
+<br>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p>&nbsp;</p>
+<div style="clear: both; width: 100%;text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+<br>
+  
+
+</body>
+</html>

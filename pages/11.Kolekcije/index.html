@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kolekcije: ArrayList i LinkedList</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/yfsvQmcvwj6oob2Yq_1675161255705.jpg" alt="" width="648" height="244" /></p>
+<p>&nbsp;</p>
+<div style="clear: both;">&nbsp;</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 350: (ForEachPetlja)</strong></p>
+<pre style="text-align: justify;">Napisati program i simulirati <strong>Unapređenu For petlju</strong>.</pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package unapredjenaForPetlja;
+
+import java.util.Scanner;
+
+public class ForEachPetlja {
+
+    public static void main(String[] args) {
+
+  Scanner ulaz = new Scanner(System.in);
+
+  <span style="color: azure;">/* Prvi nacin kreiranja niza */</span>
+  int[] brojevi = new int[5];
+
+  <span style="color: azure;">/* Drugi nacin kreiranja niza */</span>
+  int niz[] = { 2, 2, 2, 2, 2, 2 };
+
+  <span style="color: azure;">/* Unos podataka za niz brojevi*/</span>
+  for (int i = 0; i &lt; brojevi.length; i++) {
+      System.out.print("brojevi[" + i + "] = ");
+      brojevi[i] = ulaz.nextInt();
+
+      if ((i + 1) == brojevi.length) {
+        System.out.println("Niz je napunjen!");
+      }
+  }
+
+  <span style="color: azure;">/* Unapredjena FOR petlja, tkz ForEach */</span>
+  System.out.println("\nIzgled niza 'brojevi':");
+  for (int i : brojevi) {
+      System.out.print(i + ", ");
+  }
+
+  System.out.println("\nIzgled niza 'niz':");
+  for (int j : niz) {
+      System.out.print(j + ", ");
+  }
+
+  ulaz.close();
+    }
+
+}
+    
+    
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">brojevi[0] = <span style="color: azure;">1</span>
+brojevi[1] = <span style="color: azure;">2</span>
+brojevi[2] = <span style="color: azure;">3</span>
+brojevi[3] = <span style="color: azure;">4</span>
+brojevi[4] = <span style="color: azure;">5</span>
+Niz je napunjen!
+
+Izgled niza 'brojevi':
+1, 2, 3, 4, 5, 
+Izgled niza 'niz':
+2, 2, 2, 2, 2, 2, </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 351: (ArrayList01)</strong></p>
+<pre style="text-align: justify;">Napisati program koji kreira <strong>ArrayList</strong> i dodaje vrednosti 5,4,9,7,12 u tu list a zatim ispisuje navedenu listu.</pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package ArrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      <span style="color: azure;">// interfejs  ime = new ArrayList();
+       // T predstavlja top promenljive</span>
+
+      List kolekcijaAL = new ArrayList();
+
+        <span style="color: azure;">// add sluzi da dodavanje vrednosti unutar kolekcije</span>
+
+      kolekcijaAL.add(5);
+      kolekcijaAL.add(4);
+      kolekcijaAL.add(9);
+      kolekcijaAL.add(7);
+      kolekcijaAL.add(12);
+
+      System.out.println(kolekcijaAL);
+
+      <span style="color: azure;">/* Razlika u odnosu na niz?
+        * Koristite ArrayList kada se ne zna unapred velicina niza!
+        *  */</span>
+    }
+
+}
+  
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">[5, 4, 9, 7, 12]
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 352: (ArrayList02)</strong></p>
+<pre style="text-align: justify;">Kreirati <strong>ArrayList</strong> i pozvati i objasniti sledeće metode:
+- <strong style="color: #44bd32;">.size()</strong>
+- <strong style="color: #44bd32;">.add()</strong>
+- <strong style="color: #44bd32;">.contains()</strong>
+- <strong style="color: #44bd32;">.get()</strong>
+- <strong style="color: #44bd32;">.indexOf()</strong>
+- <strong style="color: #44bd32;">.toArray()</strong>
+- <strong style="color: #44bd32;">.remove()</strong>
+- <strong style="color: #44bd32;">.clear()</strong></pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package ArrayList2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+  List lista = new ArrayList();
+    <span style="color: azure;">/* size() - vraca broj elementa smestenih u kolekciji ArrayList */
+  System.out.println("Pocetna duzina: " + lista.size());</span>
+
+  <span style="color: azure;">/* add() - dodaje element na kraj kolekcije */</span>
+  lista.add("Prvi"); // 0
+  lista.add("Drugi"); // 1
+  lista.add("Treci"); // 2
+  lista.add("Cetvrti"); // 3
+
+  <span style="color: azure;">/* prolazak kroz kolekciju */</span>
+  for (String s : lista) {
+      System.out.printf("%s ", s);
+  }
+
+  System.out.println("\nTrenutna duzina kolekcije je: " + lista.size());
+
+  <span style="color: azure;">/*provera da li se neki zadati element nalazi unutar kolekcije */
+  /* contains - vraca true ako kolekcija sadrzi trazeni element, 
+    * odnosno vraca false ukoliko kolekcija ne sadrzi trazeni element */</span>
+
+  boolean sadrzi = lista.contains("Treci");
+  if (sadrzi) {
+      System.out.println("Trazeni element se nalazi u zadatoj kolekciji!");
+
+  } else {
+      System.out.println("Trazeni element se ne nalazi u zadatoj kolekciji!");
+  }
+
+  <span style="color: azure;">/* get() - vraca element sa zadatim indeksom */</span>
+  String element = lista.get(2);
+  System.out.println("Element sa indeksom 2 u kolekciji je: " + element);
+
+  <span style="color: azure;">/* indexOf - vraca indeks prve pojave zadatog elementa kolekcije i 
+    * vratice -1 ukoliko trazeni element ne postoji */</span>
+  int pozicija = lista.indexOf("Drugi");
+  System.out.println("Element Drugi je na poziciji: " + pozicija);
+
+  <span style="color: azure;">/* toArray - sluzi za prebacivanje elemenata u niz */</span>
+  String[] nizString = new String[lista.size()];
+  lista.toArray(nizString);
+
+  <span style="color: azure;">/*Prolazak kroz niz*/</span>
+  for (String s : nizString) {
+      System.out.printf("%s ", s);
+  }
+
+  <span style="color: azure;">/* remove - brise prvu pojavu zadate vrednosti*/</span>
+  System.out.println("\n\nUklanjanja elementa Treci: ");
+  lista.remove("Treci");
+  for (String s : lista) {
+      System.out.printf("%s ", s);
+  }
+
+  <span style="color: azure;">/*clear - brise sve elemente iz zadate kolekcije*/</span>
+  lista.clear();
+  System.out.println("\n\nVelicina kolekcije nakon brisanja: " + lista.size());
+    }
+
+}
+    
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Pocetna duzina: 0
+Prvi Drugi Treci Cetvrti 
+Trenutna duzina kolekcije je: 4
+Trazeni element se nalazi u zadatoj kolekciji!
+Element sa indeksom 2 u kolekciji je: Treci
+Element Drugi je na poziciji: 1
+Prvi Drugi Treci Cetvrti 
+
+Uklanjanja elementa Treci: 
+Prvi Drugi Cetvrti 
+
+Velicina kolekcije nakon brisanja: 0
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 353: (ArrayList03)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">ALBrojevi</strong> i u njoj:
+- Kreirati <strong>ArrayList</strong> tipa <strong>Integer</strong>.
+- Omogućiti korisniku unos elemenata u navedenu listu dok korisnik ne ukuca <strong>-1</strong>.
+- metodu <strong style="color: #44bd32;">ispisiBrojeve</strong> kojom može da se postavi element sa zadatim indexima.
+    
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">ALBrojevi</strong> sa nazivom <strong>alb</strong> sa unosom 5 i 5.
+- pozvati metode <strong style="color: #44bd32;">unosBrojeva</strong>  i <strong style="color: #44bd32;">ispisiBrojeve</strong>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package ArrayList3;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ALBrojevi {
+
+    Scanner ulaz = new Scanner(System.in);
+
+    List brojevi = new ArrayList();
+
+    void unosBrojeva() {
+    System.out.println("Za prekid unosenja, unesite -1: ");
+      while (true) {
+          System.out.println("Broj: ");
+          int num = ulaz.nextInt();
+          if (num == -1) {
+        return;
+          }
+          this.brojevi.add(num);
+
+	}
+
+    }
+
+    void ispisiBrojeve() {
+	    System.out.println(this.brojevi);
+    }
+
+}
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package ArrayList3;
+
+public class Main {
+
+    public static void main(String[] args) {
+      ALBrojevi alb = new ALBrojevi();
+
+      alb.unosBrojeva();
+      alb.ispisiBrojeve();
+    }
+
+}
+    
+  </pre>
+</div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Za prekid unosenja, unesite -1: 
+Broj: 
+<span style="color: azure;">4</span>
+Broj: 
+<span style="color: azure;">5</span>
+Broj: 
+<span style="color: azure;">6</span>
+Broj: 
+-1
+[4, 5, 6]
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 354: (ArrayList04)</strong></p>
+<pre style="text-align: justify;">Kreirati niz <strong>Imena</strong> sa elementima "Mika", "Zika", "Ana", "Lana", "Hana", "Una"  i kreirati <strong>ArrayList</strong> i:
+- <strong>Unapredjenom for petljom</strong> kopirati elemente iz <strong>niza</strong> u <strong>ArrayList</strong> i istom petljom ispisati tu listu. 
+- napraviti niz <strong>imenaZaBrisanje</strong> "Mika", "Lana", "Hana".
+- kori&scaron;čenjem metode <strong style="color: #44bd32;">.remove()</strong> proslediti kreirani niz kao parametar.
+- kreirati objekat <strong>iter</strong> klase <strong style="color: #0984e3;">Iterator</strong> i &scaron;tampati listu primenom metoda <strong style="color: #44bd32;">.hasNext()</strong> i <strong style="color: #44bd32;">.next()</strong>.
+- u listu dodati element "Una" primenom metode <strong style="color: #44bd32;">.add()</strong> i kori&scaron;ćenjem iteratora pronaći vrednost "Una" i izbrisati iz liste metodom <strong style="color: #44bd32;">.remove()</strong></pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">  package ArrayList4;
+
+  import java.util.ArrayList;
+  import java.util.Iterator;
+  import java.util.List;
+  
+  public class Main {
+  
+      public static void main(String[] args) {
+        String imena[] = { "Mika", "Zika", "Ana", "Lana", "Hana", "Una" };
+      
+        List listaImena = new ArrayList();
+      
+          <span style="color: azure;">/* Dodavanje imena iz niza u kolekciju*/</span>
+        for (String s : imena) {
+            listaImena.add(s);
+        }
+      
+        <span style="color: azure;">/*Ispsiivanje kolekcije*/</span>
+        for (String s : listaImena) {
+            System.out.printf("%s ", s);
+        }
+      
+        <span style="color: azure;">/* Imena za brisanje */</span>
+        String imenaZaBrisanje[] = { "Mika", "Lana", "Hana" };
+      
+        <span style="color: azure;">/* Brisanje imena iz kolekcije*/</span>
+        for (String s : imenaZaBrisanje) {
+            listaImena.remove(s);
+        }
+      
+        <span style="color: azure;">/*Ispsiivanje kolekcije*/</span>
+        System.out.println("\n\nNovi izgled: ");
+        for (String s : listaImena) {
+            System.out.printf("%s ", s);
+        }
+      
+        <span style="color: azure;">/* Kreiranje iteratora kolekcije i stampanje liste pomocu iteratora*/</span>
+        Iterator iter = listaImena.iterator();
+        System.out.println("\n\nStampanje elemenata pomocu iteratora!");
+        while (iter.hasNext()) {
+            System.out.print(iter.next() + " ");
+        }
+      
+        <span style="color: azure;">/*Brisanje elemenata liste imena koja se nalaze u listi listaImenaZaBrisanje*/</span>
+        List listaImenaZaBrisanje = new ArrayList();
+      
+        listaImenaZaBrisanje.add("Una");
+        iter = listaImena.iterator();
+        while (iter.hasNext())
+            if (listaImenaZaBrisanje.contains(iter.next()))
+          iter.remove();
+      
+        System.out.println("\n\nLista nakon drugog brisanja: ");
+        for (int i = 0; i &lt; listaImena.size(); i++) {
+            System.out.print(listaImena.get(i) + " ");
+    }
+  
+      }
+  
+  }
+  
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Mika Zika Ana Lana Hana Una 
+
+Novi izgled: 
+Zika Ana Una 
+
+Stampanje elemenata pomocu iteratora!
+Zika Ana Una 
+
+Lista nakon drugog brisanja: 
+Zika Ana 
+    </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 355: (LinkedList01)</strong></p>
+<pre style="text-align: justify;">Kreirati objekat <strong>ll</strong> klase <strong style="color: #0984e3;">LinkedList</strong> i:
+- kori&scaron;ćenjem metode <strong style="color: #44bd32;">.add()</strong> dodati sledeće vrednosti u listu: "A", "B", (na drugoj poziciji) "C".
+- i&scaron;tampati elemente liste.
+- obrisati element indexa 0 kao i vrednost "B" kori&scaron;čenjem metode <strong style="color: #44bd32;">.remove()</strong>.
+- dodati elemente "D", "E", "F" u listu metodom <strong style="color: #44bd32;">.add()</strong>.
+- metodom <strong style="color: #44bd32;">.get()</strong> dohvatiti element na poziciji 3.
+- metodom <strong style="color: #44bd32;">.set()</strong> postaviti element vrednosti "Z" na poziciji 1.</pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">  package LinkedList01;
+
+  import java.util.LinkedList;
+  import java.util.List;
+  
+  public class Main {
+    public static void main(String[] args) {
+      List ll = new LinkedList();
+    
+        <span style="color: azure;">/* Dodavanje elemanta povezanoj lisit */</span>
+      ll.add("A"); // 0
+      ll.add("B"); // 1
+      ll.add(2, "C"); // 2
+    
+      System.out.println("Elementi povezane liste su: " + ll);
+    
+      <span style="color: azure;">/*Brisanje elemenata iz povezane liste*/</span>
+      ll.remove(0); // brisanje preko indexa
+      ll.remove("B"); // brisanje preko vrednosti
+    
+      System.out.println("Povezana lista nakon brisanja elemenata: " + ll);
+    
+      ll.add("D");
+      ll.add("E");
+      ll.add("F");
+      <span style="color: azure;">/* Unutar interfejsa List, indeksiranje ide od 0. Ne moze se indeksirati stringovnim tipom*/</span>
+    
+      System.out.println("Elementi povezane liste su: " + ll);
+    
+      <span style="color: azure;">/*Trazenje elemenata u povezanoj listi */</span>
+      boolean sadrzi = ll.contains("E");
+    
+      if (sadrzi) {
+          System.out.println("Lista sadrzi element E.");
+      } else {
+          System.out.println("Lista ne sadrzi element E.");
+      }
+    
+      <span style="color: azure;">/*Pristupanje (uzimanje) vrednosti elemenata iz povezane liste*/</span>
+      Object element = ll.get(3);
+      System.out.println("Zatrazen element je: " + element);
+    
+      <span style="color: azure;">/*Postavljanje vrednosti elemenata u povezanoj listi*/</span>
+      ll.set(1, "Z");
+      System.out.println("Povezana lista nakon promene: " + ll);
+    
+    }
+}     
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Elementi povezane liste su: [A, B, C]
+Povezana lista nakon brisanja elemenata: [C]
+Elementi povezane liste su: [C, D, E, F]
+Lista sadrzi element E.
+Zatrazen element je: F
+Povezana lista nakon promene: [C, Z, E, F]
+    </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 356: (LinkedList02)</strong></p>
+<pre style="text-align: justify;">Uraditi sledeće:
+  - kreirati niz <strong>imena</strong> sa vrednostima "Mika", "Zika", "Fica".
+  - kreirati objekat <strong>listaImena</strong> klase <strong style="color: #0984e3;">LinkedList</strong> i u nju dodati elemente kreiranog niza <strong>imena</strong> kori&scaron;ćenjem <strong>unapređene for petlje</strong>.
+  - kreirati niz <strong>imena1</strong> sa vrednostima "Ana", "Lena", "Hana", "Una".
+  - kreirati objekat <strong>listaImena1</strong> klase <strong style="color: #0984e3;">LinkedList</strong> i u nju dodati elemente kreiranog niza <strong>imena1</strong> kori&scaron;ćenjem <strong>unapređene for petlje</strong>.
+
+  - kori&scaron;ćenjem metode <strong style="color: #44bd32;">.addAll()</strong> liste <strong>listaImena</strong> proslediti kao parametar <strong>listaImena1</strong>.
+  - kori&scaron;ćenjem metode <strong style="color: #44bd32;">.subList()</strong> i metodom <strong style="color: #44bd32;">.clear()</strong> obrisati elemente sa indexima od 1 do 4.</pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">    package LinkedList01;
+  
+    import java.util.LinkedList;
+    import java.util.List;
+    
+    public class Main {
+      public static void main(String[] args) {
+        List ll = new LinkedList();
+      
+          <span style="color: azure;">/* Dodavanje elemanta povezanoj lisit */</span>
+        ll.add("A"); // 0
+        ll.add("B"); // 1
+        ll.add(2, "C"); // 2
+      
+        System.out.println("Elementi povezane liste su: " + ll);
+      
+        <span style="color: azure;">/*Brisanje elemenata iz povezane liste*/</span>
+        ll.remove(0); // brisanje preko indexa
+        ll.remove("B"); // brisanje preko vrednosti
+      
+        System.out.println("Povezana lista nakon brisanja elemenata: " + ll);
+      
+        ll.add("D");
+        ll.add("E");
+        ll.add("F");
+        <span style="color: azure;">/* Unutar interfejsa List, indeksiranje ide od 0. Ne moze se indeksirati stringovnim tipom*/</span>
+      
+        System.out.println("Elementi povezane liste su: " + ll);
+      
+        <span style="color: azure;">/*Trazenje elemenata u povezanoj listi */</span>
+        boolean sadrzi = ll.contains("E");
+      
+        if (sadrzi) {
+            System.out.println("Lista sadrzi element E.");
+        } else {
+            System.out.println("Lista ne sadrzi element E.");
+        }
+      
+        <span style="color: azure;">/*Pristupanje (uzimanje) vrednosti elemenata iz povezane liste*/</span>
+        Object element = ll.get(3);
+        System.out.println("Zatrazen element je: " + element);
+      
+        <span style="color: azure;">/*Postavljanje vrednosti elemenata u povezanoj listi*/</span>
+        ll.set(1, "Z");
+        System.out.println("Povezana lista nakon promene: " + ll);
+      
+      }
+  }     
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">[Mika, Zika, Fica, Ana, Lena, Hana, Una]
+[Mika, Lena, Hana, Una]
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 357: (LinkedList03)</strong></p>
+<pre style="text-align: justify;">Uraditi sledeće:
+- kreirati objekat <strong>listaImena</strong> klase <strong style="color: #0984e3;">LinkedList</strong> i u nju dodati elemente  "1", "2", "3", "4", "5".
+- kreirati objekat <strong>itr</strong> klase <strong style="color: #0984e3;">Iterator</strong> i pozvati metodu <strong style="color: #44bd32;">.listIterator()</strong>.
+- kori&scaron;ćenjem metode <strong style="color: #44bd32;">.hasNext()</strong> i <strong style="color: #44bd32;">.next()</strong> i ispisati listu od prvog do poslednjeg elementa.
+- kori&scaron;ćenjem metode <strong style="color: #44bd32;">.hasPrevious()</strong> i <strong style="color: #44bd32;">.previous()</strong> i ispisati listu od poslednjeg do prvog elementa.</pre>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package LinkedList03;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      List LList = new LinkedList();
+
+      LList.add("1");
+      LList.add("2");
+      LList.add("3");
+      LList.add("4");
+      LList.add("5");
+
+      ListIterator itr = LList.listIterator();
+
+      System.out.println("Kretanje kroz listu od prvod do poslednjeg elementa");
+      while (itr.hasNext()) { // 0 .. n
+          System.out.print(itr.next() + " ");
+      }
+
+      System.out.println("\nKretanje kroz listu od poslednjeg do prvog elementa");
+
+      while (itr.hasPrevious()) { // 0
+          System.out.print(itr.previous() + " ");
+      }
+
+    }
+}
+ 
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: 020312;">Izlaz:</h3>
+<pre style="background-color: #020312; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Kretanje kroz listu od prvod do poslednjeg elementa
+1 2 3 4 5 
+Kretanje kroz listu od poslednjeg do prvog elementa
+5 4 3 2 1 
+</pre>
+</div>
+</div>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+  
+    <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://lh3.googleusercontent.com/bnfoFGRJfOTWON_R86BcQHn22jCXKIONC11XsIoWypnkuuKoFGQMHIEBUXyBYcWpyKaDbnVAXcYBAXR5Ear0f_M2M8XQOAU8wQkBTdG7YNZqkF5vjZc4y8G0yLpGYoE4DaA0otGQNJlugsy43pVfL7tf2sAcGXCwFi6R2_zi4dZUtqIgZoNTpJhiJ4rULKBT4VNU4W3aY2JDXNisz0vSmNIH1f_Wn5mik5ifiGt1-2NVJZkRyummJr5AvjZ3Ri-FZfl5mGap2E_Qa6n0h9brxPmSx0-Hz2VCFMYBqhEmPEQ2ieJJyE-VjhdOd5_uiHt-0y28N9K8XAEHZbhcGZdxily-wVqcVhuhh_WAKzX4tM8OA9WMPP1XFAbdpXF6GwKi-s7ITzNIrBTW-ZaDg8B-yh3fjbq1S9YL4aw5xefGXwOlQdADqsDCCePYJeT0WXMdJv2_nFrGYii2GQOEnQuQd7Ir1LND_8P9OwL9Zh7Ihth0mlfXR9-ix5j7Z4O-mNYuyICAZrG38p73AayENSGkh8oWzwZpMprsmE2yAqvn9gE95Ey5TweJ5PGG1cCX_ODO8qDUmqM6YmhgCjhy9j2IL_siMFd5Z9phGR21rBC_flL_cxOFB46tl_80zK7xhESYlwWjy67nn2M-EYHQWnj6gv7-0AkWU2do_kyk8hluuKF8H4r_Y5tzozyKCbEQg5Wc0r9I3XX5QfluiJyIeWgNgSJCqq6_NQDRWeGTw6-y3yShD_OysZ0pu96J1wRqM-Y8d5NjPDfgarA3R1Weec2AZnN8-RhL-5v4IbGeZUwugcGtJmAjzHNtd2JLf6VGx6AtCf2cOlAJxEZnmurN8NH-DGpgW-qVkhJgQMRqwpZq8x6FPM9-CfjoFlFvLIQNHMLwiAyJ_ywYl3pN-QwlFom3gBbYpcyB-KfAVTH0l7Q02uRjS5_xYY0XwWzXtNQBnvADLczDDn3wSYxymdjyNfAC68s6iHxxLhNUdNZbfsqsNTVlQJtbcX4uky_AFnQLU7qxuRsGsGmY_Q6pcp8We73KMOAc6fdpRoVIs3UDj5EjnSkIbH2MxH9xPAmxGY0=w780-h304-no?authuser=0" alt="tt" width="780" height="304" /></p>
+    <hr />
+    <p><strong>Zadatak 0: (JavaProgram)</strong></p>
+    <ul>
+    <li>Iskucati Java program koji će na ekranu (u konzoli) da ispi&scaron;e ''Java je programski jezik''</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    public class JavaProgram {
+        /* Ispisivanje poruke na ekran */
+        public static void main(String[] args) {
+        System.out.println("Java je programski jezik");
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 1: (Zaglavlje)</strong></p>
+    <ul>
+    <li>Napisati program za &scaron;tampanje:</li>
+    </ul>
+    <pre> &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664375393877.jpg" alt="" width="329" height="82" /></pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class Zaglavlje {
+        public static void main(String[] args) {
+        System.out.print("\tR.br.\tX\tY\tZ\n");
+        System.out.println("\t1\t2.5\t3.6\t4.9");
+        }
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 2: (Komentar)</strong></p>
+    <ul>
+    <li>Napisati program za ilustraciju komentara i &scaron;tampanje stringa &bdquo;Java programski jezik&rdquo;.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class Komentar {
+               /*
+                * Program napisan u programskom jeziku Java za ilustraciju komentara
+                */
+              public static void main(String[] args) {
+              // Prikazuje se string "Java programski jezik"
+         System.out.println("Java programski jezik");
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 3: (OsnovniTipPodatka)</strong></p>
+    <ul>
+    <li>Napisati program za &scaron;tampanje maksimalnih i minimalnih vrednosti primitivnih tipova podataka kori&scaron;ćenjem klasa omotača.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class OsnovniTipPodatka {
+        public static void main(String[] args) {
+        System.out.println("Tip\tInterval vrednosti");
+        System.out.println("byte\t" + Byte.MIN_VALUE + " - " + Byte.MAX_VALUE);
+        System.out.println("short\t" + Short.MIN_VALUE + " - " + Short.MAX_VALUE);
+        System.out.println("int\t" + Integer.MIN_VALUE + " - " + Integer.MAX_VALUE);
+        System.out.println("long\t" + Long.MIN_VALUE + " - " + Long.MAX_VALUE);
+        System.out.println("float\t" + Float.MIN_VALUE + " - " + Float.MAX_VALUE);
+        System.out.println("double\t" + Double.MIN_VALUE + " - " + Double.MAX_VALUE);
+        System.out.println("boolean\t" + Boolean.FALSE + " - " + Boolean.TRUE);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 4: (ObimKruga)</strong></p>
+    <ul>
+    <li>Napisati program za izračunavanje obima kruga kori&scaron;ćenjem deklarisane konstante PI. Zadatak <u>ne re&scaron;avati</u> kori&scaron;ćenjem konstante PI deklarisane u klasi Math.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class ObimKruga {
+        public static void main(String[] args) {
+        final float PI = 3.14159f;
+        float r = 5, obim;
+        obim = 2 * r * PI;
+        System.out.println("Obimkruga je " + obim + " za poluprečnik " + r);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 5: (Pitagora)</strong></p>
+    <ul>
+    <li>Napisati program za kori&scaron;ćenje Pitagorine teoreme za izračunavanje dužine hipotenuze na osnovu dužina kateta trougla.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    /*
+    Kori&scaron;ćenje Pitagorine teoreme za izračunavanje dužine hipotenuze na osnovu dužina kateta trougla.
+    */
+    class Pitagora {
+        public static void main(String args[]) {
+        double x, y, z;
+        x = 3;
+        y = 4;
+        z = Math.sqrt(x * x + y * y);
+        System.out.println("Dužina hipotenuze je " + z);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 6: (Promenljiva)</strong></p>
+    <ul>
+    <li>Napisati kod koji predstavlja dodelu jedne vrednosti većem broju promenljivih.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    /*
+    Dodela jedne vrednosti većem broju promenljiva.
+    */
+    class Promenljiva {
+        public static void main(String args[]) {
+        int x, y, z;
+        x = y = z = 150;
+        System.out.println(x + y + z);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 7: (CelobrojnaPromenljiva)</strong></p>
+    <ul>
+    <li>Napisati kod koji prikazuje promenjive celobrojnog tipa.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class CelobrojnaPromenljiva {
+        public static void main(String[] args) {
+        byte b = 120;
+        short s = 5200;
+        int i = 100200;
+        long l = 18000000000L;
+        System.out.println("Byte " + b);
+        System.out.println("Short " + s);
+        System.out.println("Int " + i);
+        System.out.println("Long " + l);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 8: (LogickaPromenljiva)</strong></p>
+    <ul>
+    <li>Napisati kod koji prikazuje promenjive logičkog tipa.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class LogickaPromenljiva {
+        public static void main(String[] args) {
+        boolean tacno = true;
+        boolean netacno = false;
+        System.out.println(tacno);
+        System.out.println(netacno);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 9: (ZnakovnaPromenljiva)</strong></p>
+    <ul>
+    <li>Napisati kod koji prikazuje promenjive logičkog tipa.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class ZnakovnaPromenljiva {
+        public static void main(String[] args) {
+        char velikoSlovoC = 'C';
+        char c1 = 65, c2 = 66, c3 = 67;
+        System.out.println(velikoSlovoC);
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 10: (ImplicitnaKonverzija)</strong></p>
+    <ul>
+    <li>Napisati kod koji prikazuje implicitnu konverziju, tj automatsko pretvaranje sa užeg na &scaron;iri tip podataka (engl. Widening Casting)</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class ImplicitnaKonverzija {
+        public static void main(String[] args) {
+        int i = 10;
+        double d = i;
+        System.out.println("i " + i);
+        System.out.println("d " + d);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 11: (EksplicitnaKonverzija)</strong></p>
+    <ul>
+    <li>Napisati kod koji prikazuje ekspicitnu konverziju, tj, konverziju koja (uz gubitke) pretvara sa &scaron;ireg na uži tip podatka (engl. Narrowing Casting). Mora da se uradi ručno stavljanjem odgovarajućeg tipa podatka u zagrade ispred vrednosti.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class EksplicitnaKonverzija {
+        public static void main(String[] args) {
+        double d = 10.82d;
+        int i = (int) d;
+        System.out.println("d " + d);
+        System.out.println("i " + i);
+        }
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 12: (Skener)</strong></p>
+    <ul>
+    <li>Napisati program primenom klase Scanner koji zahteva da se unesu ime i broj godina (integer) a potom da se ispi&scaron;u uneti podaci na ekranu.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class Skener {
+    
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Unesite ime: ");
+    
+        String userName = scanner.nextLine();
+        System.out.println("Unesite broj godina: ");
+        int brojGodina = scanner.nextInt();
+        System.out.println("Ime: " + userName + "\n" + "Broj godina: " + brojGodina);
+    
+        }
+    
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 13: (Buffer)</strong></p>
+    <ul>
+    <li>Napisati program primenom klase BufferedReader koji traži da se unese željena cifra koja će nakon unosa biti ispisana na ekranu.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    
+    public class Buffer {
+        public static void main(String[] args) throws Exception {
+        double x;
+    // Unos podataka
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Unesite vrednost za X: ");
+        x = Double.parseDouble(ulaz.readLine());
+        System.out.print("X je: " + x);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 14: (DefinisatiKonstantu)</strong></p>
+    <ul>
+    <li>Definisati konstantu MAX_VREDNOST i postaviti joj vrednost na 150. Ispisati je na ekranu.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class DefinisatiKonstantu {
+    
+        public static void main(String[] args) {
+        final int MAX_VREDNOST = 150;
+        System.out.println(MAX_VREDNOST);
+        }
+    
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 15: (Teorijsko)</strong></p>
+    <p>Da li sledeće reči mogu biti identifikatori ili ne?</p>
+    <ul>
+    <li><span style="color: #c0392b;">x&amp;y</span></li>
+    <li><span style="color: #c0392b;">kol.</span></li>
+    <li><span style="color: #c0392b;">suma brojeva</span></li>
+    <li><span style="color: #a0e320;">$vr1</span></li>
+    <li><span style="color: #a0e320;">masa</span></li>
+    <li><span style="color: #a0e320;">x_1</span></li>
+    <li><span style="color: #a0e320;">_masa</span></li>
+    </ul>
+    <hr />
+    <p><strong>Zadatak 16: (DeklarisatiPromenljive)</strong></p>
+    <ul>
+    <li>Deklarisati celobrojnu promenljivu x i realne promenljive a, b i c tipa double. Promenljivu b inicijalizovati sa 3,45, a c sa 56,78.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class DeklarisatiPromenljive {
+    
+        public static void main(String[] args) {
+        int x;
+        double a, b, c;
+        b = 3.45d;
+        c = 56.78d;
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 17: (MaxVrednostiPromenljivih)</strong></p>
+    <ul>
+    <li>Inicijalizovati sve celobrojne i realne promenljive sa svojim maximalnim vrednostima i ispisati ih na ekranu.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class MaxVrednostPromenljive {
+    
+        public static void main(String[] args) {
+        byte b = 127;
+        short s = 32767;
+        int i = 2147483647;
+        long l = 9223_3720_3685_4775_807L; // inicijalizacija zavr&scaron;ava sa 'L'
+        float f = 3.4028235E38F; // inicijalizacija zavr&scaron;ava sa 'F'
+        double d = 1.7976931348623157E308D; // inicijalizacija zavr&scaron;ava sa 'D'
+    
+        System.out.println("Najveća vrednost tipa BYTE je : " + b);
+        System.out.println("Najveća vrednost tipa SHORT je : " + s);
+        System.out.println("Najveća vrednost tipa INT je : " + i);
+        System.out.println("Najveća vrednost tipa LONG je : " + l);
+        System.out.println("Najveća vrednost tipa FLOAT je : " + f);
+        System.out.println("Najveća vrednost tipa DOUBLE je : " + d);
+        }
+    
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 18: (Operatori)</strong></p>
+    <ul>
+    <li>Deklarisati promenljive a i b i dodeliti im vrednosti 5 i 50. Napisati kod koji će da sabere, oduzme, pomnoži i podeli promenljive (i deljenje sa ostatkom) a i b i ispisati to na ekranu.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class Operatori {
+    
+        public static void main(String[] args) {
+        // Operatori
+        // Binarni operatori
+        // 5 + 10
+    
+        // =
+    
+        // = operator dodele vrednosti
+        // vrednost koja se nalazi sa desne strane
+        // znaka = dodeljuje se promenljivoj koja se nalazi
+        // sa leve strane znaka =
+    
+        int a = 5; // asocijativnost je sa desna na levo
+        int b = 50;
+    
+        int zbir = a + b;
+        System.out.println("Vrednost promenljive zbir je: " + zbir);
+    
+        // + je binarni operator
+        // -, *, /, %
+    
+        int razlika = a - b;
+        System.out.println("Razlika = " + razlika);
+    
+        int proizvod = a * b;
+        System.out.println("Proizvod = " + proizvod);
+    
+        // Operator / predstavlja celobrojno deljenje
+        float kolicnik = 13 / 3;
+        System.out.println("Kolicnik = " + kolicnik);
+    
+        // Deljenje sa ostatkom %
+        int ostatak = 17 % 3;
+        System.out.println("Ostatak = " + ostatak);
+    
+        float tacnoDeljenje = 17f / 3f;
+        System.out.println("Tacno deljenje: " + tacnoDeljenje);
+    
+        double provera = (double) 50 / 3;
+        System.out.println("Provera = " + provera);
+        }
+    
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 19: (UcitavanjeVrednosti)</strong></p>
+    <ul>
+    <li>Napisati program koji ce traziti unos imena i godina (primenom klase Scanner) i ispisati to u konzoli.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class UcitavanjeVrednosti {
+    
+        public static void main(String[] args) {
+        // Deklaracija stringova
+    
+        String ime; // deklaracija stringa
+        String izraz = "Andrija"; // Inicijalizacija stringa
+    
+        // Ucitavanje (i smestanje unete) vrednosti sa konzole.
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Kako se zovete?");
+        ime = sc.nextLine();
+        System.out.println("Vi se zovete: " + ime);
+    
+        System.out.println("Koliko imate godina? ");
+        int brojGodina = sc.nextInt();
+        System.out.println("Imate godina: " + brojGodina);
+        sc.close();
+        }
+    
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 20: (InkrementiranjeDekrementiranje)</strong></p>
+    <ul>
+    <li>Deklarisati promenljivu B i dodeliti joj vrednost 5. Primeniti operator inkrementiranja i ispisati rezultat a onda primeniti operator dekrementiranja i ispisati rezultat.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class InkrementiranjeDekrementiranje {
+    
+        public static void main(String[] args) {
+    
+        int B = 5;
+    
+        B++; // primena operatora inkrementiranja
+        System.out.println(B);
+    
+        
+        B--; // primena operatora dekrementiranja
+        System.out.println(B);
+        }
+    
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 21: (AritmetickiIzrazi1)</strong></p>
+    <ul>
+    <li>Kodirati sledeće aritmetičke izraze i ispisati ih u konzoli: .</li>
+    </ul>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664549948888.jpg" alt="" width="831" height="117" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        public class AritmetickiIzrazi1 {
+        
+            public static void main(String[] args) {
+        
+            // a)
+            System.out.println("a) a * b + a * c");
+            // b)
+            System.out.println("b) 3 * (2 * a - 8 * b) / c");
+            // c)
+            System.out.println("c) (a + b) * (3 * k + 1) / (k - 3)");
+            }
+        
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 22: (AritmetickiIzrazi2)</strong></p>
+    <ul>
+    <li>Kodirati sledeće aritmetičke izraze i ispisati ih u konzoli:&nbsp;<br /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664550718080.jpg" alt="" width="463" height="134" /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664550723982.jpg" alt="" width="388" height="129" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        public class AritmetickiIzrazi2 {
+        
+            public static void main(String[] args) {
+        
+            // a)
+            System.out.println(
+                "a) Math.log(Math.sqrt(Math.abs(Math.sin(a + Math.exp(x/2)) + Math.cos(b - Math.atan(x/2)))))");
+            // b)
+            System.out.println("b) Math.log(Math.sqrt(Math.pow(Math.tan(x), 2) + 0.2 + Math.cos(y) / Math.exp(x * y)))");
+        
+            }
+        }</pre>
+    <hr />
+    <p><strong>Zadatak 23: (AritmetickiIzrazi3)</strong></p>
+    <ul>
+    <li>Kodirati sledeće aritmetičke izraze i ispisati ih u konzoli:&nbsp;<br /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664551635203.jpg" alt="" width="651" height="370" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        public class AritmetickiIzrazi3 {
+        
+            public static void main(String[] args) {
+        
+            // 1.a)
+            System.out.println("1.a) (a - b) / (c + a / (c + b / (c - b)))");
+            // 1.b)
+            System.out.println("1.b) (Math.tan(x) + 1)*(Math.pow(x, 4 * n) + 4 * x + 1)");
+            // 1.c)
+            System.out.println("1.c) (Math.pow(Math.pow(x, y) / Math.pow(y, x), 2)) / (Math.pow(z, y / x))");
+            // 1.d)
+            System.out.println("1.d) (Math.sqrt(Math.sin(Math.sqrt(x)) + Math.pow(x, 3)))\r\n"
+                + "		/ (Math.pow(Math.log(Math.pow(Math.sin(x), 2)), 2))");
+        
+            // 2.a)
+            System.out.println("2.a) y = (Math.exp(Math.pow(Math.cos(x), 2)) + Math.log(Math.tan(x))) / Math.cos(x)");
+        
+            // 2.b)
+            System.out.println(
+                "2.b) y = (2.52 - Math.pow(x, 3)) / (Math.pow(x, 5.0 / 3.0) * (Math.exp(2.8 / Math.pow(x, 2)) + 2.1))");
+            }
+        
+        }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 24: (AritmetickiIzrazi4)</strong></p>
+    <ul>
+    <li>Kodirati sledeću aritmetičku naredbu i ispisati je u konzoli:&nbsp;<br /><img src="https://miteam.mi.sanu.ac.rs/content/wRB7EdtWgfQxFsX6p_1664731103146.jpg" alt="" width="337" height="133" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        public class AritmetickiIzrazi4 {
+        
+            public static void main(String[] args) {
+        
+            System.out.println("((Math.pow(Math.cos(x), 2.0 / 3.0) - Math.abs(Math.pow(Math.log(Math.sin(x * x)), 2)))\r\n"
+                + "/ Math.pow(x * x + 2.5, 4.0 / 3.0");
+            }
+        
+        }</pre>
+    <hr />
+    <p><strong>Zadatak 25: (LinijskaStruktura1)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije 'f' na osnovu unetih vrednosti x, y, z. Na izlazu &scaron;tampati vrednost funkcije. <br /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664557457984.jpg" alt="" width="263" height="109" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.io.*;
+        
+        public class LinijskaStruktura1 {
+            public static void main(String[] args) throws Exception {
+            double x, y, z, f;
+        // Unos podataka
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Unesite vrednost za x: ");
+            x = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost za y: ");
+            y = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost za z: ");
+            z = Double.parseDouble(ulaz.readLine());
+        // Izračunavanje vrednosti funkcije f
+            f = Math.pow((x + 3 * z + y) / 2 * x, 4) - x / (x + 3 * z - y);
+        // &Scaron;tampanje rezultata
+            System.out.println("Vrednost funkcije f je " + f);
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 26: (Dekart)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunavaju Dekartove koordinate sile inteziteta F = 6kN, ako je ugao &alpha; = 60&deg; izmedju sile F i koordinate ose. Na izlazu &scaron;tampati vrednost Dekartovih koordinata.<br />Dekartove koordinate sile F na koordinatne ose određuju se izrazima</li>
+    <li>X = F * cos &alpha;</li>
+    <li>Y = F * sin &alpha;</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class Dekart {
+            public static void main(String[] args) throws Exception {
+        //f-intenzitet sile
+        //alfa-ugao izmedju sile F i koordinatne ose
+        //x,y-Dekartove koordinate
+            double f, alfa, x, y;
+            DecimalFormat df = new DecimalFormat("#.##");
+        //Unos podataka
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Unesite vrednost za intenzitet sile F(kN):");
+            f = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost za ugao alfa u stepenima:");
+            alfa = Math.toRadians(Double.parseDouble(ulaz.readLine()));
+        //Izračunavanje vrednosti Dekartovih koordinata
+            x = f * Math.cos(alfa);
+            y = f * Math.sin(alfa);
+        //&Scaron;tampanje rezultata
+            System.out.println("Vrednosti Dekartovih koordinata su: X=" + df.format(x) + "\tY=" + df.format(y));
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 27: (Pravougaonik)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava dijagonala pravougaonika za unete stranice pravougaonika a i b.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Pravougaonik {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite vrednost stranice pravougaonika a: ");
+            double a = input.nextDouble();
+            System.out.println("Unesite vrednost stranice pravougaonika b: ");
+            double b = input.nextDouble();
+            System.out.println("Dijagonala pravougaonika je: " + Math.sqrt(a * a + b * b));
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 28: (Trougao)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava obim i povr&scaron;ina trougla na osnovu unetih stranica trougla.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Trougao {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite stranice trougla a, b, c");
+            double a = input.nextDouble();
+            double b = input.nextDouble();
+            double c = input.nextDouble();
+            double O = a + b + c;
+            System.out.println("Obim trougla je " + O);
+            double s = O / 2;
+            double P = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            System.out.print("Povr&scaron;ina trougla je " + P);
+        
+            input.close();
+            }
+        }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 29: (Lopta)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava povr&scaron;ina i zapremina lopte na osnovu unetog poluprečnika.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Lopta {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite vrednost poluprečnika: ");
+            double r = input.nextDouble();
+            double P = Math.pow(r, 2) * Math.PI * 4;
+            double V = Math.pow(r, 3) * Math.PI * 4.0 / 3;
+            System.out.println("Povr&scaron;ina lopte je:" + P);
+            System.out.println("Zapremina lopte je: " + V);
+        
+            input.close();
+            }
+        }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 30: (Galon)</strong></p>
+    <ul>
+    <li>Napisati program za pretvaranje galona u litre. Napomena: 1 galon = 4,54 l.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Galon {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Unesite zapreminu u galonima: ");
+            double g = input.nextDouble();
+            System.out.println("Zapremina u litrima je: " + (g * 4.54));
+        
+            input.close();
+            }
+        }</pre>
+    <hr />
+    <p><strong>Zadatak 31: (Farenhajt)</strong></p>
+    <ul>
+    <li>Napisati program za pretvaranje temperature iz skale Celzijusa u skalu Farenhajta.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Farenhajt {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Unesite temperaturu u celzijusima: ");
+            double tc = input.nextDouble();
+            System.out.println("Temperatura u farenhajtima je: " + (tc * 1.8 + 32));
+        
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 32: (Ugao)</strong></p>
+    <ul>
+    <li>Napisati program za izračunavanje sinusa i kosinusa ugla zadatog u radijanima.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Ugao {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Unesite vrednost ugla u radijanima: ");
+            double x = input.nextDouble();
+            System.out.println("Sinus zadatog ugla je: " + Math.sin(x));
+            System.out.print("Kosinus zadatog ugla je: " + Math.cos(x));
+        
+            input.close();
+            }
+        
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 33: (Bajt)</strong></p>
+    <ul>
+    <li>Napisati program za pretvaranje veličine fajla izražene u kilobajtima u veličinu u bajtima.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Bajt {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Pretvaranje veličine memorije iz kilobajta u bajte");
+            System.out.println("Veličina datoteke u kilobajtima: ");
+            int kb = input.nextInt();
+            System.out.print("Veličina datoteke u bajtima: " + kb * 1024);
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 34: (Rastojanje)</strong></p>
+    <ul>
+    <li>Učitati koordinate dve tačke M<sub>1</sub>(x<sub>1</sub>,y<sub>1</sub>) i M<sub>2</sub>(x<sub>2</sub>, y<sub>2</sub>) i izračunati pojedinačnu udaljenost tačaka od koordinatnog početka Opis re&scaron;enja: Udaljenost tačke od koordinatnog početka je po Pitagori kvadratni koren sume kvadrata veličina kateta. Za tačku M<sub>1</sub>(x<sub>1</sub>, y<sub>1</sub>) udaljenost od koordinatnog početka je hipotenuza a<sub>1</sub><sup>2</sup> = x<sub>1</sub><sup>2</sup> + y<sub>1</sub><sup>2</sup> odnosno kvadratni koren iz sume kvadrata. Na isti način se računa i udaljenost tačke M<sub>2</sub>(x<sub>2</sub>, y<sub>2</sub>), hipotenuza a<sub>2</sub><sup>2</sup> = x<sub>2</sub><sup>2</sup> + y<sub>2</sub><sup>2</sup> odnosno kvadratni koren iz sume kvadrata kateta.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Rastojanje {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite koordinate prve tačke: ");
+            double x1 = input.nextDouble();
+            double y1 = input.nextDouble();
+            double a1 = Math.sqrt(x1 * x1 + y1 * y1);
+            System.out.println("Unesite koordinate druge tačke: ");
+            double x2 = input.nextDouble();
+            double y2 = input.nextDouble();
+            double a2 = Math.sqrt(x2 * x2 + y2 * y2);
+            System.out.println("Rastojanje prve tačke (" + x1 + "," + y1 + ") od koordinatnog početka je " + a1);
+            System.out.println("Rastojanje druge tačke (" + x2 + "," + y2 + ") od koordinatnog početka je " + a2);
+        
+            input.close();
+            }
+        }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 35: (DveTacke)</strong></p>
+    <ul>
+    <li>Učitati koordinate dve tačke M<sub>1</sub>(x<sub>1</sub>,y<sub>1</sub>) i M<sub>2</sub>(x<sub>2</sub>, y<sub>2</sub>) i izračunati njihovu međusobnu udaljenost. Opis re&scaron;enja: Posmatra se trougao koji formiraju tačke M<sub>1</sub>(x<sub>1</sub>,y<sub>1</sub>), hipotenuza je duž između ovih tačaka. Katete su &Delta;x = x<sub>2</sub>- x<sub>1</sub>, druga kateta trougla je &Delta;y = y<sub>2</sub>- y<sub>1</sub>. Na osnovu Pitagorine teoreme hipotenuza se računa: hipotenuza<br />d<sup>2</sup> = (x<sub>2</sub>- x<sub>1</sub>)<sup>2</sup> + (y<sub>2</sub>- y<sub>1</sub>)<sup>2</sup> odnosno kvadratni koren iz sume kvadrata.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class DveTacke {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite koordinate tačke M: ");
+            double x1 = input.nextDouble();
+            double y1 = input.nextDouble();
+            System.out.println("Unesite koordinate tačke N: ");
+            double x2 = input.nextDouble();
+            double y2 = input.nextDouble();
+            double d = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+            System.out.println("Rastojanje između tačaka M (" + x1 + "," + y1 + ") i N (" + x2 + "," + y2 + ") je " + d);
+            
+            input.close();
+            }
+        }</pre>
+    <hr />
+    <p><strong>Zadatak 36: (DvocifreniBroj)</strong></p>
+    <ul>
+    <li>Napisati program za izdvajanje cifara dvocifrenog broja i ispisivanje unazad. <strong>Opis re&scaron;enja:</strong> Pri pretvaranju se koristi osobina pozicionog sistema. Dvocifren broj broj = d * 10<sup>1</sup> + j * 10<sup>0</sup> Ostatak deljenja dvocifrenog broja sa 10 (broj % 10) dobijamo jedinice broja (u ovom slučaju dvocifrenog). Celobrojnim deljenom sa 10 (broj / 10) dvocifrenog broja se dobija cifra desetica.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class DvocifreniBroj {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Cifre dvocifrenog broja ");
+            System.out.println("Dvocifreni broj ");
+            int a = input.nextInt();
+            int d, j;
+            d = a / 10;
+            j = a % 10;
+            System.out.println("broj = " + a + " " + "cifra jedinica = " + j + " " + "cifra desetica = " + d);
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 37: (RazlikaCifara)</strong></p>
+    <ul>
+    <li>Napisati program kojim se unosi dvocifreni broj i izračunava razlika cifara desetica i jedinica.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class RazlikaCifara {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Unesite dvocifren broj: ");
+            int a = input.nextInt();
+            System.out.println("Dvocifren broj: " + a);
+            int d, j, r;
+            d = a / 10;
+            j = a % 10;
+            r = d - j;
+            System.out.println("Razlika cifara je: " + r);
+        
+            input.close();
+            }
+        }</pre>
+    <hr />
+    <p><strong>Zadatak 38: (Sekunde)</strong></p>
+    <ul>
+    <li>Putovanje traje n sekundi. Napisati program za izračunavanje koliko je to sati, minuta i sekundi.<br /><br /><strong>Opis prvog re&scaron;enja:</strong> Sat ima 3600 sekundi. Deljenjem vremena u sekundama sa 3600 dobijamo sate sat = n / 3600. Ostatak sekundi (sek1) se deli sa 60 i dobijamo minute, a ostatak deljenja sek1 sa 60 su sekunde. <br /><br /><strong>Opis drugog re&scaron;enja:</strong> Odnos sati, minuta i sekundi je 1 h = 60 min; 1 min = 60 s. Posle učitavanja vrednosti u sekundama izvodi se: I varijanta - izračunavanje pretvaranje h = n / 3600; // broj sati je ceo deo deljenja vrednosti sekundi sa 3600 ostatak u sekundama je n1 = n % 3600, od ukupnog broja sekundi za minute se uzima samo ceo deo deljenja sa 60 tj. m = n % 3600 / 60; sekunde su od ukupnog broja sekundi ostatak deljenja sa 60 tj. s = n % 60;</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class Sekunde {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Proteklo sekundi: ");
+            int n = input.nextInt();
+            int sat = n / 3600;
+            int sek1 = n % 3600;
+            int min = sek1 / 60;
+            int sek = sek1 % 60;
+            System.out.println("proteklo sati: " + sat);
+            System.out.println("minuta: " + min);
+            System.out.println("sekundi: " + sek);
+        
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 39: (TrocifrenBroj)</strong></p>
+    <ul>
+    <li>Napisati program za izdvajanje cifara trocifrenog broja.<br /><br /><br /><strong>Opis re&scaron;enja:</strong> Pri pretvaranju se koristi osobina pozicionog sistema. <br />Trocifren broj broj = s * 10<sup>2</sup> + d * 10<sup>1</sup> + j * 10<sup>0</sup><br />158 = 100 + 50 + 8 = 1 * 10<sup>2</sup> + 5 * 10<sup>1</sup> + 8 * 10<sup>0</sup><br /><br />Izrazom broj % 10 dobijamo jedinice broja (u ovom slučaju trocifrenog). Celobrojnim deljenom sa 100 dobija se cifra stotica. Cifra jedinica je ostatak deljenje sa 10. Celobrojnim deljenom sa 10 dobijaju se prve dve cifre, one se dele sa 10 i ostatak deljenja je cifra desetica.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class TrocifrenBroj {
+            public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Trocifren broj:");
+            int broj = input.nextInt();
+            int s, d, j;
+            s = broj / 100; // cifra stotica
+            d = (broj / 10) % 10; // cifra desetica
+            j = broj % 10; // cifra jedinica
+            System.out.println(
+                "broj = " + broj + ", cifra stotina = " + s + ", cifra desetica = " + d + ", cifrajedinica = " + j);
+            input.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 40: (CelicniStap)</strong></p>
+    <ul>
+    <li>Čelični &scaron;tap kvadratnog poprečnog preseka stranice A = 1cm<sup>1</sup>, dužine L + 30cm, modula elastičnosti E + 2 * 10<sup>4</sup>kN / cm<sup>2</sup>, pod dejstvom aksijalne sile F izduži se za &Delta; = 3,2 - 10 <sup>-2</sup>cm, dok u poprečnom preseku nastaje kontrakcija &Delta;a = 3 * 10<sup>-4</sup>cm<sup>2</sup>.<br />Sastaviti algoritam i napisati program za određivanje intenziteta aksijalne sile F i Poasonovog kofecijenta u.</li>
+    </ul>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664646485933.jpg" alt="" width="592" height="261" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+        
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class CelicniStap {
+            public static void main(String[] args) throws Exception {
+        // A &ndash; povr&scaron;ina poprečnog preseka &scaron;tapa
+        // L - dužina &scaron;tapa
+        // E - modul elastičnosti materijala
+        // deltaL - izduženje &scaron;tapa
+        // deltaA - kontrakcija
+        // F - intenzitet aksijalne sile
+        // mi - Poasonov koeficijent
+            double A, L, E, deltaL, deltaA, F, mi;
+            DecimalFormat df = new DecimalFormat("#.##");
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        //Unos podataka
+            System.out.print("Unesite vrednost povr&scaron;ine poprečnog preseka &scaron;tapa A: ");
+            A = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost dužine &scaron;tapa L (cm): ");
+            L = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost modula elastičnosti E: ");
+            E = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost izduženja &scaron;tapa (cm): ");
+            deltaL = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite vrednost kontrakcije (cm): ");
+            deltaA = Double.parseDouble(ulaz.readLine());
+        //Izračunavanje vrednosti intenziteta aksijalne sile i Poasonovog koeficijenta
+            F = A * E * deltaL / L;
+            mi = L * deltaA / (A * deltaL);
+        //&Scaron;tampanje rezultata
+            System.out.println("Intenzitet aksijalne sile je F = " + df.format(F)
+                + "kN\nVrednost Poasonovog koeficijenta je " + df.format(mi));
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 41: (AritmetickiOperatori)</strong></p>
+    <ul>
+    <li>Napisati program za testiranje aritmetičkih operatora +, -, *, / i % nad operandima 2 i 5.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class AritmetickiOperatori {
+        public static void main(String[] args) {
+        System.out.println("5 + 2 = " + (5 + 2));
+        System.out.println("5 - 2 = " + (5 - 2));
+        System.out.println("5 * 2 = " + 5 * 2);
+        System.out.println("5 / 2 = " + 5 / 2);
+        System.out.println("5.0 / 2.0 = " + 5.0 / 2.0);
+        System.out.println("5 % 2 = " + 5 % 2);
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 42: (Max)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava y prema formuli y = 5 + max(a<sup>2</sup>, b<sup>2</sup>).</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class Max {
+    
+        public static void main(String[] args) {
+    
+        Scanner input = new Scanner(System.in);
+    
+        System.out.println("Unesite vrednost za a: ");
+        double a = input.nextDouble();
+        System.out.println("Unesite vrednost za b: ");
+        double b = input.nextDouble();
+    
+        System.out.println("y = " + (5 + Math.max(a * a, b * b)));
+    
+        }
+    
+    }
+    
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 43: (MinMax)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava y prema formuli. Na izlazu &scaron;tampati vrednost.<br /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664837087924.jpg" alt="" width="232" height="104" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class MinMax {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Unesite vrednost za a: ");
+        double a = input.nextDouble();
+        System.out.print("Unesite vrednost za b: ");
+        double b = input.nextDouble();
+        System.out.println("y = " + (1 - Math.min(a, b)) / (1 + Math.max(a, b)));
+        input.close();
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 44: (LogickiIzraz)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost funkcije prikazane na slici na osnovu unetih logičkih vrednosti promenljivih x i y. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/KBFaSiDTNdecQBpxC_1664837468653.jpg" alt="" width="313" height="65" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class LogickiIzraz {
+    
+        public static void main(String[] args) {
+        // Unos: unosenje logickih vrednosti promenjivih x i y
+        Scanner ulaz = new Scanner(System.in);
+        System.out.println("Unesite vrednost x: ");
+        boolean x = ulaz.nextBoolean();
+        System.out.println("Unesite vrednost y: ");
+        boolean y = ulaz.nextBoolean();
+    
+        // Obrada: izračunavanje
+        boolean z = (!(x &amp;&amp; y) || x &amp;&amp; y);
+    
+        // Izlaz: Stampanje rezultata
+        System.out.println("z = " + z);
+        ulaz.close();
+        }
+    
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 45: (Trougao1)</strong></p>
+    <ul>
+    <li>Napisati program kojim se logičkoj promenljivoj p dodeljuje vrednost true, ako se od odsečaka sa dužinama x, y, z može konstruisati trougao.<br /><br /><strong>Opis re&scaron;enja:</strong> p = (x + y &gt; z) &amp;&amp; (x + z &gt; y) &amp;&amp; (y + z &gt; x)</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class Trougao1 {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Unesite stranicu trougla x: ");
+        int x = input.nextInt();
+        System.out.print("Unesite stranicu trougla y: ");
+        int y = input.nextInt();
+        System.out.print("Unesite stranicu trougla z: ");
+        int z = input.nextInt();
+        boolean p = (x + y &gt; z) &amp;&amp; (x + z &gt; y) &amp;&amp; (y + z &gt; x);
+        System.out.println("p = " + p);
+        input.close();
+        }
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 46: (Pravougaonik1)</strong></p>
+    <ul>
+    <li>Napisati program kojim se logičkoj promenljivoj p dodeljuje vrednost true, ako se pravougaonik sa stranicama a i b može ceo smestiti u pravougaonik sa stranicama c i d.<br /><br /><strong>Opis re&scaron;enja:</strong> p = ((a &lt; c) &amp;&amp; (b &lt; d)) || ((a &lt; d) &amp;&amp; (b &lt; c))</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class Pravougaonik1 {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Unesite stranicu prvog pravougaonika a: ");
+        int a = input.nextInt();
+        System.out.print("Unesite stranicu prvog pravougaonika b: ");
+        int b = input.nextInt();
+        System.out.print("Unesite stranicu drugog pravougaonika c: ");
+        int c = input.nextInt();
+        System.out.print("Unesite stranicu drugog pravougaonika d: ");
+        int d = input.nextInt();
+        boolean p = ((a &lt; c) &amp;&amp; (b &lt; d)) || ((a &lt; d) &amp;&amp; (b &lt; c));
+        System.out.println("p = " + p);
+        input.close();
+        }
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 47: (Inkrement)</strong></p>
+    <ul>
+    <li>Neka je i = 3 i j = 4. Izračunaj: <br />a) j = 3 + --i; <br />b) j = 3 + i--; <br />c) j = 3 + ++i; <br />d) j = 3 + i++</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    public class Inkrement {
+        public static void main(String[] args) {
+    
+        // a)
+        int i = 3, j = 4;
+        System.out.println("Pod a)\ni = " + i + ", j = " + j);
+        j = 3 + --i; // j = 3 + (i - 1) umanji i pa izračunaj
+        System.out.println("i = " + i + "; j = " + j);
+    
+        // b)
+        i = 3;
+        j = 4;
+        System.out.println("\nPod b)\ni = " + i + " j = " + j);
+        j = 3 + i--; // j = 3 + i, i = i-i; tj. izračunaj pa umanji i
+        System.out.println("i = " + i + " j = " + j);
+    
+        // c)
+        i = 3;
+        j = 4;
+        System.out.println("\nPod c)\ni = " + i + " j = " + j);
+        j = 3 + ++i; // j = 3 + (i + 1) uvećaj i pa izračunaj
+        System.out.println("i = " + i + " j = " + j);
+    
+        // d)
+        i = 3;
+        j = 4;
+        System.out.println("\nPod d)\ni = " + i + " j = " + j);
+        j = 3 + i++; // j = 3 + i, i = i + i; tj. izračunaj pa uvećaj i
+        System.out.println("i = " + i + " j = " + j);
+    
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 48: (LinijskaStruktura3)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije prikazanoj na slici na osnovu unetih vrednosti promenljivih x, y i z. Na izlazu &scaron;tampati vrednost funkcije<br /><img src="https://miteam.mi.sanu.ac.rs/content/evEqdxQTAeL2YP8ED_1664923526908.jpg" alt="" width="364" height="107" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    import java.text.DecimalFormat;
+    
+    public class LinijskaStruktura3 {
+        public static void main(String[] args) throws Exception {
+    // Deklarisanje podataka
+        double x, y, z, f;
+        DecimalFormat df = new DecimalFormat("#.##");
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos podataka
+        System.out.print("Unesite vrednost za x: ");
+        x = Double.parseDouble(ulaz.readLine());
+        System.out.print("Unesite vrednost za y: ");
+        y = Double.parseDouble(ulaz.readLine());
+        System.out.print("Unesite vrednost za z: ");
+        z = Double.parseDouble(ulaz.readLine());
+    // Izracunavanje vrednosti funkcije f
+        f = (x + y) * (x + z) * Math.sin(x) / (2 * x - y);
+    // Stampanje rezultata
+        System.out.println("Vrednost funkcije f je " + df.format(f));
+        }
+    }
+    
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 49: (LinijskaStruktura4)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije prikazane na slici na osnovu unete vrednosti promenljive x. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/evEqdxQTAeL2YP8ED_1664923732335.jpg" alt="" width="430" height="111" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    
+    public class LinijskaStruktura4 {
+        public static void main(String[] args) throws Exception {
+    // Deklarisanje podataka
+        double x;
+        boolean y;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos podatka x
+        System.out.print("Unesite vrednost za x: ");
+        x = Double.parseDouble(ulaz.readLine());
+    // Izracunavanje vrednosti funkcije y
+        y = Math.sqrt((2 + x - Math.pow(x, 3)) / (x + 2)) &gt; 0 || Math.exp(x) &lt; x - 1 &amp;&amp; Math.sqrt(x - 1) &lt;= 0;
+    // Stampanje rezultata
+        System.out.println("Vrednost funkcije y je " + y);
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 50: (LinijskaStruktura5)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se na osnovu unete stranice kocke a izračunava povr&scaron;ina i zapremina. Na izlazu &scaron;tampati povr&scaron;inu i zapreminu kocke.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    
+    public class LinijskaStruktura5 {
+        public static void main(String[] args) throws Exception {
+    // a - stranica kocke
+    // p - povr&scaron;ina kocke
+    // v - zapremina kocke
+        double a, p, v;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos stranice kocke
+        System.out.print("Unesite stranicu kocke a: ");
+        a = Double.parseDouble(ulaz.readLine());
+    // Izračunavanje povr&scaron;ine i zapremine kocke
+        p = 6 * a * a;
+        v = Math.pow(a, 3);
+    // &Scaron;tampanje vrednosti povr&scaron;ine i zapremine kocke
+        System.out.println("Za unetu stranicu kocke a = " + a + " izračunata povr&scaron;ina je " + p + " a zapremina " + v);
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 51: (LinijskaStruktura6)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se na osnovu unete stranice kocke a izračunava povr&scaron;ina i zapremina. Na izlazu &scaron;tampati povr&scaron;inu i zapreminu kocke.<br /><img src="https://miteam.mi.sanu.ac.rs/content/evEqdxQTAeL2YP8ED_1664924165192.jpg" alt="" width="704" height="275" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    import java.text.DecimalFormat;
+    
+    public class LinijskaStruktura6 {
+        public static void main(String[] args) throws Exception {
+    // a, b, c - stranice trougla
+    // s - poluobim trougla
+    // p - povr&scaron;ina trougla
+    // R - poluprečnik opisanog kruga
+    // r - poluprečnik upisanog kruga
+    // d - rastojanje izmedju centra opisanog i upisanog kruga
+        double a, b, c, s, p, R, r, d;
+        DecimalFormat df = new DecimalFormat("#.##");
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos podataka
+        System.out.print("Unesite vrednost za a: ");
+        a = Double.parseDouble(ulaz.readLine());
+        System.out.print("Unesite vrednost za b: ");
+        b = Double.parseDouble(ulaz.readLine());
+        System.out.print("Unesite vrednost za c: ");
+        c = Double.parseDouble(ulaz.readLine());
+    //Izračunavanje vrednosti
+        s = (a + b + c) / 2;
+        p = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        R = a * b * c / (4 * p);
+        r = a * b * c / (2 * R * s);
+        d = Math.sqrt(R * (R - 2 * r));
+    //&Scaron;tampanje rezultata
+        System.out.println("R = " + df.format(R) + "\tr = " + df.format(r) + "\td = " + df.format(d));
+        }
+    }
+    
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 52: (LinijskaStruktura7)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program za izračunavanje zbira značajnih cifara proizvoljnog trocifrenog broja datog na ulazu. Na izlazu od&scaron;tampati traženi zbir.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    
+    public class LinijskaStruktura7 {
+        public static void main(String[] args) throws Exception {
+    // n - trocifren broj
+    // s - cifra stotice
+    // d - cifra desetice
+    // j - cifra jedinice
+    // zbir - zbir cifara trocifrenog broja
+        int n, s, d, j, zbir;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos trocifrenog broja
+        System.out.print("Unesite trocifren broj n: ");
+        n = Integer.parseInt(ulaz.readLine());
+    // Nalaženje cifara trocifrenog broja
+        s = n / 100;
+        d = (n - s * 100) / 10;
+        j = n - s * 100 - d * 10;
+    // Izračunavanje zbira cifara trocifrenog broja
+        zbir = s + d + j;
+    // &Scaron;tampanje rezultata
+        System.out.println("Zbir cifara trocifrenog broja " + n + " je " + zbir);
+        }
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 53: (LinijskaStruktura8)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program za prevođenje dužine zadate u inčima u centimetre, ako važi relacija 1 inč = 2.54 cm. Na izlazu &scaron;tampati koliko iznosi u centimetrima dijagonala televizora od 26 inča.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.io.*;
+    
+    public class LinijskaStruktura8 {
+        public static void main(String[] args) throws Exception {
+    // n - dijagonala ekrana izražena u inčima
+        double n;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos dijagonale ekrana izražene u inčima
+        System.out.print("Unesite dijagonalu ekrana u inčima: ");
+        n = Double.parseDouble(ulaz.readLine());
+    // &Scaron;tampanje rezultata
+        System.out.println("Dijagonala ekrana izražena u centimetrima " + n * 2.54);
+        }
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 54: (PretvoriSekunde)</strong></p>
+    <ul>
+    <li>Napisati program koji vreme učitano u satima, minutima i sekundama izračunava i pretvara u sekundama.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class PretvoriSekunde {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Unesite sate: ");
+        int s = input.nextInt();
+        System.out.print("Unesite minute: ");
+        int m = input.nextInt();
+        System.out.print("Unesite sekunde: ");
+        int sec = input.nextInt();
+        System.out.print("Vreme izraženo u sekundama je: " + (s * 3600 + m * 60 + sec));
+    
+        input.close();
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 55: (Zamena)</strong></p>
+    <ul>
+    <li>Napisati program koji izvodi zamenu vrednosti dva broja kori&scaron;ćenjem privremene promenljive.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class Zamena {
+        public static void main(String[] args) {
+        int x, y;
+        int temp; // privremena promenljiva
+        System.out.println("Dva broja: x y ");
+        Scanner input = new Scanner(System.in);
+        x = input.nextInt();
+        y = input.nextInt();
+        System.out.println("Pre zamene \nx = " + x + "\ny = " + y);
+        temp = x; // temp - privremena promenljiva
+        x = y; // x može primiti novu vrednost jer je kopija u temp
+        y = temp; // y prima vrednost od temp
+        System.out.println("Posle zamene\nx = " + x + "\ny = " + y);
+        input.close();
+        }
+    }
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 56: (BMI)</strong></p>
+    <ul>
+    <li>Napisati program koji za unetu visinu i masu izračunava indeks telesne mase BMI = m[kg]/(h[m])2</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class BMI {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Unesite visinu osobe: ");
+        double visina = input.nextDouble();
+        System.out.print("Unesite masu osobe: ");
+        double masa = input.nextDouble();
+        System.out.println("Indekstelesne mase BMI = " + masa / Math.pow(visina, 2));
+        input.close();
+        }
+    }
+    
+    
+    </pre>
+    <hr />
+    <p><strong>Zadatak 57: (LinijskaStruktura 9)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije na slici na osnovu unete vrednosti promenljive x. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665006285011.jpg" alt="" width="254" height="121" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class LinijskaStruktura9 {
+    
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Unesite x: ");
+        double x = input.nextDouble();
+        double y = Math.sqrt((Math.exp(x / 2) + 1.2 * Math.sin(2 * x)) / (3.3 * Math.cos(x) + 7.1 * Math.exp(x)));
+    
+        System.out.println("y je " + y);
+    
+        input.close();
+        }
+    
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 58: (LinijskaStruktura 10)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost funkcije prikazane na slici na osnovu unetih logičkih vrednosti promenljivih x i y. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/HePGKM2vfkRJQbgsM_1665007074455.jpg" alt="" width="328" height="84" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class LogickiIzraz {
+    
+        public static void main(String[] args) {
+        // Unos: unosenje logickih vrednosti promenjivih x i y
+        Scanner ulaz = new Scanner(System.in);
+        System.out.println("Unesite vrednost x: ");
+        boolean x = ulaz.nextBoolean();
+        System.out.println("Unesite vrednost y: ");
+        boolean y = ulaz.nextBoolean();
+    
+        // Obrada: izračunavanje
+        boolean z = !(x || y) &amp;&amp; !x || y;
+    
+        // Izlaz: Stampanje rezultata
+        System.out.println("z = " + z);
+        ulaz.close();
+        }
+    
+    }</pre>
+    <hr />
+    <p><strong>Zadatak 59: (LinijskaStruktura 11)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava i &scaron;tampa zbir i razlika vrednosti funkcija f i g zadatih kao na slici na osnovu unetih vrednosti promenljivih a,b i c.<br /><img src="https://miteam.mi.sanu.ac.rs/content/HePGKM2vfkRJQbgsM_1665008877095.jpg" alt="" width="553" height="165" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class LinijskaStruktura11 {
+    
+        public static void main(String[] args) {
+        double a, b, c, f, g;
+    
+        Scanner ulaz = new Scanner(System.in);
+        System.out.println("Unesite vrednost a: ");
+        a = ulaz.nextDouble();
+        System.out.println("Unesite vrednost b: ");
+        b = ulaz.nextDouble();
+        System.out.println("Unesite vrednost c: ");
+        c = ulaz.nextDouble();
+    
+        f = (a - b) / (c + a / (c + b / (c - b)));
+        g = (a + b + Math.sin(a)) * Math.cos(c);
+    
+        System.out.println("Zbir f i g je: " + (f + g));
+        System.out.println("Razlika f i g je: " + (f - g));
+        
+        ulaz.close();
+        }
+    
+    }
+    </pre>
+    <hr />
+    <p><strong>Zadatak 60: (LinijskaStruktura 12)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se na osnovu unetih stranica kvadra izračunava povr&scaron;ina i zapremina. Na izlazu &scaron;tampati povr&scaron;inu i zapreminu kvadra.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class LinijskaStruktura12 {
+        
+            public static void main(String[] args) {
+            // Deklarisanje promenljivih
+            double a, b, c, p, v;
+        
+            // Unos podataka
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost stranice a: ");
+            a = ulaz.nextDouble();
+            System.out.println("Unesite vrednost stranice b: ");
+            b = ulaz.nextDouble();
+            System.out.println("Unesite vrednost stranice c: ");
+            c = ulaz.nextDouble();
+        
+            // Izračunavanje povr&scaron;ine i zapremine kvadra
+        
+            p = 2 * ((a * b) + (a * c) + (b * c));
+            v = a * b * c;
+        
+            // &Scaron;tampanje vrednosti zapremine i povr&scaron;ine kvadra
+        
+            System.out.println("Povr&scaron;ina kvadra je: " + p + "\nZapremina kvadra je: " + v);
+            ulaz.close();
+        
+            }
+        
+        }
+        
+    </pre>
+    <hr />
+    <p><strong>Zadatak 61: (LinijskaStruktura 13)</strong></p>
+    <ul>
+    <li>Trougao je zadat dužinama stranica a, b i c. Sastaviti algoritam i napisati program za izračunavanje:<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665097117634.jpg" alt="" width="559" height="255" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">package LinijskaStruktura;
+    
+        import java.util.Scanner;
+        import java.text.DecimalFormat;
+        
+        public class LinijskaStruktura13 {
+        
+            public static void main(String[] args) {
+            // Deklarisanje promenljivih
+            double a, b, c, la, ma;
+            DecimalFormat df = new DecimalFormat("#.##");
+            // Unos podataka
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost stranice a: ");
+            a = ulaz.nextDouble();
+            System.out.println("Unesite vrednost stranice b: ");
+            b = ulaz.nextDouble();
+            System.out.println("Unesite vrednost stranice c: ");
+            c = ulaz.nextDouble();
+        
+            // Izračunavanje dužine simetrale ugla iz temena A
+        
+            la = 1 / (b + c) * Math.sqrt(b * c * (Math.pow(b + c, 2) - Math.pow(a, 2)));
+        
+            // Izralunavanje dužine stranice a
+            ma = 0.5 * Math.sqrt(2 * (Math.pow(b, 2) + Math.pow(c, 2)) - a * a);
+        
+            // &Scaron;tampanje vrednosti
+            System.out.println("La = " + df.format(la) + "\nma = " + df.format(ma));
+        
+            ulaz.close();
+            }
+        
+        }
+        
+    </pre>
+    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    <hr />
+    <p><em>kreirao <mark>Dejan Bajović</mark>.</em></p>
+
+
+</body>
+</html>

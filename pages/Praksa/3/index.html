@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>Kolekcije i Regex</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Пројекат праксе</h2>
+    <p class="centered">
+        1. Креирајте класу карактера која садржи податке за сваки карактер у got_meta_data.txt фајлу. <br>
+        2. Одштампајте све поруке особе Daenerys. <br>
+        3. Креирајте обавештење које приказује број порука који се сваки карактер послао. <br>
+        4. Урадити анализу карактера, бројећи њихову употребу смајлија: <br>
+        HAPPY: 😄🙂😊😍 <br>
+        SAD: 😢😭😞👿 <br>
+        Проверити да ли „SAD“ има позитивну диспозицију (да ли је више срећан или тужан). <br>
+        5. Одштампати карактер који има најпозитивнију и најнегативнију диспозицију. <br>
+        6. Да ли Jon воли Daenerys више него што она воли њега. <br>
+        LOVING: 😍😘
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="GoTMessanger-main.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <h3 class="centered">AnalizaSmajlica</h3>
+
+    <pre><code class="java">
+package praksa;
+
+import java.util.List;
+
+public class AnalizaSmajlica {
+    /* Liste srecnih i tužnih smajlija iz enumeracije */
+    static List<String> srecniSmajlici = VrstaSmajlija.SRECAN.dohvatiSmajlice();
+    static List<String> tuzniSmajlici = VrstaSmajlija.TUZAN.dohvatiSmajlice();
+
+    /* Metoda za prebrojavanje pojavljivanja odredjenog smajlija u poruci */
+    public static int brojPojavljivanjaSmajlica(String poruka, String smajlic) {
+        int brojac = 0;
+        int pozicija = poruka.indexOf(smajlic);
+
+        while (pozicija != -1) {
+            brojac++;
+            pozicija = poruka.indexOf(smajlic, pozicija + smajlic.length());
+        }
+
+        return brojac;
+    }
+
+    /* Metoda za analizu smajlija u porukama */
+    public static void analizaSmajlica(List<Karakter> karakteri) {
+        for (Karakter karakter : karakteri) {
+            List<String> poruke = karakter.dohvatiPoruke();
+            int brojSrecnihSmajlica = 0;
+            int brojTuznihSmajlica = 0;
+
+            /* Prebrojavanje srecnih i tužnih smajlija u porukama */
+            for (String poruka : poruke) {
+                brojSrecnihSmajlica += brojPojavljivanjaSmajlica(poruka, "😄");
+                brojSrecnihSmajlica += brojPojavljivanjaSmajlica(poruka, "🙂");
+                brojSrecnihSmajlica += brojPojavljivanjaSmajlica(poruka, "😊");
+                brojSrecnihSmajlica += brojPojavljivanjaSmajlica(poruka, "😍");
+                brojTuznihSmajlica += brojPojavljivanjaSmajlica(poruka, "😞");
+                brojTuznihSmajlica += brojPojavljivanjaSmajlica(poruka, "😢");
+                brojTuznihSmajlica += brojPojavljivanjaSmajlica(poruka, "😭");
+                brojTuznihSmajlica += brojPojavljivanjaSmajlica(poruka, "👿");
+            }
+
+            /* Postavljanje broja srecnih i tužnih smajlija */
+            karakter.postaviBrojSrecnihSmajlija(brojSrecnihSmajlica);
+            karakter.postaviBrojTuznihSmajlija(brojTuznihSmajlica);
+        }
+    }
+
+    /*
+        * Metoda za stampanje karaktera sa najpozitivnijom i najnegativnijom
+        * dispozicijom.
+        */
+    public static void stampanjeAnalizeDispozicije(List<Karakter> karakteri) {
+        AnalizaSmajlica.analizaSmajlica(karakteri);
+        Karakter najpozitivnijaOsoba = null;
+        Karakter najnegativnijaOsoba = null;
+
+        /* Pronalaženje karaktera sa najpozitivnijom i najnegativnijom dispozicijom */
+        for (Karakter karakter : karakteri) {
+            if (najpozitivnijaOsoba == null
+                    || karakter.dohvatiBrojSrecnihSmajlija() > najpozitivnijaOsoba.dohvatiBrojSrecnihSmajlija()) {
+                najpozitivnijaOsoba = karakter;
+            }
+            if (najnegativnijaOsoba == null
+                    || karakter.dohvatiBrojTuznihSmajlija() > najnegativnijaOsoba.dohvatiBrojTuznihSmajlija()) {
+                najnegativnijaOsoba = karakter;
+            }
+        }
+
+        /*
+            * Štampanje poglavlja sa tekstom petog zadatka kao i stampanje izlaznog
+            * rezultata
+            */
+        System.out.println("  \n\n5. Одштампати карактер који има најпозитивнију и најнегативнију диспозицију.");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+
+        System.out.println("Osoba sa najnegativnijom dispozicijom:");
+        System.out.println("Ime: " + najpozitivnijaOsoba.dohvatiIme());
+        System.out.println("Pripadnost: " + najpozitivnijaOsoba.dohvatiPripadnost());
+        System.out.println("Broj srecnih smajlija: " + najpozitivnijaOsoba.dohvatiBrojSrecnihSmajlija());
+
+        System.out.println("\nOsoba sa najpozitivnijom dispozicijom:");
+        System.out.println("Ime: " + najnegativnijaOsoba.dohvatiIme());
+        System.out.println("Pripadnost: " + najnegativnijaOsoba.dohvatiPripadnost());
+        System.out.println("Broj tužnih smajlija: " + najnegativnijaOsoba.dohvatiBrojTuznihSmajlija());
+    }
+
+    /* Metoda za analizu smajlija u porukama karaktera i stampanje rezultata. */
+    public static void analizaSmajlicaIStampanje(List<Karakter> karakteri) {
+
+        System.out.println(" \n\n4a. Uraditi analizu karaktera, brojeci njihovu upotrebu smajlija:");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+
+        for (Karakter karakter : karakteri) {
+            int happyCount = brojacEmojis(karakter.dohvatiPoruke(), srecniSmajlici);
+            int sadCount = brojacEmojis(karakter.dohvatiPoruke(), tuzniSmajlici);
+
+            System.out.println(
+                    karakter.dohvatiIme() + ": Srecni smajlici: " + happyCount + ", Tužni smajlici: " + sadCount);
+        }
+    }
+
+    /* Metoda za brojanje odredjenih smajlija u listi poruka. */
+    static int brojacEmojis(List<String> poruke, List<String> smajlics) {
+        int brojac = 0;
+        for (String poruka : poruke) {
+            for (String smajlic : smajlics) {
+                brojac += poruka.split(smajlic).length - 1;
+            }
+        }
+        return brojac;
+
+    }
+
+    /*
+        * Metoda za odredjivanje dispozicije i stampanje rezultata.
+        */
+    public static void odrediDispozicijuIStampaj(List<Karakter> karakteri) {
+        int ukupanBrojSrecnihSmajlija = 0;
+        int ukupanBrojTuznihSmajlija = 0;
+
+        /* Računanje ukupnog broja srecnih i tužnih smajlija */
+        for (Karakter karakter : karakteri) {
+            int brojacSrecnih = brojacEmojis(karakter.dohvatiPoruke(), srecniSmajlici);
+            int sadCount = brojacEmojis(karakter.dohvatiPoruke(), tuzniSmajlici);
+            ukupanBrojSrecnihSmajlija += brojacSrecnih;
+            ukupanBrojTuznihSmajlija += sadCount;
+        }
+
+        /* Štampanje teksta četvrtog A zadatka kao i stampanje izlaznog rezultata */
+
+        System.out
+                .println(" \n\n4b. Proveriti da li „SAD“ ima pozitivnu dispoziciju (da li je vise srecan ili tužan).");
+        System.out.println("----------------------------------------------------------------------------------------");
+        if (ukupanBrojSrecnihSmajlija > ukupanBrojTuznihSmajlija) {
+            System.out.println("Pozitivna dispozicija sa " + ukupanBrojSrecnihSmajlija + " srecnih smajlica i "
+                    + ukupanBrojTuznihSmajlija + " tužnih smajlica.");
+        } else if (ukupanBrojSrecnihSmajlija < ukupanBrojTuznihSmajlija) {
+            System.out.println("Negativna dispozicija sa " + ukupanBrojTuznihSmajlija + " tužnih smajlica " + " i "
+                    + ukupanBrojSrecnihSmajlija + " srecnih smajlica.");
+        } else {
+            System.out.println("Neutralna dispozicija sa " + ukupanBrojTuznihSmajlija + " tužnih smajlica " + " i "
+                    + ukupanBrojSrecnihSmajlija + " srecnih smajlica.");
+        }
+    }
+
+    /* Metoda za brojanje ljubavnih smajlica u poruci */
+    public static int ukupnoLjubavnihSmajlica(String poruka) {
+        String[] lovingEmojis = { "😍", "😘" };
+        int brojac = 0;
+
+        /* Brojanje ljubavnih smajlica u poruci */
+        for (String smajlic : lovingEmojis) {
+            int index = poruka.indexOf(smajlic);
+            while (index != -1) {
+                brojac++;
+                index = poruka.indexOf(smajlic, index + 1);
+            }
+        }
+
+        return brojac;
+    }
+
+    /* Metoda za uporedjivanje ljubavnih smajlica izmedju Jona i Deneris. */
+    public static void uporedjivanjeLjubavnihSmajlica(List<Karakter> karakteri) {
+        int jonLovingCount = 0;
+        int danyLovingCount = 0;
+
+        /* Prebrojavanje ljubavnih smajlica za Jon Snow i Daenerys Stormborn */
+        for (Karakter karakter : karakteri) {
+            if (karakter.dohvatiIme().equals("Jon Snow") || karakter.dohvatiIme().equals("Daenerys Stormborn")) {
+                for (String poruka : karakter.dohvatiPoruke()) {
+                    int lovingEmojiCount = ukupnoLjubavnihSmajlica(poruka);
+                    if (karakter.dohvatiIme().equals("Jon Snow")) {
+                        jonLovingCount += lovingEmojiCount;
+                    } else {
+                        danyLovingCount += lovingEmojiCount;
+                    }
+                }
+            }
+        }
+        /* Uporedjivanje ljubavnih smajlica i stampanje rezultata */
+
+        System.out.println(" \n\n6. Da li Jon voli Deneris vise nego sto ona voli njega?");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+        if (jonLovingCount > danyLovingCount) {
+            System.out.println("Jon voli Deneris vise jer joj je on poslao " + (jonLovingCount - danyLovingCount)
+                    + " ljubavni smajlic vise.");
+        } else if (jonLovingCount < danyLovingCount) {
+            System.out.println("Deneris voli Jona vise jer mu je ona poslala" + +(danyLovingCount - jonLovingCount)
+                    + " ljubavni smajlic vise.");
+        } else {
+            System.out.println("Jon i Deneris se vole JEDNAKO!");
+        }
+    }
+}
+
+        
+</code></pre>
+
+    <br>
+    <br>
+    <h3 class="centered">FileHelper</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileHelper {
+
+    /**
+        * Metoda za učitavanje informacija o karakterima iz meta podataka.
+        */
+    public static List<Karakter> ocitavanjeKaraktera() {
+        /* Kreiranje prazne liste za skladištenje Karakter objekata */
+        List<Karakter> karakteri = new ArrayList<>();
+
+        /* Učitavanje meta podataka kao jedinstvenog stringa */
+        String metaData = loadMetaData();
+
+        /* Razdvajanje meta podataka na linije */
+        String[] metaDataLines = metaData.split(System.lineSeparator());
+
+        /* Konverzija stringova sa meta podacima */
+        KarakterDeserializer karakterDeserializer = new KarakterDeserializer();
+
+        /*
+            * Iteracija kroz linije meta podataka, počevši od druge linije (preskače se
+            * zaglavlje)
+            */
+        for (int i = 1; i < metaDataLines.length; i++) {
+            /* Razdvajanje trenutne linije na podatke odvojene zarezima */
+            Karakter karakter = karakterDeserializer.deserializeFromString(metaDataLines[i], ", ");
+            karakteri.add(karakter);
+        }
+
+        /* Vraća se lista sa učitanim informacijama o karakterima */
+        return karakteri;
+    }
+
+    public static String loadMetaData() {
+        StringBuffer characterData = new StringBuffer();
+        File file = new File("resource/got_meta_data.txt");
+
+        try (BufferedReader buffer = new BufferedReader(new FileReader(file))) {
+            String aLine;
+            while ((aLine = buffer.readLine()) != null) {
+                characterData.append(aLine);
+                characterData.append(System.lineSeparator());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return characterData.toString();
+    }
+
+    public static List<String> loadMessages(String fileName) {
+        List<String> messages = new ArrayList<String>();
+        File file = new File("resource/message_logs/" + fileName);
+
+        try (BufferedReader buffer = new BufferedReader(new FileReader(file))) {
+            String aLine;
+            while ((aLine = buffer.readLine()) != null) {
+                messages.add(aLine);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return messages;
+    }
+
+}</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">Karakter</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/* 1. Креирајте класу карактера која садржи податке за сваки карактер у got_meta_data.txt фајлу. */
+public class Karakter implements StringDeserializer<Karakter> {
+    /* Polja klase */
+    private String ime;
+    private String pripadnost;
+    private String datotekaChata;
+    private List<String> poruke;
+    private int ukupanBrojSrecnihSmjalija;
+    private int ukupanBrojTuznihSmajlija;
+
+    /* Podrazumevani konstuktor */
+    public Karakter() {
+        this.ime = "";
+        this.pripadnost = "";
+        this.datotekaChata = "";
+        this.poruke = null;
+
+    }
+
+    /* Parametarizovan konstruktor klase */
+    public Karakter(String ime, String pripadnost, String datotekaChata) {
+        this.ime = ime;
+        this.pripadnost = pripadnost;
+        this.datotekaChata = datotekaChata;
+        this.poruke = new ArrayList<>();
+    }
+
+    /* Getteri i Setteri */
+    public String dohvatiIme() {
+        return ime;
+    }
+
+    public String dohvatiPripadnost() {
+        return pripadnost;
+    }
+
+    public String dohvatiDatotekuChata() {
+        return datotekaChata;
+    }
+
+    public List<String> dohvatiPoruke() {
+        return poruke;
+    }
+
+    /* Hvatanje broja poruka */
+    public int dohvatiBrojPoruka() {
+        int brojac = 0;
+
+        // Kreiranje mape za povezivanje imena karaktera i njihovih nadimaka
+        Map<String, String> imeNaNadimak = new HashMap<>();
+        imeNaNadimak.put("Daenerys Stormborn", "DANY");
+        imeNaNadimak.put("Jon Snow", "JON");
+        imeNaNadimak.put("Tyrion Lannister", "TYRION");
+        imeNaNadimak.put("Cersei Lannister", "CERSEI");
+
+        // Dobijanje nadimka koji odgovara imenu karaktera
+        String nadimak = imeNaNadimak.get(ime);
+
+        for (String poruka : poruke) {
+            /*
+                * Izbegavanje prvog reda jer to nije poruka vec nadimak, kao i praznih redova
+                */
+            if (!poruka.equals(nadimak) && !poruka.trim().isEmpty()) {
+                brojac++;
+            }
+        }
+        return brojac;
+    }
+
+    public void postaviPoruke(List<String> poruke) {
+        this.poruke = poruke;
+    }
+
+    public int dohvatiBrojSrecnihSmajlija() {
+        return ukupanBrojSrecnihSmjalija;
+    }
+
+    public void postaviBrojSrecnihSmajlija(int ukupanBrojSrecnihSmjalija) {
+        this.ukupanBrojSrecnihSmjalija = ukupanBrojSrecnihSmjalija;
+    }
+
+    public int dohvatiBrojTuznihSmajlija() {
+        return ukupanBrojTuznihSmajlija;
+    }
+
+    public void postaviBrojTuznihSmajlija(int ukupanBrojTuznihSmajlija) {
+        this.ukupanBrojTuznihSmajlija = ukupanBrojTuznihSmajlija;
+    }
+
+    /**
+        * Metoda za kreiranje liste Karakter objekata sa učitanim porukama.
+        */
+    public static List<Karakter> kreirajNizKaraktera() {
+        /* Učitavanje informacija o karakterima iz meta podataka */
+        List<Karakter> characters = FileHelper.ocitavanjeKaraktera();
+
+        /* Iteracija kroz listu Karakter objekata */
+        for (Karakter character : characters) {
+            /* Učitavanje poruka za trenutni karakter iz datoteke chata */
+            List<String> messages = FileHelper.loadMessages(character.dohvatiDatotekuChata());
+
+            /* Učitavanje poruka za trenutni karakter iz datoteke chata */
+            character.postaviPoruke(messages);
+        }
+
+        /* Povratna lista Karakter objekata sa učitanim porukama */
+        return characters;
+    }
+
+    /**
+        * Metoda za ispis informacija o karakterima u listi.
+        */
+    public static void ispisInformacija(List<Karakter> listaKaraktera) {
+        /* Prikaz informacija o karakterima u konzoli */
+        System.out.println(
+                " \n1. Креирајте класу карактера која садржи податке за сваки карактер у got_meta_data.txt фајлу.");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+        for (Karakter character : listaKaraktera) {
+            System.out.println("Ime: " + character.dohvatiIme());
+            System.out.println("Pripadnost: " + character.dohvatiPripadnost());
+            System.out.println("Datoteka chata: " + character.dohvatiDatotekuChata());
+            System.out.println();
+        }
+    }
+
+    @Override
+    public Karakter deserializeFromString(String entity, String fieldSeparator) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">KarakterDeserializer</h3>
+    <pre><code class="java">
+package praksa;
+
+public class KarakterDeserializer implements StringDeserializer<Karakter> {
+    // Metoda vraća objekat tipa Karakter dobijen deserijalizacijom stringa
+    @Override
+    public Karakter deserializeFromString(String entity, String fieldSeparator) {
+        String[] data = entity.split(fieldSeparator);
+
+        // Učitavanje informacija o karakteru iz niza podataka
+        String ime = data[0];
+        String pripadnost = data[1];
+        String datotekaPoruka = data[2];
+
+        // Kreiranje novog Karakter objekta sa učitanim informacijama i vraćanje istog
+        return new Karakter(ime, pripadnost, datotekaPoruka);
+    }
+}
+
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">Main</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.util.List;
+
+import javax.swing.SwingUtilities;
+
+public class Main {
+
+    /* Pokretanje programa 😁 */
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            MenadzerGUI.kreirajPrikaziGUI();
+        });
+    }
+
+    static void izvrsavanjeProgramskeLogike() {
+        // 1. Креирајте класу карактера која садржи податке за сваку особу
+        List<Karakter> characters = Karakter.kreirajNizKaraktera();
+        Karakter.ispisInformacija(characters);
+
+        // 2. Одштампајте све поруке особе Daenerys.
+        StampanjePoruka.stampanjePorukaKaraktera(characters, MenadzerGUI.izborOsobe());
+
+        // 3. Обавештење које приказује број порука који je свакa особа послала.
+        StampanjePoruka.prikaziBrojPoruka(characters);
+
+        // 4a. Урадити анализу карактера, бројећи њихову употребу смајлија:
+        AnalizaSmajlica.analizaSmajlicaIStampanje(characters);
+
+        // 4b. Проверити да ли „SAD“ има позитивну диспозицију
+        AnalizaSmajlica.odrediDispozicijuIStampaj(characters);
+
+        // 5. Одштампати карактер који има најпозитивнију и најнегативнију диспозицију.
+        AnalizaSmajlica.stampanjeAnalizeDispozicije(characters);
+
+        // 6. Да ли Jon воли Daenerys више него што она воли њега.
+        AnalizaSmajlica.uporedjivanjeLjubavnihSmajlica(characters);
+    }
+}
+
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">MenadzerGUI</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicScrollBarUI;
+
+public class MenadzerGUI {
+    private static String izabranaOsoba = "Daenerys";
+
+    static void kreirajPrikaziGUI() {
+        // Kreiranje korisničkog interfejsa
+        JFrame frame = new JFrame("JAVA IT PRAKSA");
+
+        // Ukoliko se klikne na X onda se zatvara aplikacija
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Postavljanje širine i visine prozora programa
+        frame.setSize(800, 650);
+
+        // Dohvatanje dimenzije monitora
+        Dimension velicinaEkrana = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // Računanje pozicije prozora na osnovu veličine monitora i veličine prozora,
+        // tako da prozor bude pozicioniran u sredini monitora.
+        int xPos = (velicinaEkrana.width - frame.getWidth()) / 2;
+        int yPos = (velicinaEkrana.height - frame.getHeight()) / 2;
+
+        // Postavljanje pozicije prozora na izračunatu poziciju.
+        frame.setLocation(xPos, yPos);
+
+        // Logo Game of Thrones
+        JPanel prostorZaLogo = new JPanel();
+        prostorZaLogo.setLayout(new GridLayout());
+        ImageIcon imageIcon = new ImageIcon("logoGoTB.jpg");
+        JLabel imageLabel = new JLabel(imageIcon);
+        prostorZaLogo.add(imageLabel);
+
+        // Površina za ispisivanje texta
+        JTextArea povrsinaZaText = new JTextArea();
+        povrsinaZaText.setBackground(Color.BLACK);
+        povrsinaZaText.setForeground(Color.WHITE);
+        JScrollPane prostorZaKlizac = new JScrollPane(povrsinaZaText);
+        prostorZaKlizac.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        prostorZaKlizac.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        prostorZaKlizac.setBorder(new EmptyBorder(0, 0, 0, 0)); // Remove border
+
+        // Customize scrollbars
+        prostorZaKlizac.getVerticalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(0xf9d09c);
+                this.trackColor = Color.DARK_GRAY;
+            }
+        });
+        prostorZaKlizac.getHorizontalScrollBar().setUI(new BasicScrollBarUI() {
+            @Override
+            protected void configureScrollBarColors() {
+                this.thumbColor = new Color(0xf9d09c);
+                this.trackColor = Color.DARK_GRAY;
+            }
+        });
+        // Segment sa dugmicima
+        JPanel buttonPanel = new JPanel();
+        JButton dugmeZaKonzolu = new JButton("Štampa u konzoli");
+        JButton dugmeZaEkran = new JButton("Štampa na ekranu");
+
+        String[] opcije = { "Daenerys", "John", "Tyrion", "Cersei" };
+        JComboBox<String> padajuciMeni = new JComboBox<>(opcije);
+
+        buttonPanel.add(dugmeZaKonzolu);
+        buttonPanel.add(dugmeZaEkran);
+        buttonPanel.add(padajuciMeni);
+
+        // JPanel with version label
+        JPanel versionPanel = new JPanel();
+        JLabel versionLabel = new JLabel("Copyright @ 2023 | Misanu | Verzija 1.1");
+        versionPanel.add(versionLabel);
+
+        // JPanel with buttons, padajuciMeni and version label
+        JPanel prostorDonji = new JPanel(new BorderLayout());
+        prostorDonji.add(buttonPanel, BorderLayout.CENTER);
+        prostorDonji.add(versionPanel, BorderLayout.SOUTH);
+
+        // Set background color of each panel to black
+        prostorZaLogo.setBackground(Color.BLACK);
+        buttonPanel.setBackground(Color.BLACK);
+        versionPanel.setBackground(Color.BLACK);
+        prostorDonji.setBackground(Color.BLACK);
+        frame.getContentPane().setBackground(Color.BLACK);
+
+        // Add panels to frame
+        frame.add(prostorZaLogo, BorderLayout.PAGE_START);
+        frame.add(prostorZaKlizac, BorderLayout.CENTER);
+        frame.add(prostorDonji, BorderLayout.SOUTH);
+
+        // Postavljanje vidljivosti prozora
+        frame.setVisible(true);
+
+        // Postavljanje akcije koja će se desiti kada se klikne na dugme "Štampa u
+        // konzoli" - u ovom slučaju, pozivanje metode izvrsavanjeProgramskeLogike().
+        dugmeZaKonzolu.addActionListener((ActionEvent e) -> {
+            Main.izvrsavanjeProgramskeLogike();
+        });
+
+        // Postavljanje akcije koja će se desiti kada se klikne na dugme "Štampa na
+        // ekranu" - u ovom slučaju, pozivanje metode izvrsavanjeProgramskeLogike().
+        dugmeZaEkran.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                PrintStream printStream = new PrintStream(baos);
+                PrintStream oldOut = System.out;
+                System.setOut(printStream);
+                System.setErr(printStream);
+
+                Main.izvrsavanjeProgramskeLogike();
+
+                System.setOut(oldOut);
+
+                String izlazniRezultatKonzole = new String(baos.toByteArray(), StandardCharsets.UTF_8);
+                povrsinaZaText.setText(izlazniRezultatKonzole);
+                povrsinaZaText.setCaretPosition(0);
+            }
+        });
+        // Dodavanje akcije na JComboBox
+        padajuciMeni.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Promena izabrane osobe
+                izabranaOsoba = (String) padajuciMeni.getSelectedItem();
+            }
+        });
+
+    }
+
+    public static String izborOsobe() {
+        return izabranaOsoba;
+    }
+}
+
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">StampanjePoruka</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.util.List;
+
+public class StampanjePoruka {
+    /* Metoda za štampanje poruka Daenerys iz liste karaktera. */
+    public static void stampanjePorukaKaraktera(List<Karakter> characters, String imeKaraktera) {
+        /* Za odredjivanje pozicije u listi */
+        int adapterKoda;
+        /* Utvrdjivanje nadimka parametarizovanog karaktera */
+        String nadimak = "";
+        switch (imeKaraktera) {
+        case "Daenerys":
+            /* Daenerys se nalazi na prvom mestu u listi karaktera */
+            adapterKoda = 0;
+            nadimak = "DANY";
+            break;
+        case "John":
+            /* Jon se nalazi na prvom mestu u listi karaktera */
+            adapterKoda = 1;
+            nadimak = "JON";
+            break;
+        case "Tyrion":
+            /* Tyrion se nalazi na prvom mestu u listi karaktera */
+            adapterKoda = 2;
+            nadimak = "TYRION";
+            break;
+        case "Cersei":
+            /* Cersei se nalazi na prvom mestu u listi karaktera */
+            adapterKoda = 3;
+            nadimak = "CERSEI";
+            break;
+        default:
+            adapterKoda = 0;
+        }
+
+        Karakter karakter = characters.get(adapterKoda);
+
+        /* Ispisivanje zaglavlja drugog zadatka */
+        System.out.println(" \n\n2. Odštampajte sve poruke osobe " + imeKaraktera + ".");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+        /*
+            * Iteracija kroz sve poruke koje je poslala Daenerys
+            */
+        for (String message : karakter.dohvatiPoruke()) {
+            /* Prvi red nije poruka već nadimak osobe */
+            if (!message.equals(nadimak)) {
+                /* Ispisivanje poruke u konzoli */
+                System.out.println(message);
+            }
+        }
+    }
+
+    public static void prikaziBrojPoruka(List<Karakter> listaKaraktera) {
+        /*
+            * Metoda za prikaz broja poruka koje je svaki GOT karakter poslao
+            */
+
+        System.out.println(" \n\n3. Креирајте обавештење које приказује број порука који се сваки карактер послао.");
+        System.out.println(
+                "---------------------------------------------------------------------------------------------------");
+        for (Karakter character : listaKaraktera) {
+            System.out.println(character.dohvatiIme() + " je poslao/la " + character.dohvatiBrojPoruka() + " poruka.");
+        }
+    }
+}
+    
+</code></pre>
+
+    <br>
+    <br>
+    <h3 class="centered">StringDeserializer</h3>
+    <pre><code class="java">
+package praksa;
+
+//Interfejs definisan za generički tip
+public interface StringDeserializer<T> {
+
+    // Konstanta za zarez koji se koristi kao separator polja
+    public static final String COMMA = ",";
+    // Konstanta za razmak koji se koristi kao separator polja
+    public static final String SPACE = " ";
+
+    // Metoda vraća objekat tipa T dobijen deserijalizacijom entity stringa
+    public T deserializeFromString(String entity, String fieldSeparator);
+}
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">VrstaSmajlija</h3>
+    <pre><code class="java">
+package praksa;
+
+import java.util.Arrays;
+import java.util.List;
+
+/*
+    * Enumeracija za vrste smajlija - SRECAN i TUZAN.
+    * */
+public enum VrstaSmajlija {
+    /* Definisanje vrsta smajlija sa listama pripadajućih emotikona */
+    SRECAN(Arrays.asList("😄", "🙂", "😍", "😊")), TUZAN(Arrays.asList("😞", "😢", "😭", "👿"));
+
+    /* Atribut koji sadrži listu smajli kodova za svaku vrstu smajlija */
+    private final List<String> smajlici;
+
+    /* Konstruktor za enumeraciju VrstaSmajlija */
+    VrstaSmajlija(List<String> smajlici) {
+        this.smajlici = smajlici;
+    }
+
+    /* Metoda za dohvatanje liste smajli kodova za odgovarajuću vrstu smajlija */
+    public List<String> dohvatiSmajlice() {
+        return smajlici;
+    }
+}
+</code></pre>
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

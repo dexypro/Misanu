@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insertion Sort Animation</title>
+    <style>
+        /* Styling for the bars */
+        .bar {
+            display: inline-block;
+            width: 20px;
+            height: 100px;
+            margin-right: 5px;
+            background-color: gray;
+            transition: height 0.2s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Insertion Sort Animation</h1>
+    <div id="container"></div>
+    <button onclick="sortArray()">Sort</button>
+
+    <script>
+        // Generate random array of numbers between 1 and 100
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            array.push(Math.floor(Math.random() * 100) + 1);
+        }
+
+        // Create bars to represent array elements
+        let container = document.getElementById("container");
+        for (let i = 0; i < array.length; i++) {
+            let bar = document.createElement("div");
+            bar.className = "bar";
+            bar.style.height = array[i] + "px";
+            container.appendChild(bar);
+        }
+
+        // Insertion sort algorithm
+        async function insertionSort() {
+            for (let i = 1; i < array.length; i++) {
+                let key = array[i];
+                let j = i - 1;
+
+                // Move elements of array[0..i-1], that are greater than key, to one position ahead of their current position
+                while (j >= 0 && array[j] > key) {
+                    array[j + 1] = array[j];
+                    j = j - 1;
+                    // Animate bars swapping positions
+                    await new Promise(resolve => setTimeout(resolve, 200)); // delay for animation effect
+                    let bars = document.querySelectorAll(".bar");
+                    bars[j + 1].style.height = bars[j].style.height;
+                    bars[j].style.height = key + "px";
+                }
+                array[j + 1] = key;
+            }
+        }
+
+        // Call insertionSort() repeatedly until the array is sorted
+        async function sortArray() {
+            let isSorted = false;
+            while (!isSorted) {
+                await insertionSort();
+                isSorted = isAscending(array);
+            }
+        }
+
+        // Check if the array is sorted in ascending order
+        function isAscending(array) {
+            for (let i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/sJWgvmuPGD9qinjEu_1666131441514.jpg" alt="" width="780" height="304" /></p>
+    <br>
+    <hr>
+    <p><strong>Zadatak 92: (SwitchCase0)</strong></p>
+    <ul>
+    <li>Napisati naredbu case kojom se na osnovu brojnih ocena 5, 4, 3, 2, 1 ispisuju opisne Ocene
+        “odlican”, “vrlo dobar”, “dobar”, “dovoljan”, “nedovoljan”. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase0 {
+    
+        public static void main(String[] args) {
+        int ocena;
+    
+        // Unos podataka
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite ocenu: ");
+        ocena = sc.nextInt();
+        sc.close();
+    
+        // Obrada podataka
+        switch (ocena) {
+        case 5:
+            System.out.println("Odlican.");
+            break;
+        case 4:
+            System.out.println("Vrlo dobar.");
+            break;
+        case 3:
+            System.out.println("Dobar.");
+            break;
+        case 2:
+            System.out.println("Dovoljan.");
+            break;
+        case 1:
+            System.out.println("Nedovoljan");
+            break;
+        default:
+            System.out.println("Pogresan unos.");
+    
+        }
+    }
+    
+    }
+    
+    </pre>
+    <hr>
+    <p><strong>Zadatak 93: (SwitchCase1)</strong></p>
+    <ul>
+    <li>Napisati program koji za dati redni broj dana u nedelji štampa ime dana. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase1 {
+    
+        public static void main(String[] args) {
+        int redniBrojDana;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite redni broj dana: ");
+        redniBrojDana = ulaz.nextInt();
+    
+        /* 2. deo: Obrada podataka */
+        switch (redniBrojDana) {
+        case 1:
+            System.out.println("Ponedeljak");
+            break;
+        case 2:
+            System.out.println("Utorak");
+            break;
+        case 3:
+            System.out.println("Sreda");
+            break;
+        case 4:
+            System.out.println("Četvrtak");
+            break;
+        case 5:
+            System.out.println("Petak");
+            break;
+        case 6:
+            System.out.println("Subota");
+            break;
+        case 7:
+            System.out.println("Nedelja");
+            break;
+        default:
+            System.out.println("Greska");
+    
+        }
+    
+        ulaz.close();
+        }
+    
+    }
+        
+    
+    </pre>
+
+
+    <hr>
+    <p><strong>Zadatak 94: (SwitchCase2)</strong></p>
+    <ul>
+    <li>Napisati program koji za uneti karakter stampa da li je samoglasnik ili suglasnik. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase2 {
+    
+        public static void main(String[] args) {
+        char karakter;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite slovo: ");
+        karakter = ulaz.next().charAt(0);
+    
+        /* 2. deo: Obrada podataka */
+    
+        if (karakter >= 'a' && karakter <= 'z' || karakter >= 'A' && karakter <= 'Z') {
+    
+            switch (karakter) {
+            case 'a':
+            case 'A':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'e':
+            case 'E':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'i':
+            case 'I':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'o':
+            case 'O':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'u':
+            case 'U':
+            System.out.println("Samoglasnik.");
+            break;
+            default:
+            System.out.println("Suglasnik!");
+    
+            }
+            ulaz.close();
+    
+        } else
+    
+        {
+            System.out.println("Unesite veliko ili malo slovo.\nSpecijalni znakovi ili brojevi nisu dozvoljeni!");
+        }
+    
+        }
+    }
+    
+
+    </pre>
+    
+    <hr />
+    <p><strong>Zadatak 95: (SwitchCase3)</strong></p>
+    <ul>
+    <li>Napisati program kojim se ispisuju moguće vrednosti koordinata x i y zavisno od broja
+        kvadranta koji se unosi. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase3 {
+    
+        public static void main(String[] args) {
+        int ugao;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite ugao: ");
+        ugao = ulaz.nextInt();
+    
+        /* 2. deo: Obrada podataka */
+        if (ugao > 0 && ugao < 90) {
+            System.out.println("Prvi kvadrant.");
+        } else if (ugao > 90 && ugao < 180) {
+            System.out.println("Drugi kvadrant.");
+        } else if (ugao > 180 && ugao < 270) {
+            System.out.println("Treći kvadrant.");
+        } else if (ugao > 270 && ugao < 360) {
+            System.out.println("Četvrti kvadrant.");
+        } else {
+            System.out.println("Unet ugao se nalazi na x ili y osi.");
+        }
+        ulaz.close();
+        }
+    
+    }  
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 96: (SwitchCase4)</strong></p>
+    <ul>
+    <li>Napisati program koji za nalaženje ekvivalentnog kapaciteta dva kondenzatora kapaciteta C1=
+        10nF i C2 = 15 nF ako su vezana: <br><br>
+        <b>a)</b> Redno<br>
+        <b>b)</b> Paralelno<br>
+        <em>Rešenje: Ekvivalnentni kapacitet redne veze izračunava se po formuli Ce= C1*C2/(C1+C2), a
+            paralelne veze po formuli: Ce = C1 + C2.</em>
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+    import java.util.Scanner;
+    import java.text.DecimalFormat;
+
+    public class SwitchCase4 {
+
+        public static void main(String[] args) {
+        double c1, c2;
+        String veza;
+
+        /* 1. deo: Unos podataka */
+        DecimalFormat df = new DecimalFormat("#.##");
+        Scanner ulaz = new Scanner(System.in);
+
+        System.out.println("Unesite da li je 'Redno' ili 'Paralelno' vezivanje: ");
+        veza = ulaz.nextLine();
+        System.out.println("Unesite vrednost za c1: ");
+        c1 = ulaz.nextInt();
+        System.out.println("Unesite vrednost za c2: ");
+        c2 = ulaz.nextInt();
+
+        /* 2. deo: Obrada podataka IF-ELSE */
+        if (veza.equalsIgnoreCase("Redno")) {
+            System.out.println("Ekvivalnentni kapacitet redne veze: " + df.format(c1 * c2 / (c1 + c2)));
+        } else if (veza.equalsIgnoreCase("Paralelno")) {
+            System.out.println("Paralelna veza: " + df.format((c1 + c2)));
+        } else {
+            System.out.println("Pogrešan unos!");
+        }
+
+        ulaz.close();
+
+        }
+
+    }
+
+    </pre>
+    
+
+    <hr />
+    <p><strong>Zadatak 97: (SwitchCase5)</strong></p>
+    <ul>
+    <li>Napisati program koji se učita znak za operaciju (+,-,*,/) i dva realna operanda, a zatim štampa
+        rezultat. 
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+
+    public class SwitchCase5 {
+
+        public static void main(String[] args) {
+        double x, y;
+        char operator;
+
+        /* 1. deo: Unos podataka */
+        Scanner ulaz = new Scanner(System.in);
+
+        System.out.println("Unesite željeni operator: ");
+        operator = ulaz.next().charAt(0);
+        System.out.println("Unesite operand x: ");
+        x = ulaz.nextDouble();
+        System.out.println("Unesite operand y: ");
+        y = ulaz.nextDouble();
+
+        /* 2. deo: Obrada podataka */
+        System.out.println("Rešenje sa SWITCH:");
+        switch (operator) {
+        case '+':
+            System.out.println("X + Y = " + (x + y));
+            break;
+        case '-':
+            System.out.println("X - Y = " + (x - y));
+            break;
+        case '*':
+            System.out.println("X * Y = " + (x * y));
+            break;
+        case '/':
+            System.out.println("X / Y = " + (x / y));
+        }
+
+        /* 2. deo: Obrada podataka sa IF/ELSE */
+        System.out.println("\nRešenje sa ELSE/IF: ");
+        if (operator == '+') {
+            System.out.println("X + Y = " + (x + y));
+        } else if (operator == '-') {
+            System.out.println("X - Y = " + (x - y));
+        } else if (operator == '*') {
+            System.out.println("X * Y = " + (x * y));
+        } else if (operator == '/') {
+            System.out.println("X / Y = " + (x / y));
+        } else {
+            System.out.println("Nepravilan unos.");
+        }
+
+        ulaz.close();
+        }
+
+    }
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 98: (SwitchCase6)</strong></p>
+    <ul>
+    <li>Ako se sa ulaza učitavaju tri prirodna broja k1, k2, k3 koji označavaju redni broj dana u godini,
+        ispitati da li označavaju isti dan u nedelji. Na primer, isti dan iznačavaju: 2, 16 i 30 ili 344, 351, i
+        358.  
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+
+        import java.util.Scanner;
+        
+        public class SwitchCase6 {
+        
+            public static void main(String[] args) {
+            int k1, k2, k3, boolToInt;
+            boolean i;
+        
+            /* 1. deo: Unos podataka */
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite vrednost za k1: ");
+            k1 = ulaz.nextInt();
+            System.out.println("Unesite vrednost za k2: ");
+            k2 = ulaz.nextInt();
+            System.out.println("Unesite vrednost za k3: ");
+            k3 = ulaz.nextInt();
+        
+            i = ((k2 - k1) % 7 == 0 && (k3 - k1) % 7 == 0);
+        
+            boolToInt = i ? 1 : 0;
+        
+            /* SA SWITCH 2. deo: Obrada podataka */
+            System.out.println("Rešenje sa SWITCH:");
+            switch (boolToInt) {
+            case 1:
+                System.out.println("Isti dan u nedelji!");
+                break;
+            case 0:
+                System.out.println("Nije isti dan u nedelji!");
+                break;
+            default:
+                System.out.println("Pogresan unos!");
+            }
+        
+            /* SA IF/ELSE 2. deo: Obrada podataka */
+            System.out.println("\nRešenje sa If/Else:");
+            if ((k2 - k1) % 7 == 0 && (k3 - k1) % 7 == 0) {
+                System.out.println("Isti dan u nedelji!");
+            } else {
+                System.out.println("Nije isti dan u nedelji!");
+            }
+            ulaz.close();
+            }
+        
+        }
+        
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 99: (SwitchCase7)</strong></p>
+    <ul>
+    <li>Napisati program koji ispisuje koliko mesec Februar ima dana na osnovu unete godine.  
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+
+    public class SwitchCase7 {
+
+        public static void main(String[] args) {
+        /* Deklarisanje promenljivih */
+        int godina;
+        Scanner sc = new Scanner(System.in);
+
+        /* Unos podataka */
+        System.out.println("Unesite godinu: ");
+        godina = sc.nextInt();
+
+        /* Obrada podatka */
+        if (godina % 4 == 0 && !(godina % 100 == 0) || godina % 400 == 0) {
+            System.out.println("Februar: 29 dana");
+        } else {
+            System.out.println("Februar: 28 dana");
+        }
+
+        sc.close();
+        }
+
+    }
+    </pre>
+
+    
+    <hr />
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><em>by Dejan Bajović</em></div>
+    <p>&nbsp;</p>
+</body>
+</html>Algoritamsko rešavanje problema u javi - Razgranata struktura

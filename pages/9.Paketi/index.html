@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Paketi</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+    <img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/t36HD4nioNS7LSriN_1673794158473.jpg" alt="" width="648" height="244" /></p>
+  <p>&nbsp;</p>
+ 
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 324: (Paket01)</strong></p>
+<pre style="text-align: justify;">U paketu <b>p1</b> definisati klasu <strong style="color: #0984e3;">First</strong> koja sadrži:
+- podatak <strong>a</strong> tipa <em>integer</em> sa inicijalizovanom vrednošću od 5,
+- metodu <strong style="color: #44bd32;">view</strong> koja ispisuje poruku <i>"Ovo je klasa definisana u paketu P1."</i>
+    
+U paketu <b>p2</b> definisati pokretačku klasu <strong style="color: #0984e3;">ImportPackage</strong> i u njoj odrediti sledeće:
+- importovati klasu <strong style="color: #0984e3;">First</strong> iz paketa <b>p1</b> koriscenjem kljucne reci <b>import</b>.
+- Kreirati objekat klase <strong style="color: #0984e3;">First</strong> sa nazivom '<strong>f</strong>.
+- Pokrenuti metodu <strong style="color: #44bd32;">view</strong> objekta <b>f</b>.
+</pre>
+
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package p1;
+  <span style="color: azure;">/*Paketi služe za grupisanje klase.
+* Primera radi, možete napraviti dve klase sa istim nazivom unutar dva 
+* različita paketa. Paket je istovremeno mehanizam za imenovanje i za
+* upravljanje vidljivošću klasa. 
+* 
+* Paketi sadrže klase. Klase sadrže polja (fields) i metode (methods).
+* Metode sadrže lokalne promenljive. Nema globalnih promenljivih u Javi!
+*/</span>
+
+public class First {
+    public int a = 5;
+
+    public void view() {
+      System.out.println("Ovo je klasa definisana u paketu P1.");
+    }
+}                      
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p2;
+
+<span style="color: azure;">/* Prvi način: prelaskom pokazivač miša preko naziva klase i importovanjem klase */</span>
+
+import p1.First; <span style="color: azure;">// Importuje se klasa First iz paketa p1</span>
+<span style="color: azure;">// import p1.* --> importujete sve klase iz navedenog paketa</span>
+
+public class ImportPackage {
+
+    public static void main(String[] args) {
+
+  First f = new First(); <span style="color: azure;">/* Kreiranje objekta klase */</span>
+  f.view(); <span style="color: azure;">/* Za dati objekat poziv funkcije */</span>
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 100%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Ovo je klasa definisana u paketu P1.
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 325: (Paket02)</strong></p>
+<pre style="text-align: justify;">U paketu <b>p1</b> definisati klasu <strong style="color: #0984e3;">Balance</strong> koja sadrži:
+- polje <strong>name</strong> tipa <strong style="color: #0984e3;">String</strong>,
+- polje <strong>bal</strong> tipa <b>double</b>,
+- parametarizovan konstuktor za unos <b>name</b> i <b>bal</b>.
+- metodu <strong style="color: #44bd32;">show</strong> koja ispisuje koliko je račun zadužen.
+
+U paketu <b>p2</b> definisati pokretačku klasu <strong style="color: #0984e3;">BalanceImport</strong> i u njoj odrediti sledeće:
+- importovati sav sadržaj paketa <b>p1</b>.
+- kreirati niz <b>current</b> tipa <strong style="color: #0984e3;">Balance</strong> koji sadrži tri inicijalizivana objekta klase <strong style="color: #0984e3;">Balance</strong>.
+- ispisati sadržaj niza <b>current</b> pozivanjem metode <strong style="color: #44bd32;">show</strong> za svaki od kreiranih objekta.
+</pre>
+
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class Balance {
+      String name;
+      double bal;
+
+      public Balance(String n, double b) {
+        name = n;
+        bal = b;
+      }
+
+      public void show() {
+        if (bal < 0)
+            System.out.println("U minusu: \n");
+        System.out.println(name + " = " + bal);
+    }
+}                    
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p2;
+
+import p1.*;
+
+public class BalanceImport {
+    public static void main(String[] args) {
+
+      Balance current[] = new Balance[3];
+    
+      current[0] = new Balance("Mika", 123.45);
+      current[1] = new Balance("Zika", 345.12);
+      current[2] = new Balance("Ljubivoje", -12.34);
+
+      for (int i = 0; i < 3; i++) {
+          current[i].show();
+      }
+    }
+}    
+</pre>
+</div>
+<div style="float: left; width: 100%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Mika = 123.45
+Zika = 345.12
+U minusu: 
+
+Ljubivoje = -12.34    
+</pre>
+  </div>
+  </div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 326: (Paket03)</strong></p>
+<pre style="text-align: justify;">U istom  paketu definisati klasu <strong style="color: #0984e3;">Base</strong> koja sadrži:
+- privatno polje <strong>n_private</strong> tipa <b>int</b> sa vrednošću 1.
+- polje <strong>n_default</strong> tipa <b>int</b> sa vrednošću 2.
+- protected polje <strong>n_protected</strong> tipa <b>int</b> sa vrednošću 3.
+- public polje <strong>n_public</strong> tipa <b>int</b> sa vrednošću 4.
+- konstruktor koji ispisuje sve vrednosti navedenih polja na ekranu.
+
+Definisati klasu <strong style="color: #0984e3;">SamePackage</strong> koja sadrži:
+- konstruktor u kome je kreiran objekat <b>b</b> klase <strong style="color: #0984e3;">Base</strong>.
+- i u kome se ispisuju vrednosti svih polja iz objekta <b>b</b>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Demo</strong> i u njoj odrediti sledeće:
+- kreirati objekat <b>ob1</b> klase <strong style="color: #0984e3;">Base</strong>.
+- kreirati objekat <b>ob3</b> klase <strong style="color: #0984e3;">SamePackage</strong>.
+</pre>
+
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class Base {
+    private int n_private = 1;
+    int n_default = 2; // podrazumevani nivo pristupa
+    protected int n_protected = 3;
+    public int n_public = 4;
+
+    public Base() {
+      System.out.println("\nKonstruktor klase Base.");
+      System.out.println("Base klasa n_private = " + n_private);
+      System.out.println("Base klasa n_default = " + n_default);
+      System.out.println("Base klasa n_protected = " + n_protected);
+      System.out.println("Base klasa n_public = " + n_public);
+
+    }
+}                   
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class SamePackage {
+    SamePackage() {
+      Base b = new Base();
+      System.out.println("\nKonstuktor klase SamePackage");
+
+      // System.out.println("Same package klasa: n_private = " + b.n_private);
+      System.out.println("Same package klasa: n_default = " + b.n_default);
+      System.out.println("Same package klasa: n_protected = " + b.n_protected);
+      System.out.println("Same package klasa: n_public = " + b.n_public);
+
+    }
+}
+                  
+  </pre>
+  </div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class Demo {
+    public static void main(String[] args) {
+  Base ob1 = new Base();
+  SamePackage ob3 = new SamePackage();
+    }
+}  
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Konstruktor klase Base.
+Base klasa n_private = 1
+Base klasa n_default = 2
+Base klasa n_protected = 3
+Base klasa n_public = 4
+
+Konstruktor klase Base.
+Base klasa n_private = 1
+Base klasa n_default = 2
+Base klasa n_protected = 3
+Base klasa n_public = 4
+
+Konstuktor klase SamePackage
+Same package klasa: n_default = 2
+Same package klasa: n_protected = 3
+Same package klasa: n_public = 4      
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 327: (Paket04)</strong></p>
+<pre style="text-align: justify;">U paketu <b>p1</b> definisati klasu <strong style="color: #0984e3;">Base</strong> koja sadrži:
+- privatno polje <strong>n_private</strong> tipa <b>int</b> sa vrednošću 1.
+- polje <strong>n_default</strong> tipa <b>int</b> sa vrednošću 2.
+- protected polje <strong>n_protected</strong> tipa <b>int</b> sa vrednošću 3.
+- public polje <strong>n_public</strong> tipa <b>int</b> sa vrednošću 4.
+- konstruktor koji ispisuje sve vrednosti navedenih polja na ekranu.
+
+U paketu <b>p2</b> definisati klasu <strong style="color: #0984e3;">OtherPackage</strong> koja sadrži:
+- konstruktor u kome je kreiran objekat <b>p</b> klase <strong style="color: #0984e3;">Base</strong> pozivom paketa <b>p1</b>.
+- i u kome se ispisuju vrednosti svih polja iz objekta <b>p</b>.
+
+u paketu <b>p2</b> definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj odrediti sledeće:
+- kreirati objekat <b>op1</b> klase <strong style="color: #0984e3;">OtherPackage</strong>.
+</pre>
+
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class Base {
+      private int n_private = 1;
+      int n_default = 2; // podrazumevani nivo pristupa
+      protected int n_protected = 3;
+      public int n_public = 4;
+
+      public Base() {
+        System.out.println("Konstruktor klase Base.");
+        System.out.println("Base klasa n_private = " + n_private);
+        System.out.println("Base klasa n_default = " + n_default);
+        System.out.println("Base klasa n_protected = " + n_protected);
+        System.out.println("Base klasa n_public = " + n_public);
+
+    }
+}
+                      
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p2;
+
+public class OtherPackage {
+    OtherPackage() {
+
+      p1.Base p = new p1.Base();
+      System.out.println("\nKonstuktor klase OtherPackage");
+
+      <span style="color: azure;">// System.out.println("Same package klasa: n_private = " + p.n_private); 
+      // --> samo vidljivost unutar iste klase (Base)</span>
+
+      <span style="color: azure;">// System.out.println("n_default = " + p.n_default); 
+      // --> samo vidljivost unutar istog paketa</span>
+
+      <span style="color: azure;">// System.out.println("n_protected = " + p.n_protected);
+      // --> kada se nasledjuju klase</span>
+
+      System.out.println("Other package: n_public = " + p.n_public);
+
+    }
+}                
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p2;
+
+public class Main {
+  public static void main(String[] args) {
+    OtherPackage op2 = new OtherPackage();
+  }
+}
+
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Konstruktor klase Base.
+Base klasa n_private = 1
+Base klasa n_default = 2
+Base klasa n_protected = 3
+Base klasa n_public = 4
+
+Konstuktor klase OtherPackage
+Other package: n_public = 4
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 328: (Paket05)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj odrediti sledeće:
+- importovati sve što sadrži paket <b>java.util</b>.
+- kreirati objekat <b>sc</b> klase <strong style="color: #0984e3;">Scanner</strong>.
+- unos za poluprecnik <b>r</b>, sračunati površinu kruga i ispisati rezultat.
+</pre>
+
+<hr style="width: 90%;" />
+
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+      Scanner sc = new Scanner(System.in);
+
+      double r, a;
+      System.out.println("Unesite poluprecnik: ");
+      r = sc.nextDouble();
+      a = 3.14 * r * r;
+      System.out.println("Povrsina kruga: " + a);
+    }
+}
+  
+
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite poluprecnik: 
+<span style="color: azure;">5</span>
+Povrsina kruga: 78.5  
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 329: (Paket06)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj odrediti sledeće:
+- kreirati objekat <b>sc</b> klase <strong style="color: #0984e3;">Scanner</strong> bez pozivanja ključne reči <b>import</b>!
+- unos za poluprecnik <b>r</b>, sračunati površinu kruga i ispisati rezultat.
+</pre>
+
+<hr style="width: 90%;" />
+
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+public class Main {
+    public static void main(String[] args) {
+
+      java.util.Scanner sc = new java.util.Scanner(System.in);
+
+      double r, a;
+      System.out.println("Unesite poluprecnik: ");
+      r = sc.nextDouble();
+      a = 3.14 * r * r;
+      System.out.println("Povrsina kruga: " + a);
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite poluprecnik: 
+<span style="color: azure;">55</span>
+Povrsina kruga: 706.5 
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 330: (Paket07)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj odrediti sledeće:
+- kreirati objekat <b>sc</b> klase <strong style="color: #0984e3;">Scanner</strong>.
+- prilikom importa <b>java.lang.Math.PI</b> iskoristiti ključnu reč <b>static.</b>
+- unos za poluprecnik <b>r</b>, sračunati površinu kruga i ispisati rezultat.
+</pre>
+
+<hr style="width: 90%;" />
+
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+import static java.lang.Math.PI;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+      Scanner sc = new Scanner(System.in);
+
+      double r, a;
+      System.out.println("Unesite poluprecnik: ");
+      r = sc.nextDouble();
+      a = PI * r * r;
+      System.out.println("Povrsina kruga: " + a);
+      sc.close();
+    }
+}    
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+Unesite poluprecnik: 
+<span style="color: azure;">5</span>
+Povrsina kruga: 78.53981633974483
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 331: (Paket08)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj odrediti sledeće:
+- importovati klasu <strong style="color: #0984e3;">Math</strong> korišćenjem ključne reči <b>static</b>.
+- inicijalizovati promenljive <b>a</b> = 3.0, <b>b</b> = 4.0
+- sračunati koren zbira kvadrata <b>a</b> i <b>b</b>.
+</pre>
+
+<hr style="width: 90%;" />
+
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+package p1;
+
+import static java.lang.Math.*;
+
+public class Main {
+    public static void main(String[] args) {
+    double a = 3.0, b = 4.0;
+    double c = sqrt(a * a + b * b);
+    System.out.println("C = " + c);
+    }
+}  
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #1B1464; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">
+C = 5.0
+</pre>
+</div>
+</div>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<p>&nbsp;</p>
+<div style="clear: both; width: 100%;text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+<br>
+</body>
+</html>

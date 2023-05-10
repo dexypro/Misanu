@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Selection Sort Animation</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .bar {
+            height: 50px;
+            width: 20px;
+            height: 40px;
+
+            margin-right: 5px;
+            background-color: #0984e3;
+        }
+
+        .current {
+            background-color: #00b894;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selection Sort Animation</h1>
+    <button onclick="selectionSort()">Sort</button>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector('.container');
+
+        const createBars = (array) => {
+            container.innerHTML = '';
+            array.forEach((num) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                bar.style.height = `${num}px`;
+                container.appendChild(bar);
+            });
+        }
+
+        const selectionSort = async () => {
+            const bars = document.querySelectorAll('.bar');
+            const n = bars.length;
+
+            for (let i = 0; i < n; i++) {
+                let minIndex = i;
+
+                // highlight the current bar
+                bars[i].classList.add('current');
+
+                for (let j = i + 1; j < n; j++) {
+                    // highlight the comparison bar
+                    bars[j].classList.add('current');
+
+                    // add delay to visualize the comparison
+                    await sleep(100);
+
+                    if (Number(bars[j].style.height.slice(0, -2)) < Number(bars[minIndex].style.height.slice(0, -2))) {
+                        // update the min index
+                        minIndex = j;
+                    }
+
+                    // remove the highlight from the comparison bar
+                    bars[j].classList.remove('current');
+                }
+
+                // swap the two bars
+                let temp = bars[i].style.height;
+                bars[i].style.height = bars[minIndex].style.height;
+                bars[minIndex].style.height = temp;
+
+                // add delay to visualize the swap
+                await sleep(100);
+
+                // remove the highlight from the current bar
+                bars[i].classList.remove('current');
+            }
+        }
+
+        // sleep function to add delay between steps
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // create an array of random numbers and display the bars
+        const array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
+        createBars(array);
+    </script>
+</body>
+
+</html>

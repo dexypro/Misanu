@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode</title>
+</head>
+<body>
+    <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669074906191.jpg" alt="" width="644" height="296" /></p>
+<p>&nbsp;</p>
+<hr />
+<p><strong>Zadatak 254: (Metode01)</strong></p>
+<pre>    Napisati metodu za izračunavanje kvadrata celog broja. U glavnom programu pozvati ovu metodu sa parametrom 10.
+            </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode01 {
+    public static int kvadratBroja(int x) {
+        return x * x;
+    }
+
+    public static void main(String[] args) {
+        int x = 10;
+        System.out.println("Kvadrat broja " + x + " je " + kvadratBroja(x));
+    }
+}                                                                                                            
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Kvadrat broja 10 je 100
+    </pre>
+<hr />
+<p><strong>Zadatak 255: (Metode02)</strong></p>
+<pre>    Napisati metodu za &scaron;tampanje i izračunavanje srednje vrednosti niza od n elemenata. U glavnom programu od&scaron;tampati vrednost niza i izračunati srednju vrednost.
+            </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode02 {
+    static void stampajNiz(int n, double niz[]) {
+    System.out.println("Uneti elementi niza su: ");
+    for (int i = 0; i &lt; n; i++)
+        System.out.println(niz[i] + "\t");
+    }
+
+    static double srednjaVrednost(int n, double niz[]) {
+    double sr = 0;
+    for (int i = 0; i &lt; n; i++)
+        sr += niz[i];
+    return sr / n;
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] niz = new double[10];
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    System.out.print("Unesite dimenziju niza: ");
+    int n = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite elemente niza: ");
+    for (int i = 0; i &lt; n; i++) {
+        System.out.print("niz[" + i + "] = ");
+        niz[i] = Double.parseDouble(ulaz.readLine());
+    }
+    stampajNiz(n, niz);
+    System.out.println("\nSrednja vrednost niza je " + srednjaVrednost(n, niz));
+    }
+}                                                                                                          
+            </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju niza: <strong style="color: aliceblue;">2</strong>
+    Unesite elemente niza: 
+    niz[0] = <strong style="color: aliceblue;">1.5</strong>
+    niz[1] = <strong style="color: aliceblue;">2.8</strong>
+    Uneti elementi niza su: 
+    1.5
+    2.8
+    
+    Srednja vrednost niza je 2.15     
+</pre>
+<hr />
+<p><strong>Zadatak 256: (Metode03)</strong></p>
+<pre>    
+Napisati metodu za &scaron;tampanje kvadratne matrice reda 2. U glavnom programu uneti matricu i od&scaron;tampati je.
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode03 {
+    final static int vrsta = 2;
+    final static int kolona = 2;
+
+    static void prikaziMatricu(int matrica[][]) {
+    System.out.println("Dobijena matrica izgleda ");
+    for (int i = 0; i &lt; vrsta; i++) {
+        for (int j = 0; j &lt; kolona; j++)
+        System.out.print(" " + matrica[i][j]);
+        System.out.println();
+    }
+    }
+
+    public static void main(String[] args) {
+    int a[][] = { { 1, 2 }, { 3, 4 } };
+    prikaziMatricu(a);
+    }
+}                                                                                                       
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Dobijena matrica izgleda 
+    1 2
+    3 4    
+</pre>
+<hr />
+<p><strong>Zadatak 257: (Metode04)</strong></p>
+<pre>    Napisati metode za izračunavanje zbira dva cela i dva realna broja. U glavnom programu izvr&scaron;iti poziv metode za sabiranje dva cela broja 3 i 4 i dva realna broja 2.3 i 4.5.
+            </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode04 {
+    public static double zbir(double x, double y) {
+    return x + y;
+    }
+
+    public static int zbir(int x, int y) {
+    return x + y;
+    }
+
+    public static void main(String[] args) {
+    double x = 2.3, y = 4.5;
+    int a = 3, b = 4;
+    System.out.println("Poziv za podatke tipa double: " + zbir(x, y));
+    System.out.println("Poziv za podatke tipa int: " + zbir(a, b));
+    }
+}                                                                                                     
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Poziv za podatke tipa double: 6.8
+    Poziv za podatke tipa int: 7
+</pre>
+<hr />
+<p><strong>Zadatak 258: (Metode05)</strong></p>
+<pre>    
+Napisati metodu za rekurzivno izračunavanje faktorijela broja.
+        
+Obja&scaron;njenje:
+Rekurzivno se može izračunati faktorijel broja (n!), jer je za n = 0, 0! = 1, a za n&gt;0 je n! = n * (n-1)!. Tako se sve vrednosti mogu izračunatu pomoću  rekurzivnog pravila:
+&nbsp;
+1! = 1 * 0! = 1
+2! = 2 * 1! = 2
+3! = 3 * 2! = 6 ... itd.
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode05 {
+    static int faktorijel(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return faktorijel(n - 1) * n;
+    }
+
+    public static void main(String[] args) {
+    System.out.println("Faktorijel broja 5 je " + faktorijel(5));
+    }
+}                                                                                                 
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Faktorijel broja 5 je 120
+</pre>
+<hr />
+<p><strong>Zadatak 259: (Metode06a)</strong></p>
+<pre>    
+Sastaviti algoritam i napisati program za tabeliranje vrednosti funkcije
+        
+<strong>y = f(2g(f(x)))</strong>
+
+za x = 0.1(0.1)0.9, ako je  
+
+<strong>f(x) = 2x - ln(x),  g(x) = tg(x/2) + |x|</strong>
+
+Izlaznu listu &scaron;tampati u obliku
+
+X			Y
+x.xx       xx.xxxx
+
+<strong>Napomena:</strong> Za izračunavanje funkcija f i g koristiti metode.
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+
+public class Metode06a { // Definisanje funkcija f i g
+    static double f(double x) {
+    return 2 * x - Math.log(x);
+    }
+
+    static double g(double x) {
+    return Math.tan(x / 2.) + Math.abs(x);
+    }
+
+    public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("###,##0.00"); // Deklarisanje promenljivih x i y
+    double x, y; // &Scaron;tampanje zaglavlja
+    System.out.println("\tX\tY");
+    for (x = 0.1; x &lt;= 0.9; x += 0.1) { // Poziv funkcija f i g
+        y = f(2 * g(f(x))); // &Scaron;tampanje izlaznog rezultata
+        System.out.println("\t" + df.format(x) + "\t" + df.format(y));
+    }
+    }
+}                                                                                            
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X       Y
+    0.10	19.70
+    0.20	12.36
+    0.30	10.46
+    0.40	9.75
+    0.50	9.56
+    0.60	9.70
+    0.70	10.07
+    0.80	10.63
+    0.90	11.36
+</pre>
+<hr />
+<p><strong>Zadatak 260: (Metode06b)</strong></p>
+<pre>    
+Sastaviti algoritam i napisati program za tabeliranje vrednosti funkcije
+        
+<strong>y = f(2g(f(x)))</strong>
+
+za x = 0.1(0.1)0.9, ako je  
+
+<strong>f(x) = 2x - ln(x),  g(x) = tg(x/2) + |x|</strong>
+
+Izlaznu listu &scaron;tampati u obliku
+
+X			Y
+x.xx       xx.xxxx
+
+<strong>Napomena:</strong> Za izračunavanje funkcija f i g koristiti metode.
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+import static java.lang.Math.*;
+
+public class Metode06b {
+    static double f(double x) {
+    return 2 * x - log(x);
+    }
+
+    static double g(double x) {
+    return tan(x / 2.) + abs(x);
+    }
+
+    public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("###,##0.00");
+    double x, y;
+    System.out.println("\tX\tY");
+    for (x = 0.1; x &lt;= 0.9; x += 0.1) {
+        y = f(2 * g(f(x)));
+        System.out.println("\t" + df.format(x) + "\t" + df.format(y));
+    }
+    }
+}                                                                                  
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X       Y
+    0.10	19.70
+    0.20	12.36
+    0.30	10.46
+    0.40	9.75
+    0.50	9.56
+    0.60	9.70
+    0.70	10.07
+    0.80	10.63
+    0.90	11.36
+</pre>
+<hr />
+<p><strong>Zadatak 261: (Metode07)</strong></p>
+<pre>    
+Sastaviti algoritam i napisati metodu pod imenom <strong>sila</strong> za izračunavanje sile privlačenja između 
+dve materijalne tačke m<sub>1</sub> i m<sub>2</sub> na rastojanju r, datu formulom
+        
+        
+<strong>F = y * m<sub>1</sub> * m<sub>2</sub> / r<sup>2</sup>,</strong>
+
+ako je y = 6.67 * 10 <sup>-11</sup>Nm / kg <sup>2</sup>. Izračunati silu F i za mase i rastojanje date na 
+ulazu (m<sub>1</sub> = 3 * 10 <sup>6</sup>kg, m<sub>2</sub> = 3.7 * 10 <sup>6</sup>kg, r = 10<sup>4</sup>m).    
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode07 {
+    // gama &ndash; univerzalna gravitaciona konstanta
+    static final double GAMA = 6.67 * Math.pow(10, -11);
+
+    // sila - metoda za izracunavanje sile privlacenja izmedju dve materijalne tacke
+    // // m1, m2 &ndash; mase tela // r &ndash; rastojanje izmedju tezista materijalnih tela
+    public static double sila(double m1, double m2, double r) {
+    return GAMA * m1 * m2 / (r * r);
+    }
+
+    public static void main(String[] args) throws Exception { // Deklarisanje podataka
+    double m1, m2, r;
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); // Unos podataka
+    System.out.println("Unesite vrednost za mase (kg): ");
+    System.out.print("m1 = ");
+    m1 = Double.parseDouble(ulaz.readLine());
+    System.out.print("m2 = ");
+    m2 = Double.parseDouble(ulaz.readLine());
+    System.out.print("Unesite vrednost za rastojanje r (m): ");
+    r = Double.parseDouble(ulaz.readLine()); // &Scaron;tampanje rezultata
+    System.out.println("Za m1 = " + m1 + " kg, m2 = " + m2 + " kg i rastojanje r = " + r + " m, sila je F = "
+        + sila(m1, m2, r) + " N.");
+    }
+}                                                                               
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za mase (kg): 
+    m1 = <strong style="color: aliceblue;">3000000</strong>
+    m2 = <strong style="color: aliceblue;">3700000</strong>
+    Unesite vrednost za rastojanje r (m): <strong style="color: aliceblue;">10000</strong>
+    Za m1 = 3000000.0 kg, m2 = 3700000.0 kg i rastojanje r = 10000.0 m, sila je F = 7.4037E-6 N.
+</pre>
+<hr />
+<p><strong>Zadatak 262: (Metode08)</strong></p>
+<pre> &nbsp; &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669162720433.jpg" alt="" width="750" height="226" />    
+            </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode08 {
+    static double suma(double[] a, double[] b, int k, int n, int m) {
+    double s = 0;
+    for (int i = 1; i &lt;= k; i++)
+        s += Math.pow(a[i], n) * Math.pow(b[i], m);
+    return s;
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] x = new double[30];
+    double[] y = new double[30];
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Unesite dimenziju n nizova: ");
+    int n = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite elemente niza x: ");
+    for (int i = 1; i &lt;= n; i++) {
+        System.out.print("x[" + i + "] = ");
+        x[i] = Double.parseDouble(ulaz.readLine());
+    }
+    System.out.println("Unesite elemente niza y: ");
+    for (int i = 1; i &lt;= n; i++) {
+        System.out.print("y[" + i + "] = ");
+        y[i] = Double.parseDouble(ulaz.readLine());
+    }
+    double q = (n * suma(x, y, n, 1, 1) - suma(x, y, n, 1, 0) * suma(x, y, n, 0, 1))
+        / Math.sqrt(n * Math.abs(suma(x, y, n, 2, 0) * suma(x, y, n, 0, 2)));
+    System.out.println("Suma je " + q);
+}
+}                                                                             
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju n nizova: 
+    <strong style="color: aliceblue;">3</strong>
+    Unesite elemente niza x: 
+    x[1] = <strong style="color: aliceblue;">11.5</strong>
+    x[2] = <strong style="color: aliceblue;">-4.6</strong>
+    x[3] = <strong style="color: aliceblue;">6.8</strong>
+    Unesite elemente niza y: 
+    y[1] = <strong style="color: aliceblue;">1.2</strong>
+    y[2] = <strong style="color: aliceblue;">4.8</strong>
+    y[3] = <strong style="color: aliceblue;">-0.3</strong>
+    Suma je -0.8989340003626278
+    </pre>
+<hr />
+<p><strong>Zadatak 263: (Metode09)</strong></p>
+<pre> &nbsp; &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669162963774.jpg" alt="" width="750" height="306" />    
+            </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode09 {
+    // Definisanje funkcije
+    static double t(double z) {
+    if (z &lt;= 0)
+        return z + 2;
+    else if (z &gt; 1)
+        return z;
+    else
+        return Math.exp(z);
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] x = new double[100];
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); // Unos dimenzije niza x
+    System.out.println("Unesite dimenziju n niza x: ");
+    int n = Integer.parseInt(ulaz.readLine());
+    // Unos elemenata niza x
+    System.out.println("Unesite elemente niza x: ");
+    for (int i = 1; i &lt;= n; i++) {
+        System.out.print("x[" + i + "] = ");
+        x[i] = Double.parseDouble(ulaz.readLine());
+    } // &Scaron;tampanje zaglavlja
+    System.out.println("\tR.BR.\tX\tY");
+    for (int i = 1; i &lt;= n; i++) { // Izračunavanje vrednosti funkcije
+        double y = t(x[i] + 2) + 1.4 * t(Math.pow(x[i], 2) - 1); // &Scaron;tampanje rezultata
+        System.out.println("\t" + i + "\t" + x[i] + "\t" + y);
+    }
+}
+}
+                                                                             
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju n nizova: 
+    <strong style="color: aliceblue;">3</strong>
+    Unesite elemente niza x: 
+    x[1] = <strong style="color: aliceblue;">1.3</strong>
+    x[2] = <strong style="color: aliceblue;">5.6</strong>
+    x[3] = <strong style="color: aliceblue;">-2.8</strong>
+    R.BR.	X	Y
+    1	1.3	6.091201746540316
+    2	5.6	50.10399999999999
+    3	-2.8	10.776 
+    </pre>
+<hr />
+<p><strong>Zadatak 264: (Metode10)</strong></p>
+<pre> 
+Sastaviti algoritam i napisati program za rekurzivno re&scaron;avanje problema Hanojskih kula.
+        </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode10 { // Definisanje rekurzivne funkcije
+        public static void hanoj(char a, char b, char c, int n) {
+        if (n &gt; 0) {
+            hanoj(a, c, b, n - 1);
+            System.out.println(a + " -&gt; " + b);
+            hanoj(c, b, a, n - 1);
+        }
+        }
+
+        public static void main(String[] args) {
+        hanoj('A', 'B', 'C', 4); // Za slučaj 4 diska.
+    }
+}
+                                                                    
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    A -&gt; C
+    A -&gt; B
+    C -&gt; B
+    A -&gt; C
+    B -&gt; A
+    B -&gt; C
+    A -&gt; C
+    A -&gt; B
+    C -&gt; B
+    C -&gt; A
+    B -&gt; A
+    C -&gt; B
+    A -&gt; C
+    A -&gt; B
+    C -&gt; B
+    </pre>
+<hr />
+<p><strong>Zadatak 265: (Metode11a)</strong></p>
+<pre> &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669163220343.jpg" alt="" width="750" height="160" /> &nbsp; &nbsp; &nbsp; &nbsp;</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode11a { // Definisanje rekurzivne funkcije
+    public static int fibonaci(int i) {
+    if (i &lt;= 1)
+        return i;
+    else
+        return fibonaci(i - 1) + fibonaci(i - 2);
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); // Unos podatka n
+    System.out.print("Unesite n = ");
+    int n = Integer.parseInt(ulaz.readLine()); // &Scaron;tampanje Fibonacijevih brojeva
+    for (int i = 1; i &lt;= n; i++)
+        System.out.print(fibonaci(i - 1) + " ");
+    }
+}                                                                                
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite n = <strong style="color: aliceblue;">10</strong>
+    0 1 1 2 3 5 8 13 21 34        
+    </pre>
+<hr />
+<p><strong>Zadatak 266: (Metode11b)</strong></p>
+<pre> &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669163220343.jpg" alt="" width="750" height="160" /> &nbsp; &nbsp; &nbsp; &nbsp;</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.util.Scanner;
+
+public class Metode11b {
+    // Rekurzivna definicija metoda
+    public static int fibonaciRekurzivno(int n) {
+    // izlaz iz rekurzije
+    if (n == 0 || n == 1)
+        return 1;
+    // rekurzivni korak
+    else {
+        int n1 = fibonaciRekurzivno(n - 1);
+        int n2 = fibonaciRekurzivno(n - 2);
+        return n1 + n2;
+    }
+    }
+
+    // Iterativna definicija metoda kori&scaron;ćenjem principa dinamičkog programiranja
+    public static int fibonaciIterativno(int n) {
+    // niz za čuvanje prvih n+1 Fibonačijevih brojeva jer indeksi počinju od 0.
+    int fibonaci[] = new int[n + 1];
+
+    // nulti element niza se inicijalizuje na 1
+    fibonaci[0] = 1;
+
+    // ako je n bar 1, inicijalizuje se i prvi element na 1
+    if (n &gt;= 1)
+        fibonaci[1] = 1;
+    // za svako i, 2 &lt;= i &lt;= n, primenjuje se rekurentna formula
+    for (int i = 2; i &lt; n + 1; i++)
+        fibonaci[i] = fibonaci[i - 1] + fibonaci[i - 2];
+
+    // n-ti član Fibonačijevog niza je
+    // element fibonaci[n] dobijenog niza
+    return fibonaci[n];
+    }
+
+    public static void main(String[] args) {
+    Scanner ulaz = new Scanner(System.in);
+    // Broj za koji se računa n-ti član Fibonačijevog niza
+    int n;
+    System.out.print("Unesite ceo negativan broj " + " - negativan za kraj: ");
+
+    while ((n = ulaz.nextInt()) &gt;= 0) {
+        // Rekurzivna varijanta
+        long vremePocetak = System.nanoTime();
+        int fibonaciR = Metode11b.fibonaciRekurzivno(n);
+        long vremeKraj = System.nanoTime();
+        System.out.println("Rekurzivna varijanta:");
+        System.out.println("Fibonači(" + n + ") = " + fibonaciR);
+        System.out.println("Vreme: " + (vremeKraj - vremePocetak) + "ns");
+        vremePocetak = System.nanoTime();
+        int fibonaciI = Metode11b.fibonaciIterativno(n);
+        vremeKraj = System.nanoTime();
+        System.out.println("Iterativna varijanta:");
+        System.out.println("Fibonači(" + n + ") = " + fibonaciI);
+        System.out.println("Vreme: " + (vremeKraj - vremePocetak) + "ns");
+        System.out.print("Unesite ceo negativan broj " + " - negativan za kraj: ");
+    }
+    ulaz.close();
+    }
+}                                                                                     
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite ceo nenegativan broj  - negativan za kraj: <strong style="color: aliceblue;">10</strong>
+    Rekurzivna varijanta:
+    Fibonači(10) = 89
+    Vreme: 6800ns
+    Iterativna varijanta:
+    Fibonači(10) = 89
+    Vreme: 1700ns
+    Unesite ceo nenegativan broj  - negativan za kraj:       
+    </pre>
+<hr />
+<p><strong>Zadatak 267: (Metode12)</strong></p>
+<pre> 
+    Sastaviti algoritam i napisati metodu kojom se za zadate vrednosti x, y i z izračunava vrednost f po formuli
+    <strong>f = max(x, min(y,z)).</strong>
+    U glavnom programu uneti vrednosti za x, y i z i &scaron;tampati rezultat.
+        </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode12 {
+    // Definisanje funkcije
+    static int f(int x, int y, int z) {
+    int f = (y &lt; z) ? y : z;
+    if (x &gt; f)
+        f = x;
+    return f;
+    }
+
+    public static void main(String[] args) throws Exception {
+    // Deklarisanje podataka
+    int x, y, z;
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // Unos podataka
+    System.out.print("Unesite vrednost za x: ");
+    x = Integer.parseInt(ulaz.readLine());
+    System.out.print("Unesite vrednost za y: ");
+    y = Integer.parseInt(ulaz.readLine());
+    System.out.print("Unesite vrednost za z: ");
+    z = Integer.parseInt(ulaz.readLine());
+    // &Scaron;tampanje rezultata
+    System.out.println("Dobijena vrednost izraza f je " + f(x, y, z));
+    }
+}                                                                                          
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za x: <strong style="color: aliceblue;">12</strong>
+    Unesite vrednost za y: <strong style="color: aliceblue;">10</strong>
+    Unesite vrednost za z: <strong style="color: aliceblue;">8</strong>
+    Dobijena vrednost izraza f je 12    
+    </pre>
+<hr />
+<p><strong>Zadatak 268: (Metode13)</strong></p>
+<pre> 
+    Napisati funkciju kojom se ispituje da li se pravougaonik dužina stranica a i b može ceo smestiti u 
+    pravougaonik dužina stranica c i d uz uslov da su im stranice paralelne. U glavnom programu uneti pravougaonik 
+    sa stranicama a i b i n pravougaonika sa stranicama c i d.
+    </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode13 {
+    public static boolean uslov(int a, int b, int c, int d) {
+    return ((a &lt; c) &amp;&amp; (b &lt; d)) || ((a &lt; d) &amp;&amp; (b &lt; c));
+    }
+
+    public static void main(String[] args) throws Exception {
+    int a, b, n;
+    int c[] = new int[100];
+    int d[] = new int[100];
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+// Unos podataka 
+    System.out.print("Unesite stranicu a: ");
+    a = Integer.parseInt(ulaz.readLine());
+    System.out.print("Unesite stranicu b: ");
+    b = Integer.parseInt(ulaz.readLine());
+    System.out.print("Koliko novih pravougaonika zelite da unesete? ");
+    n = Integer.parseInt(ulaz.readLine());
+    System.out.print("Unesite stranice c i d: \n");
+    for (int i = 1; i &lt;= n; i++) {
+        System.out.print("c[" + i + "] = ");
+        c[i] = Integer.parseInt(ulaz.readLine());
+        System.out.print("d[" + i + "] = ");
+        d[i] = Integer.parseInt(ulaz.readLine());
+    }
+    for (int i = 1; i &lt;= n; i++) {
+        if (uslov(a, b, c[i], d[i]))
+        System.out.println("Pravougaonik sa stranicama c = " + c[i] + " i d = " + d[i]
+            + " nalazi se u pravougaoniku stranica a = " + a + " i b = " + b);
+        else
+        System.out.println("Pravougaonik sa stranicama c = " + c[i] + " i d = " + d[i]
+            + " ne nalazi se u pravougaoniku stranica a = " + a + " i b = " + b);
+    }
+    }
+}                                                                                        
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite stranicu a: <strong style="color: aliceblue;">5</strong>
+    Unesite stranicu b: <strong style="color: aliceblue;">6</strong>
+    Koliko novih pravougaonika želite da unesete? <strong style="color: aliceblue;">2</strong>
+    Unesite stranice c i d: 
+    c[1] = <strong style="color: aliceblue;">6</strong>
+    d[1] = <strong style="color: aliceblue;">7</strong>
+    c[2] = <strong style="color: aliceblue;">2</strong>
+    d[2] = <strong style="color: aliceblue;">3</strong>
+    Pravougaonik sa stranicama a = 5 i b = 6 nalazi se u pravougaoniku stranica c = 6 i d = 7
+    Pravougaonik sa stranicama a = 5 i b = 6 ne nalazi se u pravougaoniku stranica c = 2 i d = 3
+    </pre>
+<hr />
+<p><strong>Zadatak 269: (Metode14)</strong></p>
+<pre> 
+    Sastaviti algoritam i napisati program za izračunavanje vrednosti determinante
+        |1  -3  2|
+    D = |4  1  -8|
+        |-7 8   6|
+    
+    Izračunavanje determinante D izvr&scaron;iti kori&scaron;ćenjem metode za izračunavanje determinante reda dva.
+    </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode14 {
+    // Definisanje funkcije za izračunavanje vrednosti determinante reda dva
+    static int det(int a1, int a2, int b1, int b2) {
+    return a1 * b2 - a2 * b1;
+    }
+
+    public static void main(String[] args) {
+    int[][] a = { { 1, -3, 2 }, { 4, 1, -8 }, { -7, 8, 6 } };
+    // Izračunavanje vrednosti determinante reda tri
+    int determinanta = a[0][0] * det(a[1][1], a[1][2], a[2][1], a[2][2])
+        - a[0][1] * det(a[1][0], a[1][2], a[2][0], a[2][2]) + a[0][2] * det(a[1][0], a[1][1], a[2][0], a[2][1]);
+    // &Scaron;tampanje rezultata
+    System.out.println("Vrednost determinante je " + determinanta);
+    }
+}                                                                                            
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Vrednost determinante je 52
+    </pre>
+<hr />
+<p><strong>Zadatak 270: (Metode15)</strong></p>
+<pre> <img src="https://miteam.mi.sanu.ac.rs/content/5ntke9MevGDfdtnFS_1669163993024.jpg" alt="" width="633" height="253" /> &nbsp; &nbsp; </pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode15 {
+// Definisanje funkcije y 
+    static double y(int n, double x, double[] a) {
+    double s = 0, p;
+
+    for (int i = 1; i <= n; i++) {
+        p = 1;
+        for (int j = 1; j <= n; j++)
+        if (i != j)
+            p *= x - a[j];
+        s += p;
+    }
+    return s;
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] a = new double[100];
+
+    DecimalFormat df = new DecimalFormat("#.###");
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+// Unos dimenzije niza 
+    System.out.println("Unesite dimenziju n niza a: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+// Unos elemenata niza 
+    System.out.println("Unesite elemente niza a: ");
+    for (int i = 1; i <= n; i++) {
+        System.out.print("a[" + i + "] = ");
+        a[i] = Double.parseDouble(ulaz.readLine());
+    }
+
+// Štampanje rezultata
+    System.out.println("\tN = " + n + "\tX\tY");
+    for (double x = 0.0; x <= 1.0; x += 0.1)
+        System.out.println("\t\t" + df.format(x) + "\t\t" + df.format(y(n, x, a)));
+    }
+}                                                                                         
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju n niza a: 
+    3
+    Unesite elemente niza a: 
+    a[1] = 1.2
+    a[2] = 5.6
+    a[3] = -0.5
+    N = 3       	X	Y
+                    0	3.32
+                    0.1	2.09
+                    0.2	0.92
+                    0.3	-0.19
+                    0.4	-1.24
+                    0.5	-2.23
+                    0.6	-3.16
+                    0.7	-4.03
+                    0.8	-4.84
+                    0.9	-5.59
+                    1	-6.28
+</pre>
+
+    <hr />
+<p><strong>Zadatak 271: (Metode16a)</strong></p>
+<pre> 
+Napisati metodu kojom se utvrđuje da li je godina prestupna ili nije. 
+U glavnom programu uneti godinu i ispitati da li je prestupna ili nije. 
+Na primer, 1972. godina je prestupna.
+
+<b>Objašnjenje:</b>
+Godina je prestupna ako je deljiva sa 4 (svaka četvrta godina je prestupna) 
+i nije deljiva sa 100 (svaka stota godina nije prestupna) ili je deljiva sa 400 (svaka 400. godina je prestupna).
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode16 {
+    public static void prestupna(int godina) {
+    // Ispitivanje da li je godina prestupna ili nije
+    if (godina % 4 == 0 && godina % 100 != 0 || godina % 400 == 0)
+        System.out.println("Godina " + godina + " je prestupna.");
+    else
+        System.out.println("Godina " + godina + " nije prestupna.");
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Unesite godinu: ");
+    int godina = Integer.parseInt(ulaz.readLine());
+    prestupna(godina);
+    }
+}                                                                                       
+    </pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    I test
+    Unesite godinu: 
+    <strong style="color: aliceblue;">1972</strong>
+    Godina 1972 je prestupna.
+    
+    II test
+    Unesite godinu: 
+    <strong style="color: aliceblue;">2022</strong>
+    Godina 2022 nije prestupna.
+    </pre>
+
+
+    <hr />
+<p><strong>Zadatak 272: (Metode16b)</strong></p>
+<pre> 
+Napisati metodu kojom se utvrđuje da li je godina prestupna ili nije. 
+U glavnom programu uneti godinu i ispitati da li je prestupna ili nije. 
+Na primer, 1972. godina je prestupna.
+
+<b>Objašnjenje:</b>
+Godina je prestupna ako je deljiva sa 4 (svaka četvrta godina je prestupna) 
+i nije deljiva sa 100 (svaka stota godina nije prestupna) ili je deljiva sa 400 (svaka 400. godina je prestupna).
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode16b {
+    public static void prestupna(int godina) {
+    // Ispitivanje da li je godina prestupna ili nije
+    if (godina % 4 == 0 && godina % 100 != 0 || godina % 400 == 0)
+        System.out.println("Godina " + godina + " je prestupna.");
+    else
+        System.out.println("Godina " + godina + " nije prestupna.");
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.println("Unesite godinu: ");
+
+    prestupna(Integer.parseInt(ulaz.readLine()));
+
+    }
+}                                                                                     
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    I test
+    Unesite godinu: 
+    <strong style="color: aliceblue;">1972</strong>
+    Godina 1972 je prestupna.
+    
+    II test
+    Unesite godinu: 
+    <strong style="color: aliceblue;">2022</strong>
+    Godina 2022 nije prestupna.
+    </pre>
+
+
+<hr />
+<p><strong>Zadatak 273: (Metode17)</strong></p>
+<pre> 
+Napisati metodu kojom se nalazi ekvivalentni kapacitet dva kondenzatora kapaciteta 
+C1 = 10 nF i C2 = 15 nF, ako su vezana:
+a) redno,
+b) paralelno.
+
+Objašnjenje:
+Ekvivalentni kapacitet redne veze izračunava se po formuli
+
+C<sub>e</sub> = C<sub>1</sub>*C<sub>2</sub> / (C<sub>1</sub> + C<sub>2</sub>)
+a paralelne veze po formuli C<sub>e</sub> = C<sub>1</sub>+C<sub>2</sub>        
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode17 {
+    public static void vrstaVezeKondenzatora(double c1, double c2, int vrstaVeze) {
+    double ce;
+    switch (vrstaVeze) {
+    case 1:
+        /* Izračunavanje kapaciteta redne veze */
+        ce = c1 * c2 / (c1 + c2);
+        System.out.println("Kapacitet redne veze je " + ce);
+        break;
+    case 2:
+        /* Izračunavanje kapaciteta paralelne veze */
+        ce = c1 + c2;
+        System.out.println("Kapacitet paralelne veze je " + ce);
+        break;
+    default:
+        System.out.println("Treba uneti 1 za rednu, a 2 za paralelnu vezu.");
+        break;
+    }
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in)); // Unos vrednosti za izbor veze
+                                            // kondenzatora
+    System.out.println("Unesite 1 za rednu, a 2 za paralelnu vezu: ");
+    int i = Integer.parseInt(ulaz.readLine()); // Unos kapaciteta kondenzatora
+    System.out.println("Unesite vrednost kapaciteta prvog kondenzatora: ");
+    double c1 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite vrednost kapaciteta drugog kondenzatora: ");
+    double c2 = Double.parseDouble(ulaz.readLine());
+    vrstaVezeKondenzatora(c1, c2, i);
+    }
+}                                                                                
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    <b>I test</b>
+    Unesite 1 za rednu, a 2 za paralelnu vezu: 
+    <strong style="color: aliceblue;">1</strong>
+    
+    Unesite vrednost kapaciteta prvog kondenzatora: 
+    <strong style="color: aliceblue;">10</strong>
+
+    Unesite vrednost kapaciteta drugog kondenzatora: 
+    <strong style="color: aliceblue;">15</strong>
+
+    Kapacitet redne veze je 6.0
+
+    <b>II test</b>
+    Unesite 1 za rednu, a 2 za paralelnu vezu: 
+    <strong style="color: aliceblue;">2</strong>
+
+    Unesite vrednost kapaciteta prvog kondenzatora: 
+    <strong style="color: aliceblue;">10</strong>
+
+    Unesite vrednost kapaciteta drugog kondenzatora: 
+    <strong style="color: aliceblue;">15</strong>
+    15
+    Kapacitet paralelne veze je 25.0
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 274: (Metode18)</strong></p>
+<pre style="text-align: justify;"> 
+Rastojanje između dve tačke u ravni određeno je relacijom
+d = Math.sqrt(x<sub>1</sub> - x<sub>2</sub>)<sup>2</sup> + (y<sub>1</sub> - y<sub>2</sub>)<sup>2</sup> gde su (x1, y1) i (x2, y2) koordinate prve i druge tačke, 
+respektivno. Koristeći ovu formulu sastaviti algoritam i napisati program kojim se izračunava rastojanje od koordinatnog početka svake od N tačaka čije se koordinate 
+redom učitavaju. Relaciju kojom se određuje rastojanje između dve tačke u ravni definisati metodom. 
+Izlazna lista neka je oblika:
+
+        R.BR.         X                   Y     	          RASTOJANJE
+        xxx         x.xx              x.xx                     xxx.xxx
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode18 {
+// Definisanje funkcije rastojanje
+    static double rastojanje(double x1, double y1, double x2, double y2) {
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] x = new double[100];
+    double[] y = new double[100];
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    DecimalFormat df = new DecimalFormat("#.##");
+
+// Unos broja tačaka
+    System.out.println("Unesite vrednost za n: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+// Unos koordinata tačke
+    System.out.println("Unesite vrednosti koordinata tačke: ");
+    for (int i = 1; i <= n; i++) {
+        System.out.println(i + ". tačka ");
+        System.out.print("x = ");
+        x[i] = Double.parseDouble(ulaz.readLine());
+        System.out.print("y = ");
+        y[i] = Double.parseDouble(ulaz.readLine());
+    } // Štampanje zaglavlja
+    System.out.println("\tR.BR.\tX\tY\tRastojanje");
+
+//Štampanje rezultata
+    for (int i = 1; i <= n; i++)
+        System.out.println("\t" + i + "\t" + df.format(x[i]) + "\t" + df.format(y[i]) + "\t"
+            + df.format(rastojanje(0, 0, x[i], y[i])));
+    }
+}                                                                         
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za n: 
+    <strong style="color: aliceblue;">3</strong>
+    Unesite vrednosti koordinata tačke: 
+    1. tačka 
+    x = <strong style="color: aliceblue;">0.1</strong>
+    y = <strong style="color: aliceblue;">2.5</strong>
+    2. tačka 
+    x = <strong style="color: aliceblue;">-4.5</strong>
+    y = <strong style="color: aliceblue;">2.3</strong>
+    3. tačka 
+    x = <strong style="color: aliceblue;">23.4</strong>
+    y = <strong style="color: aliceblue;">34.5</strong>
+        R.BR.	X	Y	Rastojanje
+        1	0.1	2.5	2.5
+        2	-4.5	2.3	5.05
+        3	23.4	34.5	41.69
+</pre>
+
+
+
+<hr />
+<p><strong>Zadatak 275: (Metode19)</strong></p>
+<pre style="text-align: justify;"> 
+Izračunati vrednost polinoma  <b>P = a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x + a<sub>0</sub></b>
+Koristeći Hornerovu šemu
+                   <b>P = (...((a<sub>n</sub>x + a<sub>n-1</sub>)x + a<sub>n-1</sub>)x + ... + a<sub>1</sub>)x + a <sub>0</sub></b>
+za n <= 10, x = 10(1.0)20 i
+
+        a<sub>0</sub> = 0.75, a<sub>1</sub> = 163.2, a<sub>2</sub> = -3.17, a<sub>3</sub>= a <sub>4</sub> = 5.6,a<sub>5</sub> = -2.34,
+        a<sub>6</sub> = -1.21, a<sub>7</sub> = 26.7, a<sub>8</sub> = -3.66, a<sub>9</sub> = 10.2, a<sub>10</sub> = -11.6,
+
+        Izlazna lista neka izgleda
+    X                                    P
+    x.xx                              xx.xxx 
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode19 {
+    static double horn(double[] a, int n, double x) {
+    double horner = a[n];
+    while (n != 0) {
+        horner = horner * x + a[n - 1];
+        n--;
+    }
+
+    return horner;
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] a = { 0.75, 163.2, -3.17, 5.6, -2.34, -1.21, 26.7, -3.66, 10.2, -11.6 };
+
+    DecimalFormat df = new DecimalFormat("#.##");
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.println("Unesite vrednost za n manju od 11: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+    if (n < 11) {
+        System.out.println("\tX\tP(X)");
+        for (double x = 10.0; x <= 20.0; x += 1.0)
+        System.out.println("\t" + df.format(x) + "\t" + df.format(horn(a, n, x)));
+    } else
+        System.out.println("Uneli ste veću vrednost od potrebne!");
+    }
+}                                                                        
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za n manju od 11: 
+    <strong style="color: aliceblue;">2</strong>
+    X	P(X)
+    10	1315.75
+    11	1412.38
+    12	1502.67
+    13	1586.62
+    14	1664.23
+    15	1735.5
+    16	1800.43
+    17	1859.02
+    18	1911.27
+    19	1957.18
+    20	1996.75
+</pre>
+
+<hr />
+<p><strong>Zadatak 276: (Metode20)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program za tabeliranje vrednosti funkcije 
+f(x) = x<sup>4</sup> - 10x<sup>3</sup> + 35x<sup>2</sup> - 50x + 24
+
+koristeći Hornerovu šemu za izračunavanje vrednosti funkcije. Funkciju tabelirati za vrednost x = 0.0(0.1)0.9. 
+Na izlazu štampati tabelu izgleda
+ 
+            X                                   F
+            x.xx                              xx.xxx 
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+
+public class Metode20 {
+    static double horn(double[] a, int n, double x) {
+    double horner = a[n];
+    while (n != 0) {
+        horner = horner * x + a[n - 1];
+        n--;
+    }
+
+    return horner;
+    }
+
+    public static void main(String[] args) {
+    double[] a = { 24, -50, 35, -10, 1 };
+
+    DecimalFormat df = new DecimalFormat("#.##");
+
+    int n = 4;
+
+    System.out.println("\tX\tF(X)");
+    for (double x = 0.0; x < 0.9; x += 0.1)
+        System.out.println("\t" + df.format(x) + "\t" + df.format(horn(a, n, x)));
+    }
+}                                                                            
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X	F(X)
+	0	24
+	0.1	19.34
+	0.2	15.32
+	0.3	11.89
+	0.4	8.99
+	0.5	6.56
+	0.6	4.57
+	0.7	2.96
+	0.8	1.69
+	0.9	0.72
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 277: (Metode21)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+
+public class Metode21 {
+    static double f(double x) {
+    double s = 0;
+    for (int k = 0; k <= 20; k++)
+        s += Math.cos(k * x) + (x * x - 3 * k * x) / (Math.sin(x) + Math.cos(x));
+
+    return s;
+    }
+
+    public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("#.##");
+
+    System.out.println("\tX\tF(X)");
+
+    for (double x = 0; x <= 2; x += 0.2)
+        System.out.println("\t" + df.format(x) + "\t" + df.format(f(x)));
+    }
+}                                                                           
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X	F(X)
+	0	21
+	0.2	-109.78
+	0.4	-186.86
+	0.6	-266.45
+	0.8	-347.23
+	1	-439.2
+	1.2	-560.64
+	1.4	-727.56
+	1.6	-982.19
+	1.8	-1427.62
+	2	-2384.26
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 278: (Metode22)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+
+public class Metode22 {
+    static double fun(double x, double y) {
+    double f;
+    if (x < y)
+        f = Math.exp(x) + Math.sin(2 * y);
+    else if (x == y)
+        f = Math.cos(x);
+    else
+        f = 1 - Math.sqrt(Math.abs(x * y));
+    return f;
+    }
+
+    public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("#.##");
+
+    System.out.println("\tX\tY\tF(X, Y)");
+
+    for (double x = 0.1; x <= 0.5; x += 0.1)
+        for (double y = 0.01; y <= 0.03; y += 0.01)
+        System.out.println("\t" + df.format(x) + "\t" + df.format(y) + "\t" + df.format(fun(x, y)));
+    }
+}                                                                             
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X	    Y	    F(X, Y)
+	0.1	    0.01	0.97
+	0.1	    0.02	0.96
+	0.1	    0.03	0.95
+	0.2	    0.01	0.96
+	0.2	    0.02	0.94
+	0.2	    0.03	0.92
+	0.3	    0.01	0.95
+	0.3	    0.02	0.92
+	0.3	    0.03	0.91
+	0.4	    0.01	0.94
+	0.4	    0.02	0.91
+	0.4	    0.03	0.89
+	0.5	    0.01	0.93
+	0.5	    0.02	0.9
+	0.5	    0.03	0.88
+</pre>
+
+<hr />
+<p><strong>Zadatak 279: (Metode23)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati metodu za rekurzivno izračunavanje faktorijela broja.
+
+Objašnjenje:
+Rekurzivno se može izračunati faktorijel broja (n!), jer je za n = 0, 0! = 1, a za n > 0 je n! = n * (n-1)!. Tako se sve vrednosti mogu izračunatu pomoću  rekurzivnog pravila:
+ 
+1! = 1 * 0! = 1
+2! = 2 * 1! = 2
+3! = 3 * 2! = 6 ... itd.  
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode23 {
+    static int faktorijel(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return faktorijel(n - 1) * n;
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.println("Unesite vrednost za m: ");
+    int m = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite vrednost za n: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+    int l;
+    if (m > n)
+        l = faktorijel(m - n);
+    else if (m == n)
+        l = faktorijel(m);
+    else
+        l = faktorijel(n - m);
+
+    System.out.println("Za unete vrednosti m = " + m + " i n = " + n + " dobija se " + l);
+    }
+}                                                                              
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za m: 
+    <strong style="color: aliceblue;">8</strong>
+    Unesite vrednost za n: 
+    <strong style="color: aliceblue;">10</strong>
+    Za unete vrednosti m = 8 i n = 10 dobija se 2
+</pre>
+
+<hr />
+<p><strong>Zadatak 280: (Metode24)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA  
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.text.DecimalFormat;
+
+public class Metode24 {
+    static double sh(double x) {
+    double p0 = 1.0;
+    int k = 1;
+
+    double p1 = p0 * (1 + x * x / (k * k * Math.PI * Math.PI));
+
+    while (Math.abs(p1 / p0 - 1) > 1.0E-8) {
+        p0 = p1;
+        k++;
+        p1 = p0 * (1 + x * x / (k * k * Math.PI * Math.PI));
+    }
+
+    return x * p1;
+    }
+
+    public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("#.###");
+
+    System.out.println("\tX\tSH(X)\t(EXP(X)-EXP(-X))/2");
+
+    for (double x = 0.1; x <= 1.2; x += 0.1)
+        System.out.println(
+            "\t" + df.format(x) + "\t" + df.format(sh(x)) + "\t" + df.format((Math.exp(x) - Math.exp(-x)) / 2));
+    }
+}                                                                            
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    X	    SH(X)	(EXP(X)-EXP(-X))/2
+	0.1	    0.1	    0.1
+	0.2	    0.201	0.201
+	0.3	    0.305	0.305
+	0.4	    0.411	0.411
+	0.5	    0.521	0.521
+	0.6	    0.637	0.637
+	0.7	    0.759	0.759
+	0.8	    0.888	0.888
+	0.9	    1.026	1.027
+	1	    1.175	1.175
+	1.1	    1.336	1.336
+	1.2	    1.509	1.509
+</pre>
+
+<hr />
+<p><strong>Zadatak 281: (Metode25)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati metodu pod imenom sila za izračunavanje sile privlačenja između dve čestice naelektrisanja q<sub>1</sub> i q<sub>2</sub> na rastojanju r, 
+datu formulom
+
+f = k * q<sub>1</sub> * q<sub>2</sub> / r<sup>2</sup>,
+
+ako je k = 9 * 10<sup>9</sup> Nm<sup>2</sup>/C<sup>2</sup>. Izračunati silu F za naelektrisanja i rastojanje date na ulazu
+(q<sub>1</sub> = 3 * 10<sup>6</sup>C, q<sub>2</sub>= 3.7 * 10<sup>6</sup>C, r = 10<sup>4</sup>m). 
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode24 {
+    static final double k = 9 * Math.pow(10, 9);
+
+// sila - metoda za izračunavanje sile privlačenja izmedju dve čestice
+// q1, q2 – naelektrisanja čestica
+// r – rastojanje izmedju čestica
+    public static double sila(double q1, double q2, double r) {
+    return k * q1 * q2 / (r * r);
+    }
+
+    public static void main(String[] args) throws Exception {
+// Deklarisanje podataka
+    double q1, q2, r;
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+// Unos podataka
+    System.out.println("Unesite vrednost prvog naelektrisanja q1 (C): ");
+    System.out.print("q1 = ");
+    q1 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite vrednost drugog naelektrisanja q2 (C): ");
+    System.out.print("q2 = ");
+    q2 = Double.parseDouble(ulaz.readLine());
+    System.out.print("Unesite vrednost za rastojanje r (m): ");
+    r = Double.parseDouble(ulaz.readLine());
+
+//Štampanje rezultata
+    System.out.println("Za q1 = " + q1 + " C, q2 = " + q2 + " C i rastojanje r = " + r + " m, sila je F = "
+        + sila(q1, q2, r) + " N.");
+    }
+}                                                                        
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost prvog naelektrisanja q1 (C): 
+    q1 = <strong style="color: aliceblue;">3.0E6</strong>
+    Unesite vrednost drugog naelektrisanja q2 (C): 
+    q2 = <strong style="color: aliceblue;">3.7E6</strong>
+    Unesite vrednost za rastojanje r (m): <strong style="color: aliceblue;">1.0E4</strong>
+    Za q1 = 3000000.0 C, q2 = 3700000.0 C i rastojanje r = 10000.0 m, sila je F = 9.989999999999999E14 N.
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 282: (Metode26)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program kojim se zamenjuju elementi na glavnoj i sporednoj dijagonali matrice                                           
+Na izlazu štampati matricu pre i posle transformacije.    
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode26 {
+    static void prikaziMatricu(int matrica[][], int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++)
+        System.out.print(" " + matrica[i][j]);
+
+        System.out.println();
+    }
+    }
+
+    static void zameniElemente(int matrica[][], int n) {
+    for (int i = 1; i <= n; i++) {
+        int tmp = matrica[i][i];
+        matrica[i][i] = matrica[i][n - i + 1];
+        matrica[i][n - i + 1] = tmp;
+    }
+    }
+
+    public static void main(String[] args) throws Exception {
+    int[][] matrica = new int[10][10];
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.println("Unesite dimenziju matrice: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+    System.out.println("Unesite elemente matrice: ");
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= n; j++) {
+        System.out.print("matrica[" + i + "]" + "[" + j + "]: ");
+        matrica[i][j] = Integer.parseInt(ulaz.readLine());
+        }
+
+    System.out.println("Štampanje matrice pre zamene elemenata");
+    prikaziMatricu(matrica, n);
+
+    System.out.println("Štampanje matrice nakon zamene elemenata");
+    zameniElemente(matrica, n);
+    prikaziMatricu(matrica, n);
+    }
+}                                                                        
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju matrice: 
+    <strong style="color: aliceblue;">3</strong>
+    Unesite elemente matrice: 
+    matrica[1][1]: <strong style="color: aliceblue;">1</strong>
+    matrica[1][2]: <strong style="color: aliceblue;">2</strong>
+    matrica[1][3]: <strong style="color: aliceblue;">3</strong>
+    matrica[2][1]: <strong style="color: aliceblue;">4</strong>
+    matrica[2][2]: <strong style="color: aliceblue;">5</strong>
+    matrica[2][3]: <strong style="color: aliceblue;">6</strong>
+    matrica[3][1]: <strong style="color: aliceblue;">7</strong>
+    matrica[3][2]: <strong style="color: aliceblue;">8</strong>
+    matrica[3][3]: <strong style="color: aliceblue;">9</strong>
+    Štampanje matrice pre zamene elemenata
+     1 2 3
+     4 5 6
+     7 8 9
+    Štampanje matrice nakon zamene elemenata
+     3 2 1
+     4 5 6
+     9 8 7
+</pre>
+
+<hr />
+<p><strong>Zadatak 283: (Metode27)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program kojim se transponuju elementi pravougaone matrice.     
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode27 {
+    static void prikaziMatricu(int matrica[][], int n, int m) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++)
+        System.out.print(" " + matrica[i][j]);
+        System.out.println();
+    }
+    }
+
+    static void transponovanje(int m1[][], int m2[][], int v, int k) {
+    for (int i = 1; i <= v; i++)
+        for (int j = 1; j <= k; j++)
+        m2[j][i] = m1[i][j];
+    }
+
+    public static void main(String[] args) throws Exception {
+    int[][] matrica = new int[10][10];
+    int[][] b = new int[10][10];
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Unesite dimenziju vrste n matrice: ");
+    int n = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite dimenziju kolone m matrice: ");
+    int m = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite elemente matrice: ");
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++) {
+        System.out.print("matrica[" + i + "]" + "[" + j + "]: ");
+        matrica[i][j] = Integer.parseInt(ulaz.readLine());
+        }
+    System.out.println("Štampanje matrice pre zamene elemenata");
+    prikaziMatricu(matrica, n, m);
+    System.out.println("Štampanje matrice nakon zamene elemenata");
+    transponovanje(matrica, b, n, m);
+    prikaziMatricu(b, m, n);
+    }
+}                                                                    
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite dimenziju vrste n matrice: 
+    <strong style="color: aliceblue;">2</strong>
+    Unesite dimenziju kolone m matrice:  
+    <strong style="color: aliceblue;">3</strong>
+    Unesite elemente matrice: 
+    matrica[1][1]: <strong style="color: aliceblue;">1</strong>
+    matrica[1][2]: <strong style="color: aliceblue;">2</strong>
+    matrica[1][3]: <strong style="color: aliceblue;">3</strong>
+    matrica[2][1]: <strong style="color: aliceblue;">4</strong>
+    matrica[2][2]: <strong style="color: aliceblue;">5</strong>
+    matrica[2][3]: <strong style="color: aliceblue;">6</strong>
+    Štampanje matrice pre zamene elemenata
+    1 2 3
+    4 5 6
+    Štampanje matrice nakon zamene elemenata
+    1 4
+    2 5
+    3 6
+</pre>
+
+<hr />
+<p><strong>Zadatak 284: (Metode28)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati metodu za izračunavanje Hermiteovih polinoma pomoću rekurentne formule
+H<sub>n+1</sub> = 2 * (x * H<sub>n</sub> - n * H<sub>n-1</sub>),
+
+gde je H<sub>0</sub> = 1, H<sub>1</sub> = x. Metodu nazvati H(n, x), gde je n stepen polinoma, a x promenliva. 
+U glavnom programu uneti stepen polinoma i promenljivu x i pozvati metodu.
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode28 {
+    public static double[] h(int n, double x) {
+    double[] hermit = new double[10];
+    hermit[0] = 1.0;
+    hermit[1] = x;
+
+    for (int i = 1; i <= n; i++)
+        hermit[i + 1] = 2 * (x * hermit[i] - n * hermit[i - 1]);
+
+    return hermit;
+    }
+
+    public static void main(String[] args) throws Exception {
+    // Deklarisanje podataka
+    double x;
+    int n;
+    double[] hermit = new double[10];
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    DecimalFormat df = new DecimalFormat("###,##0.00");
+
+    // Unos podataka
+    System.out.println("Unesite stepen polinoma n: ");
+    n = Integer.parseInt(ulaz.readLine());
+    System.out.println("Unesite vrednost x: ");
+    x = Double.parseDouble(ulaz.readLine());
+
+    // Štampanje zaglavlja
+    System.out.println("Stepen \t h[stepen] \n======================");
+
+    // Poziv metode za izračunavanje Hermiteovih polinoma
+    hermit = h(n, x);
+
+    // Štampanje rezultata
+    for (int i = 0; i <= n; i++)
+        System.out.println(i + "\t" + df.format(hermit[i]));
+    }
+}                                                                    
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite stepen polinoma n: 
+    <strong style="color: aliceblue;">5</strong>
+    Unesite vrednost x: 
+    <strong style="color: aliceblue;">2.3</strong>
+    Stepen 	 h[stepen] 
+    ======================
+    0	1.00
+    1	2.30
+    2	0.58
+    3	-20.33
+    4	-99.33
+    5	-253.59
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 285: (Metode29)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode29 {
+    public static double ugao(double x1, double x2, double y1, double y2) {
+    double x = x2 - x1;
+    double y = y2 - y1;
+
+    if (x == 0)
+        return 0;
+    else
+        return Math.atan(y / x);
+    }
+
+    public static double rastojanje(double x1, double x2, double y1, double y2) {
+    double x = x2 - x1;
+    double y = y2 - y1;
+
+    return Math.sqrt((x * x) + (y * y));
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    DecimalFormat df = new DecimalFormat("###.##");
+
+// Unos podataka
+    System.out.println("Unesite koordinatu x1: ");
+    double x1 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite koordinatu y1: ");
+    double y1 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite koordinatu x2: ");
+    double x2 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite koordinatu y2: ");
+    double y2 = Double.parseDouble(ulaz.readLine());
+
+// Štampanje rezultata
+    System.out.println("Direkcioni ugao: " + df.format(ugao(x1, x2, y1, y2)) + "\nRastojanje: "
+        + df.format(rastojanje(x1, x2, y1, y2)));
+    }
+}                                                                      
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite koordinatu x1: 
+    <strong style="color: aliceblue;">10</strong>
+    Unesite koordinatu y1: 
+    <strong style="color: aliceblue;">12</strong>
+    Unesite koordinatu x2: 
+    <strong style="color: aliceblue;">42</strong>
+    Unesite koordinatu y2: 
+    <strong style="color: aliceblue;">53</strong>
+    Direkcioni ugao: 0.91
+    Rastojanje: 52.01
+</pre>
+
+<hr />
+<p><strong>Zadatak 286: (Metode30)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati metodu za izračunavanje realnog korena jednačine
+
+f(x) = x - cosx + 0,15 = 0,
+
+sa greškom e <= 10<sup>-5</sup> upotrebom iterativne formule
+
+x<sub>0</sub> = 0.65,
+x<sub>i+1</sub> = cosx<sub>i</sub> - 0,15, (i = 0,1...).
+
+Na izlazu štampati rezultat sledećeg oblika:
+ 
+       I                        X(I)                F(X(I))
+  ---------------------------------------------------- 
+       xx                      x.xxxx               x.xxxx 
+
+
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode30 {
+    public static void korenJednacine(double x0, double eps) {
+    int i = 0;
+
+// Štampanje zaglavlja
+    System.out.println("I         X(I)           F(X(I))");
+    System.out.println("------------------------------------");
+
+    double x1 = Math.cos(x0) - 0.15;
+
+    System.out.println(i + "\t" + x0 + "\t" + x1);
+
+    while (Math.abs(x1 - x0) > eps) {
+        i++;
+        x0 = x1;
+        x1 = Math.cos(x0) - 0.15;
+
+        // Štampanje rezultata
+        System.out.println(i + "\t" + x0 + "\t" + x1);
+    }
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.println("Unesite vrednost za x0: ");
+    double x0 = Double.parseDouble(ulaz.readLine());
+    System.out.println("Unesite vrednost za eps: ");
+    double eps = Double.parseDouble(ulaz.readLine());
+
+    korenJednacine(x0, eps);
+    }
+}                                                                      
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za x0: 
+    <strong style="color: aliceblue;">0.65</strong>
+    Unesite vrednost za eps: 
+    <strong style="color: aliceblue;">1.0E-5</strong>
+    I         X(I)           F(X(I))
+    ------------------------------------
+    0	0.65	0.6460837985490558
+    1	0.6460837985490558	0.6484477197561979
+    2	0.6484477197561979	0.64702225796203
+    3	0.64702225796203	0.6478823554729803
+    4	0.6478823554729803	0.6473635822854132
+    5	0.6473635822854132	0.6476765541938552
+    6	0.6476765541938552	0.647487766311681
+    7	0.647487766311681	0.6476016544582789
+    8	0.6476016544582789	0.6475329537153736
+    9	0.6475329537153736	0.6475743973002349
+    10	0.6475743973002349	0.6475493969915654
+    11	0.6475493969915654	0.647564478269637
+    12	0.647564478269637	0.6475553806436871
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 287: (Metode31)</strong></p>
+<pre style="text-align: justify;"> 
+Neka je danas u Nišu izmerena temperatura 25°C. 
+Napisati program za prevođenje Celzijusovih u Farenthajtove stepene. 
+Na izlazu štampati vrednost izmerene temperature u Farenthajtovim stepenima. 
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+public class Metode31 {
+    // Metoda za prevođenje Celzijusovih u Farenhajtove stepene
+    public static double CuF(double celsius) {
+    return (((0.9 / 0.5) * celsius) + 32);
+    }
+
+    public static void main(String[] args) throws Exception {
+    // Izmerena temperatura
+    double temp = 25;
+
+    // Štampanje rezultata
+    System.out.println("Temperatura prevedena u Farenthajte iznosi: " + CuF(temp));
+    }
+}                                                                       
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Temperatura prevedena u Farenthajte iznosi: 77.0
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 288: (Metode32)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode32 {
+    public static double koeficijentR(double x[], double y[], int n) {
+    double s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0;
+    for (int i = 1; i <= n; i++) {
+        s1 += x[i] * y[i];
+        s2 += x[i];
+        s3 += y[i];
+        s4 += x[i] * x[i];
+        s5 += y[i] * y[i];
+    }
+
+    // Izračunavanje koeficijenta r
+    return (n * s1 - s2 * s3) / Math.sqrt((n * s4 - s2 * s2) * (n * s5 - s3 * s3));
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] x = new double[100];
+    double[] y = new double[100];
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    DecimalFormat df = new DecimalFormat("#.##");
+
+    System.out.println("Unesite vrednost za n: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+    for (int i = 1; i <= n; i++) {
+        System.out.println(i + ". tačka ");
+        System.out.print("x[" + i + "] = ");
+        x[i] = Double.parseDouble(ulaz.readLine());
+        System.out.print("y[" + i + "] = ");
+        y[i] = Double.parseDouble(ulaz.readLine());
+    }
+
+    System.out.println("r = " + df.format(koeficijentR(x, y, n)));
+    }
+}                                                                          
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za n: 
+    <strong style="color: aliceblue;">5</strong>
+    1. tačka 
+    x[1] = <strong style="color: aliceblue;">0.1</strong>
+    y[1] = <strong style="color: aliceblue;">0.5</strong>
+    2. tačka 
+    x[2] = <strong style="color: aliceblue;">0.2</strong>
+    y[2] = <strong style="color: aliceblue;">0.3</strong>
+    3. tačka 
+    x[3] = <strong style="color: aliceblue;">0.3</strong>
+    y[3] = <strong style="color: aliceblue;">0.2</strong>
+    4. tačka 
+    x[4] = <strong style="color: aliceblue;">0.4</strong>
+    y[4] = <strong style="color: aliceblue;">0.0</strong>
+    5. tačka 
+    x[5] = <strong style="color: aliceblue;">0.5</strong>
+    y[5] = <strong style="color: aliceblue;">-0.6</strong>
+    r = -0.94
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 289: (Metode33)</strong></p>
+<pre style="text-align: justify;"> 
+FALI SLIKA
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class Metode33 {
+    public static double[] koeficijentAB(double x[], double y[], int n) {
+    double s1 = 0, s2 = 0, s3 = 0, s4 = 0;
+    double[] koeficijent = new double[5];
+    for (int i = 1; i <= n; i++) {
+        s1 += x[i];
+        s2 += y[i];
+        s3 += x[i] * y[i];
+        s4 += x[i] * x[i];
+    }
+
+    // Izračunavanje koeficijenta a
+    koeficijent[1] = (s1 * s2 - n * s3) / (s1 * s1 - n * s4);
+
+    // Izračunavanje koeficijenta b
+    koeficijent[2] = (s2 - koeficijent[1] * s1) / n;
+
+    return koeficijent;
+    }
+
+    public static void main(String[] args) throws Exception {
+    double[] x = new double[100];
+    double[] y = new double[100];
+
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    DecimalFormat df = new DecimalFormat("#.##");
+
+    System.out.println("Unesite vrednost za n: ");
+    int n = Integer.parseInt(ulaz.readLine());
+
+    for (int i = 1; i <= n; i++) {
+        System.out.println(i + ". tačka ");
+        System.out.print("x[" + i + "] = ");
+        x[i] = Double.parseDouble(ulaz.readLine());
+        System.out.print("y[" + i + "] = ");
+        y[i] = Double.parseDouble(ulaz.readLine());
+    }
+
+    System.out.println(
+        "a = " + df.format(koeficijentAB(x, y, n)[1]) + "\tb = " + df.format(koeficijentAB(x, y, n)[2]));
+    }
+}                                                                        
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite vrednost za n: 
+    <strong style="color: aliceblue;">5</strong>
+    1. tačka 
+    x[1] = <strong style="color: aliceblue;">-1</strong>
+    y[1] = <strong style="color: aliceblue;">-1</strong>
+    2. tačka 
+    x[2] = <strong style="color: aliceblue;">0</strong>
+    y[2] = <strong style="color: aliceblue;">0</strong>
+    3. tačka 
+    x[3] = <strong style="color: aliceblue;">1</strong>
+    y[3] = <strong style="color: aliceblue;">3</strong>
+    4. tačka 
+    x[4] = <strong style="color: aliceblue;">2</strong>
+    y[4] = <strong style="color: aliceblue;">3</strong>
+    5. tačka 
+    x[5] = <strong style="color: aliceblue;">3</strong>
+    y[5] = <strong style="color: aliceblue;">7</strong>
+    a = 2.2	b = 0.8
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 290: (Metode34)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program kojim se određuju i ispisuju svi savršeni brojevi unetog broja m. 
+
+<b>Napomena:</b> Broj je savršen ako je jednak sumi svih delitelja isključujući njega samog.    
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode34 {
+    public static void savrsenBroj(double m) {
+    System.out.println("Savršeni brojevi broja " + m + " su: ");
+
+    // Nalaženje savršenih brojeva broja m
+    for (int n = 2; n <= m; n++) {
+        double suma = 1;
+        int nk = n / 2;
+
+        for (int i = 2; i <= nk; i++)
+        if (n % i == 0)
+            suma += n / i;
+
+        if (suma == n)
+        System.out.println(n);
+    }
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+    // m - broj za koji se pronalaze svi savršeni brojevi
+    int m;
+
+    System.out.println("Unesite broj za koji se pronalaze svi savršeni brojevi m: ");
+    m = Integer.parseInt(ulaz.readLine());
+
+    savrsenBroj(m);
+    }
+}                                                                        
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite broj za koji se pronalaze svi savršeni brojevi m: 
+    <strong style="color: aliceblue;">1000</strong>
+    Savršeni brojevi broja 1000.0 su: 
+    6
+    28
+    496
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 291: (Metode35)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program kojim se određuju i ispisuju svi savršeni brojevi unetog broja m. 
+
+<b>Napomena:</b> Broj je savršen ako je jednak sumi svih delitelja isključujući njega samog.    
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode34 {
+// Metoda za izračunavanje rastojanja između dve tačke 
+    public static double rastojanje(double x1, double y1, double x2, double y2) {
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    // Deklarisanje podataka
+    double a, b, c, xa, ya, xb, yb, xc, yc, p, s;
+
+    // Unos koordinata temena A trougla
+    System.out.println("Unesite koordinate temena A trougla: ");
+    System.out.print("xa = ");
+    xa = Double.parseDouble(ulaz.readLine());
+    System.out.print("ya = ");
+    ya = Double.parseDouble(ulaz.readLine());
+
+    // Unos koordinata temena B trougla
+    System.out.println("Unesite koordinate temena B trougla: ");
+    System.out.print("xb = ");
+    xb = Double.parseDouble(ulaz.readLine());
+    System.out.print("yb = ");
+    yb = Double.parseDouble(ulaz.readLine());
+
+    // Unos koordinata temena C trougla
+    System.out.println("Unesite koordinate temena C trougla: ");
+    System.out.print("xc = ");
+    xc = Double.parseDouble(ulaz.readLine());
+    System.out.print("yc = ");
+    yc = Double.parseDouble(ulaz.readLine());
+
+    // Izračunavanje stranica trougla
+    a = rastojanje(xb, yb, xc, yc);
+    b = rastojanje(xa, ya, xc, yc);
+    c = rastojanje(xa, ya, xb, yb);
+
+    // Izračunavanje poluobima trougla
+    s = (a + b + c) / 2;
+
+    // Izračunavanje površine trougla
+    p = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+    // Štampanje rezultata
+    System.out.println("Površina trougla je " + p);
+    }
+}                                                                            
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite koordinate temena A trougla: 
+    xa = <strong style="color: aliceblue;">1.0</strong>
+    ya = <strong style="color: aliceblue;">0.0</strong>
+    Unesite koordinate temena B trougla: 
+    xb = <strong style="color: aliceblue;">5.0</strong>
+    yb = <strong style="color: aliceblue;">0.0</strong>
+    Unesite koordinate temena C trougla: 
+    xc = <strong style="color: aliceblue;">3.0</strong>
+    yc = <strong style="color: aliceblue;">5.0</strong>
+    Površina trougla je 10.0
+</pre>
+
+
+<hr />
+<p><strong>Zadatak 292: (Metode36)</strong></p>
+<pre style="text-align: justify;"> 
+Napisati program kojim se od k duži u ravni koje su zadate koordinatama svojih krajnjih tačaka, izdvaja ona čije je središte na najkraćem rastojanju od koordinatnog početka. 
+ 
+<b>Napomena:</b> Za izračunavanje rastojanja između dve tačke u ravni
+        
+</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package Metode;
+
+import java.io.*;
+
+public class Metode36 {
+// Metoda za izračunavanje rastojanja između dve tačke 
+    public static double rastojanje(double x1, double y1, double x2, double y2) {
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    }
+
+    public static void main(String[] args) throws Exception {
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    // Deklarisanje podataka
+    int k;
+    double min, x1, x2, y1, y2, xm1, xm2, ym1, ym2;
+
+    // Unos broja duži
+    System.out.print("Unesite broj duži k: ");
+    k = Integer.parseInt(ulaz.readLine());
+
+    // Unos koordinata prve duži
+    System.out.println("Unesite koordinate 1. duži:");
+    System.out.print("x1 = ");
+    x1 = Double.parseDouble(ulaz.readLine());
+    System.out.print("y1 = ");
+    y1 = Double.parseDouble(ulaz.readLine());
+    System.out.print("x2 = ");
+    x2 = Double.parseDouble(ulaz.readLine());
+    System.out.print("y2 = ");
+    y2 = Double.parseDouble(ulaz.readLine());
+
+    // Izračunavanje rastojanja prve duži od koordinatnog početka
+    min = rastojanje((x1 + x2) / 2, (y1 + y2) / 2, 0, 0);
+    xm1 = x1;
+    xm2 = x2;
+    ym1 = y1;
+    ym2 = y2;
+
+    for (int i = 2; i <= k; i++) {
+        // Unos koordinata k - 1 duži
+        System.out.println("Unesite koordinate " + i + " duži: ");
+        System.out.print("x1 = ");
+        x1 = Double.parseDouble(ulaz.readLine());
+        System.out.print("y1 = ");
+        y1 = Double.parseDouble(ulaz.readLine());
+        System.out.print("x2 = ");
+        x2 = Double.parseDouble(ulaz.readLine());
+        System.out.print("y2 = ");
+        y2 = Double.parseDouble(ulaz.readLine());
+
+        // Nalaženje duži čije je središte na najkraćem rastojanju od koordinatnog
+        // početka
+        if (min > rastojanje((x1 + x2) / 2, (y1 + y2) / 2, 0, 0)) {
+        min = rastojanje((x1 + x2) / 2, (y1 + y2) / 2, 0, 0);
+        xm1 = x1;
+        xm2 = x2;
+        ym1 = y1;
+        ym2 = y2;
+        }
+    }
+    // Štampanje rezultata
+    System.out.println("Koordinate duži sa najkraćim rastojanjem su: ");
+    System.out.println("x1 = " + x1 + " y1 = " + y1 + " x2 = " + x2 + " y2 = " + y2 + " i ima vrednost " + min);
+    }
+}                                                                           
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Unesite broj duži k: <strong style="color: aliceblue;">3</strong>
+    Unesite koordinate 1. duži:
+    x1 = <strong style="color: aliceblue;">1.2</strong>
+    y1 = <strong style="color: aliceblue;">3.2</strong>
+    x2 = <strong style="color: aliceblue;">5.6</strong>
+    y2 = <strong style="color: aliceblue;">-2.5</strong>
+    Unesite koordinate 2 duži: 
+    x1 = <strong style="color: aliceblue;">-4.5</strong>
+    y1 = <strong style="color: aliceblue;">2.3</strong>
+    x2 = <strong style="color: aliceblue;">5.8</strong>
+    y2 = <strong style="color: aliceblue;">9.2</strong>
+    Unesite koordinate 3 duži: 
+    x1 = <strong style="color: aliceblue;">1.5</strong>
+    y1 = <strong style="color: aliceblue;">0.6</strong>
+    x2 = <strong style="color: aliceblue;">8.6</strong>
+    y2 = <strong style="color: aliceblue;">1.4</strong>
+    Koordinate duži sa najkraćim rastojanjem su: 
+    x1 = 1.5 y1 = 0.6 x2 = 8.6 y2 = 1.4 i ima vrednost 3.41796723214252
+</pre>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<hr />
+<p>&nbsp;</p>
+
+<div style="text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+</body>
+</html>

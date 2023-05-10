@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>Sortiranje</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Сортирање</h2>
+    <p class="centered">
+        - Bubble sort<br>
+        - Merge sort<br>
+        - Selection sort<br>
+        - Heap Sort.<br>
+        - Insertion Sort.<br>
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="Sortiranje.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <h3 class="centered">BubbleSort</h3>
+
+    <pre><code class="java">
+
+package bubbleSort;
+
+public class BubbleSort {
+	public static void main(String[] args) {
+		int[] niz = { 64, 34, 25, 12, 22, 11, 90 };
+
+		// Pozivamo funkciju za sortiranje niza
+		bubbleSort(niz);
+
+		System.out.println("Sortiran niz:");
+		for (int element : niz) {
+			System.out.print(element + " ");
+		}
+	}
+
+	// Bubble Sort funkcija za sortiranje niza
+	public static void bubbleSort(int[] niz) {
+		int n = niz.length; // Dužina niza
+
+		// Spoljašnja petlja prolazi kroz sve elemente niza
+		for (int i = 0; i < n - 1; i++) {
+
+			// Unutrašnja petlja prolazi kroz niz od 0 do n-i-1
+			// Nakon svakog prolaska kroz petlju najveći element se "bubnji" do kraja
+			for (int j = 0; j < n - i - 1; j++) {
+
+				// Ako je trenutni element veći od sledećeg, zameni ih
+				if (niz[j] > niz[j + 1]) {
+					int temp = niz[j];
+					niz[j] = niz[j + 1];
+					niz[j + 1] = temp;
+				}
+			}
+		}
+	}
+}
+
+</code></pre>
+    <h3 class="centered">MergeSort</h3>
+
+    <pre><code class="java">
+package mergeSort;
+
+public class MergeSort {
+
+    // Metoda za spajanje dva podniza
+    public static void merge(int[] arr, int levo, int sredina, int desno) {
+        // Određivanje dužina podnizova
+        int n1 = sredina - levo + 1;
+        int n2 = desno - sredina;
+
+        // Pravljenje privremenih nizova
+        int[] leviNiz = new int[n1];
+        int[] desniNiz = new int[n2];
+
+        // Kopiranje podataka u privremene nizove
+        for (int i = 0; i < n1; i++) {
+            leviNiz[i] = arr[levo + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            desniNiz[j] = arr[sredina + 1 + j];
+        }
+
+        // Spajanje privremenih nizova
+
+        // Inicijalni indeksi prvog i drugog podniza
+        int i = 0, j = 0;
+
+        // Inicijalni indeks spajanja podnizova
+        int k = levo;
+        while (i < n1 && j < n2) {
+            if (leviNiz[i] <= desniNiz[j]) {
+                arr[k] = leviNiz[i];
+                i++;
+            } else {
+                arr[k] = desniNiz[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Kopiranje preostalih elemenata leviNiz[], ako ih ima
+        while (i < n1) {
+            arr[k] = leviNiz[i];
+            i++;
+            k++;
+        }
+
+        // Kopiranje preostalih elemenata desniNiz[], ako ih ima
+        while (j < n2) {
+            arr[k] = desniNiz[j];
+            j++;
+            k++;
+        }
+    }
+
+    // Glavna metoda koja sortira niz
+    public static void mergeSort(int[] arr, int levo, int desno) {
+        if (levo < desno) {
+            // Pronalazak sredine niza
+            int sredina = (levo + desno) / 2;
+
+            // Sortiranje obe polovine
+            mergeSort(arr, levo, sredina);
+            mergeSort(arr, sredina + 1, desno);
+
+            // Spajanje sortiranih polovina
+            merge(arr, levo, sredina, desno);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 12, 11, 13, 5, 6, 7 };
+        System.out.println("Nesortiran niz:");
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+
+        mergeSort(arr, 0, arr.length - 1);
+
+        System.out.println("Sortiran niz:");
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+    }
+}
+</code></pre>
+
+    <h3 class="centered">SelectionSort</h3>
+
+    <pre><code class="java">
+public class SelectionSort {
+
+    // Metoda za selekcioni sort
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+
+        // Prolazimo kroz sve elemente u nizu
+        for (int i = 0; i < n - 1; i++) {
+            // Pronalazimo indeks najmanjeg elementa u preostalom delu niza
+            int minIndeks = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndeks]) {
+                    minIndeks = j;
+                }
+            }
+
+            // Menjamo mesta trenutnom elementu i najmanjem elementu u preostalom delu niza
+            if (minIndeks != i) {
+                int temp = arr[minIndeks];
+                arr[minIndeks] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Nesortiran niz:");
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+
+        selectionSort(arr);
+
+        System.out.println("Sortiran niz:");
+        for (int e : arr) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+    }
+}
+</code></pre>
+
+    <h3 class="centered">HeapSort</h3>
+    <pre><code class="java">
+package heapSort;
+
+public class HeapSort {
+public static void main(String[] args) {
+    int[] niz = { 12, 11, 13, 5, 6, 7 };
+    int duzina = niz.length;
+
+    HeapSort heapSort = new HeapSort();
+    heapSort.sortiraj(niz);
+
+    System.out.println("Sortirani niz:");
+    for (int i = 0; i < duzina; ++i) {
+        System.out.print(niz[i] + " ");
+    }
+}
+
+public void sortiraj(int niz[]) {
+    int duzina = niz.length;
+
+    // Izgradnja heap-a (reorganizacija niza)
+    for (int i = duzina / 2 - 1; i >= 0; i--) {
+        stvoriHeap(niz, duzina, i);
+    }
+
+    // Zamena elemenata i ponovna izgradnja heap-a
+    for (int i = duzina - 1; i > 0; i--) {
+        // Zamena trenutnog korena sa krajnjim elementom
+        int temp = niz[0];
+        niz[0] = niz[i];
+        niz[i] = temp;
+
+        // Ponovna izgradnja heap-a za preostali niz
+        stvoriHeap(niz, i, 0);
+    }
+}
+
+// Funkcija za izgradnju heap-a
+void stvoriHeap(int niz[], int duzina, int i) {
+    int najveci = i; // Inicijalizacija najvećeg elementa kao korena
+    int levoDete = 2 * i + 1;
+    int desnoDete = 2 * i + 2;
+
+    // Ako je levo dete veće od korena
+    if (levoDete < duzina && niz[levoDete] > niz[najveci]) {
+        najveci = levoDete;
+    }
+
+    // Ako je desno dete veće od trenutno najvećeg elementa
+    if (desnoDete < duzina && niz[desnoDete] > niz[najveci]) {
+        najveci = desnoDete;
+    }
+
+    // Ako najveci element nije koren
+    if (najveci != i) {
+        int temp = niz[i];
+        niz[i] = niz[najveci];
+        niz[najveci] = temp;
+
+        // Rekurzivno stvaranje heap-a za podstabla
+        stvoriHeap(niz, duzina, najveci);
+    }
+}
+} </code></pre>
+    <h3 class="centered">InsertionSort</h3>
+    <pre><code class="java">
+package insertSort;
+
+public class InsertionSort {
+
+    public static void main(String[] args) {
+        int[] niz = { 12, 11, 13, 5, 6, 7 };
+        int duzina = niz.length;
+
+        InsertionSort insertionSort = new InsertionSort();
+        insertionSort.sortiraj(niz);
+
+        System.out.println("Sortirani niz:");
+        for (int i = 0; i < duzina; ++i) {
+            System.out.print(niz[i] + " ");
+        }
+    }
+
+    public void sortiraj(int niz[]) {
+        int duzina = niz.length;
+
+        // Prolazimo kroz niz počevši od drugog elementa (indeks 1)
+        for (int i = 1; i < duzina; ++i) {
+            // Izdvajamo trenutni element (ključ) sa kojim ćemo upoređivati prethodne
+            // elemente
+            int kljuc = niz[i];
+
+            // Postavljamo indeks j na prethodni element u odnosu na trenutni
+            int j = i - 1;
+
+            // Pomeranje elemenata većih od ključa na jedno mesto udesno
+            // Dok god je j veći ili jednak nuli i trenutni element veći od ključa
+            while (j >= 0 && niz[j] > kljuc) {
+                // Pomeramo trenutni element jedno mesto udesno
+                niz[j + 1] = niz[j];
+                // Smanjujemo indeks j za 1
+                j = j - 1;
+            }
+
+            // Postavljamo ključ na odgovarajuću poziciju
+            niz[j + 1] = kljuc;
+        }
+    }
+}
+</code></pre>
+
+
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metode</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671007424755.jpg" alt="" width="651" height="249" /></p>
+<p>&nbsp;</p>
+<hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 293: (VIII_OOP.K0)</strong></p>
+<pre style="text-align: justify;">Kreirati klasu <strong style="color: #0984e3;">A</strong> sa metodom <strong style="color: #44bd32;">PrikaziPoruku</strong> koja ispisuje text "Ovo je poruka!".
+Kreirati pokretačku klasu <strong style="color: #0984e3;">ObjekatKlaseA</strong>.
+U klasi <strong style="color: #0984e3;">ObjekatKlaseA</strong> kreirati objekat klase <strong style="color: #0984e3;">A</strong> i pozvati metodu <strong style="color: #44bd32;">PrikaziPoruku</strong>.                
+    </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K0;
+
+public class A {
+
+    public void PrikaziPoruku() {
+      System.out.print("Ovo je poruka! \n");
+    }
+}                                                                               
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K0;
+
+public class ObjekatKlaseA {
+
+    public static void main(String[] args) {
+
+    <span style="color: azure;">/* Kreiranje novog objekta (instance) klase A. 
+    * Svaki objekat predstavlja instancu odredjene klase.
+    * Kreiran je tokom izvr&scaron;avanja.
+    * Objekat je sastavljen od određenog broja polja (podataka)
+    *  */</span>
+    A objekat = new A();
+
+    <span style="color: azure;">/* 
+    * Metode klase se pozivaju pomoću operatora '.'
+    *  */</span>
+    objekat.PrikaziPoruku();
+
+    }
+
+}</pre>
+</div>
+<!-- SLEDECI ZADATAK --><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 294: (VIII_OOP.K1)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Rastojanje</strong> koja sadrži:
+- podatak <strong>stopala</strong> tipa <em>integer</em> kao mernu jedinicu,
+- podatak <strong>inci</strong> tipa <em>double</em> za broj inci.
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">DemoPrikaz</strong> i u njoj odrediti sledeće:
+- Kreirati tri objekta klase <strong style="color: #0984e3;">Rastojanje</strong> sa nazivima '<strong>r1</strong>', '<strong>r2</strong>' i '<strong>r3</strong>'.
+- Objekat '<strong>r1</strong>', za polje <strong>stopala</strong> dodeliti vredonost 14, a za polje <strong>inci</strong> vrednost 9.5.
+- Objekat '<strong>r2</strong>', za polje <strong>stopala</strong> dodeliti vredonost 19, a za polje <strong>inci</strong> vrednost 5.5.
+- Objekat '<strong>r3</strong>', bez ikakvog dodeljivanja vredosti poljima objekta.
+- Najzad, i&scaron;tampati vrednosti podataka svih objekata na izlazu.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Koje vrednosti imaju polja objekta</em> '<strong>r3</strong>'? 
+<em>Za&scaron;to imaju ba&scaron; te vrednosti?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K1;
+public class Rastojanje {
+  int stopala;
+  double inci;
+}                                                                             
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K1;
+public class DemoPrikaz {
+
+  public static void main(String[] args) {
+
+    Rastojanje r1 = new Rastojanje();
+    Rastojanje r2 = new Rastojanje();
+    Rastojanje r3 = new Rastojanje();
+
+    <span style="color: azure;">/* Dodaju se vrednosti atributima objekta r1 */</span>
+    r1.stopala = 14;
+    r1.inci = 9.5;
+
+    <span style="color: azure;">/* Dodaju se vrednosti atributima objekta r2 */</span>
+    r2.stopala = 19;
+    r2.inci = 5.5;
+
+    System.out.println("Rastojanje 1: " + r1.stopala + "\'-" + r1.inci + "\"");
+    System.out.println("Rastojanje 2: " + r2.stopala + "\'-" + r2.inci + "\"");
+
+    <span style="color: azure;">/* S obzirom da nismo dodali vrednosti atributima objekta r3, ispisace se
+    * tkz. 'default' vrednosti. 
+    * Za tip double default vrednost je '0.0' 
+    * Za tip int default vrednost je '0'*/</span>
+    System.out.println("Rastojanje 3: " + r3.stopala + "\'-" + r3.inci + "\"");
+
+  }
+
+}                                                                                  
+      </pre>
+</div>
+<!-- SLEDECI ZADATAK --><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 295: (VIII_OOP.K2)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">A</strong> koja sadrži:
+- metodu <strong style="color: #44bd32;">prikaziPoruku</strong> koja ispisuje text sledeće sadržine: "Primer static metode!".
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">metodaStaticPrikaz</strong> i u njoj:
+- Pokrenuti metodu <strong style="color: #44bd32;">prikaziPoruku</strong> iz klase <strong style="color: #0984e3;">A</strong> bez kreiranja objekta klase.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znači ključna reč 'void'?</em>
+<em>Da li bi Eclipse izbacio gre&scaron;ku ukoliko bi prilikom kreiranja metode </em><strong style="color: #44bd32;">prikaziPoruku</strong> <em>izostavili ključnu reč </em><strong>static</strong>?
+<em>Do kog zaključka dolazimo u pogledu postojanja ključne reči</em> <strong>static</strong>?
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K1.K2;
+public class A {
+    public static void prikaziPoruku() {
+      <span style="color: azure;">/* Void --&gt; nemamo ključnu reč return, ne očekujemo povratnu vrednost */</span>
+      System.out.println("Primer static metode! ");
+    }
+
+}                                                
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K1.K2;
+/* Static metoda klase */
+
+public class metodaStaticPrikaz {
+
+    public static void main(String[] args) {
+
+    <span style="color: azure;">
+    /* Da li ovde imamo objekat? nemamo
+    * Dakle ključna rec 'static' nam omogućava da možemo
+    * pozvati metodu klase bez kreiranja objekta te klase
+    * klasa.nazivMetode();
+    * */</span>
+      A.prikaziPoruku();
+
+    }
+
+}
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="padding: 5px;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 296: (VIII_OOP.K3)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">A</strong> koja sadrži:
+- metodu <strong style="color: #44bd32;">setMessage</strong> koja postavlja vrednost promenljivoj <em>message</em>.
+- metodu <strong style="color: #44bd32;">getMessage</strong> koja vraća vrednost promenljive <em>message</em>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">SeteriGeteri</strong> i u njoj:
+- Kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <em>ob</em>.
+- Primenom metode <strong style="color: #44bd32;">setMessage</strong> postaviti sledeću vrednost: "Vrednost1".
+- Primenom metode <strong style="color: #44bd32;">getMessage</strong> "dohvatiti" vrednost promenljive <em>message</em> i &scaron;tampati izlazni rezultat te vrednosti.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Da li "getter" metoda uzima parametre?</em>
+<em>Jedan od četiri principa OOP je <strong>Enkapsulacija</strong>. Kako se obezbeđuje enkapsulacija, odnosno skrivanje podataka?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K3;
+public class A {
+    private String message;
+
+    <span style="color: azure;">/* Deklarisanjem privatnih podataka vr&scaron;i se enkapsulacija - skrivanje podataka.
+      * Sprečava se promena vrednosti promenljivih iz koda van zadatke klase
+      * 
+      * podatak = atribut = osobina klase
+      * Objekti imaju svoje atribute
+      * atributi se predstavljaju preko promenljivih u deklaraciji klase
+      * deklari&scaron;u se unutar klase van svih metoda
+      * 
+      * Metoda klase
+      * 
+      * Metoda setMessage postavlja poruku. 
+      *  */</span>
+
+    public void setMessage(String msg) {
+      message = msg; <span style="color: azure;">/* postavlja vrednost promenljivoj 'message' */</span>
+    }
+
+    <span style="color: azure;"> /* Metoda getMessage() vraća poruku. */</span>
+    public String getMessage() { <span style="color: azure;">/* nema parametara, vraćaju odgovarajući tip podataka */</span>
+      return message;
+    }
+
+    <span style="color: azure;">/* Parametri i argumenti metoda
+      * promenljiva deklarisana u zaglavlju metode nazivamo parametrom
+      * Argument se prosledjuje metodi prilikom poziva metode.
+      * !!! Prilikom poziva, parametri dobijaju vrednost argumenata metode
+      * 
+      * */</span>  
+}                                 
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K3;
+
+<span style="color: azure;">/* Geteri i seteri */</span>
+
+public class SeteriGeteri {
+
+    public static void main(String[] args) {
+
+      A ob = new A(); <span style="color: azure;">/* kreiranje objekta klase */</span>
+
+      ob.setMessage("Vrednost1 "); <span style="color: azure;">/* postavlja vrednost */</span>
+      System.out.println(" Postavljena je vrednost: " + ob.getMessage() + " ...!");
+    }
+
+} </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 297: (VIII_OOP.K4)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Circle</strong> koja sadrži:
+- privatni podatak <strong>poluprecnik</strong> tipa <em>double</em>.
+- Defaultni konstruktor koji postavlja vrednost promenljivoj <strong>poluprecnik</strong> na 10.0.
+- metodu  <strong style="color: #44bd32;">area</strong> za izračunavanje povr&scaron;ine kruga <sup>(I * r<sup>2</sup>)</sup>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">DefaultConstructorPrikaz</strong> i u njoj:
+- Kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c1</strong>.
+- Primenom metode <strong style="color: #44bd32;">area</strong> postaviti sledeću vrednost: "Vrednost1".
+- Primenom metode <strong style="color: #44bd32;">area</strong> sračunati povr&scaron;inu kruga.
+- Najzad, &scaron;tampati vrednost povr&scaron;ine kruga.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znači ključna reč <strong>new</strong>?</em>
+<em>&Scaron;ta se de&scaron;ava ako se ne postavi konstruktor?</em>
+<em>&Scaron;ta je konstruktor klase?</em>
+<em>Da li konstruktor može imati različito ime od svoje Klase?</em>
+<em>&Scaron;ta znači kada se kaže da konstruktor 'ne vraća vrednost'?</em>
+<em>Da li se konstruktor može deklarisati kao <strong>void</strong>?</em>
+<em>U pogledu podataka klase, koja bi bila podrazumevana vrednost za tip <strong>String</strong>?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K4;
+public class Circle {
+    private double poluprecnik;
+
+    Circle() {
+      poluprecnik = 10.0;
+    }
+    <span style="color: azure;">/* poluprecnik ima vrednost 10, koja je postavljena u konstruktoru 
+    * prilikom kreiranja objekta */
+
+    /* Ako se ne navede konstruktor, kompajler postavlja defaultne vrednosti */</span>
+
+    public double area() {
+      return 3.14 * poluprecnik * poluprecnik;
+    }
+}                               
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K4;
+public class DefaultConstructorPrikaz {
+
+  <span style="color: azure;"> /* Defaultni konstruktor */</span>
+
+    public static void main(String[] args) {
+      Circle c1 = new Circle();
+  <span style="color: azure;">/* - kreiranje objekta -&gt; tada se poziva konstruktor
+    * - konstruktor inicijalizuje (u ovom primeru) vrednost 'poluprecnik' na 10 
+  */</span>
+
+      System.out.println("Povr&scaron;ina kruga je: " + c1.area());
+    }
+
+}
+
+<span style="color: azure;">/* - Ključnom rečju 'new' se kreira nova instanca klase Circle, 
+  * pri čemu se objekat inicijalizuje podrazumevanim vrednostima.
+  * 
+  * - Ukoliko želimo da se inicijalizacija izvr&scaron;i nekim drugim vrednostima 
+  * koje bismo mi definisali, potrebno je realizaciji klase dodati jo&scaron;
+  * jedan metod, odnosno - konstruktor klase.
+  * 
+  * - Konstruktor klase je specijalna metoda koja se koristi samo pri
+  * kreiranju objekta da postavi početne vrednosti objekta
+  * tj. da inicijalizuje objekat.
+  * 
+  * - Za konstruktor važi sledeće:
+  *  &gt;&gt; konstuktor mora imati isto ime kao i klasa
+  *  &gt;&gt; konstuktor može imati i parametre
+  *  &gt;&gt; konstuktor ne vraća vrednosti, čak se ne može deklarisati ni kao void
+  *  &gt;&gt; konstuktor je javna metoda
+  *  
+  * - Ukoliko realizacija klase ne uključuje konstruktor klase,
+  * kompajler obezbeđuje tkz. podrazumevani konstruktor (ili defaultni)
+  * koji nema parametara, i koji podacima objekata daje podrazumevane vrednosti.  
+  * 
+  * - Podaci klase imaju podrazumevane vrednosti koje su za primitivne tipove:
+  * byte, char, short, int, long, float i double jednake 0, za tip boolean je false.
+  * Za referencijske tipove vrednost je null.
+  * */</span>  
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 298: (VIII_OOP.K5)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Circle</strong> koja sadrži:
+- privatni podatak <strong>radius</strong> tipa <em>double</em>.
+- parametrizovan konstruktor za inicijalizaciju <strong>radius</strong>.
+- metodu  <strong style="color: #44bd32;">area</strong> za izračunavanje povr&scaron;ine kruga (PI * r<sup>2</sup>).
+    
+Definisati pokretačku klasu <strong style="color: #0984e3;">KonstruktorSaParametrom</strong> i u njoj:
+- Kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c1</strong> sa parametrom vrednosti 10.
+- Primenom metode <strong style="color: #44bd32;">area</strong> sračunati povr&scaron;inu kruga.
+- Najzad, &scaron;tampati vrednost povr&scaron;ine kruga.
+  
+  <strong style="font-size: medium;">Pitanja:</strong>
+  <em>Koja je razlika izmedju pojma <strong>parametar</strong> i pojma <strong>argument</strong></em>?
+  <em>Koja je razlika između parametrizovanog konstruktora i podrazumevanog konstruktora?</em>
+  <em>Kako se kreira objekat sa parametrom?</em>
+  </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K5;
+  public class Circle {
+  
+      private double radius;
+  
+      Circle(double rad) <span style="color: azure;">/* Konstrukor klase koji inicijalizuje jedan podatak. */</span>
+      {
+        radius = rad;
+      }
+  
+      public double area() {
+        return 3.14 * radius * radius;
+      }
+  
+  }          
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K5;
+  public class KonstruktorSaParametrom {
+  
+      public static void main(String[] args) {
+        <span style="color: azure;">/* Konstruktor sa parametrom */</span>
+  
+        Circle c1 = new Circle(10); <span style="color: azure;">/* kreiranje objekta sa parametrom */</span>
+  
+        System.out.println("Area of Circle: " + c1.area());
+      }
+  
+  }
+  
+  <span style="color: azure;">/* Ako ne navedemo konstruktor? */
+  /* Da li u konstruktoru možemo zadati početnu vrednost? (ne preko parametra)*/
+  /* Kako izgleda konstruktor sa parametrom? */</span>
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 299: (VIII_OOP.K6)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Circle</strong> koja sadrži:
+- privatni podatak <strong>poluprecnik</strong> tipa <em>double</em>.
+- konstruktor za inicijalizaciju podatka <strong>poluprecnik</strong> na početnu vrednost 0.0.
+- parametrizovan konstruktor za novu vrednost za podatak <strong>poluprecnik</strong> kori&scaron;ćenjem ključne reči <strong>this</strong>.
+- metodu <strong style="color: #44bd32;">area</strong> za izračunavanje povr&scaron;ine kruga (PI * r<sup>2</sup>).
+    
+Definisati pokretačku klasu <strong style="color: #0984e3;">KljucnaRecThisPrikaz</strong> i u njoj:
+- Kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c1</strong> sa parametrom vrednosti 10.
+- Primenom metode <strong style="color: #44bd32;">area</strong> sračunati povr&scaron;inu kruga.
+- Najzad, &scaron;tampati vrednost povr&scaron;ine kruga.
+  
+  <strong style="font-size: medium;">Pitanja:</strong>
+  <em>&Scaron;ta znači ključna reč <strong>this</strong>?</em>
+  <em>Da li se ključna reč <strong>this</strong> može koristiti kako bi se pozvale metode tekućeg objekta?</em>
+  <em>Da li je ključna reč <strong>this</strong> obavezna da se koristi? kada je opciona?</em>
+  <em>Da li se ključna reč <strong>this</strong> može referencirati tekući objekat kao argumenat u metodi?</em>
+    </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K6;
+    <span style="color: azure;">/*This
+    * 
+    * Ključna reč this ili referenca this pruža način da metoda zna koji tačno objekat
+    * je pozvao metodu, tj sa čijim podacima radi. 
+    * Takođe, može se koristiti za pristup podacima objekta koji su sakriveni 
+    * lokalnim promenljivima ili parametrima metode.
+    * 
+    * Takođe, odnosi se na trenutni objekat u metodi ili konstruktoru.
+    * */</span>
+  
+  public class Circle {
+      private double poluprecnik;
+  
+      Circle() {
+        poluprecnik = 0.0;
+      }
+  
+      Circle(double radius) {
+        this.poluprecnik = radius;
+      }
+  
+      public double area() {
+        return 3.14 * poluprecnik * poluprecnik;
+      }
+  }      
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K6;
+  public class KljucnaRecThisPrikaz {
+  
+    <span style="color: azure;">/* Ključna reč This */</span>
+      public static void main(String[] args) {
+  
+        Circle c1 = new Circle(10);
+        System.out.println(" Area of Circle : " + c1.area());
+  
+      }
+  }
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 300: (VIII_OOP.K7)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Circle</strong> koja sadrži:
+- privatni podatak <strong>radius</strong> tipa <em>double</em>.
+- konstruktor za inicijalizaciju podatka <strong>radius</strong> na početnu vrednost 0.0.
+- parametrizovan konstruktor za novu vrednost za podatak <strong>poluprecnik</strong> kori&scaron;ćenjem ključne reči <strong>this</strong>.
+- parametrizovan konstruktor za prosleđivanje objekta.
+- metodu <strong style="color: #44bd32;">area</strong> za izračunavanje povr&scaron;ine kruga (PI * r<sup>2</sup>).
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">ObjekatKaoParametar</strong> i u njoj:
+- Kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c1</strong> sa parametrom vrednosti 10.
+- Kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c2</strong> sa objektom <strong>c1</strong> kao parametrom.
+- &Scaron;tampati vrednost povr&scaron;ine kruga pozivom metode <strong style="color: #44bd32;">area</strong> objekta <strong>c2</strong>.
+
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Kako se objekat prosleđuje konstruktoru klase?</em>
+
+    </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K07;
+  public class Circle {
+      private double radius;
+  
+      Circle() {
+        radius = 0.0;
+      }
+  
+      Circle(double radius) {
+        this.radius = radius;
+      }
+  
+      Circle(Circle ob) {
+        radius = ob.radius;
+      }
+  
+      public double area() {
+        return 3.14 * radius * radius;
+      }
+  }    
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K07;
+  public class ObjekatKaoParametar {
+  
+    <span style="color: azure;">/* Objekat kao parametar konstruktora*/</span>
+  
+      public static void main(String[] args) {
+  
+        Circle c1 = new Circle(10);
+        Circle c2 = new Circle(c1);
+        System.out.println("Povr&scaron;ina kruga: " + c2.area());
+      }
+  
+  }    
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 301: (VIII_OOP.K8)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Circle</strong> koja sadrži:
+- privatni podatak <strong>radius</strong> tipa <em>double</em>.
+- konstruktor za inicijalizaciju podatka <strong>radius</strong> na početnu vrednost 0.0.
+- parametrizovan konstruktor za novu vrednost za podatak <strong>radius</strong> kori&scaron;ćenjem ključne reči <strong>this</strong>.
+- metodu <strong style="color: #44bd32;">area</strong> za izračunavanje povr&scaron;ine kruga (PI * r<sup>2</sup>).
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">ProsledjivanjeObjektaMetodiPrikaz</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Circle</strong> pod nazivom <strong>c1</strong> sa parametrom vrednosti 20.
+- statičku metodu <strong style="color: #44bd32;">calcArea</strong> kojoj se prosleđuje objekat kao argument.
+- metoda <strong style="color: #44bd32;">calcArea</strong> &scaron;tampa povr&scaron;inu kruga objekta pozivanjem metode <strong style="color: #44bd32;">area</strong> objekta <strong>c1</strong>.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Za&scaron;to se koristi prosleđivanje objekta metodi?</em>
+<em>Možete li da izmenite stanje objekta koji se prosleđuje kao argument metodi?</em>
+<em>Koji su benefiti prosleđivanja objekta metodi?</em>
+  </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K8;
+  public class Circle {
+      private double radius;
+  
+      Circle() {
+        radius = 0.0;
+      }
+  
+      Circle(double radius) {
+        this.radius = radius;
+      }
+  
+      public double area() {
+        return 3.14 * radius * radius;
+      }
+  }   
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K8;
+  public class ProsledjivanjeObjektaMetodiPrikaz {
+  
+    <span style="color: azure;">/* Prosleđivanje objekta metodi */
+      /* Za razliku kada se metodi prosleđuje primitivan tip podataka, 
+        * prosleđivanje objekta metodi nam omogućava da manipuli&scaron;emo složenim tipom podataka
+        * koji se svakako sastoji od vi&scaron;e primitivih tipova podataka.
+        */</span>
+      public static void main(String[] args) {
+  
+        Circle c1 = new Circle(20);
+  
+          calcArea(c1);
+  
+        }
+  
+      public static void calcArea(Circle c) {
+        System.out.println("Povr&scaron;ina kruga: " + c.area());
+      }
+  
+  }    
+
+  <span style="color: azure;">
+  /*
+  BENEFITI prosledjivanja objekta metodi
+
+    1. Omogućava vam da ponovo koristite kod. Možete napisati jednu metodu 
+    koja može da radi na različitim objektima, sve dok pripadaju klasi koja 
+    ima odgovarajuće metode ili polja.
+    
+    2. Olak&scaron;ava modifikaciju pona&scaron;anja objekta. Preno&scaron;enjem objekta kao 
+    argumenta metodi, možete promeniti pona&scaron;anje objekta bez potrebe 
+    da direktno menjate kod objekta.
+    
+    3. Omogućava vam da apstrahujete detalje implementacije. 
+    Inkapsulacijom implementacije objekta u poseban metod, možete sakriti 
+    detalje o tome kako objekat funkcioni&scaron;e i predstaviti jednostavniji 
+    interfejs ostatku koda.
+    
+    4. To olak&scaron;ava testiranje va&scaron;eg koda. Preno&scaron;enjem objekata kao argumenata 
+    metodama, možete lak&scaron;e testirati pona&scaron;anje svog koda koristeći lažne 
+    objekte koji simuliraju pona&scaron;anje stvarnih objekata.
+    
+    5. Može pobolj&scaron;ati performanse va&scaron;eg koda. U zavisnosti od specifičnih
+    okolnosti, prosleđivanje objekata kao argumenata može biti efikasnije 
+    od kreiranja novih objekata ili pravljenja kopija postojećih objekata.*/</span>
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 302: (VIII_OOP.K9)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">FunkcijaExit</strong> i u njoj:
+- statičku metodu <strong style="color: #44bd32;">test</strong> u kojoj se:
+-&gt; inicijalizuje promenljiva <strong>a</strong> tipa <em>integer</em> sa vredno&scaron;ću 10.
+-&gt; &scaron;tampa text "BBB".
+-&gt; dalje, pokreće funkciju <strong style="color: #0984e3;">System</strong>.<strong style="color: #44bd32;">exit(0)</strong> ako je ispunjen sledeći uslov: <mark style="background-color: yellow;">a == 10</mark>
+-&gt; sekvencijalno nakon toga se &scaron;tampa text "CCC". 
+
+U <strong style="color: #44bd32;">main</strong> funkciji izvr&scaron;iti sekvencijalno sledeće naredbe:
+1. &scaron;tampati text "AAA".
+2. pozvati metodu <strong style="color: #44bd32;">test</strong>.
+3. &scaron;tampati text "DDD".
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Za &scaron;ta služi metoda <strong>System.exit()</strong>?</em>
+<em>&Scaron;ta znači kada u metodi <strong>System.exit(<mark>0</mark>)</strong> unesemo argument <strong>0</strong> a &scaron;ta kada unesemo <strong>1</strong>?</em>
+<em>Koji su potencijalni nedostaci kori&scaron;ćenja metode <strong>System.exit()</strong>?</em>
+  </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K9;
+  public class FunkcijaExit {
+  
+    <span style="color: azure;">/* Program koristi funkciju Exit */
+  
+      /* Metod Sistem.exit(0) u Javi je statičan metod koji prekida trenutno pokrenutu 
+      Java virtuelnu ma&scaron;inu (JVM). Potreban je celobrojni argument, koji specificira 
+      izlazni status JVM-a. Status 0 označava da je JVM prekinut normalno, dok status 
+      različit od nule ukazuje da je JVM prekinut sa gre&scaron;kom.
+      
+      Lo&scaron;e strane System.exit(0)
+      - Odmah prekida JVM, ne dajući drugim nitima ili resursima priliku da se "očiste" ili da se isključe.
+      - Može učiniti kod težim za razumevanje i održavanje.
+      - Može otežati testiranje koda.
+      - Može otežati otklanjanje gre&scaron;aka u kodu.
+      */</span>
+
+      public static void test() {
+        int a = 10;
+        System.out.println("BBB");
+  
+        if (a == 10) {
+          System.exit(0);
+        }
+          System.out.println("CCC");
+        }
+  
+      public static void main(String[] args) {
+        System.out.println("AAA");
+        test();
+        System.out.println("DDD");
+      }
+  }  
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 303: (VIII_OOP.K10)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">ReturnTest</strong> i u njoj:
+- statičku metodu <strong style="color: #44bd32;">test</strong> u kojoj se:
+-&gt; inicijalizuje promenljiva <strong>a</strong> tipa <em>integer</em> sa vredno&scaron;ću 10.
+-&gt; &scaron;tampa text "BBB".
+-&gt; dalje, vraća <strong>return;</strong> ako je ispunjen sledeći uslov: <mark style="background-color: yellow;">a == 10</mark>
+-&gt; sekvencijalno nakon toga se &scaron;tampa text "CCC". 
+
+U <strong style="color: #44bd32;">main</strong> funkciji izvr&scaron;iti sekvencijalno sledeće naredbe:
+1. &scaron;tampati text "AAA".
+2. pozvati metodu <strong style="color: #44bd32;">test</strong>.
+3. &scaron;tampati text "DDD".
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znači naredba <strong>return</strong> u metodi?</em>
+<em>Kako se <strong>System.exit()</strong> razlikuje od naredbe <strong>return</strong> u metodi?</em>
+  </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K10;
+public class ReturnTest {
+
+    public static void test() {
+      int a = 10;
+      System.out.println("BBB");
+      if (a == 10) {
+          return;
+    }
+  System.out.println("CCC");
+
+    }
+
+    public static void main(String[] args) {
+      System.out.println("AAA");
+      test();
+      System.out.println("DDD");
+    }
+    <span style="color: azure;">
+  /*Razlika izmedju System.exit() &amp; naredbe 'return' u metodi?
+  - Metod Sistem.ekit je statičan metod koji prekida trenutno pokrenutu Java virtuelnu ma&scaron;inu (JVM).
+  - Naredba return se, s druge strane, koristi za izlazak iz metode i vraćanje vrednosti kodu.
+    Obično se koristi za prekid izvr&scaron;avanja metode i vraćanje kontrole pozivnom kodu, ali se takođe 
+    može koristiti za vraćanje vrednosti iz metode u kod.
+
+  - Važno je napomenuti da metod System.exit prekida ceo JVM, 
+    dok naredba return "napu&scaron;ta" samo trenutni blok metode.
+
+  - Metodu Sistem.ekit treba koristiti oprezno, jer može imati neželjene posledice 
+  i treba je koristiti samo u izuzetnim okolnostima. 
+  
+  - Naredba return, s druge strane, je često kori&scaron;ćena konstrukcija toka kontrole koja se koristi za 
+  izlazak iz metode i vraćanje vrednosti u kod.
+  */</span>
+}
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 304: (VIII_OOP.K10_Cat)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Macka</strong> i u njoj:
+- podatak <strong>ime</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- metodu <strong style="color: #44bd32;">prikazatiIme</strong> za ispisivanje imena macke.
+    
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Macka</strong> pod nazivom <strong>macka</strong> ciju vrednost unosi korisnik.
+- poziv metode <strong style="color: #44bd32;">prikazatiIme</strong> objekta <strong>macka</strong>.
+  
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Nevesti tri referentna tipova podataka?</em>
+<em>Da li je složeni tip podatka <strong style="color: #0984e3;">String</strong> (tj niska) zapravo klasa?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K10_Cat;
+public class Macka {
+  String ime;
+
+  public void prikazatiIme() {
+    System.out.println("Ime: " + this.ime);
+  }
+}  
+
+<span style="color: azure;">/*  */</span>
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K10_Cat;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      Macka macka = new Macka();
+
+      Scanner scanner = new Scanner(System.in);
+
+      System.out.println("Unesite ime macke: ");
+
+      macka.ime = scanner.nextLine();
+
+      macka.prikazatiIme();
+
+      scanner.close();
+    }
+
+}
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 305: (VIII_OOP.K11)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">ABC</strong> i u njoj:
+- metodu <strong style="color: #44bd32;">ABC</strong> za stampanje texta "Objekat je kreiran".
+
+Definisati klasu <strong style="color: #0984e3;">XYZ</strong> i u njoj:
+- metodu <strong style="color: #44bd32;">XYZ</strong> za stampanje texta "Objekat je kreiran".
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InstanceOfPrikaz</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">ABC</strong> pod nazivom <strong>a</strong>.
+- kreirati objekat klase <strong style="color: #0984e3;">XYZ</strong> pod nazivom <strong>x</strong>.
+- odrediti da li objekat <strong>a</strong> pripada klasi <strong>ABC</strong> kori&scaron;ćenjem operatora <em>instanceof</em>.
+- odrediti da li objekat <strong>x</strong> pripada klasi <strong>XYZ</strong> kori&scaron;ćenjem operatora <em>instanceof</em>.
+- &scaron;tampati rezltat
+    
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znači operator <strong>instanceof</strong>?</em>
+<em>&Scaron;ta znači <strong>Main</strong> (pokretačka) klasa?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 45%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K11;
+public class ABC {
+
+    ABC() {
+      System.out.println("Objekat je kreiran.");
+    }
+}   
+  
+<span style="color: azure;">/* 
+U Javi, glavna klasa je klasa koja sadrži metod main(), 
+koji je ulazna tačka programa. Glavni () metod je mesto
+gde Java virtuelna ma&scaron;ina (JVM) počinje da 
+izvr&scaron;ava program.Metoda main() mora biti deklarisana 
+kao javna da bi mogla biti pozvana od strane JVM. Takođe 
+mora biti progla&scaron;ena statičkom kako bi se mogla 
+pozvati bez kreiranja instance klase. Vraćanje tipa void 
+označava da metoda ne vraća vrednost. Metoda main() uzima 
+jedan argument tipa String[], koji predstavlja niz argumenata 
+komandne linije prosleđenih programu. Ovi argumenti su 
+opcioni i mogu se koristiti za prosleđivanje unosa programu 
+kada se izvr&scaron;i.*/
+</span>
+</pre>
+</div>
+<div style="float: left; width: 20%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K11;
+  public class XYZ {
+      XYZ() {
+        System.out.println("Objekat je kreiran.");
+      }
+  }
+  </pre>
+</div>
+<div style="float: left; width: 35%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K11;
+
+public class InstanceOfPrikaz {
+
+    public static void main(String[] args) {
+
+      ABC a = new ABC();
+      XYZ x = new XYZ();
+
+      if (a instanceof ABC) {
+          System.out.println("a je instanca klase ABC.");
+      } else {
+          System.out.println("a nije instanca klase ABC.");
+      }
+
+      if (x instanceof XYZ) {
+          System.out.println("a je instanca klase XYZ.");
+      } else {
+          System.out.println("a nije instanca klase XYZ.");
+      }
+
+    }
+}
+
+<span style="color: azure;">
+Operator instanceof u Javi je operator poređenja tipova 
+koji se koristi za određivanje da li je objekat instanca 
+određene klase ili implementira određeni interfejs.</span>
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 306: (VIII_OOP.K12)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- podatak <strong>sirina</strong> tipa <em>double</em>.
+- podatak <strong>visina</strong> tipa <em>double</em>.
+- podatak <strong>dubina</strong> tipa <em>double</em>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">BoxPrikaz</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong>.
+- deklarisati promenljivu <strong>zapremina</strong> tipa <em>double</em>.
+- izračunati <strong>zapreminu</strong> objekta <strong>box</strong> kori&scaron;ćenjem formule za zapreminu kutije (&scaron;irina * visina * dubina).
+- &scaron;tampati zapreminu kutije.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Da li se polja u klasi mogu deklarisati na sledeći način: <strong>double</strong> sirina, visina, dubina;?</em>
+<em>Kada dolazi do alokacije memorije za objekat?</em>
+<em>&Scaron;ta je problem u sledećoj liniji koda: <strong style="color: #0984e3;">Person</strong> <strong>p</strong> = null;?
+</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K12;
+public class Box {
+
+double sirina;
+double visina;
+double dubina;
+
+}
+    
+  <span style="color: azure;">/* 
+1. Polja mogu da se deklari&scaron;u u jednoj liniji.
+
+2. Do alokacije memorije za objekat dolazi prilikom samog kreiranja objekta 
+kori&scaron;ćenjem ključne reči "null".
+
+3. Linija koda "Person p = null;" kreira nultu referencu objekta koja se ne
+odnosi ni na jedan objekat. Ne može se koristiti nulta referenca objekta
+za pristup metodama ili poljima, a poku&scaron;aj da se to uradi rezultiraće
+"NullPointerException"om.
+
+*/</span>
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K12;
+
+public class BoxPrikaz {
+
+    public static void main(String[] args) {
+
+      Box b1 = new Box();
+
+      double zapremina;
+
+      b1.sirina = 10;
+      b1.visina = 15;
+      b1.dubina = 20;
+
+      zapremina = b1.sirina * b1.visina * b1.dubina;
+
+      System.out.println("Zapremina: " + zapremina);
+
+    }
+
+}
+
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 307: (VIII_OOP.K13)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- podatak <strong>width</strong> tipa <em>double</em>.
+- podatak <strong>height</strong> tipa <em>double</em>.
+- podatak <strong>depth</strong> tipa <em>double</em>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">KutijaPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> i <strong>b2</strong>.
+- vrednosti za <strong>b1</strong> za &scaron;irinu su 10, visina 15, dubina 20.
+- vrednosti za <strong>b2</strong> za &scaron;irinu su 5, visina 6, dubina 7.
+- izračunati <strong>zapreminu</strong> oba objekta kori&scaron;ćenjem formule za zapreminu kutije (&scaron;irina * visina * dubina).
+- &scaron;tampati zapreminu obe kutije.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znače Klase, Polja i Metode u Javi?</em>
+<em>&Scaron;ta su specifikatori pristupa u Javi?</em>
+<em>Koja je razlika izmedju <strong>private</strong> i <strong>public</strong> specifikatora pristupa?</em>
+<em>Koji su ostali specifikatori pristupa?</em>
+<em>Kako modifikatori pristupa utiču na koncept enkapsulacije u objektno orijentisanom programiranju?</em>
+<em>Možete li pristupiti privatnom polju (ili metodi) izvan klase u kojoj je deklarisan? Ako ne, kako mu možete pristupiti?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K13;
+
+public class Box {
+
+    double width;
+    double height;
+    double depth;
+}
+<span style="color: azure;">
+/* - Klasa u Javi predstavlja uputstvo koje kaže kako će izgledati 
+  *   i kako će se pona&scaron;ati objekat koji je iz nje kreiran.
+  * - Polja (atributi) sadrže trenutno stanje nekog objekta (ili klase).
+  * - Metode implementiraju pona&scaron;anje objekta, odnosno klase.
+  * - Klase i objekti: Kontrola pristupa članovima
+  * 
+  * - U javi specifikatori pristupa se koriste da bi se da bi se za&scaron;titile
+  *   promenljive klase i njene metode.
+  *   
+  * - Java podržava sledeće nivoe pristupa članovima klase (promenljivima i metodama): 
+  *   private, protected, public, i ukoliko se ne zada, package.
+  * 
+  * - Private:
+  *   Najrestriktivniji nivo pristupa. Privatnom članu mogu da pristupe samo ostali
+  *   članovi klase u kojoj je on definisan. Članovi izvedene klase ne 
+  *   mogu da mu pristupe. Privatni članovi deklari&scaron;u se ključnom reči private.
+  *   
+  * - Protected:
+  *   Za&scaron;tićenim članovima mogu da pristupaju članovi klase u kojoj je definisana,
+  *   članovi izvedenih klasa i sve klase unutar istog paketa.
+  *   Za&scaron;tićeni članovi defini&scaron;u se ključnom reči protected.
+  *   
+  * - Public:
+  *   Bilo koja klasa, u bilo kom paketu, ima pravo pristupa javnim članovima neke klase.
+  *   Javni članovi klase implementiraju način komunikacije sa nekim objektom.
+  *   Ključna reč public se koristi da bi se deklarisao javni član klase.
+  *   
+  * - Package (default):
+  *   Ovo je nivo pristupa koji se dobija ukoliko se ne navede nijedan deklarator 
+  *   nivoa pristupa. Ovaj nivo pristupa dozvoljava klasama unutar istog paketa da 
+  *   pristupi članovima klase. Podrazumeva se da su klase unutar istog paketa
+  *   poverljivi prijatelji.
+  *   
+  * */</span>
+
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K13;
+
+public class KutijaPrikaz {
+
+    public static void main(String[] args) {
+
+      Box b1 = new Box();
+      Box b2 = new Box();
+
+      double vol;
+
+      b1.width = 10;
+      b1.height = 15;
+      b1.depth = 20;
+
+      b2.width = 5;
+      b2.height = 6;
+      b2.depth = 7;
+
+      vol = b1.width * b1.height * b1.depth;
+      System.out.println("Zapremina: " + vol);
+
+      vol = b2.width * b2.height * b2.depth;
+      System.out.println("Zapremina: " + vol);
+    }
+
+}
+    
+  
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 3000.0
+Zapremina: 210.0</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 308: (VIII_OOP.K14)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+  - podatak <strong>width</strong> tipa <em>double</em>.
+  - podatak <strong>height</strong> tipa <em>double</em>.
+  - podatak <strong>depth</strong> tipa <em>double</em>.
+  - metodu <strong style="color: #44bd32;">volume</strong> koja računa zapreminu kutije i &scaron;tampa vrednost.
+  
+  Definisati pokretačku klasu <strong style="color: #0984e3;">BoxPrikaz</strong> i u njoj:
+  - kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> i <strong>b2</strong>.
+  - vrednosti za <strong>b1</strong> za &scaron;irinu su 10, visina 15, dubina 20.
+  - vrednosti za <strong>b2</strong> za &scaron;irinu su 5, visina 6, dubina 7.
+  - pozvati metodu <strong style="color: #44bd32;">volume</strong> za objekat <strong>b1</strong> i <strong>b2</strong>.
+  
+  <strong style="font-size: medium;">Pitanja:</strong>
+  <em>Možete li da date primer metode koja uzima argumente i vraća vrednost?</em>
+  <em>Možete li da date primer metode koja ne uzima argumente i ne vraća vrednost?</em>
+  <em>Možete li da date primer metode koja uzima promenljiv broj argumenata?</em>
+  </pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K14;
+
+public class Box {
+
+      double width;
+      double height;
+      double depth;
+
+      void volume() {
+      System.out.print("Zapremina: ");
+      System.out.println(width * height * depth);
+    }
+
+}
+  
+<span style="color: azure;">
+/* U programskom jeziku Java, varargs je skraćenica za promenljive argumente. 
+To je karakteristika koja vam omogućava da deklari&scaron;ete metod koji uzima promenljiv broj 
+argumenata određenog tipa. Da biste deklarisali metod sa promenljivim brojem argumenata, 
+koristite sintaksu <strong>...</strong> praćenu tipom argumenata. Na primer: 
+    
+<mark>metoda u Klasi</mark>
+    public static void stampajBrojeve(int... brojevi) {
+        for (int broj : brojevi) {
+            System.out.println(broj);
+        }
+    }
+<mark>pozivanje metode u pokretackoj Klasi</mark>
+stampajBrojeve(1, 2, 3, 4, 5);
+stampajBrojeve(6, 7, 8, 9);
+stampajBrojeve(10);
+*/</span>
+  
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K14;
+
+public class BoxPrikaz {
+
+    public static void main(String[] args) {
+      Box b1 = new Box();
+      Box b2 = new Box();
+
+      b1.width = 10;
+      b1.height = 15;
+      b1.depth = 20;
+
+      b2.width = 5;
+      b2.height = 6;
+      b2.depth = 7;
+
+      b1.volume();
+      b2.volume();
+
+    }
+
+}</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 3000.0
+Zapremina: 210.0</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 309: (VIII_OOP.K15)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- privatni podatak <strong>width</strong> tipa <em>double</em>.
+- privatni podatak <strong>height</strong> tipa <em>double</em>.
+- privatni podatak <strong>depth</strong> tipa <em>double</em>.
+- metodu <strong style="color: #44bd32;">initBox</strong> sa tri ulazna parametra <em>double</em> <strong>w</strong>,<em>double</em> <strong>h</strong>, <em>double</em> <strong>d</strong> 
+  za odredjivanje &scaron;irine, visine i dubine kutije.
+- metodu <strong style="color: #44bd32;">volume</strong> koja računa i vraća vrednost zapremine kutije.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InicijalizacijaVrednostiUpodrazumevanomKonstruktoruPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> i <strong>b2</strong>.
+- pozvati metodu <strong style="color: #44bd32;">initBox</strong> za objekte <strong>b1</strong> sa parametrima (10, 15, 20) i <strong>b2</strong> sa (5, 6, 7).
+- pozvati metodu <strong style="color: #44bd32;">volume</strong> za oba objekta i i&scaron;tampati vrednosti njihovih zapremina.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Da li je gore navedeni <strong style="color: #44bd32;">initBox</strong> konstruktor?</em>
+<em>Pri pozivu podrazumevanog konstruktora, koje bi vrednosti imale promenljive <strong>height</strong>, <strong>width</strong> i <strong>depth</strong>?</em>
+<em>Da li Java kompajler kreira podrazumevani konstrukor ukoliko sami napi&scaron;ete konstruktor za određenu klasu?</em>
+<em>Da li konstruktor može da ima ključnu reč <em>void</em> ili <em>return</em>? a da li može da sadrži <em>public</em>?</em>
+<em>Da li je moguće u jednoj klasi imati vi&scaron;e konstruktora? ako je odgovor DA, objasniti kako?</em>
+
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K15;
+
+public class Box {
+
+private double width;
+private double height;
+private double depth;
+
+    void initBox(double w, double h, double d) {
+      width = w;
+      height = h;
+      depth = d;
+    }
+
+    double volume() {
+      return width * height * depth;
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K15;
+
+public class InicijalizacijaVrednostiUpodrazumevanomKonstruktoruPrikaz {
+
+    public static void main(String[] args) {
+
+      <span style="color: azure;">/* u trenutku kreiranja objekta poziva se 
+      podrazumevani konstruktor */</span>
+      Box b1 = new Box();
+      Box b2 = new Box();
+
+      b1.initBox(10, 15, 20);
+      b2.initBox(5, 6, 7);
+
+      System.out.println("Zapremina: " + b1.volume());
+      System.out.println("Zapremina: " + b2.volume());
+    }
+
+}
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 3000.0
+Zapremina: 210.0</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 310: (VIII_OOP.K17)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- privatni podatak <strong>width</strong> tipa <em>double</em>.
+- privatni podatak <strong>height</strong> tipa <em>double</em>.
+- privatni podatak <strong>depth</strong> tipa <em>double</em>.
+- podrazumevani konstruktor <strong style="color: #44bd32;">Box</strong> sa sledećim vrednostima:
+  <strong>width</strong> = 10; <strong>height</strong> = 10; <strong>depth</strong> = 10;
+  za odredjivanje &scaron;irine, visine i dubine kutije.
+- metodu <strong style="color: #44bd32;">volume</strong> koja računa i vraća vrednost zapremine kutije.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InicObjKoristeciDifoltniKonstruktorPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> i <strong>b2</strong>.
+- pozvati metodu <strong style="color: #44bd32;">volume</strong> za oba objekta i i&scaron;tampati vrednosti njihovih zapremina.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Koja je razlika između konstruktora BEZ argumenata i konstruktora SA argumentima?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K17;
+
+public class Box {
+    private double width;
+    private double height;
+    private double depth;
+
+    Box() { <span style="color: azure;">/* Konstruktor BEZ argumenata */</span>
+      width = 10;
+      height = 10;
+      depth = 10;
+    }
+    <span style="color: azure;">
+    /*Konstruktor:
+      * - Isto ime kao klasa
+      * - Konstruktor ne vraća vrednost
+      * - Konstruktor je javna ''metoda''
+      * - Konstruktor može (ne mora) da ima 
+      *   parametre
+      * */</span>
+
+    double volume() {
+      return width * height * depth;
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K17;
+
+public class InicObjKoristeciDifoltniKonstruktorPrikaz {
+
+  public static void main(String[] args) {
+    Box b1 = new Box();
+    Box b2 = new Box();
+
+    System.out.println("Zapremina: " + b1.volume());
+    System.out.println("Zapremina: " + b2.volume());
+
+  }
+
+}     
+  </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 1000.0
+Zapremina: 1000.0
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 311: (VIII_OOP.K18)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- privatni podatak <strong>width</strong> tipa <em>double</em>.
+- privatni podatak <strong>height</strong> tipa <em>double</em>.
+- privatni podatak <strong>depth</strong> tipa <em>double</em>.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Box</strong> za inicijalizaciju podataka visina, &scaron;irina i dubina kutije.
+- metodu <strong style="color: #44bd32;">volume</strong> koja računa i vraća vrednost zapremine kutije.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InicObjKoristeciDifoltniKonstruktorPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> sa argumentima (10,15,20) i <strong>b2</strong> sa (5,6,7).
+- pozvati metodu <strong style="color: #44bd32;">volume</strong> za oba objekta i i&scaron;tampati vrednosti njihovih zapremina.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Da li je moguće da Klasa ima vi&scaron;e konstruktora sa različitim tipovima ili brojem argumenata?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K18;
+
+public class Box {
+    private double width;
+    private double height;
+    private double depth;
+
+    Box(double w, double h, double d) { <span style="color: azure;">/* Konstruktor SA argumentima*/</span>
+      width = w;
+      height = h;
+      depth = d;
+    }
+
+    double volume() {
+      return width * height * depth;
+    }
+}
+
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K18;
+
+public class InicObjSaParametrizovanimKonstruktorom {
+
+    public static void main(String[] args) {
+      Box b1 = new Box(10, 15, 20);
+      Box b2 = new Box(5, 6, 7);
+
+      System.out.println("Zapremina: " + b1.volume());
+      System.out.println("Zapremina: " + b2.volume());
+
+    }
+
+}
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 3000.0
+Zapremina: 210.0
+  </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 312: (VIII_OOP.K19)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- privatni podatak <strong>width</strong> tipa <em>double</em>.
+- privatni podatak <strong>height</strong> tipa <em>double</em>.
+- privatni podatak <strong>depth</strong> tipa <em>double</em>.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Box</strong> za inicijalizaciju podataka visina, &scaron;irina i dubina kutije kori&scaron;ćenjem ključne reči <em>this</em>.
+- metodu <strong style="color: #44bd32;">volume</strong> koja računa i vraća vrednost zapremine kutije.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InicObjKoristeciDifoltniKonstruktorPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> sa argumentima (10,15,20) i <strong>b2</strong> sa (5,6,7).
+- pozvati metodu <strong style="color: #44bd32;">volume</strong> za oba objekta i i&scaron;tampati vrednosti njihovih zapremina.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Kada je neophodno da se koristi ključna reč <em>this</em> u konstruktoru klase?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K18;
+
+  public class Box {
+      private double width;
+      private double height;
+      private double depth;
+  
+      Box(double w, double h, double d) { <span style="color: azure;">/* Konstruktor SA argumentima*/</span>
+        this.width = w;
+        this.height = h;
+        this.depth = d;
+      }
+  
+      double volume() {
+        return width * height * depth;
+      }
+  }
+  
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K18;
+  
+  public class InicObjSaParametrizovanimKonstruktorom {
+  
+      public static void main(String[] args) {
+        Box b1 = new Box(10, 15, 20);
+        Box b2 = new Box(5, 6, 7);
+  
+        System.out.println("Zapremina: " + b1.volume());
+        System.out.println("Zapremina: " + b2.volume());
+  
+      }
+  
+  }
+  </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">  Zapremina: 3000.0
+  Zapremina: 210.0
+    </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 313: (VIII_OOP.K20)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Box</strong> i u njoj:
+- privatni podatak <strong>width</strong> tipa <em>double</em>.
+- privatni podatak <strong>height</strong> tipa <em>double</em>.
+- privatni podatak <strong>depth</strong> tipa <em>double</em>.
+- podrazumevani konstruktor <strong style="color: #44bd32;">Box</strong> za inicijalizaciju podataka visina, &scaron;irina i dubina na vrednost 1.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Box</strong> za inicijalizaciju podataka visina, &scaron;irina i dubina.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Box</strong> sa 1 parametrom <strong>len</strong> čija se vrednost dodeljuje &scaron;irini, visini i dubini kutije.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Box</strong> sa unosom objekta <strong>b2</strong> klase <strong style="color: #0984e3;">Box</strong>.
+- metodu <strong style="color: #44bd32;">volume</strong> koja računa i vraća vrednost zapremine kutije.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">InicObjKoristeciDifoltniKonstruktorPrikaz</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b1</strong> bez parametara.
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b2</strong> sa argumentima (10,15,20).
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b3</strong> sa argumentom (10).
+- kreirati objekte klase <strong style="color: #0984e3;">Box</strong> pod nazivom <strong>b4</strong> sa unosom objekta <strong>b2</strong>.
+- pozvati metodu <strong style="color: #44bd32;">volume</strong> za oba objekta i i&scaron;tampati vrednosti njihovih zapremina.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>U slučaju preklapanja konstruktora, kako kompajler poziva takve konstruktore?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K20;
+
+public class Box {
+    private double width;
+    private double height;
+    private double depth;
+
+    <span style="color: azure;">/* Preklapanje konstruktora 
+      * (navođenje vi&scaron;e oblika konstruktora)
+      * 
+      * */</span>
+
+    Box() {
+      width = 1;
+      height = 1;
+      depth = 1;
+    }
+
+    Box(double w, double h, double d) {
+      width = w;
+      height = h;
+      depth = d;
+    }
+
+    Box(double len) {
+      width = height = depth = len;
+    }
+
+    Box(Box b) {
+      width = b.width;
+      height = b.height;
+      depth = b.depth;
+    }
+
+    double volume() {
+      return width * height * depth;
+    }
+} 
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K20;
+
+public class PreklapanjeKonstruktoraPrikaz {
+
+    public static void main(String[] args) {
+
+      Box b1 = new Box();
+      Box b2 = new Box(10, 15, 20);
+      Box b3 = new Box(10);
+      Box b4 = new Box(b2);
+
+      System.out.println("Zapremina: " + b1.volume());
+      System.out.println("Zapremina: " + b2.volume());
+      System.out.println("Zapremina: " + b3.volume());
+      System.out.println("Zapremina: " + b4.volume());
+
+    }
+
+}    
+  </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Zapremina: 1.0
+Zapremina: 3000.0
+Zapremina: 1000.0
+Zapremina: 3000.0
+      
+    </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 314: (VIII_OOP.K21_Knjiga)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Knjiga</strong> i u njoj:
+- privatni podatak <strong>ime</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- privatni podatak <strong>brojStrana</strong> tipa <em>double</em>.
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong> kako za ime, tako i za broj strana knjige.
+- metodu <strong style="color: #44bd32;">stampanjeKnjige</strong> koja ispisuje ime knjige i broj stranica.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">PrikazKnjige</strong> i u njoj:
+- kori&scaron;ćenjem klase <strong style="color: #0984e3;">Scanner</strong> omogućiti korisniku da unese ime i broj strana knjige.
+- pozvati metodu <strong style="color: #44bd32;">stampanjeKnjige</strong> koja &scaron;tampa ime i broj strana knjige.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta su <strong>getters</strong> i <strong>setters</strong> u Javi i za &scaron;ta se koriste?</em>
+<em>Da li možete imati <strong>setters</strong> bez <strong>getters</strong> u Javi?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K21_Knjiga;
+
+public class Knjiga {
+
+    private String ime;
+    private int brojStrana;
+
+    public void setIme(String name) {
+      ime = name;
+    }
+
+    public String getIme() {
+      return ime;
+    }
+
+    public void setBrojStrana(int broj) {
+      brojStrana = broj;
+    }
+
+    public int getBrojStrana() {
+      return brojStrana;
+    }
+
+    void stampanjeKnjige() {
+      System.out.println("Ime knjige je '" + 
+      ime + "' koja ima " + brojStrana + 
+      " stranica.");
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.K21_Knjiga;
+
+import java.util.Scanner;
+
+public class PrikazKnjiga {
+
+    public static void main(String[] args) {
+      Scanner ulaz = new Scanner(System.in);
+      Knjiga knjiga = new Knjiga();
+    
+      System.out.println("Unesite ime knjige: ");
+      String ime = ulaz.nextLine();
+      System.out.println("Koliko strana ima knjiga '" + ime + "'?");
+      int brojStrana = ulaz.nextInt();
+    
+      knjiga.setIme(ime);
+      knjiga.setBrojStrana(brojStrana);
+    
+      knjiga.stampanjeKnjige();
+    
+      ulaz.close();
+    }
+
+}  
+</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Unesite ime knjige: 
+<span style="color: azure;">Zločin i kazna</span>
+Koliko strana ima knjiga 'Zločin i kazna'?
+<span style="color: azure;">714</span>
+Ime knjige je 'Zločin i kazna' koja ima 714 stranica.
+      </pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 315: (VIII_OOP.UML01)</strong></p>
+<pre style="text-align: justify;">Kod sa slike pretvoriti u UML dijagram.
+
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>&Scaron;ta znači UML i za &scaron;ta služi?</em>
+<em>Kako se UML koristi u Javi?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML01;
+
+public class Kutija {
+    public double sirina;
+    public double visina;
+    public double dubina;
+
+    public double izracunajZapreminu() {
+      return sirina * visina * dubina;
+    }
+
+    public double izracunajPovrsinu() {
+      return 2 * (dubina * sirina + dubina * visina + sirina * visina);
+    }
+}
+  
+<span style="color: azure;">/*
+1. Unified Modeling Language (UML) je grafički jezik za 
+vizuelizaciju, specifikaciju, konstruisanje i 
+dokumentovanje softverskih sistema. UML se koristi za 
+modeliranje strukture i pona&scaron;anja softverskih sistema, 
+uključujući odnose između klasa, objekata i interakcije 
+između njih. 
+
+2. U kontekstu Jave, UML se često koristi za dizajniranje
+i dokumentovanje strukture i pona&scaron;anja Java aplikacija.
+Na primer, možete koristiti UML za modeliranje klasa, 
+atributa i metoda u Java aplikaciji, kao i relacije 
+između njih i interakcije između objekata.*/</span>
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671410211890.jpg" alt="" width="312" height="202" /></div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 316: (VIII_OOP.UML02)</strong></p>
+<pre style="text-align: justify;">Tačka u ravni se zadaje pomoću realnih koordinata, mogu da joj se dohvate vrednosti koordinata i može
+da se konvertuje u tip String.
+<em>Dakle, sledeći uslovi zadatka su:</em>
+
+Definisati klasu <strong style="color: #0984e3;">Tacka</strong> i u njoj:
+- privatni podatak <strong>x</strong> tipa <em>double</em>.
+- privatni podatak <strong>y</strong> tipa <em>double</em>.
+- parametrizovan konstruktor za inicijalizaciju koordinata tacke.
+- odgovarajuću metodu <strong style="color: #44bd32;">get</strong> za <strong>x</strong> i <strong>y</strong>.
+- metodu <strong style="color: #44bd32;">ispisi</strong> koja ispisuje koordinate tacke "(x, y)".
+- kreirati UML diagram za zadatu klasu  
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Tacka</strong> pod nazivom <strong>t1</strong> sa parametrima 2 i 5.
+- pozvati metode <strong style="color: #44bd32;">getX</strong>, <strong style="color: #44bd32;">getY</strong> i <strong style="color: #44bd32;">ispisi</strong> objekta <strong>t1</strong>.
+  
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Koja je razlika kada se vrednosti inicijalizuju preko <em>konstruktora</em> u odnosu na <em>setter</em>?</em>
+<em>Da li se vrednosti inicijalizovane <em>konstruktorom</em> mogu menjati <em>setterima</em>?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML02;
+
+public class Tacka {
+    private double x;
+    private double y;
+
+    Tacka(double x, double y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    public double getX() {
+      return x;
+    }
+
+    public double getY() {
+      return y;
+    }
+
+    public String ispisi() {
+      return "(" + x + ", " + y + ")";
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML02;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      Tacka t1 = new Tacka(2, 5);
+
+      System.out.println(t1.getX());
+      System.out.println(t1.getY());
+      System.out.println(t1.ispisi());
+
+    }
+
+}
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671545056343.jpg" alt="" width="167" height="199" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">2.0
+5.0
+(2.0, 5.0)
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 317: (VIII_OOP.UML03)</strong></p>
+<pre style="text-align: justify;">Podatke o osobi čine ime, datum rođenja i adresa stanovanja. Omogućiti uno&scaron;enje podataka o osobi
+čitanjem sa glavnog ulaza i sastavljanje tekstualnog opisa.
+<em>Dakle, sledeći uslovi zadatka su:</em>
+
+Definisati klasu <strong style="color: #0984e3;">Osoba</strong> i u njoj:
+- javni podatak <strong>ime</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- javni podatak <strong>datumRodjenja</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- javni podatak <strong>adresaStanovanja</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- bez ispisivanja konstruktora.
+- metodu <strong style="color: #44bd32;">ispisiToString</strong> koja vraća ime, datum rodjenja i adresu.
+- kreirati UML diagram za zadatu klasu
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Scanner</strong> pod nazivom <strong>ulaz</strong> za omogućavanje korisniku da unose podatke.
+- kreirati objekat klase <strong style="color: #0984e3;">Osoba</strong> pod nazivom <strong>o1</strong>.
+- &scaron;tampati vrednost metode <strong style="color: #44bd32;">ispisiToString</strong> objekta <strong>o1</strong>.
+    
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Za&scaron;to objekat klase <strong>Scanner</strong> je na kraju kori&scaron;ćenja uvek poželjno ''zatvoriti'' (<em>ulaz.close()</em>)?</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML03;
+
+public class Osoba {
+    public String ime;
+    public String datumRodjenja;
+    public String adresaStanovanja;
+
+    public String ispisiToString() {
+      return "Ime: " + ime + "\nDatum rodjenja: " 
+      + datumRodjenja + "\nAdresa: " + 
+      adresaStanovanja;
+
+    }
+}
+  
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML03;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+      Scanner ulaz = new Scanner(System.in);
+      Osoba o1 = new Osoba();
+
+      System.out.println("Unesite ime: ");
+      o1.ime = ulaz.nextLine();
+      System.out.println("Unesite datum rodjenja: ");
+      o1.datumRodjenja = ulaz.nextLine();
+      System.out.println("Unesite adresu stanovanja: ");
+      o1.adresaStanovanja = ulaz.nextLine();
+
+      System.out.println(o1.ispisiToString());
+
+      ulaz.close();
+      <span style="color: azure;">/*
+        Važno je da zatvorite objekat Scanner kada zavr&scaron;ite 
+        sa njegovim kori&scaron;ćenjem jer je povezan sa osnovnim 
+        InputStream-om, koji može biti FileInputStream ili 
+        veza utičnice (socketa), a ovi resursi su ograničeni. 
+        Ako ne zatvorite objekat Scanner, on neće osloboditi osnovni 
+        InputStream i to može sprečiti druge programe da mu pristupe. 
+        Pored toga, nezatvaranje objekta Scanner može dovesti do curenja 
+        memorije jer će objekat nastaviti da drži InputStream i sve 
+        povezane resurse.
+        
+        Zato Eclipse IDE izbacuje upozorenje ukoliko se ne zatvori objekat
+        klase Scanner.
+        */</span>
+
+    }
+
+}
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671545067800.jpg" alt="" width="271" height="180" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Unesite ime: 
+<span style="color: azure;">Milan Peric</span>
+Unesite datum rodjenja: 
+<span style="color: azure;">05.05.1988</span>
+Unesite adresu stanovanja: 
+<span style="color: azure;">Zahumska 12/58, Beograd</span>
+
+Ime: Milan Peric
+Datum rodjenja: 05.05.1988
+Adresa: Zahumska 12/58, Beograd
+  </pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 318: (VIII_OOP.UML04)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Valjak</strong> i u njoj:
+- privatni podatak <strong>poluprecnik</strong> tipa <em>double</em>.
+- privatni podatak <strong>visina</strong> tipa <em>double</em>.
+- parametrizovani konstruktor za inicijalziaciju promenljivih <strong>poluprecnik</strong> i <strong>visina</strong>.
+- konstruktor bez parametara za inicijalziaciju promenljivih <strong>poluprecnik</strong> i <strong>visina</strong> na 1.
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> za dohvat <strong>poluprecnik</strong> i <strong>visina</strong>.
+- metodu <strong style="color: #44bd32;">zapreminaValjka</strong> za izračunavanje zapremine valjka.
+- metodu <strong style="color: #44bd32;">opsiValjka</strong> za &scaron;tampanje poluprecnika i visine valjka.
+- kreirati UML diagram za zadatu klasu  
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Valjak</strong> sa nazivom <strong>v1</strong> bez unosa parametara.
+- kreirati objekat klase <strong style="color: #0984e3;">Valjak</strong> sa nazivom <strong>v2</strong> sa parametrima 3 i 5.
+- &scaron;tampati vrednost metode <strong style="color: #44bd32;">opisValjka</strong> i <strong style="color: #44bd32;">zapreminavaljka</strong> za oba objekta (v1 i v2).      
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML04;
+
+public class Valjak {
+    private double poluprecnik;
+    private double visina;
+
+    Valjak(double r, double h) {
+      this.poluprecnik = r;
+      this.visina = h;
+    }
+
+    Valjak() {
+      this.poluprecnik = 1;
+      this.visina = 1;
+    }
+
+    public double getPoluprecnik() {
+      return poluprecnik;
+    }
+
+    public double getVisina() {
+      return visina;
+    }
+
+    public double zapreminaValjka() {
+      return poluprecnik * poluprecnik * 3.14 * visina;
+    }
+
+    public String opisValjka() {
+      return "[" + poluprecnik + ", " + visina + "]";
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML04;
+
+public class Main {
+
+    public static void main(String[] args) {
+      Valjak v1 = new Valjak();
+      Valjak v2 = new Valjak(3, 5);
+
+      System.out.println("Opis valjka v1: " + v1.opisValjka());
+      System.out.println("Zapremina: " + v1.zapreminaValjka());
+
+      System.out.println("\nOpis valjka v2: " + v2.opisValjka());
+      System.out.println("Zapremina: " + v2.zapreminaValjka());
+
+    }
+
+}
+
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671546728058.jpg" alt="" width="276" height="223" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Opis valjka v1: [1.0, 1.0]
+Zapremina: 3.14
+
+Opis valjka v2: [3.0, 5.0]
+Zapremina: 141.3</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 319: (VIII_OOP.UML05)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Radnik</strong> i u njoj:
+- privatni podatak <strong>ime</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- privatni podatak <strong>procenat</strong> tipa <em>double</em>.
+- privatni podatak <strong>prihod</strong> tipa <em>double</em>.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Radnik</strong> za inicijalizaciju promenljivih ime, procenat i prihod.
+- odgovarajuću metodu <strong style="color: #44bd32;">getPrihod</strong> za dohvat <strong>prihoda</strong>.
+- metodu <strong style="color: #44bd32;">obracunPlate</strong> kojom se vraca vrednost <strong>plata</strong>.
+- metodu <strong style="color: #44bd32;">opis</strong> za vraćanje informacije o imenu i plati radnika.
+- metodu <strong style="color: #44bd32;">stampanjeInformacija</strong> za &scaron;tampanje informacija o radniku.
+- kreirati UML diagram za zadatu klasu  
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Radnik</strong> sa nazivom <strong>r1</strong> sa unosom "Pera", 100, 150000.
+- kreirati objekat klase <strong style="color: #0984e3;">Radnik</strong> sa nazivom <strong>r2</strong> sa unosom "Mika", 80, 120000.
+- kreirati objekat klase <strong style="color: #0984e3;">Radnik</strong> sa nazivom <strong>r3</strong> sa unosom "Zika", 55, 80000.
+- pozvati metodu <strong style="color: #44bd32;">stampanjeInformacija</strong> za svakog od radnika.      
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML05;
+
+public class Radnik {
+  private String ime;
+  private double procenat;
+  private double prihod;
+
+  Radnik(String ime, double procenat, double prihod) {
+      this.ime = ime;
+      this.procenat = procenat;
+      this.prihod = prihod;
+    }
+
+    public double getPrihod() {
+      return prihod;
+    }
+
+    public double obracunPlate() {
+      return getPrihod() * procenat / 100;
+    }
+
+    public String opis() {
+      return ime + " / " + obracunPlate();
+    }
+
+    public void stampanjeInformacija() {
+      System.out.println(opis());
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML05;
+public class Main {
+
+    public static void main(String[] args) {
+      Radnik r1 = new Radnik("Pera", 100, 150000);
+      Radnik r2 = new Radnik("Mika", 80, 120000);
+      Radnik r3 = new Radnik("Zika", 55, 80000);
+    
+      System.out.println("Ime    Plata");
+      r1.stampanjeInformacija();
+      r2.stampanjeInformacija();
+      r3.stampanjeInformacija();
+
+    }
+
+}</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671551787330.jpg" alt="" width="272" height="236" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Ime    Plata
+Pera / 150000.0
+Mika / 96000.0
+Zika / 44000.0
+    </pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 320: (VIII_OOP.UML06)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Domina</strong> i u njoj:
+- privatni podatak <strong>a</strong> tipa <em>double</em>.
+- privatni podatak <strong>b</strong> tipa <em>double</em>.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Domina</strong> za inicijalizaciju promenljivih <strong>a</strong> i <strong>b</strong>.
+- odgovarajuću metodu <strong style="color: #44bd32;">getter</strong> za dohvat <strong>a</strong> i <strong>b</strong>.
+- metodu <strong style="color: #44bd32;">ista</strong> za upoređivanje dve domine.
+- metodu <strong style="color: #44bd32;">okreni</strong> koja zamenjuje polja domini.
+- redefinisanu metodu <strong style="color: #44bd32;">toString</strong> za &scaron;tampanje izgleda domine.
+- kreirati UML diagram za zadatu klasu  
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Domina</strong> sa nazivom <strong>d1</strong> sa unosom 2 i 4.
+- kreirati objekat klase <strong style="color: #0984e3;">Domina</strong> sa nazivom <strong>d2</strong> sa unosom 3 i 4.
+- pozvati metodu <strong style="color: #44bd32;">toString</strong> za obe domine.
+- pozvati metodu <strong style="color: #44bd32;">ista</strong> i uporediti domine <strong>d1</strong> i <strong>d2</strong>.
+- pozvati metodu <strong style="color: #44bd32;">okreni</strong> na domini <strong>d1</strong> kako bi doslo do zamene polja. 
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML06;
+
+public class Domina {
+    private int a, b;
+
+    public Domina(int p, int q) {
+      a = p;
+      b = q;
+    }
+
+    public int getA() {
+      return a;
+    }
+
+    public int getB() {
+      return b;
+    }
+
+    public boolean uporediDomine(Domina d) {
+      return a == d.a &amp;&amp; b == d.b || b == d.a &amp;&amp; a == d.b;
+    }
+
+    public Domina zameniDomine() {
+      int c = a;
+      a = b;
+      b = c;
+      return this;
+    }
+
+    public String opis() {
+      return "[" + a + " | " + b + "]";
+    }
+
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML06;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      Domina d1 = new Domina(2, 4);
+      Domina d2 = new Domina(3, 4);
+
+      System.out.println("Prva domina: " + d1.opis());
+      System.out.println("Druga domina: " + d2.opis());
+      System.out.println("Da li su domine d1 i d2 iste?\n" + d1.uporediDomine(d2));
+      System.out.println("Ako okrenemo d1, onda ona izgleda:\n" + d1.zameniDomine());
+
+    }
+
+}</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671629107513.jpg" alt="" width="265" height="367" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Prva domina: [2 | 4]
+Druga domina: [3 | 4]
+Da li su domine d1 i d2 iste?
+false
+Ako okrenemo d1, onda ona izgleda:
+[4 | 2]</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 321: (VIII_OOP.UML07)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Matrica</strong> i u njoj:
+- privatni podatak <strong>matrica</strong> tipa <em>double[][]</em>.
+- parametrizovani konstruktor <strong style="color: #44bd32;">Matrica</strong> za inicijalizaciju promenljivih <strong>vrste</strong> i <strong>kolone</strong>.
+- odgovarajuću metodu <strong style="color: #44bd32;">getter</strong> za dohvat redova i kolona.
+- metodu <strong style="color: #44bd32;">postaviElement</strong> kojom može da se postavi element sa zadatim indexima.
+- metodu <strong style="color: #44bd32;">dohvatiElement</strong> kojom može da se ispi&scaron;e željeni element sa zadatim indexima.
+- metodu <strong style="color: #44bd32;">stampanjeMatrice</strong> za &scaron;tampanje izgleda matrice.
+- kreirati UML diagram za zadatu klasu  
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Matrica</strong> sa nazivom <strong>m1</strong> sa unosom 5 i 5.
+- stampati koliko matrica <strong>m1</strong> ima vrsta i kolona pozivom odgovarajućih <strong style="color: #44bd32;">getter</strong> metoda.
+- postaviti vrednost 3 pozivom metode <strong style="color: #44bd32;">postaviElement</strong> koji se nalazi u drugom redu, treća kolona. <em>(obratiti paznju)</em>
+- pozivom metode <strong style="color: #44bd32;">dohvatiElement</strong> dohvatiti element sa indexom reda 1 a kolone 2.
+- &scaron;tampati novi izgled matrice primenom metode <strong style="color: #44bd32;">stampanjeMatrice</strong>.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML07;
+
+public class Matrica {
+    private double[][] matrica;
+
+    public Matrica(int vrste, int kolone) {
+      matrica = new double[vrste][kolone];
+    }
+
+    public double getVrste() {
+      return matrica.length;
+    }
+
+    public double getKolone() {
+      return matrica[0].length;
+    }
+
+    public Matrica postaviElement(int vrste, int kolone, double vrednost) {
+      matrica[vrste][kolone] = vrednost;
+      return this;
+    }
+
+    public double dohvatiElement(int vrste, int kolone) {
+      return matrica[vrste][kolone];
+    }
+
+    public void stampanjeMatrice() {
+      System.out.println("Izgled niza: ");
+      for (int v = 0; v &lt; matrica.length; v++) {
+        for (int k = 0; k &lt; matrica[0].length; k++) {
+          System.out.print(matrica[v][k] + " ");
+        }
+      System.out.println();
+    }
+
+  }
+
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML07;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+    Matrica m1 = new Matrica(5, 5);
+
+    System.out.println("Matrica ima redova: " + m1.getVrste());
+    System.out.println("Matrica ima kolona: " + m1.getKolone());
+    m1.postaviElement(1, 2, 3);
+    System.out.println("Dohvatili ste element: " + m1.dohvatiElement(1, 2));
+    m1.stampanjeMatrice();
+
+  }
+
+}
+</pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671643692189.jpg" alt="" width="270" height="276" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Matrica ima redova: 5.0
+Matrica ima kolona: 5.0
+Dohvatili ste element: 3.0
+Izgled niza: 
+0.0 0.0 0.0 0.0 0.0 
+0.0 0.0 3.0 0.0 0.0 
+0.0 0.0 0.0 0.0 0.0 
+0.0 0.0 0.0 0.0 0.0 
+0.0 0.0 0.0 0.0 0.0 
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 322: (VIII_OOP.UML08)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Tacka</strong> i u njoj:
+- privatni podatak <strong>x</strong> tipa <em>double</em>.
+- privatni podatak <strong>y</strong> tipa <em>double</em>.
+- konstruktor bez parametara.
+- konstruktor sa unosom jednog parametra za inicijalizaciju vrednosti promenljive <strong>x</strong>.
+- parametrizovan konstruktor za inicijalizaciju koordinata <strong>x</strong> i <strong>y</strong>.  
+- metodu <strong style="color: #44bd32;">rastojanjeOdKP</strong> koja računa rastojanje navedene tačke od koordinatnog početka.
+- metodu <strong style="color: #44bd32;">rastojanjeIzmedju</strong> koja računa rastojanje između dve zadate tačke.
+- kreirati UML diagram za zadatu klasu  
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">Tacka</strong> sa nazivom <strong>t1</strong> bez unosa, <strong>t2</strong> sa unosom 5, <strong>t3</strong> sa unosom 2 i 2.
+- &scaron;tampati rastojanje od koordinatnog početka za svaku od tačaka.
+- &scaron;tampati rastojanje između svake od tačaka.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML08;
+
+public class Tacka {
+    private double x, y;
+
+    Tacka() {
+
+    }
+
+    Tacka(double x) {
+      this.x = x;
+    }
+
+    public Tacka(double x, double y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    double rastojanjeOdKP() {
+      return Math.sqrt(x * x + y * y);
+    }
+
+    double rastojanjeIzmedju(Tacka t) {
+      return Math.sqrt(Math.pow(t.x - x, 2) + Math.pow(t.y - y, 2));
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML08;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Tacka t1 = new Tacka();
+    Tacka t2 = new Tacka(5);
+    Tacka t3 = new Tacka(2, 2);
+
+    System.out.println("Rastojanje od koordinatnog pocetka tacke t1: " + t1.rastojanjeOdKP());
+    System.out.println("Rastojanje od koordinatnog pocetka tacke t1: " + t2.rastojanjeOdKP());
+    System.out.println("Rastojanje od koordinatnog pocetka tacke t1: " + t3.rastojanjeOdKP());
+
+    System.out.println();
+
+    System.out.println("Rastojanje tacke t1 od tacke t2: " + t1.rastojanjeIzmedju(t2));
+    System.out.println("Rastojanje tacke t2 od tacke t3: " + t2.rastojanjeIzmedju(t3));
+    System.out.println("Rastojanje tacke t3 od tacke t1: " + t3.rastojanjeIzmedju(t1));
+
+    }
+
+}
+    
+  </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671646059682.jpg" alt="" width="329" height="288" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Rastojanje od koordinatnog pocetka tacke t1: 0.0
+Rastojanje od koordinatnog pocetka tacke t1: 5.0
+Rastojanje od koordinatnog pocetka tacke t1: 2.8284271247461903
+
+Rastojanje tacke t1 od tacke t2: 5.0
+Rastojanje tacke t2 od tacke t3: 3.605551275463989
+Rastojanje tacke t3 od tacke t1: 2.8284271247461903 
+</pre>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 323: (VIII_OOP.UML09)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">ApsolutnaVrednost</strong> i u njoj:
+- privatni podatak <strong>broj</strong> tipa <em>double</em>.
+- odgovarajuće metode <strong style="color: #44bd32;">get</strong> i <strong style="color: #44bd32;">set</strong> za <strong>broj</strong>.
+- metodu <strong style="color: #44bd32;">prikazatiApsVrednost</strong> kojom se vraća apsolutna vrednost unetog <strong>broj</strong>.
+- kreirati UML diagram za zadatu klasu  
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekte klase <strong style="color: #0984e3;">ApsolutnaVrednost</strong> sa nazivom <strong>abs</strong> bez unosa.
+- uneti željeni pozitivan ili negativan broj, sračunati apsolutnu vrednost i ispisati primenom odgovarajućih metoda.
+
+<strong style="font-size: medium;">Pitanja:</strong>
+<em>Uskoro..</em>
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML09;
+
+public class ApsolutnaVrednost {
+    private double broj;
+
+    public double getBroj() {
+      return broj;
+    }
+
+    public void setBroj(double broj) {
+      this.broj = broj;
+    }
+
+    public double prikazatiApsVrednost(double broj) {
+      return Math.abs(broj);
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">package VIII_OOP.UML09;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+    ApsolutnaVrednost abs = new ApsolutnaVrednost();
+  
+    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+  
+    System.out.println("Unesite željeni broj: ");
+    double broj = Double.parseDouble(ulaz.readLine());
+  
+    abs.setBroj(broj);
+    System.out
+    .println("Apsolutna vrednost unetog broja " + broj + " je " 
+    + abs.prikazatiApsVrednost(abs.getBroj()));
+
+    }
+
+}
+   </pre>
+</div>
+<div style="clear: both; float: left; width: 50%;">
+<h3 style="color: #130f40;">UML:</h3>
+<img src="https://miteam.mi.sanu.ac.rs/content/4qTpadBZrR7jNyWSW_1671648196913.jpg" alt="" width="270" height="182" /></div>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px; padding: 15px;">Unesite željeni broj: 
+-5
+Apsolutna vrednost unetog broja -5.0 je 5.0   
+</pre>
+</div>
+
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both; float: left; width: 50%;"><hr />
+  <p><em>kreirao <mark>Dejan Bajović</mark>.</em></p></div>
+
+</body>
+</html>

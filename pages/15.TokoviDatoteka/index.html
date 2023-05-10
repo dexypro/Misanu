@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datoteke i String</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/MzHqJbcEaNcwigGfs_1676028927537.gif" alt="" width="600" height="200" /></p>
+<p>&nbsp;</p>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 399: (File01)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- kreirati objekat klase <strong style="color: #0984e3;">File</strong> i pozvati metode <strong style="color: green;">exists(), isDirectory(), canRead(), lastModified()</strong>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">package f1;
+
+import java.io.File;
+
+public class File01 {
+
+  public static void main(String[] args) {
+    File f = new File("C:\\Users\\bajov\\Desktop\\test.java");
+
+    System.out.println("Fajl (" + f.getName() + (f.isFile() ? ") je fajl." : ") nije fajl."));
+    System.out.println("Apsolutna putanja: " + f.getAbsolutePath());
+    System.out.println(f.exists() ? "Fajl postoji." : "Fajl ne postoji.");
+    System.out.println(f.isDirectory() ? "Direktorijum: " : "Fajl");
+    System.out.println(f.canRead() ? "Fajl može biti procitan." : "Fajl ne može biti pročitan.");
+    System.out.println(
+      f.canWrite() ? "U fajlu se može vr&scaron;iti upisivanje." : "Nije omogućeno upisivanje u ovaj fajl.");
+    System.out.println("Veličina: " + f.length());
+    System.out.println("Poslednja promena fajla: " + f.lastModified());
+
+  }
+
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #2c2a2a;">Izlaz:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">Fajl (test.java) je fajl.
+Apsolutna putanja: C:\Users\bajov\Desktop\test.java
+Fajl postoji.
+Fajl
+Fajl može biti procitan.
+U fajlu se može vr&scaron;iti upisivanje.
+Veličina: 21
+Poslednja promena fajla: 1676039022161  
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 400: (File02)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- kreirati objekat <strong>dis</strong> klase <strong style="color: #0984e3;">DataInputStream</strong>.
+- kreirati objekat <strong>fos</strong> klase <strong style="color: #0984e3;">FileOutputStream</strong>.
+- omogućuti unos texta u fajl
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">package f2;
+
+import java.io.DataInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Main {
+
+  public static void main(String[] args) throws IOException {
+
+    <strong style="color: azure;">/* Osnovne UI operacije
+    Za UI operacije Java koristi tokove(Stream)
+    Strimovi obezbeđuju način za rad sa podacima koji se primaju i &scaron;alju */</strong>
+
+      <strong style="color: azure;">/* Klasa koja omogućuje da se poveže tastatura sa stream-om */</strong>
+    DataInputStream dis = new DataInputStream(System.in);
+
+    <strong style="color: azure;">/* Povezivanje fajla sa klasom FileOutputStream */</strong>
+    FileOutputStream fos = new FileOutputStream("rezultat.txt");
+
+    System.out.println("Unesite string (prekinite unosom znaka $): ");
+
+    <strong style="color: azure;">// read ()
+    // write()</strong>
+
+    char ch;
+
+    while ((ch = (char) dis.read()) != '$') {
+        fos.write(ch);
+    }
+    fos.close();
+
+  }
+
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #2c2a2a;">Izlaz:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">Unesite string (prekinite unosom znaka $): 
+<strong style="color: azure;">Ovo je text koji se upisuje u fajl!$</strong>
+</pre>
+</div>
+</div>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 401: (File03)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- kori&scaron;ćenjem bibilioteke <strong style="color: #0984e3;">JOptionPane</strong> omogućiti korisniku unos 2 broja
+- metodom <strong style="color: limegreen;">showMessageDialog()</strong> prikazati promenu mesta promenljivih.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">package f3;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    int a = 0, b = 0;
+
+    a = Integer.parseInt(JOptionPane.showInputDialog("Unesite prvi broj: "));
+
+    b = Integer.parseInt(JOptionPane.showInputDialog("Unesite drugi broj: "));
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    JOptionPane.showMessageDialog(null, "Promena: " + a + " " + b);
+
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #2c2a2a;">Izlaz:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;"><img src="https://miteam.mi.sanu.ac.rs/content/MzHqJbcEaNcwigGfs_1676041286559.jpg" alt="" width="331" height="156" /> &nbsp;<br /><img src="https://miteam.mi.sanu.ac.rs/content/MzHqJbcEaNcwigGfs_1676041297042.jpg" alt="" width="310" height="139" /> <br /><img src="https://miteam.mi.sanu.ac.rs/content/MzHqJbcEaNcwigGfs_1676041305748.jpg" alt="" width="280" height="136" /></pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 402: (String01)</strong></p>
+<pre style="text-align: justify;">Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj: 
+- kreirati objekte klase <strong style="color: #0984e3;">String</strong> i testirati načine inicijalizacije vrednosti.
+- primeniti metode <strong style="color: limegreen;">equals(), equalsIgnoreCase, compareTo()</strong>.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">
+package z1;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    <strong style="color:azure">/* Stringovi se predstavljaju klasom String*/</strong>
+    System.out.println("Stringovi se predstavljaju klasom String");
+
+    String str = "1321515yfawdw$%%";
+    System.out.println(str);
+
+    <strong style="color:azure">/* Kreiranje string pomocu kljucne reci new*/</strong>
+    System.out.println("Kreiranje string pomocu kljucne reci new");
+    String str1 = new String("Utorak, 24. januar. ");
+    System.out.println(str1);
+
+    <strong style="color:azure">/* Inicijalizacija stringa postojecim stringom*/</strong>
+    System.out.println("Inicijalizacija stringa postojecim stringom");
+
+    String s1 = "Podatak1";
+    System.out.println(s1);
+    String s2 = new String(s1);
+    System.out.println(s2);
+
+    <strong style="color:azure">/*Metoda charAt vraca karakter tipa char sa 
+    zadate pozicije u stringu. Indeksiranje ide od 0.*/</strong>
+    System.out.println("Metoda charAt vraca karakter tipa char" 
+    + "sa zadate pozicije u stringu.");
+    char ch2 = "Java".charAt(2);
+    System.out.println(ch2);
+
+    <strong style="color:azure">/* Inicijalizacija nizom char vrednosti */</strong>
+    System.out.println("Inicijalizacija nizom char vrednosti");
+    char ch3[] = { 'J', 'a', 'v', 'a' };
+    String str3 = new String(ch3);
+    System.out.println(str3);
+
+    <strong style="color:azure">/* Inicijalziacija podnizom*/</strong>
+    System.out.println("Inicijalziacija podnizom");
+    String s4 = new String(ch3, 1, 2);
+    System.out.println(s4);
+
+    <strong style="color:azure">/*//Metoda equals vrsi leksikografsko poredjenje stringova, 
+      pri cemu se pravi razlika izmedju // velikih i malih slova. Vraca true ako su stringovi isti,
+       u suprotnom vraca false.*/
+    // Metoda iqualsIgnoreCase leksikograski poredi stringove, ali ne pravi razliku izmedju malih 
+    // i velikih slova.
+    // Metoda copareTo poziva se kao: // s1.compareTo(s2) // vraca 0 ako su s1 i s2 jednaki, 
+    // negativan broj ako je s1 manji, pozitivan broj ako je s1 veci od s2.
+    // 6. </strong>
+    System.out.println("equals(), equalsIgnoreCase(), compareTo()");
+
+    String s8 = "JAVA";
+    String s9 = "JAVA";
+    String s10 = "Java";
+    System.out.println(s8 + " equals " + s9 + " = " + s8.equals(s9));
+    System.out.println(s8 + " equals " + s10 + " = " + s8.equals(s10));
+    System.out.println(s8 + " equalsIgnoreCase " + s10 + " = " + s8.equalsIgnoreCase(s10));
+
+    System.out.println("\n==");
+
+    boolean b;
+    String s11 = "JAVA";
+    String s12 = "JAVA";
+    String s13 = "Java";
+    String s14 = new String("JAVA");
+    String s15 = new String("JAVA");
+    System.out.println(s11 + " equals " + s12 + " = " + s11.equals(s12));
+    System.out.println(s11 + " == " + s12 + " = " + (s11 == s12));
+    System.out.println(s11 + " equals " + s13 + " = " + s11.equals(s13));
+    System.out.println(s11 + " == " + s13 + " = " + (s11 == s13));
+    System.out.println(s11 + " equals " + s14 + " = " + s11.equals(s14));
+    System.out.println(s11 + " == " + s14 + " = " + (s11 == s14));
+    System.out.println(s14 + " equals " + s15 + " = " + s14.equals(s15));
+    System.out.println(s14 + " == " + s15 + " = " + (s14 == s15));
+
+    String s16 = "JAVA";
+    String s17 = "JAVA";
+    String s18 = "Java";
+    System.out.println(s16 + " compared to " + s17 + " = " + s16.compareTo(s17));
+    System.out.println(s16 + " compared to " + s18 + " = " + s16.compareTo(s18));
+
+    <strong style="color:azure">/* Provera iste lokacije elemenata niza */</strong>
+    System.out.println("\n\nProvera iste lokacije elemenata niza");
+    String niz[] = { new String("5"), new String("5"), "5", "5" };
+
+    for (String s : niz) {
+        System.out.println(System.identityHashCode(s));
+
+    }
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #2c2a2a;">Izlaz:</h3>
+<pre style="background-color: #2c2a2a; color: yellow; width: max-content; padding-right: 60px; padding: 15px;">
+Stringovi se predstavljaju klasom String
+1321515yfawdw$%%
+Kreiranje string pomocu kljucne reci new
+Utorak, 24. januar. 
+Inicijalizacija stringa postojecim stringom
+Podatak1
+Podatak1
+Metoda charAt vraca karakter tipa char 
+sa zadate pozicije u stringu.
+v
+Inicijalizacija nizom char vrednosti
+Java
+Inicijalziacija podnizom
+av
+equals(), equalsIgnoreCase(), compareTo()
+JAVA equals JAVA = true
+JAVA equals Java = false
+JAVA equalsIgnoreCase Java = true
+
+==
+JAVA equals JAVA = true
+JAVA == JAVA = true
+JAVA equals Java = false
+JAVA == Java = false
+JAVA equals JAVA = true
+JAVA == JAVA = false
+JAVA equals JAVA = true
+JAVA == JAVA = false
+JAVA compared to JAVA = 0
+JAVA compared to Java = -32
+
+
+Provera iste lokacije elemenata niza
+1365202186
+1651191114
+1586600255
+1586600255
+</pre>
+</div>
+</div>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p>&nbsp;</p>
+<div style="clear: both; width: 100%; text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+</div>
+
+</body>
+</html>

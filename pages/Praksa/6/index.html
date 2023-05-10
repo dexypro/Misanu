@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>Pretraživanje</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Претраживање</h2>
+    <p class="centered">
+        - Linear Search.<br>
+        - Binary Search. <br>
+        - Fibonacci Search.
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="Pretrazivanje.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3 class="centered">Linear Search</h3>
+
+    <pre><code class="java">
+package linearSearch;
+
+public class LinearSearch {
+
+    public static void main(String[] args) {
+        int[] niz = { 10, 23, 15, 8, 4, 3, 25, 30, 34, 2, 7 };
+        int trazeniBroj = 34;
+        int indeks = linearSearch(niz, trazeniBroj);
+
+        if (indeks == -1) {
+            System.out.println("Broj " + trazeniBroj + " nije pronađen u nizu.");
+        } else {
+            System.out.println("Broj " + trazeniBroj + " je pronađen na indeksu " + indeks + ".");
+        }
+    }
+
+    public static int linearSearch(int[] niz, int trazeniBroj) {
+        int duzinaNiza = niz.length;
+
+        // Prolazimo kroz sve elemente niza
+        for (int i = 0; i < duzinaNiza; i++) {
+            // Ako trenutni element odgovara traženom broju
+            if (niz[i] == trazeniBroj) {
+                // Vraćamo indeks trenutnog elementa kao rezultat pretrage
+                return i;
+            }
+        }
+
+        // Ako nismo pronašli traženi broj u nizu, vraćamo -1
+        return -1;
+    }
+}
+</code></pre>
+
+    <h3 class="centered">Binary Search</h3>
+
+    <pre><code class="java">
+package binarySearch;
+
+public class BinarySearch {
+
+    public static void main(String[] args) {
+        int[] niz = { 2, 3, 4, 10, 15, 23, 25, 30, 34, 40, 45 };
+        int trazeniBroj = 34;
+        int indeks = binarySearch(niz, trazeniBroj);
+
+        if (indeks == -1) {
+            System.out.println("Broj " + trazeniBroj + " nije pronađen u nizu.");
+        } else {
+            System.out.println("Broj " + trazeniBroj + " je pronađen na indeksu " + indeks + ".");
+        }
+    }
+
+    public static int binarySearch(int[] niz, int trazeniBroj) {
+        int levo = 0;
+        int desno = niz.length - 1;
+
+        // Dok god je leva granica manja ili jednaka desnoj granici
+        while (levo <= desno) {
+            // Računamo srednji indeks
+            int srednji = levo + (desno - levo) / 2;
+
+            // Ako je srednji element jednak traženom broju
+            if (niz[srednji] == trazeniBroj) {
+                // Vraćamo indeks srednjeg elementa kao rezultat pretrage
+                return srednji;
+            }
+
+            // Ako je srednji element manji od traženog broja
+            if (niz[srednji] < trazeniBroj) {
+                // Pomeramo levu granicu za jedno mesto desno od srednjeg indeksa
+                levo = srednji + 1;
+            } else {
+                // Inače, pomeramo desnu granicu za jedno mesto levo od srednjeg indeksa
+                desno = srednji - 1;
+            }
+        }
+
+        // Ako nismo pronašli traženi broj u nizu, vraćamo -1
+        return -1;
+    }
+}       
+</code></pre>
+
+
+    <h3 class="centered">Fibonacci Search</h3>
+
+    <pre><code class="java">
+package fibonacciSearch;
+
+public class FibonacciSearch {
+
+    public static void main(String[] args) {
+        int[] niz = { 2, 3, 4, 10, 15, 23, 25, 30, 34, 40, 45 };
+        int trazeniBroj = 34;
+        int indeks = fibonacciSearch(niz, trazeniBroj);
+
+        if (indeks == -1) {
+            System.out.println("Broj " + trazeniBroj + " nije pronađen u nizu.");
+        } else {
+            System.out.println("Broj " + trazeniBroj + " je pronađen na indeksu " + indeks + ".");
+        }
+    }
+
+    public static int fibonacciSearch(int[] niz, int trazeniBroj) {
+        int duzina = niz.length;
+        int fibMMm2 = 0; // (m-2)-ti Fibonacci broj
+        int fibMMm1 = 1; // (m-1)-ti Fibonacci broj
+        int fibM = fibMMm2 + fibMMm1; // m-ti Fibonacci broj
+
+        // Pronalazimo najmanji Fibonacci broj veći ili jednak dužini niza
+        while (fibM < duzina) {
+            fibMMm2 = fibMMm1;
+            fibMMm1 = fibM;
+            fibM = fibMMm2 + fibMMm1;
+        }
+
+        int offset = -1;
+
+        // Dok je fibM veći od 1
+        while (fibM > 1) {
+            int i = Math.min(offset + fibMMm2, duzina - 1);
+
+            // Ako je traženi broj veći od elementa na indeksu i
+            if (niz[i] < trazeniBroj) {
+                fibM = fibMMm1;
+                fibMMm1 = fibMMm2;
+                fibMMm2 = fibM - fibMMm1;
+                offset = i;
+            } else if (niz[i] > trazeniBroj) {
+                // Ako je traženi broj manji od elementa na indeksu i
+                fibM = fibMMm2;
+                fibMMm1 = fibMMm1 - fibMMm2;
+                fibMMm2 = fibM - fibMMm1;
+            } else {
+                // Traženi broj je pronađen
+                return i;
+            }
+        }
+
+        // Ako je fibMMm1 jednak 1 i niz[offset+1] jednak traženom broju, vraćamo indeks
+        if (fibMMm1 == 1 && niz[offset + 1] == trazeniBroj) {
+            return offset + 1;
+        }
+
+        // Ako nismo pronašli traženi broj, vraćamo -1
+        return -1;
+    }
+}            
+</code></pre>
+
+
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

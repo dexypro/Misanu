@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666911694488.jpg" alt="" width="780" height="304" /></p>
+    <p>&nbsp;</p>
+    <hr />
+    <p><strong>Zadatak 140: (WhilePetlja01)</strong></p>
+    <ul>
+    <li>Napisati program kojim se &scaron;tampaju prvih deset prirodnih brojeva kori&scaron;ćenjem for i while petlje.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class WhilePetlja01 {
+                
+                    public static void main(String[] args) {
+                    // Napisati program kojim se &scaron;tampaju prvih 10 prirodnih brojeva koriscenjem for
+                    // i while petlje
+                
+                    // Resenje sa for petljom
+                    for (int i = 1; i &lt;= 10; i++) {
+                        System.out.println(i);
+                    }
+                
+                    System.out.println("------------");
+                    // Resenje sa while petljom
+                    int i = 1;
+                    while (i &lt;= 10) {
+                        System.out.println(i);
+                        i++;
+                    }
+                    }
+                
+                }</pre>
+    <hr />
+    <p><strong>Zadatak 141: (WhilePetlja02)</strong></p>
+    <ul>
+    <li>Koliko puta će se izvesti sledeće while petlje?
+    <pre>int i = 0;
+                    while (++i &lt; 5){ // uvećaj pa poredi
+                    System.out.println(i); // ispis uvećane vrednosti za i
+                    }
+                    </pre>
+    <pre>int i = 0;
+                        while (i++ &lt; 5){ // poredi pa uvećaj
+                        System.out.println(i); // ispis uvećane vrednosti za i
+                        }</pre>
+    </li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            public class WhilePetlja02 {
+            
+                public static void main(String[] args) {
+                // Koliko se puta izvrsava naredba while u zadatim slucajevima
+            
+                int i = 0;
+            
+                while (++i &lt; 5) {
+                    System.out.println(i);
+                } // Izvrsava se 4 puta
+            
+                i = 0;
+                while (i++ &lt; 5) {
+                    System.out.println(i);
+                } // Izvrsava se 5 puta
+                }
+            
+            }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 142: (WhilePetlja03)</strong></p>
+    <ul>
+    <li>Napisati program za ispis sume recipročnih vrednosti prvih n prirodnih brojeva (harmonijski niz: S = 1 + 1/2 + 1/3 + ... + 1/n).</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            public class ForPetlja03 {
+            
+                public static void main(String[] args) {
+            
+                int zbir = 0; /* 0 predstavlja neutral prilikom sabiranja */
+                for (int i = 1; i &lt;= 10; i++) {
+                    zbir = zbir + i; // zbir += i;
+            
+                }
+                System.out.println("Zbir brojeva iznosi: " + zbir);
+                }
+            
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 143: (WhilePetlja04)</strong></p>
+    <ul>
+    <li>Napisati program za ispisivanje neparnih brojeva od 1 do zadatog broja n.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.io.BufferedReader;
+            import java.io.InputStreamReader;
+            
+            public class WhilePetlja04 {
+            
+                public static void main(String[] args) throws Exception {
+                // Napisati program za ispisivanje neparnih brojeva od 1 do zadatog broja n.
+                int n;
+            
+                BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                System.out.println("Unesite vrednost za n: ");
+                n = Integer.parseInt(ulaz.readLine());
+            
+                int i = 1;
+                while (i &lt;= n) {
+                    if (i % 2 != 0)
+                    System.out.println(i);
+                    i++;
+                }
+                }
+            
+            }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 144: (WhilePetlja05)</strong></p>
+    <ul>
+    <li>Napisati program za ispisivanje brojeva od 1 do zadatog broja n koji su deljivi sa a.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+            
+                import java.util.Scanner;
+                
+                public class WhilePetlja05 {
+                    public static void main(String[] args) {
+                    Scanner ulaz = new Scanner(System.in);
+                    int a, n, i = 1;
+                    System.out.println("Unesite vrednost za n:");
+                    n = ulaz.nextInt();
+                    System.out.println("Unesite vrednost za a:");
+                    a = ulaz.nextInt();
+                    while (i &lt;= n) {
+                        if (i % a == 0)
+                        System.out.println(i);
+                        i++;
+                    }
+                    ulaz.close();
+                    }
+                }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 145: (WhilePetlja06)</strong></p>
+    <ul>
+    <li>Napisati program za ispisivanje sume brojeva od k do zadatog broja n.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.util.Scanner;
+            
+            public class WhilePetlja06 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int i, k, n, suma = 0;
+                System.out.print("Unesite vrednost za k: ");
+                k = ulaz.nextInt();
+                System.out.print("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+            
+                i = k;
+                /*
+                    * while (i &lt;= n) { suma += i; i++; }
+                    */
+                // Pregledniji nacin resenja
+                while (i &lt;= n)
+                    suma += i++;
+            
+                System.out.println("Od " + k + " do " + n + " suma = " + suma);
+                ulaz.close();
+                }
+            }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 146: (WhilePetlja07)</strong></p>
+    <ul>
+    <li>Napisati program za ispisivanje sume brojeva u intervalu od 1 do zadatog broja n čija je cifra jedinica 8.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.util.Scanner;
+            
+            public class WhilePetlja07 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int n, i = 1, s = 0;
+                System.out.println("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+                while (i &lt;= n) {
+                    if (i % 10 == 8)
+                    s += i;
+                    i++;
+                }
+                System.out.println("Suma je " + s);
+                ulaz.close();
+                }
+            }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 147: (WhilePetlja08)</strong></p>
+    <ul>
+    <li><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666909328496.jpg" alt="" width="650" height="238" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.text.DecimalFormat;
+            
+            public class WhilePetlja09 {
+                public static void main(String[] args) {
+                DecimalFormat df = new DecimalFormat("#.##");
+                double x0 = 18.0;
+                double x1 = 30.0 / (x0 * x0) - 42.0 / x0 + 18.0;
+            // Ciklična struktura 
+                while (Math.abs(x1 - x0) &gt; 1.0E-5) {
+                    x0 = x1;
+                    x1 = 30.0 / (x0 * x0) - 42.0 / x0 + 18.0;
+                }
+            // &Scaron;tampanje rezultata 
+                System.out.println("Dobijena vrednost je x = " + df.format(x1));
+            // drugi način ... ispravnije 
+                boolean provera = true;
+                x0 = 18.0;
+                x1 = 0.0;
+            // Ciklična struktura 
+                while (provera) {
+                    x1 = 30.0 / (x0 * x0) - 42.0 / x0 + 18.0;
+                    provera = Math.abs(x1 - x0) &gt; 1.0E-5;
+                    x0 = x1;
+                }
+            // &Scaron;tampanje rezultata 
+                System.out.println("Dobijena vrednost je x = " + df.format(x1));
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 148: (WhilePetlja09)</strong></p>
+    <ul>
+    <li>Ako prosledimo true u while petlju, to će biti beskonačna while petlja. Pokrenuti beskonacnu petlju a onda prekinuti program (Terminate).</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            public class WhilePetlja09 {
+                public static void main(String[] args) {
+                while (true)
+                    System.out.println("Beskonačna while petlja.");
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 149: (WhilePetlja10)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost sume <br /><br /><strong>S = 1/2 + 1/4 + 1/6 + ... + 1 / 2n</strong><br /><br />za unetu vrednost n. Zadatak re&scaron;iti pomoću:<br /><br />a) <strong>do-while</strong> petlje<br />b) <strong>while</strong> petlje</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.util.Scanner;
+            
+            public class WhilePetlja10 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int n;
+                double s = 0;
+                System.out.print("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+                /*
+                    * Resenje sa While int i = 1;
+                    * 
+                    * while (i &lt;= n) { s += 1 / (double) (2 * i); i++; }
+                    */
+            
+                // Resenje sa For
+                for (int i = 1; i &lt;= n; i++)
+                    s += 1 / (double) (2 * 1);
+            
+                System.out.println("n = " + n + " s = " + s);
+                ulaz.close();
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 150: (WhilePetlja11)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost sume <br /><br /><strong>S = 1<sup>2</sup> + 3<sup>2</sup> + 5<sup>2</sup> + ... +n<sup>2</sup></strong><br /><br />za unetu vrednost n. Zadatak re&scaron;iti pomoću:<br /><br />a) <strong>do-while</strong> petlje<br />b) <strong>while</strong> petlje</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.util.Scanner;
+            
+            public class WhilePetlja11 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int n, s = 0;
+                System.out.print("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+                int i = 1;
+                // Resenje sa Do / While
+                do {
+                    if (i % 2 != 0)
+                    s += Math.pow(i, 2);
+                    i++;
+                } while (i &lt;= n);
+            
+                // Resenje sa While
+                // while (i &lt;= n){ if (i % 2 != 0) s += Math.pow(i, 2); i++; }
+            
+                System.out.println("Za unetu vrednost n = " + n + " dobija se s = " + s);
+                ulaz.close();
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 151: (WhilePetlja12)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost sume <br /><br /><strong>S = 2 / k + 2 / (k+1) + 2 / (k+2) + ... + 2 / (k + n)</strong><br /><br />za unetu vrednost n. Zadatak re&scaron;iti pomoću:<br /><br />a) <strong>do-while</strong> petlje<br />b) <strong>while</strong> petlje</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.util.Scanner;
+            
+            public class WhilePetlja12 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int n, k;
+                double s = 0;
+                System.out.print("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+                System.out.print("Unesite vrednost za k: ");
+                k = ulaz.nextInt();
+                int i = 0;
+                do {
+                    s = s + 2 / (double) (k + i);
+                    ++i;
+                } while (i &lt;= n);
+                System.out.println("(do-while) Suma je " + s);
+            
+                // Resenje sa While
+                while (i &lt;= n) {
+                    s = s + 2 / (double) (k + i);
+                    ++i;
+                }
+            
+                System.out.println("(while) Suma je " + s);
+                ulaz.close();
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 152: (WhilePetlja13)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program za iterativno re&scaron;avanje sistema jednačina <br /><br /><strong>4x <sup>2</sup>- 3xy + 2x - 1 = 0</strong><br /><br />koristeći sledeće formule:<br /><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666910490421.jpg" alt="" width="418" height="90" /><br />Iterativni proces prekinuti kada se ispune uslovi &nbsp;<img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666910514324.jpg" alt="" width="275" height="46" /></li>
+    <li>Na ulazu je data vrednost za <strong>E</strong> i početne vrednosti za x0 i y0 . Na izlazu &scaron;tampati re&scaron;enja sistema jednačina.<br /><br />a) <strong>do-while</strong> ciklusa<br />b) <strong>while</strong> ciklusa</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.io.*;
+            import java.text.DecimalFormat;
+            
+            public class WhilePetlja13 {
+                public static void main(String[] args) throws Exception {
+                DecimalFormat df = new DecimalFormat("#.##");
+                BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            // Unos vrednosti promenljivih eps, x0 i y0 
+                System.out.print("Unesite vrednost za epsilon: ");
+                double eps = Double.parseDouble(ulaz.readLine());
+                System.out.print("Unesite vrednost za x0: ");
+                double x0 = Double.parseDouble(ulaz.readLine());
+                System.out.print("Unesite vrednost za y0: ");
+                double y0 = Double.parseDouble(ulaz.readLine());
+            // Iterativni postupak za određivanje re&scaron;enja sistema jednačina 
+                double x1 = 0.5 * Math.sqrt(x0 * (3 * y0 - 1) + 1);
+                double y1 = Math.sqrt((x0 + 3) / 2);
+                while (Math.abs(x1 - x0) &gt; eps || Math.abs(y1 - y0) &gt; eps) {
+                    x0 = x1;
+                    x1 = 0.5 * Math.sqrt(x0 * (3 * y0 - 1) + 1);
+                    y0 = y1;
+                    y1 = Math.sqrt((x0 + 3) / 2);
+                }
+            
+            // Re&scaron;enje sa do-while
+                do {
+                    x0 = x1;
+                    x1 = 0.5 * Math.sqrt(x0 * (3 * y0 - 1) + 1);
+                    y0 = y1;
+                    y1 = Math.sqrt((x0 + 3) / 2);
+                } while (Math.abs(x1 - x0) &gt; eps || Math.abs(y1 - y0) &gt; eps);
+            
+            //&Scaron;tampanje izlaznog rezultata 
+                System.out.println("Re&scaron;enja sistema jednačina su x = " + df.format(x1) + " i y = " + df.format(y1));
+                }
+            }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 153: (WhilePetlja14)</strong></p>
+    <ul>
+    <li><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666911096305.jpg" alt="" width="548" height="488" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.text.DecimalFormat;
+            
+            public class WhilePetlja14 {
+                public static void main(String[] args) {
+                double f, x = 1.0;
+                DecimalFormat df = new DecimalFormat("#.##");
+            // &Scaron;tampanje zaglavlja 
+                System.out.println("\tX\tF(X)");
+                while (x &lt;= 2.0) {
+                    // Izračunavanje vrednosti funkcije
+                    f = 41.926 * Math.sqrt(1 + Math.pow(x, 3)) + Math.pow(x, 1.0 / 3.0) * Math.exp(x);
+                    // &Scaron;tampanje rezultata
+                    System.out.println("\t" + df.format(x) + "\t" + df.format(f));
+                    x += 0.2;
+                }
+                // Resenje putem for petlje
+                System.out.println("\t---------------");
+                System.out.println("\tX\tF(X)");
+                for (x = 1.0; x &lt;= 2.0; x += 0.2) {
+                    // Izračunavanje vrednosti funkcije
+                    f = 41.926 * Math.sqrt(1 + Math.pow(x, 3)) + Math.pow(x, 1.0 / 3.0) * Math.exp(x);
+                    // &Scaron;tampanje rezultata
+                    System.out.println("\t" + df.format(x) + "\t" + df.format(f));
+                }
+            
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 154: (WhilePetlja15)</strong></p>
+    <ul>
+    <li><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666910868056.jpg" alt="" width="650" height="412" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+            
+            import java.text.DecimalFormat;
+            
+            public class WhilePetlja15 {
+                public static void main(String[] args) {
+                double y, j = 1.0;
+                int i = 0;
+                DecimalFormat df = new DecimalFormat("#.##");
+            // &Scaron;tampanje zaglavlja 
+                System.out.println("\tResenje sa FOR petljom");
+                System.out.println("\t_______________________");
+            
+                // Resenje sa FOR
+                System.out.println("\tR.BR.\tX\tY(X)");
+                for (double x = 1.0; x &lt;= 10.0; x += 0.5) {
+                    y = x - 0.3 * Math.pow(x, 2) / (x + 1.2);
+                    i++;
+                    System.out.println("\t" + i + "\t" + df.format(x) + "\t" + df.format(y));
+                }
+            
+                // Resenje sa WHILE
+                System.out.println("\n\tResenje sa While petljom");
+                System.out.println("\t_______________________");
+                System.out.println("\tR.BR.\tX\tY(X)");
+            
+                while (j &lt;= 10.0) {
+                    // Izračunavanje vrednosti funkcije
+                    y = j - 0.3 * Math.pow(j, 2) / (j + 1.2);
+                    i++;
+                    // &Scaron;tampanje rezultata
+                    System.out.println("\t" + i + "\t" + df.format(j) + "\t" + df.format(y));
+                    j += 0.5;
+                }
+                }
+            
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 155: (WhilePetlja16)</strong></p>
+    <ul>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost izraza za uneto k</li>
+    </ul>
+    </ul>
+    <p><br /><br /></p>
+    <ul>𝑃 = 𝑘 𝑘 + 1 &hellip; 2𝑘 &minus; 1 2𝑘.</ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+        
+            import java.util.Scanner;
+            
+            public class WhilePetlja16 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int k;
+                double p = 1;
+                System.out.println("Unesite vrednost za k: ");
+                k = ulaz.nextInt();
+                int i = k;
+                while (i &lt;= (2 * k))
+                    p *= i++;
+                System.out.println("Proizvod je " + p);
+                ulaz.close();
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 156: (WhilePetlja17)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666911301823.jpg" alt="" width="695" height="213" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+        
+            import java.util.Scanner;
+            
+            public class WhilePetlja17 {
+                public static void main(String[] args) {
+                Scanner ulaz = new Scanner(System.in);
+                int n, k;
+                double s = 0;
+                System.out.print("Unesite vrednost za n: ");
+                n = ulaz.nextInt();
+                System.out.print("Unesite vrednost za k: ");
+                k = ulaz.nextInt();
+                int i = 0;
+                while (i &lt;= n) {
+                    s += (i + 1) / (double) (k + i);
+                    ++i;
+                }
+                System.out.println("Suma je " + s);
+                ulaz.close();
+                }
+            }</pre>
+    <hr />
+    <p><strong>Zadatak 157: (WhilePetlja18)</strong></p>
+    <p>Napisati program kojim se izračunava vrednost izraza na slici za unetu vrednost n.<br /><img src="https://miteam.mi.sanu.ac.rs/content/Jzf7QJT4qivCW9LAM_1666911452683.jpg" alt="" width="321" height="86" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+        
+        import java.util.Scanner;
+        
+        public class WhilePetlja18 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            int n;
+            double s = 0;
+            System.out.print("Unesite vrednost za n: ");
+            n = ulaz.nextInt();
+            int i = 1;
+            while (i &lt;= n) {
+                s += i / Math.pow((2 * i - 1), 2);
+                i++;
+            }
+            System.out.println("Suma je: " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <hr />
+    <p><strong>Zadatak 158: (WhilePetlja19)</strong></p>
+    <p>Napisati program kojim se izračunava vrednost sume<br /><br />S = 1/2 + 2/3 + 3/4 ... + n / (n+1)<br /><br />Zadatak re&scaron;iti pomoću:<br /><br />a) <strong>for</strong> petlje, b) <strong>while</strong> petlje c) <strong>do-while</strong> petlje</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+        
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class WhilePetlja19 {
+            public static void main(String[] args) throws Exception {
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            // Re&scaron;enje sa 'for' petljom
+            double suma = 0;
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Unesite vrednost za n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+            for (int i = 1; i &lt;= n; i++)
+                suma += (double) i / (i + 1);
+            System.out.println("For petlja: Suma je  " + df.format(suma));
+        
+            // Re&scaron;enje sa 'while' petljom
+        
+            int i = 1;
+            suma = 0;
+            while (i &lt;= n) {
+                suma += (double) i / (i + 1);
+                i++;
+            }
+            System.out.println("While petlja: Suma je  " + df.format(suma));
+        
+            // Re&scaron;enje sa 'do-while' petljom
+            i = 1;
+            suma = 0;
+            do {
+                suma += (double) i / (i + 1);
+                i++;
+            } while (i &lt;= n);
+            System.out.println("Do-while petlja: Suma je " + df.format(suma));
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">10</strong> 
+        Dobijena vrednost sume je <strong style="color: aliceblue;">7.980122655122655</strong>
+        </pre>
+    <hr />
+    <p><strong>Zadatak 159: (WhilePetlja20)</strong></p>
+    <p>Napisati program za izdvajanje i ispisivanje cifre jednu ispod druge počev&scaron;i od cifre jedinica.<br /><br />Obja&scaron;njenje: <br />Broj delimo sa 10 i dobijeni ostatak je cifra jedinica. Zatim izvodimo celobrojno deljenje broja sa 10, i ponavljamo % naredbu.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja20 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost broja: ");
+            int broj = ulaz.nextInt();
+            int cifra;
+            do {
+                cifra = broj % 10; // izdvojena cifra
+                broj = broj / 10; // celobrojna vrednost podeljenog broja sa 10
+                System.out.println(cifra); // izdvojena cifra
+            } while (broj &gt; 0);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost broja: <strong style="color: aliceblue;">568493</strong> 
+        <strong style="color: aliceblue;"><br />    3<br />    9<br />    4<br />    8<br />    6<br />    5</strong>
+        </pre>
+    <hr />
+    <p><strong>Zadatak 160: (WhilePetlja21)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127616080.jpg" alt="" width="937" height="269" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.text.DecimalFormat;
+        import java.util.Scanner;
+    
+        public class WhilePetlja21 {
+            public static void main(String[] args) {
+            DecimalFormat df = new DecimalFormat("#.##");
+            Scanner ulaz = new Scanner(System.in);
+            int n, a;
+            double eps;
+            System.out.println("Unesite vrednost za n:");
+            n = ulaz.nextInt();
+            System.out.println("Unesite vrednost za a:");
+            a = ulaz.nextInt();
+            System.out.println("Unesite vrednost za epsilon:");
+            eps = ulaz.nextDouble();
+            double x0 = (a + n - 1) / n;
+            double x1 = ((n - 1) * x0 + a / Math.pow(x0, n - 1)) / n;
+    
+            while (Math.abs(x1 - x0) &gt; eps) {
+                x0 = x1;
+                x1 = ((n - 1) * x0 + a / Math.pow(x0, n - 1)) / n;
+    
+            }
+            System.out.println("Dobijena vrednost je x = " + df.format(x1));
+    
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">3</strong> 
+        Unesite vrednost za a: <strong style="color: aliceblue;">27</strong>
+        Unesite vrednost za epsilon: <strong style="color: aliceblue;">1.0E-4</strong> 
+        Dobijena vrednost je x = 3
+        </pre>
+    <hr />
+    <p><strong>Zadatak 161: (WhilePetlja22)</strong></p>
+    <p>Napisati program kojim se određuje suma prvih 10 unetih parnih brojeva. Brojeve unosi redom korisnik sve dok ne unese nulu ili 10 parnih brojeva. Kada se unese nula treba prekinuti sumiranje brojeva bez obzira da li je izvr&scaron;eno sumiranje tačno 10 parnih brojeva.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja23 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            int b = 1, s = 0, i = 0;
+        
+            // Prvi način
+            while (i &lt; 10 &amp;&amp; b != 0) {
+                System.out.println("Unesite vrednost broja:");
+                int br = ulaz.nextInt();
+                if (br == 0)
+                b = 0;
+                else if (br % 2 == 0) {
+                s += br;
+                i++;
+                }
+            }
+        
+            // Drugi način ispisati sa predavanja
+        
+            if (b == 1)
+                System.out.println("Sumirano je 10 parnih brojeva");
+            else
+                System.out.println("Korisnik je uneo cifru 0");
+            System.out.println("i = " + i + " s = " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost broja: <strong style="color: aliceblue;">26</strong>
+        Unesite vrednost broja: <strong style="color: aliceblue;">13</strong>
+        Unesite vrednost broja: <strong style="color: aliceblue;">12</strong>
+        Unesite vrednost broja: <strong style="color: aliceblue;">0</strong> 
+        Korisnik je uneo cifru 0 
+        i = 2  s = 38 
+        </pre>
+    <hr />
+    <p><strong>Zadatak 162: (WhilePetlja23)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127584216.jpg" alt="" width="849" height="338" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja23 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost za n:");
+            int n = ulaz.nextInt();
+            System.out.println("Unesite vrednost za k:");
+            int k = ulaz.nextInt();
+            double s = 0;
+            int i = 1;
+        
+            // Re&scaron;enje sa while petljom
+            while (i &lt;= n) {
+                s += k * i / Math.pow((2 * i - 1), 2);
+                i++;
+            }
+            System.out.println("Suma s = " + s);
+        
+            // Re&scaron;enje sa do-while petljom
+            s = 0;
+            i = 1;
+            do {
+                s += k * i / Math.pow((2 * i - 1), 2);
+                i++;
+            } while (i &lt;= n);
+            System.out.println("Suma s = " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">5</strong>
+        Unesite vrednost za k: <strong style="color: aliceblue;">2</strong>
+        Suma s = 2.971166540690351
+        </pre>
+    <hr />
+    <p><strong>Zadatak 163: (WhilePetlja24)</strong></p>
+    <p>Napisati program kojim se za uneto n izračunava vrednost sume <br /><br />𝑆 = 1! + 2!+. . . +𝑛!.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja24 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            int s, p;
+            p = 1;
+            s = 0;
+            System.out.println("Unesite vrednost za n:");
+            int n = ulaz.nextInt();
+            int i = 1;
+            while (i &lt;= n) {
+                p *= i;
+                s += p;
+                i++;
+            }
+            System.out.println("Faktorijel broja = " + p);
+            System.out.println("Suma = " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">5</strong>
+        Faktorijel broja = 120
+        Suma = 153
+        </pre>
+    <hr />
+    <p><strong>Zadatak 164: (WhilePetlja25)</strong></p>
+    <p>Napisati program kojim se za uneto n izračunava vrednost sume faktorijela parnih brojeva do n <br /><br />𝑆 = 2! + 4! + 6!+. . . +𝑛!.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja25 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost za n:");
+            int n = ulaz.nextInt();
+            int p = 1, s = 0;
+            int i = 1;
+            while (i &lt;= n) {
+                p *= i;
+                if (i % 2 == 0)
+                s += p;
+                i++;
+            }
+            System.out.println("Suma s = " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">5</strong>
+        Suma s = 26
+    </pre>
+    <hr />
+    <p><strong>Zadatak 165: (WhilePetlja26)</strong></p>
+    <p>Napisati program kojim se za uneto n izračunava vrednost sume <br /><br />𝑆 = 3! + 6! + 9!+. . . +(3𝑛)!.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja26 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza n:");
+            int n = ulaz.nextInt();
+            int p = 1, s = 0;
+            int i = 1;
+            while (i &lt;= 3 * n) {
+                p *= i;
+                if (i % 3 == 0)
+                s += p;
+                i++;
+            }
+            System.out.println("Suma s = " + s);
+            ulaz.close();
+            }
+        }       
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">2</strong>
+        Suma s = 726
+    </pre>
+    <hr />
+    <p><strong>Zadatak 166: (WhilePetlja27)</strong></p>
+    <p>Napisati program kojim se za uneto n i k izračunava vrednost sume <br /><br />𝑆 = 1! / k + 2! / k<sup>2</sup> + 3! / k<sup>3</sup> + ... + n! / k<sup>n</sup>.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja27 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza n:");
+            int n = ulaz.nextInt();
+            System.out.println("Unesite vrednostza k:");
+            int k = ulaz.nextInt();
+            double s = 0, p = 1, p1 = 1;
+            int i = 1;
+            while (i &lt;= n) {
+                p *= i; // faktorijel broja
+                p1 *= k; // stepen broja
+                s += p / p1;
+                i++;
+            }
+            System.out.println("Suma s = " + s);
+            ulaz.close();
+        
+            }
+        }   
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">10</strong>
+        Unesite vrednost za k: <strong style="color: aliceblue;">2</strong>
+        Suma s = 4467.625
+        </pre>
+    <hr />
+    <p><strong>Zadatak 167: (WhilePetlja28)</strong></p>
+    <p>Napisati program kojim se za uneto n izračunava vrednost sume <br /><br />𝑆 = 1/2 - 2/3 + 3/4 + ... + (-1)<sup>n+1</sup> * n / (n+1).</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja28 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza n:");
+            int n = ulaz.nextInt();
+            int znak = 1;
+            double s = 0;
+            int i = 1;
+            while (i &lt;= n) {
+                s += znak * i / (double) (i + 1);
+                znak = -znak;
+                i++;
+            }
+            System.out.println("Suma s = " + s);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">7</strong>
+        Suma s = 0.6345238095238096
+        </pre>
+    <hr />
+    <p><strong>Zadatak 168: (WhilePetlja29)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127545509.jpg" alt="" width="463" height="385" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.text.DecimalFormat;
+        
+        public class WhilePetlja29 {
+            public static void main(String[] args) {
+            double y;
+            int i = 0;
+            DecimalFormat df = new DecimalFormat("#.##");
+        // &Scaron;tampanje zaglavlja 
+            System.out.println("\tR.BR.\tX\tY(X)");
+        
+            // Re&scaron;enje sa 'for' petljom
+            for (double x = 1.0; x &lt;= 2.0; x += 0.2) {
+                // Izračunavanje vrednosti funkcije
+                y = x + 2.5 * Math.pow(x, 3) / (x - 2.8);
+                i++;
+                // &Scaron;tampanje rezultata
+                System.out.println("\t" + i + "\t" + df.format(x) + "\t" + df.format(y));
+            }
+        
+            // Re&scaron;enje sa 'while' petljom
+            System.out.println("\n\tR.BR.\tX\tY(X)");
+            double x = 1;
+            i = 0;
+            y = 0;
+            while (x &lt;= 2.0) {
+                // Izračunavanje vrednosti funkcije
+                y = x + 2.5 * Math.pow(x, 3) / (x - 2.8);
+                i++;
+                // &Scaron;tampanje rezultata
+                System.out.println("\t" + i + "\t" + df.format(x) + "\t" + df.format(y));
+                x += 0.2;
+            }
+        
+            }
+        }       
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+            R.BR.   X       Y(X)
+            1       1       -0.39
+            2       1.2     -1.5
+            3       1.4     -3.5
+            4       1.6     -6.93
+            5       1.8     -12.78
+            6       2       -23 
+    </pre>
+    <hr />
+    <p><strong>Zadatak 169: (WhilePetlja30)</strong></p>
+    <p>Napisati program koji za date prirodne brojeve a i b ispisuje brojeve iz intervala [a, b], od kojih je prvi broj koji se ispisuje jednak a, a svaki sledeći četiri puta veći od prethodnog. Na primer, [a, b] = [5, 100] treba ispisati 5, 20, 80</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja30 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza a:");
+            int a = ulaz.nextInt();
+            System.out.println("Unesite vrednostza b:");
+            int b = ulaz.nextInt();
+            while (a &lt;= b) {
+                System.out.println(a);
+                a *= 4;
+            }
+            ulaz.close();
+            }
+        }  
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za a: <strong style="color: aliceblue;">5</strong>
+        Unesite vrednost za b: <strong style="color: aliceblue;">100</strong>
+        5
+        20
+        80
+    </pre>
+    <hr />
+    <p><strong>Zadatak 170: (WhilePetlja31)</strong></p>
+    <p>Napisati program kojim se učitavaju brojevi dok se ne učita broj 5. Naći zbir učitanih brojeva koji su deljivi sa 2 ili 7.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja31 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost za a:");
+            int a = ulaz.nextInt();
+            int suma = 0;
+            while (a != 5) {
+                if (a % 2 == 0 || a % 7 == 0)
+                suma += a;
+                System.out.println("Unesite vrednost za a:");
+                a = ulaz.nextInt();
+            }
+            System.out.println("Zbir učitanih brojeva koji su deljivi sa 2 ili 7 je " + suma);
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za a: <strong style="color: aliceblue;">26</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">18</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">21</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">49</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">62</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">5</strong>
+        Zbir učitanih brojeva koji su deljivi sa 2 ili 7 je 176
+    </pre>
+    <hr />
+    <p><strong>Zadatak 171: (WhilePetlja32)</strong></p>
+    <p>Napisati program kojim se učitavaju brojevi koji su veći od 10 i manji od 30. Naći aritmetičku sredinu učitanih brojeva.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja32 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednost za a:");
+            int a = ulaz.nextInt();
+            int suma = 0, brojac = 0;
+            while (a &gt; 10 &amp;&amp; a &lt; 30) {
+                suma += a;
+                brojac++;
+                System.out.println("Unesite vrednost za a:");
+                a = ulaz.nextInt();
+            }
+            if (brojac != 0) {
+                double sr = (double) suma / brojac;
+                System.out.println("Aritmetička sredina je " + sr);
+            } else {
+                System.out.println("Niste uneli brojeve iz zahtevanog intervala.");
+            }
+            ulaz.close();
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za a: <strong style="color: aliceblue;">22</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">26</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">25</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">10</strong>
+        Aritmetička sredina je 24.333333333333332
+</pre>
+    <hr />
+    <p><strong>Zadatak 172: (WhilePetlja33)</strong></p>
+    <p>Napisati program kojim se učitavaju brojevi koji su deljivi sa 3. Naći aritmetičku sredinu učitanih brojeva koji su veći od 5 i manji od 20.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja33 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza a:");
+            int a = ulaz.nextInt();
+            int suma = 0, brojac = 0;
+            while (a % 3 == 0) {
+                if (a &gt; 5 &amp;&amp; a &lt; 20) {
+                suma += a;
+                brojac++;
+                }
+                System.out.println("Unesite vrednostza a:");
+                a = ulaz.nextInt();
+            }
+            if (brojac != 0) {
+                double sr = (double) suma / brojac;
+                System.out.println("Aritmetička sredina je " + sr);
+            }
+            ulaz.close();
+        
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za a: <strong style="color: aliceblue;">18</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">6</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">9</strong>
+        Unesite vrednost za a: <strong style="color: aliceblue;">11</strong>
+        Aritmetička sredina je 11.0
+            </pre>
+    <hr />
+    <p><strong>Zadatak 173: (WhilePetlja34)</strong></p>
+    <p>Napisati program koji učitava pozitivan ceo broj i ispisuje najveću cifru tog broja.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja34 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite vrednostza a:");
+            int a = ulaz.nextInt();
+            int i = a;
+            int cifra, max = 0;
+            while (a != 0) {
+                cifra = a % 10;
+                if (cifra &gt; max)
+                max = cifra;
+                a /= 10;
+            }
+            System.out.println("Najveća cifra unetog broja " + i + " je " + max);
+            ulaz.close();
+        
+            }
+        }        
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za a: <strong style="color: aliceblue;">108</strong>
+        Najveća cifra unetog broja 108 je 8
+        
+        Unesite vrednost za a: <strong style="color: aliceblue;">959</strong>
+        Najveća cifra unetog broja 959 je 9
+    </pre>
+    <hr />
+    <p><strong>Zadatak 174: (WhilePetlja35)</strong></p>
+    <p>Napisati program koji za uneti broj n (n &gt; 0) ispisuje zbir njegovih cifara.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.util.Scanner;
+        
+        public class WhilePetlja35 {
+            public static void main(String[] args) throws Exception {
+            Scanner ulaz = new Scanner(System.in);
+            // n - broj koji se unosi
+            // s - zbir cifara
+            // cifra - cifra koja se izdvaja
+            int n, s = 0, cifra;
+            System.out.println("Unesite vrednostza n:");
+            n = ulaz.nextInt();
+            if (n &lt; 0)
+                System.out.println("Uneliste negativan broj.");
+            else {
+                while (n &gt; 0) {
+                cifra = n % 10;
+                s += cifra;
+                n /= 10;
+                }
+                System.out.println("Zbir cifara je " + s);
+            }
+            ulaz.close();
+            }
+        }              
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za n: <strong style="color: aliceblue;">123</strong>
+        Zbir cifara je 6
+        
+        Unesite vrednost za n: <strong style="color: aliceblue;">5043</strong>
+        Zbir cifara je 12
+        </pre>
+    <hr />
+    <p><strong>Zadatak 175: (WhilePetlja36)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127477735.jpg" alt="" width="936" height="251" /></p>
+    <p><strong><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127502791.jpg" alt="" width="669" height="372" /></strong></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class WhilePetlja36 {
+            public static void main(String[] args) throws Exception {
+        // a0 - prvi član sume
+        // s - tražena suma
+        // eps - tačnost izračunavanja
+            double a0, s;
+            int k;
+            DecimalFormat df = new DecimalFormat("#.##");
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        // Unos podataka
+            System.out.println("Unesite vrednostza x: ");
+            double x = Double.parseDouble(ulaz.readLine());
+            System.out.println("Unesite vrednostza eps: ");
+            double eps = Double.parseDouble(ulaz.readLine());
+        // Ispitivanje važenja reda
+            if (Math.abs(x) &lt; 4) {
+        // Izračunavanje vrednosti funkcije
+                a0 = 1.0;
+                s = a0;
+                k = 0;
+                while (Math.abs(a0 / s) &gt; eps) {
+                a0 = x * x / ((2 * k + 2) * (2 * k + 1)) * a0;
+                s += a0;
+                k++;
+                }
+        // &Scaron;tampanje rezultata
+                System.out.println("Tražena suma je S = " + df.format(s));
+            } else
+                System.out.println("Za ch mora da važi |x| &lt; 4.");
+            }
+        }
+                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za x: <strong style="color: aliceblue;">2.4</strong>
+        Unesite vrednost za eps: <strong style="color: aliceblue;">1.0E-6</strong>
+        Tražena suma je S = 5.56
+
+        Unesite vrednost za x: <strong style="color: aliceblue;">4.5</strong>
+        Unesite vrednost za eps: <strong style="color: aliceblue;">1.0E-6</strong>
+        Za ch mora da važi |x| &lt; 4.
+        </pre>
+    <hr />
+    <p><strong>Zadatak 176: (WhilePetlja37)</strong></p>
+    <p><img src="https://miteam.mi.sanu.ac.rs/content/n2xdppaMgGxrLWLR7_1668127427504.jpg" alt="" width="827" height="165" /></p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package CiklicnaStruktura;
+    
+            import java.io.*;
+            import java.text.DecimalFormat;
+            
+            public class WhilePetlja37 {
+                public static void main(String[] args) throws Exception {
+                DecimalFormat df = new DecimalFormat("#.##");
+                BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            // Unos podataka
+                System.out.println("Unesite vrednostza x: ");
+                double x = Double.parseDouble(ulaz.readLine());
+                System.out.println("Unesite vrednostza eps: ");
+                double eps = Double.parseDouble(ulaz.readLine());
+            // Izračunavanje vrednosti sume
+                double koef = Math.sin(x) + Math.cos(x);
+                double a0 = 1.0;
+                double s = a0;
+                int k = 0;
+                while (Math.abs(a0) &gt; eps) {
+                    a0 = a0 * (k + 1) / (k + 2);
+                    s += a0;
+                    k++;
+                }
+                s *= koef;
+            // &Scaron;tampanje rezultata
+                System.out.println("Tražena suma je S = " + df.format(s));
+                }
+            }
+                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">
+    
+        Unesite vrednost za x: <strong style="color: aliceblue;">2.4</strong>
+        Unesite vrednost za eps: <strong style="color: aliceblue;">1.0E-6</strong>
+        Tražena suma je S = -0.89
+        </pre>
+    <hr />
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><em>by Dejan Bajović</em></div>
+    <p>&nbsp;</p>
+</body>
+</html>

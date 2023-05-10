@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polja: Dvodimenzionaln</title>
+</head>
+<body>
+    <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/sMCwa4bytKH2tty5Y_1668790090134.jpg" alt="" width="644" height="296" /></p>
+<p>&nbsp;</p>
+<hr />
+<p><strong>Zadatak 222: (DDN01)</strong></p>
+<pre>
+Ispisati vrednosti elemenata prethodno inicijalizovanog dvodimenzionalnog niza.</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+public class DDN01 {
+
+    public static void main(String[] args) {
+
+    // I nacin: Inicijalizacija dvodimenzionalnog niza
+    int[][] a = { { 10, 20, 30 }, { 40, 50, 60 }, { 70, 80, 90 } };
+
+    // Stampanje elementa dvodimenzionalnog niza:
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+        System.out.print(a[i][j] + " ");
+        }
+        System.out.println();
+    }
+
+    }
+
+}                                                                                                                                       
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    10 20 30 
+    40 50 60 
+    70 80 90 
+    </pre>
+<hr />
+<p><strong>Zadatak 223: (DDN01a)</strong></p>
+<pre>
+Učitati elemente dvodimenzionalnog niza, a zatim ispisati sve elemente dvodimenzionalnog niza</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+import java.util.Scanner;
+
+public class DDN01a {
+
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Broj redova: ");
+    int red = sc.nextInt();
+
+    System.out.println("Broj kolona: ");
+    int kolona = sc.nextInt();
+
+    int niz[][] = new int[red][kolona];
+
+    System.out.println("Elementi matrice: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        System.out.println("a[" + i + ", " + j + "]" + " = ");
+        niz[i][j] = sc.nextInt();
+        }
+    }
+
+    // b) Ispisati sve elemente dvodimenzionalog niza
+
+    System.out.println("Elementi niza su: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        System.out.print(niz[i][j] + " ");
+        }
+        System.out.println();
+    }
+    sc.close();
+
+    }
+
+}                                                                                                                
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Elementi matrice: 
+    a[0, 0] = <strong style="color: aliceblue;">1</strong>
+    a[0, 1] = <strong style="color: aliceblue;">2</strong>
+    a[0, 2] = <strong style="color: aliceblue;">3</strong>
+    a[1, 0] = <strong style="color: aliceblue;">4</strong>
+    a[1, 1] = <strong style="color: aliceblue;">5</strong>
+    a[1, 2] = <strong style="color: aliceblue;">6</strong>
+    a[2, 0] = <strong style="color: aliceblue;">7</strong>
+    a[2, 1] = <strong style="color: aliceblue;">8</strong>
+    a[2, 2] = <strong style="color: aliceblue;">9</strong>
+    Elementi niza su: 
+    1 2 3 
+    4 5 6 
+    7 8 9 
+    </pre>
+<hr />
+<p><strong>Zadatak 224: (DDN01b)</strong></p>
+<pre>
+Učitati elemente dvodimenzionalnog niza, a zatim ispisati sve elemente prvog reda</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+import java.util.Scanner;
+
+public class DDN01b {
+
+    public static void main(String[] args) {
+
+	Scanner sc = new Scanner(System.in);
+
+	System.out.println("Broj redova: ");
+	int red = sc.nextInt();
+
+	System.out.println("Broj kolona: ");
+	int kolona = sc.nextInt();
+
+	int niz[][] = new int[red][kolona];
+
+	System.out.println("Elementi matrice: ");
+	for (int i = 0; i < red; i++) {
+	    for (int j = 0; j < kolona; j++) {
+		System.out.println("a[" + i + ", " + j + "]" + " = ");
+		niz[i][j] = sc.nextInt();
+	    }
+	}
+
+	// b) Ispisati elemente prvog reda
+
+	System.out.println("Elementi prvog reda su: ");
+	for (int i = 0; i < red; i++) {
+	    for (int j = 0; j < kolona; j++) {
+		if (i == 0) {
+		    System.out.print(niz[i][j] + " ");
+		}
+	    }
+
+	}
+	sc.close();
+
+    }
+
+}                                                                                                                           
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Elementi matrice: 
+    a[0, 0] = <strong style="color: aliceblue;">1</strong>
+    a[0, 1] = <strong style="color: aliceblue;">2</strong>
+    a[0, 2] = <strong style="color: aliceblue;">3</strong>
+    a[1, 0] = <strong style="color: aliceblue;">4</strong>
+    a[1, 1] = <strong style="color: aliceblue;">5</strong>
+    a[1, 2] = <strong style="color: aliceblue;">6</strong>
+    a[2, 0] = <strong style="color: aliceblue;">7</strong>
+    a[2, 1] = <strong style="color: aliceblue;">8</strong>
+    a[2, 2] = <strong style="color: aliceblue;">9</strong>
+    Elementi prvog reda su: 
+    1 2 3 
+    </pre>
+
+    <hr />
+<p><strong>Zadatak 225: (DDN01c)</strong></p>
+<pre>
+Učitati elemente dvodimenzionalnog niza, a zatim ispisati sve elemente druge kolone</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+import java.util.Scanner;
+
+public class DDN01c {
+
+    public static void main(String[] args) {
+
+	Scanner sc = new Scanner(System.in);
+
+	System.out.println("Broj redova: ");
+	int red = sc.nextInt();
+
+	System.out.println("Broj kolona: ");
+	int kolona = sc.nextInt();
+
+	int niz[][] = new int[red][kolona];
+
+	System.out.println("Elementi matrice: ");
+	for (int i = 0; i < red; i++) {
+	    for (int j = 0; j < kolona; j++) {
+		System.out.println("a[" + i + ", " + j + "]" + " = ");
+		niz[i][j] = sc.nextInt();
+	    }
+	}
+
+	// b) Ispisati elemente druge kolone
+
+	System.out.println("Elementi druge kolone: ");
+	for (int i = 0; i < red; i++) {
+	    for (int j = 0; j < kolona; j++) {
+		if (j == 1) {
+		    System.out.print(niz[i][j] + " ");
+		}
+	    }
+
+	}
+	sc.close();
+
+    }
+
+}
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Elementi matrice: 
+    a[0, 0] = <strong style="color: aliceblue;">1</strong>
+    a[0, 1] = <strong style="color: aliceblue;">2</strong>
+    a[0, 2] = <strong style="color: aliceblue;">3</strong>
+    a[1, 0] = <strong style="color: aliceblue;">4</strong>
+    a[1, 1] = <strong style="color: aliceblue;">5</strong>
+    a[1, 2] = <strong style="color: aliceblue;">6</strong>
+    a[2, 0] = <strong style="color: aliceblue;">7</strong>
+    a[2, 1] = <strong style="color: aliceblue;">8</strong>
+    a[2, 2] = <strong style="color: aliceblue;">9</strong>
+    Elementi druge kolone su: 
+    2 5 8
+    </pre>
+<hr />
+<p><strong>Zadatak 226: (DDN02a)</strong></p>
+<pre>
+Učitati elemente dvodimenzionalnog niza, a zatim ispisati sve parne elemente</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+import java.util.Scanner;
+
+public class DDN02a {
+
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Broj redova: ");
+    int red = sc.nextInt();
+
+    System.out.println("Broj kolona: ");
+    int kolona = sc.nextInt();
+
+    int niz[][] = new int[red][kolona];
+
+    System.out.println("Elementi matrice: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        System.out.println("a[" + i + ", " + j + "]" + " = ");
+        niz[i][j] = sc.nextInt();
+        }
+    }
+
+    // b) Ispisati parne elemente niza
+
+    System.out.println("Parni elementi niza su: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        if (niz[i][j] % 2 == 0) {
+            System.out.print(niz[i][j] + " ");
+        }
+        }
+    }
+    sc.close();
+
+    }
+
+}
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Elementi matrice: 
+    a[0, 0] = <strong style="color: aliceblue;">1</strong>
+    a[0, 1] = <strong style="color: aliceblue;">2</strong>
+    a[0, 2] = <strong style="color: aliceblue;">3</strong>
+    a[1, 0] = <strong style="color: aliceblue;">4</strong>
+    a[1, 1] = <strong style="color: aliceblue;">5</strong>
+    a[1, 2] = <strong style="color: aliceblue;">6</strong>
+    a[2, 0] = <strong style="color: aliceblue;">7</strong>
+    a[2, 1] = <strong style="color: aliceblue;">8</strong>
+    a[2, 2] = <strong style="color: aliceblue;">9</strong>
+    Parni elementi niza su: 
+    2 4 6 8 
+    </pre>
+
+
+    <hr />
+<p><strong>Zadatak 227: (DDN02b)</strong></p>
+<pre>
+Učitati elemente dvodimenzionalnog niza, a zatim ispisati neparne elemente niza</pre>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package DDN;
+
+import java.util.Scanner;
+
+public class DDN02b {
+
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Broj redova: ");
+    int red = sc.nextInt();
+
+    System.out.println("Broj kolona: ");
+    int kolona = sc.nextInt();
+
+    int niz[][] = new int[red][kolona];
+
+    System.out.println("Elementi matrice: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        System.out.println("a[" + i + ", " + j + "]" + " = ");
+        niz[i][j] = sc.nextInt();
+        }
+    }
+
+    // b) Ispisati neparne elemente niza
+
+    System.out.println("Neparni elementi niza su: ");
+    for (int i = 0; i < red; i++) {
+        for (int j = 0; j < kolona; j++) {
+        if (niz[i][j] % 2 != 0) {
+            System.out.print(niz[i][j] + " ");
+        }
+        }
+    }
+    sc.close();
+
+    }
+
+}
+</pre>
+<pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Broj redova: <strong style="color: aliceblue;">3</strong>
+    Elementi matrice: 
+    a[0, 0] = <strong style="color: aliceblue;">1</strong>
+    a[0, 1] = <strong style="color: aliceblue;">2</strong>
+    a[0, 2] = <strong style="color: aliceblue;">3</strong>
+    a[1, 0] = <strong style="color: aliceblue;">4</strong>
+    a[1, 1] = <strong style="color: aliceblue;">5</strong>
+    a[1, 2] = <strong style="color: aliceblue;">6</strong>
+    a[2, 0] = <strong style="color: aliceblue;">7</strong>
+    a[2, 1] = <strong style="color: aliceblue;">8</strong>
+    a[2, 2] = <strong style="color: aliceblue;">9</strong>
+    Neparni elementi niza su: 
+    1 3 5 7 9  
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 228: (DDN03a)</strong></p>
+    <pre>
+    Učitati elemente dvodimenzionalnog niza, a zatim ispisati elemente sa parnim indexima redova</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN03a {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // c) Ispisati elemente sa parnim indeksima redova
+    
+        System.out.println("Elementi sa parnim indeksima redova: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if ((i + 1) % 2 == 0) {
+                System.out.print(niz[i][j] + " ");
+            }
+            }
+    
+        }
+        sc.close();
+    
+        }
+    
+    }   
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi sa parnim indeksima redova: 
+        4 5 6  
+        </pre>
+
+
+        <hr />
+    <p><strong>Zadatak 229: (DDN03b)</strong></p>
+    <pre>
+    Učitati elemente dvodimenzionalnog niza, a zatim ispisati elemente sa neparnim indexima kolona</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN03b {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // c) Ispisati elemente sa neparnim indeksima kolona
+    
+        System.out.println("Elementi sa neparnim indeksima kolona: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if ((j + 1) % 2 != 0) {
+                System.out.print(niz[i][j] + " ");
+            }
+            }
+            System.out.println();
+    
+        }
+        sc.close();
+    
+        }
+    
+    }
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi sa neparnim indeksima kolona: 
+        1 3 
+        4 6 
+        7 9    
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 230: (DDN03c)</strong></p>
+    <pre>
+    Učitati elemente dvodimenzionalnog niza, a zatim ispisati elemente sa parnim indexima kolona</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+
+    public class DDN03c {
+
+        public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+
+        int niz[][] = new int[red][kolona];
+
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+
+        // c) Ispisati elemente sa parnim indeksima kolona
+
+        System.out.println("Elementi sa parnim indeksima kolona: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if ((j + 1) % 2 == 0) {
+                System.out.print(niz[i][j] + " ");
+            }
+            }
+            System.out.println();
+
+        }
+        sc.close();
+
+        }
+
+    }
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi sa parnim indeksima kolona: 
+        2 
+        5 
+        8     
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 231: (DDN03d)</strong></p>
+    <pre>
+    Učitati elemente dvodimenzionalnog niza, a zatim ispisati elemente sa neparnim indexima redova</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN03d {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // c) Ispisati elemente sa parnim indeksima kolona
+    
+        System.out.println("Elementi sa neparnim indeksima redova: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if ((i + 1) % 2 != 0) {
+                System.out.print(niz[i][j] + " ");
+            }
+            }
+            System.out.println();
+    
+        }
+        sc.close();
+    
+        }
+    
+    }        
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi sa neparnim indeksima redova: 
+        1 2 3 
+
+        7 8 9        
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 232: (DDN03e)</strong></p>
+    <pre>
+    Učitati elemente dvodimenzionalnog niza, a zatim ispisati elemente sa parnim indexima i redova i kolona</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN03e {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza:
+        System.out.println("Izgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // c) Ispisati elemente sa parnim indeksima i redova i kolona
+    
+        System.out.println("Elementi sa parnim indeksima i redova i kolona: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if ((i + 1) % 2 == 0 && (j + 1) % 2 == 0) {
+                System.out.print(niz[i][j] + " ");
+            }
+            }
+            System.out.println();
+    
+        }
+        sc.close();
+    
+        }
+    
+    }              
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi sa parnim indeksima i redova i kolona: 
+        5
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 233: (DDN04a)</strong></p>
+    <pre>
+    Učitati dva dvodimenzionalnog niza, a zatim izračunati zbir elemenata</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN04a {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int nizA[][] = new int[red][kolona];
+        int nizB[][] = new int[red][kolona];
+        int nizC[][] = new int[red][kolona];
+    
+        System.out.println("Elementi dvodimenzionalnog niza A su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("nizA[" + i + ", " + j + "]" + " = ");
+            nizA[i][j] = sc.nextInt();
+            }
+        }
+    
+        System.out.println("Elementi dvodimenzionalnog niza B su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("nizB[" + i + ", " + j + "]" + " = ");
+            nizB[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza A:
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizA[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza B:
+        System.out.println("Izgled niza B: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizB[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Ispisati zbir elemenata nizova A i B
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            nizC[i][j] = nizA[i][j] + nizB[i][j];
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza C:
+        System.out.println("Izgled niza C: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizC[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        sc.close();
+    
+        }
+    
+    }                   
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi dvodimenzionalnog niza A su: 
+        nizA[0, 0] = <strong style="color: aliceblue;">1</strong>
+        nizA[0, 1] = <strong style="color: aliceblue;">2</strong>
+        nizA[0, 2] = <strong style="color: aliceblue;">3</strong>
+        nizA[1, 0] = <strong style="color: aliceblue;">4</strong>
+        nizA[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizA[1, 2] = <strong style="color: aliceblue;">6</strong>
+        nizA[2, 0] = <strong style="color: aliceblue;">7</strong>
+        nizA[2, 1] = <strong style="color: aliceblue;">8</strong>
+        nizA[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi dvodimenzionalnog niza B su: 
+        nizB[0, 0] = <strong style="color: aliceblue;">9</strong>
+        nizB[0, 1] = <strong style="color: aliceblue;">8</strong>
+        nizB[0, 2] = <strong style="color: aliceblue;">7</strong>
+        nizB[1, 0] = <strong style="color: aliceblue;">6</strong>
+        nizB[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizB[1, 2] = <strong style="color: aliceblue;">4</strong>
+        nizB[2, 0] = <strong style="color: aliceblue;">3</strong>
+        nizB[2, 1] = <strong style="color: aliceblue;">2</strong>
+        nizB[2, 2] = <strong style="color: aliceblue;">1</strong>
+        Izgled niza A: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Izgled niza B: 
+        9 8 7 
+        6 5 4 
+        3 2 1 
+        Izgled niza C (zbir elemenata niza A i B): 
+        10 10 10 
+        10 10 10 
+        10 10 10 
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 234: (DDN04b)</strong></p>
+    <pre>
+    Učitati dva dvodimenzionalnog niza, a zatim izračunati razliku elemenata</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN04b {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int nizA[][] = new int[red][kolona];
+        int nizB[][] = new int[red][kolona];
+        int nizC[][] = new int[red][kolona];
+    
+        System.out.println("Elementi dvodimenzionalnog niza A su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("nizA[" + i + ", " + j + "]" + " = ");
+            nizA[i][j] = sc.nextInt();
+            }
+        }
+    
+        System.out.println("Elementi dvodimenzionalnog niza B su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("nizB[" + i + ", " + j + "]" + " = ");
+            nizB[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza A:
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizA[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza B:
+        System.out.println("Izgled niza B: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizB[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Ispisati zbir elemenata nizova A i B
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            nizC[i][j] = nizA[i][j] - nizB[i][j];
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza C:
+        System.out.println("Izgled niza C (razlika elemenata niza A i B): ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizC[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        sc.close();
+    
+        }
+    
+    }                                  
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi dvodimenzionalnog niza A su: 
+        nizA[0, 0] = <strong style="color: aliceblue;">1</strong>
+        nizA[0, 1] = <strong style="color: aliceblue;">2</strong>
+        nizA[0, 2] = <strong style="color: aliceblue;">3</strong>
+        nizA[1, 0] = <strong style="color: aliceblue;">4</strong>
+        nizA[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizA[1, 2] = <strong style="color: aliceblue;">6</strong>
+        nizA[2, 0] = <strong style="color: aliceblue;">7</strong>
+        nizA[2, 1] = <strong style="color: aliceblue;">8</strong>
+        nizA[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi dvodimenzionalnog niza B su: 
+        nizB[0, 0] = <strong style="color: aliceblue;">9</strong>
+        nizB[0, 1] = <strong style="color: aliceblue;">8</strong>
+        nizB[0, 2] = <strong style="color: aliceblue;">7</strong>
+        nizB[1, 0] = <strong style="color: aliceblue;">6</strong>
+        nizB[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizB[1, 2] = <strong style="color: aliceblue;">4</strong>
+        nizB[2, 0] = <strong style="color: aliceblue;">3</strong>
+        nizB[2, 1] = <strong style="color: aliceblue;">2</strong>
+        nizB[2, 2] = <strong style="color: aliceblue;">1</strong>
+        Izgled niza A: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Izgled niza B: 
+        9 8 7 
+        6 5 4 
+        3 2 1 
+        Izgled niza C (razlika elemenata niza A i B): 
+        -8 -6 -4 
+        -2 0 2 
+        4 6 8 
+    </pre>
+
+
+    
+
+    <hr />
+    <p><strong>Zadatak 235: (DDN04c)</strong></p>
+    <pre>
+    Učitati dva dvodimenzionalnog niza, a zatim izračunati proizvod elemenata (kvadratna matrica)</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN04c {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int nizA[][] = new int[red][kolona];
+        int nizB[][] = new int[red][kolona];
+        int nizC[][] = new int[red][kolona];
+    
+        System.out.println("Elementi dvodimenzionalnog niza A su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            nizA[i][j] = sc.nextInt();
+            }
+        }
+    
+        System.out.println("Elementi dvodimenzionalnog niza B su: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            nizB[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza A:
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizA[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza B:
+        System.out.println("Izgled niza B: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizB[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Ispisati proizvod elemenata nizova A i B
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            nizC[i][j] = nizA[i][j] * nizB[i][j];
+            }
+        }
+    
+        // Stampanje elementa dvodimenzionalnog niza C:
+        System.out.println("Izgled niza C (proizvod elemenata niza A i B): ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(nizC[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        sc.close();
+    
+        }
+    
+    }                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi dvodimenzionalnog niza A su: 
+        nizA[0, 0] = <strong style="color: aliceblue;">1</strong>
+        nizA[0, 1] = <strong style="color: aliceblue;">2</strong>
+        nizA[0, 2] = <strong style="color: aliceblue;">3</strong>
+        nizA[1, 0] = <strong style="color: aliceblue;">4</strong>
+        nizA[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizA[1, 2] = <strong style="color: aliceblue;">6</strong>
+        nizA[2, 0] = <strong style="color: aliceblue;">7</strong>
+        nizA[2, 1] = <strong style="color: aliceblue;">8</strong>
+        nizA[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Elementi dvodimenzionalnog niza B su: 
+        nizB[0, 0] = <strong style="color: aliceblue;">9</strong>
+        nizB[0, 1] = <strong style="color: aliceblue;">8</strong>
+        nizB[0, 2] = <strong style="color: aliceblue;">7</strong>
+        nizB[1, 0] = <strong style="color: aliceblue;">6</strong>
+        nizB[1, 1] = <strong style="color: aliceblue;">5</strong>
+        nizB[1, 2] = <strong style="color: aliceblue;">4</strong>
+        nizB[2, 0] = <strong style="color: aliceblue;">3</strong>
+        nizB[2, 1] = <strong style="color: aliceblue;">2</strong>
+        nizB[2, 2] = <strong style="color: aliceblue;">1</strong>
+        Izgled niza A: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Izgled niza B: 
+        9 8 7 
+        6 5 4 
+        3 2 1 
+        Izgled niza C (proizvod elemenata niza A i B): 
+        9 16 21 
+        24 25 24 
+        21 16 9  
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 236: (DDN04d)</strong></p>
+    <pre>
+    Učitati dva dvodimenzionalnog niza, a zatim izračunati proizvod matrice skalarom</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN04d {
+        public static void main(String[] args) {
+        int[][] a = new int[20][20];
+        int[][] b = new int[20][20];
+        int[][] c = new int[20][20];
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+    // Unos dimenzija matrica
+        System.out.println("Unesite dimenzije matrica m, n, k: ");
+        // m = Broj redova prve matrice
+        System.out.println("m = ");
+        int m = ulaz.nextInt();
+        // n = Broj kolona prve matrice & broj redova druge matrice
+        System.out.println("n = ");
+        int n = ulaz.nextInt();
+        // k = Broj kolona druge matrice
+        System.out.println("k = ");
+        int k = ulaz.nextInt();
+        System.out.println("Vrednost skalara: ");
+        int s = ulaz.nextInt();
+    
+        // Unos matrice A
+        System.out.println("Unesite elemente matrica a: ");
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+            System.out.println("a[" + i + "][" + j + "] = ");
+            a[i][j] = ulaz.nextInt();
+            }
+        }
+    
+        // Unos matrice B
+        System.out.println("Unesite elemente matrica b: ");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= k; j++) {
+            System.out.println("b[" + i + "][" + j + "] = ");
+            b[i][j] = ulaz.nextInt();
+            }
+        }
+    
+        // Nalazenje proizvoda dve matrice
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= k; j++) {
+            c[i][j] = 0;
+            for (int t = 1; t <= n; t++) {
+                c[i][j] += s * a[i][t] * b[t][j];
+            }
+            }
+        }
+    
+        // Izgled niza A
+        System.out.println("Izgled niza A: ");
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+            System.out.print(a[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Izgled niza B
+        System.out.println("Izgled niza B: ");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= k; j++) {
+            System.out.print(b[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Stampanje izlaznog rezultata
+        System.out.println("Proizvod matrice skalarom (" + s + ") iznosi: ");
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= k; j++) {
+            System.out.println(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        ulaz.close();
+    
+        }
+    }                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite dimenzije matrica m, n, k: 
+        m =  <strong style="color: aliceblue;">3</strong>
+        n =  <strong style="color: aliceblue;">3</strong>
+        k =  <strong style="color: aliceblue;">3</strong>
+        Vrednost skalara: <strong style="color: aliceblue;">2</strong>
+
+
+        Unesite elemente matrica a: 
+        a[1][1] = <strong style="color: aliceblue;">1</strong>
+        a[1][2] = <strong style="color: aliceblue;">2</strong>
+        a[1][3] = <strong style="color: aliceblue;">3</strong>
+        a[2][1] = <strong style="color: aliceblue;">4</strong>
+        a[2][2] = <strong style="color: aliceblue;">5</strong>
+        a[2][3] = <strong style="color: aliceblue;">6</strong>
+        a[3][1] = <strong style="color: aliceblue;">7</strong>
+        a[3][2] = <strong style="color: aliceblue;">8</strong>
+        a[3][3] = <strong style="color: aliceblue;">9</strong>
+        Unesite elemente matrica b: 
+        b[1][1] = <strong style="color: aliceblue;">1</strong>
+        b[1][2] = <strong style="color: aliceblue;">2</strong>
+        b[1][3] = <strong style="color: aliceblue;">3</strong>
+        b[2][1] = <strong style="color: aliceblue;">4</strong>
+        b[2][2] = <strong style="color: aliceblue;">5</strong>
+        b[2][3] = <strong style="color: aliceblue;">6</strong>
+        b[3][1] = <strong style="color: aliceblue;">7</strong>
+        b[3][2] = <strong style="color: aliceblue;">8</strong>
+        b[3][3] = <strong style="color: aliceblue;">9</strong>
+        
+        Izgled niza A: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Izgled niza B: 
+        9 8 7 
+        6 5 4 
+        3 2 1 
+        Proizvod matrice skalarom (2) iznosi: 
+        60 
+        48 
+        36 
+        
+        168 
+        138 
+        108 
+        
+        276 
+        228 
+        180
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 237: (DDN05)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i izračunati zbir svih elemenata.</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN05 {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        double suma = 0d;
+        // Ispisivanje elementa 2D niza
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            suma += niz[i][j];
+            }
+    
+        }
+        System.out.println("Zbir svih elemanta niza je: " + suma);
+        sc.close();
+    
+        }
+    
+    }                                        
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">1</strong>
+        a[0, 1] = <strong style="color: aliceblue;">2</strong>
+        a[0, 2] = <strong style="color: aliceblue;">3</strong>
+        a[1, 0] = <strong style="color: aliceblue;">4</strong>
+        a[1, 1] = <strong style="color: aliceblue;">5</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">7</strong>
+        a[2, 1] = <strong style="color: aliceblue;">8</strong>
+        a[2, 2] = <strong style="color: aliceblue;">9</strong>
+        Izgled niza A: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Zbir svih elemanta niza je: 45.0
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 238: (DDN06a)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i pronaći najveći element.</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN06a {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Učitati dvodimenzionalni niz i pronaći Najeveći element
+        int max = 0;
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if (max < niz[i][j]) {
+                max = niz[i][j];
+            }
+    
+            }
+    
+        }
+        System.out.println("Najveci broj 2D niza je: " + max);
+        sc.close();
+    
+        }
+    
+    }                                            
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">5</strong>
+        a[0, 1] = <strong style="color: aliceblue;">8</strong>
+        a[0, 2] = <strong style="color: aliceblue;">6</strong>
+        a[1, 0] = <strong style="color: aliceblue;">1</strong>
+        a[1, 1] = <strong style="color: aliceblue;">8</strong>
+        a[1, 2] = <strong style="color: aliceblue;">7</strong>
+        a[2, 0] = <strong style="color: aliceblue;">9</strong>
+        a[2, 1] = <strong style="color: aliceblue;">5</strong>
+        a[2, 2] = <strong style="color: aliceblue;">4</strong>
+        Izgled niza A: 
+        5 8 6 
+        1 8 7 
+        9 5 4 
+        Najveci broj 2D niza je: 9
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 239: (DDN06b)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i pronaći najmanji element.</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN06b {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Učitati dvodimenzionalni niz i pronaći NAJMANJI element
+        int min = niz[0][0];
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+    
+            if (min >= niz[i][j]) {
+                min = niz[i][j];
+            }
+    
+            }
+    
+        }
+        System.out.println("Najmanji broj 2D niza je: " + min);
+        sc.close();
+    
+        }
+    
+    }                                                
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">5</strong>
+        a[0, 1] = <strong style="color: aliceblue;">8</strong>
+        a[0, 2] = <strong style="color: aliceblue;">6</strong>
+        a[1, 0] = <strong style="color: aliceblue;">1</strong>
+        a[1, 1] = <strong style="color: aliceblue;">8</strong>
+        a[1, 2] = <strong style="color: aliceblue;">7</strong>
+        a[2, 0] = <strong style="color: aliceblue;">9</strong>
+        a[2, 1] = <strong style="color: aliceblue;">5</strong>
+        a[2, 2] = <strong style="color: aliceblue;">4</strong>
+        Izgled niza: 
+        5 8 6 
+        1 8 7 
+        9 5 4 
+        Najmanji broj 2D niza je: 1
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 240: (DDN07a)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i ispisati elemente na glavnoj dijagonali.</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN07a {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Učitati dvodimenzionalni niz i ispisati elemente na Glavnoj dijagonali
+    
+        System.out.print("Glavna dijagonala: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+    
+            if (i == j) {
+                System.out.print(niz[i][j] + ", ");
+            }
+            }
+        }
+        System.out.println("");
+        sc.close();
+        }
+    
+    }                                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">8</strong>
+        a[0, 1] = <strong style="color: aliceblue;">5</strong>
+        a[0, 2] = <strong style="color: aliceblue;">4</strong>
+        a[1, 0] = <strong style="color: aliceblue;">9</strong>
+        a[1, 1] = <strong style="color: aliceblue;">7</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">1</strong>
+        a[2, 1] = <strong style="color: aliceblue;">3</strong>
+        a[2, 2] = <strong style="color: aliceblue;">2</strong>
+        Izgled niza: 
+        8 5 4 
+        9 7 6 
+        1 3 2 
+        Glavna dijagonala: 8, 7, 2,
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 241: (DDN07b)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i ispisati elemente na sporednoj dijagonali.</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN07b {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // a) Učitati dvodimenzionalni niz i ispisati elemente na SPOREDNOJ dijagonali
+    
+        System.out.print("Sporedna dijagonala: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+    
+            if ((i + j) == (red - 1)) {
+                System.out.print(niz[i][j] + ", ");
+            }
+            }
+        }
+        System.out.println("");
+        sc.close();
+        }
+    
+    }                                                          
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">8</strong>
+        a[0, 1] = <strong style="color: aliceblue;">5</strong>
+        a[0, 2] = <strong style="color: aliceblue;">4</strong>
+        a[1, 0] = <strong style="color: aliceblue;">9</strong>
+        a[1, 1] = <strong style="color: aliceblue;">7</strong>
+        a[1, 2] = <strong style="color: aliceblue;">6</strong>
+        a[2, 0] = <strong style="color: aliceblue;">1</strong>
+        a[2, 1] = <strong style="color: aliceblue;">3</strong>
+        a[2, 2] = <strong style="color: aliceblue;">2</strong>
+        Izgled niza A: 
+        8 5 4 
+        9 7 6 
+        1 3 2 
+        Sporedna dijagonala: 4, 7, 1,
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 242: (DDN08)</strong></p>
+    <pre>
+    Učitanom dvodimenzionalnom nizu zameniti redove i kolone.
+    Početni dvodimenzionalni niz:
+    10 20 30
+    40 50 60
+    70 80 90
+    Transponovani elementi:
+    10 40 70
+    20 50 80
+    30 60 90
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN08 {
+    
+        public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Elementi matrice: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("a[" + i + ", " + j + "]" + " = ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+    
+        // 8. Učitanom dvodimenzionalnom nizu zameniti redove i kolone.
+    
+        int[][] transponovaniNiz = new int[red][kolona];
+        for (int i = 0; i < red; ++i) {
+            for (int j = 0; j < kolona; ++j) {
+            transponovaniNiz[j][i] = niz[i][j];
+            }
+        }
+        System.out.println("Pocetni dvodimenzionalni niz: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+    
+            System.out.print(niz[i][j] + " ");
+    
+            }
+            System.out.println("");
+    
+        }
+    
+        System.out.println("Transponovani elementi: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+    
+            System.out.print(transponovaniNiz[i][j] + " ");
+    
+            }
+            System.out.println("");
+        }
+    
+        sc.close();
+        }
+    
+    }                                                                 
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Broj redova: <strong style="color: aliceblue;">3</strong>
+        Elementi matrice: 
+        a[0, 0] = <strong style="color: aliceblue;">10</strong>
+        a[0, 1] = <strong style="color: aliceblue;">20</strong>
+        a[0, 2] = <strong style="color: aliceblue;">30</strong>
+        a[1, 0] = <strong style="color: aliceblue;">40</strong>
+        a[1, 1] = <strong style="color: aliceblue;">50</strong>
+        a[1, 2] = <strong style="color: aliceblue;">60</strong>
+        a[2, 0] = <strong style="color: aliceblue;">70</strong>
+        a[2, 1] = <strong style="color: aliceblue;">80</strong>
+        a[2, 2] = <strong style="color: aliceblue;">90</strong>
+        Pocetni dvodimenzionalni niz: 
+        10 20 30 
+        40 50 60 
+        70 80 90 
+        Transponovani elementi: 
+        10 40 70 
+        20 50 80 
+        30 60 90 
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 243: (DDN09)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i ispisati sve elemente na glavnoj i ispod glavne dijagonale.
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN09 {
+    
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    
+        // Inicijalizacija niza
+    
+        int[][] niz = { { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 } };
+    
+        // Štampanje početnog izgleda niza
+    
+        System.out.println("Početni izgled: ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Štampanje novog izgleda niza
+        System.out.println("Novi izgled: ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+            if (j <= i) {
+                System.out.print(niz[i][j] + " ");
+            }
+    
+            }
+            System.out.println();
+        }
+    
+        sc.close();
+        }
+    }                                                                       
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Početni izgled: 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        Novi izgled: 
+        1 
+        1 1 
+        1 1 1 
+        1 1 1 1 
+        1 1 1 1 1 
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 244: (DDN10)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz i ispisati sve elemente na sporednoj i iznad sporedne dijagonale.
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN10 {
+    
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    
+        // Inicijalizacija niza
+    
+        int[][] niz = { { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1 } };
+    
+        // Štampanje početnog izgleda niza
+    
+        System.out.println("Početni izgled: ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        // Štampanje novog izgleda niza
+        System.out.println("Novi izgled: ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+            if (j >= i) {
+                System.out.print(niz[i][j] + " ");
+            }
+    
+            }
+            System.out.println();
+        }
+    
+        sc.close();
+        }
+    }                                                                            
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Početni izgled: 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        1 1 1 1 1 
+        Novi izgled: 
+        1 1 1 1 1 
+        1 1 1 1 
+        1 1 1 
+        1 1 
+        1  
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 245: (DDN11)</strong></p>
+    <pre>
+    Ispisati dvodimenzionali niz i izračunati sumu kvadrata svih elementa niza.<br>
+    <b>(Sprečiti negativan broj za unos redova i kolona)</b>
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN11 {
+    
+        public static void main(String[] args) {
+        // Deklarisanje promenljivih
+        double s = 0d;
+        int red, kolona;
+        // Ucitavanje podataka
+        Scanner sc = new Scanner(System.in);
+    
+        // Proverava da li nije unet negativan broj redova
+        do {
+            System.out.println("Unesite broj redova: ");
+            red = sc.nextInt();
+            if (red <= 0) {
+            System.out.println("Uneli ste negativan broj kolona!");
+            }
+        } while (red <= 0);
+    
+        // Proverava da li nije unet negativan broj kolona
+        do {
+            System.out.println("Unesite broj kolona: ");
+            kolona = sc.nextInt();
+            if (kolona <= 0) {
+            System.out.println("Uneli ste negativan broj kolona!");
+            }
+        } while (kolona <= 0);
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int matrica[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            matrica[i][j] = sc.nextInt();
+    
+            if (i == j)
+                s += Math.pow(matrica[i][j], 2);
+            }
+        }
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(matrica[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        System.out.println("Suma kvadrata svih (pozitivnih) elementa na glavnoj dijagonali niza je: " + s);
+    
+        sc.close();
+        }
+    
+    }                                                                                
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Suma kvadrata svih (pozitivnih) elementa na glavnoj dijagonali niza je: 107.0
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 246: (DDN12)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu 5x5. Izračunati i ispisati sumu
+    elemenata treceg reda niza X[5,5].
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN12 {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu 5x5. Izracunati i ispisati sumu
+        // elemeenata treceg reda niza X[5,5]
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int matrica[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            matrica[i][j] = sc.nextInt();
+            }
+        }
+    
+        // Izgled niza
+        System.out.println("Izgled niza A: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(matrica[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        double s = 0d;
+        System.out.println("Elementi 3 reda niza su: " + " ");
+        for (int i = 0; i < red; i++) {
+            if (i == 2) {
+            for (int j = 0; j < kolona; j++) {
+                System.out.print(matrica[i][j] + " + ");
+                s += matrica[i][j];
+            }
+            System.out.println();
+            }
+        }
+    
+        System.out.println("= " + s);
+        sc.close();
+        }
+    
+    }                                                                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">5</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">5</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[0,3]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[0,4]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[1,3]= 
+        <strong style="color: aliceblue;">9</strong>
+        matrica[1,4]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[2,3]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[2,4]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[3,0]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[3,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[3,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        matrica[3,3]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[3,4]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[4,0]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[4,1]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[4,2]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[4,3]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[4,4]= 
+        <strong style="color: aliceblue;">7</strong>
+        Izgled niza A: 
+        1 2 3 4 5 
+        6 7 8 9 1 
+        2 3 4 5 6 
+        7 8 9 1 2 
+        3 4 5 6 7 
+        Elementi 3 reda niza su:  
+        2 + 3 + 4 + 5 + 6 + 
+        = 20.0
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 247: (DDN13)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati sumu
+    elemenata pete kolone niza X[n,m].
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN13 {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu nxm. Izracunati i ispisati sumu
+        // elemeenata pete kolone niza niza X[n,m]
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        System.out.println("Izgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        double s = 0d;
+        System.out.print("Elemenati pete kolone niza su: " + " ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if (j == 4) {
+                System.out.print(niz[i][j] + ", ");
+                s += niz[i][j];
+            }
+            }
+            System.out.print("");
+        }
+    
+        System.out.println("\nZbir tih elemenata je: " + s);
+    
+        sc.close();
+        }
+    
+    }                                                                                       
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">2</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">5</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[0,3]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[0,4]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[1,3]= 
+        <strong style="color: aliceblue;">9</strong>
+        matrica[1,4]= 
+        <strong style="color: aliceblue;">10</strong>
+        Izgled niza: 
+        1 2 3 4 5 
+        6 7 8 9 1 
+        Elemenati pete kolone niza su:  5, 10, 
+        Zbir tih elemenata je: 15.0
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 248: (DDN14)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati sumu svih članova većih od 3.
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN14 {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu 5x5. IZracunati
+        // i ispisati sumu svih clanova vecih od 3
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        System.out.println("\nIzgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        double s = 0d;
+        System.out.print("Članovi veci od 3 su: " + " ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if (niz[i][j] > 3) {
+                System.out.print(niz[i][j] + ", ");
+                s += niz[i][j];
+            }
+            }
+            System.out.print("");
+        }
+    
+        System.out.println("\nZbir tih članova iznosi: " + s);
+    
+        sc.close();
+        }
+    
+    }                                                                                              
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        Izgled niza: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+        Članovi veci od 3 su:  4, 5, 6, 7, 8, 9, 
+        Zbir tih članova iznosi: 39.0
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 249: (DDN15)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati sumu negativnih elemenata.
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN15 {
+    
+        public static void main(String[] args) {
+        // Učitati dvodimenzionalni niz - matricu 5x5. Izračunati i ispisati sumu svih
+        // negativnih članova
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        System.out.println("\nIzgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        double s = 0d;
+        System.out.print("Članovi veci od 3 su: " + " ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            if (niz[i][j] < 0) {
+                System.out.print(niz[i][j] + ", ");
+                s += niz[i][j];
+            }
+            }
+            System.out.print("");
+        }
+    
+        System.out.println("\nZbir tih članova iznosi: " + s);
+    
+        sc.close();
+        }
+    
+    }                                                                                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">-3</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">-6</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        Izgled niza: 
+        1 2 -3 
+        4 5 -6 
+        7 8 9 
+        Članovi veci od 3 su:  -3, -6, 
+        Zbir tih članova iznosi: -9.0
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 250: (DDN16a)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati 
+    <b>a) aritmeticku sredinu svih elemenata</b>
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN16a {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu 5x5. Izracunati
+        // i ispisati a) aritmeticku sredinu svih elemenata
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        int brojac = 0;
+        double s = 0d;
+        System.out.println("\nIzgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            brojac++;
+            s += niz[i][j];
+            }
+            System.out.println();
+        }
+    
+        double arSredina = s / brojac;
+    
+        System.out.println("\nAritmetička sredina svih elemenata je: " + arSredina);
+    
+        sc.close();
+        }
+    
+    }                                                                                                    
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">4</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">7</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        Izgled niza: 
+        1 2 3 
+        4 5 6 
+        7 8 9 
+
+        Aritmetička sredina svih elemenata je: 5.0
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 251: (DDN16b)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati 
+    <b>a) aritmeticku sredinu pozitivnih elemenata</b>
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN16b {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu 5x5. Izracunati
+        // i ispisati a) aritmeticku sredinu pozitivnih elemenata
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("matrica[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        int brojac = 0;
+        double s = 0d;
+        System.out.println("\nIzgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            if (niz[i][j] > 0) {
+                brojac++;
+                s += niz[i][j];
+            }
+            }
+            System.out.println();
+        }
+    
+        double arSredina = s / brojac;
+    
+        System.out.println("\nAritmetička sredina pozitivinih elemenata je: " + arSredina);
+    
+        sc.close();
+        }
+    
+    }                                                                                                            
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">1</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">3</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">-4</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">-7</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">9</strong>
+        Izgled niza: 
+        1 2 3 
+        -4 5 6 
+        -7 8 9 
+
+        Aritmetička sredina pozitivinih elemenata je: 4.857142857142857
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 252: (DDN16c)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati 
+    <b>a) aritmeticku sredinu pozitivnih elemenata na redovima</b>
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package DDN;
+
+    import java.util.Scanner;
+    
+    public class DDN16c {
+    
+        public static void main(String[] args) {
+        // Ucitati dvodimenzionalni niz - matricu 5x5. Izracunati
+        // i ispisati a) aritmeticku sredinu pozitivnih elemenata na redovima
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite broj redova: ");
+        int red = sc.nextInt();
+    
+        System.out.println("Unesite broj kolona: ");
+        int kolona = sc.nextInt();
+    
+        // "Matrica" = naziv naseg dvodimenzionalnog niza
+        int niz[][] = new int[red][kolona];
+    
+        System.out.println("Unesite elemente: ");
+    
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.println("niz[" + i + "," + j + "]" + "= ");
+            niz[i][j] = sc.nextInt();
+            }
+        }
+        // Stampanje niza
+        int brojac = 0;
+        double s = 0d;
+        double artSredina = 0d;
+        System.out.println("\nIzgled niza: ");
+        for (int i = 0; i < red; i++) {
+            for (int j = 0; j < kolona; j++) {
+            System.out.print(niz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    
+        for (int i = 0; i < red; i++) {
+            s = 0;
+            System.out.println("Aritmeticka sredina pozitivnih elemenata na redu " + (i + 1) + " iznosi: ");
+            for (int j = 0; j < kolona; j++) {
+            if (niz[i][j] > 0) {
+                s += niz[i][j];
+                artSredina = s / ++brojac;
+            }
+            }
+            brojac = 0;
+            System.out.println(artSredina);
+            System.out.println();
+        }
+    
+        sc.close();
+        }
+    
+    }                                                                                                                  
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">-11</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">20</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">33</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">-88</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">45</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">68</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">-99</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">74</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">18</strong>
+        Izgled niza: 
+        -11 20 33 
+        -88 45 68 
+        -99 74 18 
+        Aritmeticka sredina pozitivnih elemenata na redu 1 iznosi: 
+        26.5
+
+        Aritmeticka sredina pozitivnih elemenata na redu 2 iznosi: 
+        56.5
+
+        Aritmeticka sredina pozitivnih elemenata na redu 3 iznosi: 
+        46.0
+    </pre>
+    <hr />
+    <p><strong>Zadatak 253: (DDN16d)</strong></p>
+    <pre>
+    Učitati dvodimenzionalni niz - matricu nxm. Izračunati i ispisati 
+    <b>a) aritmetičku sredinu parnih elemenata na kolonama</b>
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package DDN;
+
+        import java.util.Scanner;
+        
+        public class DDN16d {
+        
+            public static void main(String[] args) {
+            // Ucitati dvodimenzionalni niz - matricu 5x5. Izracunati
+            // i ispisati a) aritmeticku sredinu parnih elemenata na kolonama
+            Scanner sc = new Scanner(System.in);
+        
+            System.out.println("Unesite broj redova: ");
+            int red = sc.nextInt();
+        
+            System.out.println("Unesite broj kolona: ");
+            int kolona = sc.nextInt();
+        
+            // "Matrica" = naziv naseg dvodimenzionalnog niza
+            int niz[][] = new int[red][kolona];
+        
+            System.out.println("Unesite elemente: ");
+        
+            for (int i = 0; i < red; i++) {
+                for (int j = 0; j < kolona; j++) {
+                System.out.println("niz[" + i + "," + j + "]" + "= ");
+                niz[i][j] = sc.nextInt();
+                }
+            }
+            // Stampanje niza
+            int brojac = 0;
+            double s = 0d;
+            double artSredina = 0d;
+            System.out.println("\nIzgled niza: ");
+            for (int i = 0; i < red; i++) {
+                for (int j = 0; j < kolona; j++) {
+                System.out.print(niz[i][j] + " ");
+                }
+                System.out.println();
+            }
+        
+            for (int i = 0; i < red; i++) {
+                s = 0;
+                artSredina = 0;
+                System.out.println("Aritmeticka sredina parnih elemenata na koloni " + (i + 1) + " iznosi: ");
+                for (int j = 0; j < kolona; j++) {
+        
+                if (niz[j][i] % 2 == 0) {
+                    s += niz[j][i];
+                    artSredina = s / ++brojac;
+                }
+                }
+                brojac = 0;
+                System.out.println(artSredina);
+                System.out.println();
+            }
+        
+            sc.close();
+            }
+        
+        }                                                                                                                   
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj redova: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite broj kolona: 
+        <strong style="color: aliceblue;">3</strong>
+        Unesite elemente: 
+        matrica[0,0]= 
+        <strong style="color: aliceblue;">2</strong>
+        matrica[0,1]= 
+        <strong style="color: aliceblue;">5</strong>
+        matrica[0,2]= 
+        <strong style="color: aliceblue;">6</strong>
+        matrica[1,0]= 
+        <strong style="color: aliceblue;">8</strong>
+        matrica[1,1]= 
+        <strong style="color: aliceblue;">9</strong>
+        matrica[1,2]= 
+        <strong style="color: aliceblue;">10</strong>
+        matrica[2,0]= 
+        <strong style="color: aliceblue;">12</strong>
+        matrica[2,1]= 
+        <strong style="color: aliceblue;">13</strong>
+        matrica[2,2]= 
+        <strong style="color: aliceblue;">14</strong>
+        Izgled niza: 
+        2 5 6 
+        8 9 10 
+        12 13 14 
+        Aritmeticka sredina parnih elemenata na koloni 1 iznosi: 
+        7.333333333333333
+
+        Aritmeticka sredina parnih elemenata na koloni 2 iznosi: 
+        0.0
+
+        Aritmeticka sredina parnih elemenata na koloni 3 iznosi: 
+        10.0
+    </pre>
+<hr />
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<p>&nbsp;</p>
+<div style="text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+
+</body>
+</html>

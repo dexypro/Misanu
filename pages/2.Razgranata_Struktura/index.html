@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+    <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://lh3.googleusercontent.com/eDFJyzpLQGj3ZXQBvzGZy0oEHCtCqFICrgSaUiyVPDS2zUhyQeBGPBI_I7jWUrRvn29qGUlTnr5e6Sd-5ikxnxQxLaEzRkD1ZrC_KdT6u0gXLrkh7o7PZuKWmkAFQOuCOMxOp0nL96wLNsqnmmQAj3K0FPIdxUY1N1HM9gO9MS9z9vzllBaCbhYeaoqnGf1xP9bidU2xxIvwa1H_5mSLRVhrSWZQGFcLDRr_wX7aFRpCNDSHeuCLW86MLeRHvBh9n_dk6LddFwl-mPDnVMVeouW1KdZdVXcWfCTz0-uly__j4pPSlcWRpbEjnP7xjt8G644ovOyxPbMLXaqLnDTcWZO3JRgMPym6FPbIgDRCFt_YRf5x9oTSXncAXmQJwFtFwoCbipZm0kf_por2Lw5oOnJz9CGyML-rdm5GKhOd5vO8kfU0_bSNfzf8dNcl0OaI9DmWzakr153i13xn3lsZg96uD9rGiMXDbOPujvsfRa_sqAKARnb0lQAcdyjSq9D96biBiTVwwqpieYXT7AEaDlLO2sK0CJBQx21FTZ9m3mmUPVTdUl-XFfH_NZkwOZW7g1uxKqjsm8QHRSuS_yTIExVUoj314M9LSc-8EuFzCmfVv1fNqIkJXsRn4rauQF4vzrspr_ItiynoIdo1nU4XYdpgu_WDpy15d7KDBK3bcQZjZS7lFlmRcBnLGoD14z8qHqUAKyWeA6l7ckXNbZ39cffgX2f8B1AhXru19ptTVioFZftpcI3vmMOQkJ4xtulY-vuuLzyo8nsYOtn8L12r0C9KCiYLlvvgS5G6SmkI_pqK468wyABbFtgbBQ4UmQOoIcvi-vk4u1IePCD7MyKShc2Glqw0pgXC7QX5D721pCgqdLkPaB32IuWb9y_8YquAmZ7nhgnpWSURXlW6XSk6Hd95NFLZfAvDDLbvCxMQ9oUHbq_WjyIpRKJ2jKRtOy-qDzIDtvnacAh9ZlNPTP78ctK36X9MqVU0D9VTcNDHHek0nMGEB7K1zLP4wICVnGW5HYwP3_FYIxJDnAd19FPa34f-5Pm4ubA36qyyguPw2wwjOBT1_8YJaBsijzk=w780-h304-no?authuser=0" alt="tt" width="780" height="304" /></p>
+    <hr />
+    <p><strong>Zadatak 62: (IfElseStruktura)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije prikazane na slici. Na izlazu &scaron;tampati rezultat oblika Za uneto X = xxx.xxx dobija se Y = xxx.xxx.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665260508407.jpg" alt="" width="314" height="116" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    
+                package RazgranataStruktura;
+                import java.util.Scanner;
+                                
+                    public class IfElseStruktura {
+                    
+                        public static void main(String[] args) {
+                        // Deklarisanje promenljivih
+                        double x, y;
+                    
+                        // Unos: Učitavanje vrednosti
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Unesite x: ");
+                        x = input.nextDouble();
+                    
+                        // Obrada vrednosti
+                        if (x &gt;= 0)
+                            y = x;
+                        else
+                            y = -x;
+                    
+                        // Može i primena uslovnog operatora (ternary operator)
+                        // y = (x &gt;= 0) ? x : -x;
+                    
+                        // &Scaron;tampanje rezultata
+                        System.out.println("Za uneto X = " + x + " dobija se  Y = " + y);
+                    
+                        input.close();
+                    }
+                    
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 63: (Paran)</strong></p>
+    <ul>
+    <li>Napisati program kojim se unosi prirodan broj a i ako je neparan ispisuje njegova recipročna vrednost, a ako je paran ispisuje kvadrat njegovog prethodnika. <br /><br /><strong>Opis re&scaron;enja</strong>: Zadatak se može opisati kori&scaron;ćenjem sledeće formule<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665260523808.jpg" alt="" width="392" height="138" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                            
+                import java.util.Scanner;
+                
+                public class Paran {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    int a;
+                    double y;
+                    System.out.println("Unesite vrednost broja a: ");
+                    a = input.nextInt();
+                    if (a % 2 != 0)
+                        y = (double) 1 / a;
+                    else
+                        y = (a - 1) * (a - 1);
+                    System.out.println("y je " + y);
+                
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 64: (Min)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava y prema formuli<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665261508692.jpg" alt="" width="328" height="136" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                        
+                import java.util.Scanner;
+                
+                public class Min {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    int a, b;
+                    int y;
+                    System.out.println("Unesite vrednost broja a: ");
+                    a = input.nextInt();
+                    System.out.println("Unesite vrednost broja b: ");
+                    b = input.nextInt();
+                    if (a &gt;= 0)
+                        y = Math.min(a, b);
+                    else
+                        y = 2 * Math.min(a, b);
+                    System.out.println("y je " + y);
+                
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 65: (MinMax)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava y prema formuli<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665261521332.jpg" alt="" width="404" height="214" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                        
+                import java.util.Scanner;
+                
+                public class MinMax {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    double a, b;
+                    double y;
+                    System.out.println("Unesite vrednost broja a: ");
+                    a = input.nextDouble();
+                    System.out.println("Unesite vrednost broja b: ");
+                    b = input.nextDouble();
+                    if (a &gt;= 0)
+                        y = (1 - Math.min(a, b)) / (1 + Math.max(a, b));
+                    else
+                        y = Math.min(a, b) / (Math.min(a * a, b * b) + 3);
+                    System.out.println("y je " + y);
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 66: (KorenKvadrat)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unetu vrednost a ispisuje njegov koren, a ako je negativan njegov kvadrat. <br /><br /><strong>Opis re&scaron;enja</strong>:<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665261543173.jpg" alt="" width="307" height="168" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                        
+                import java.util.Scanner;
+                
+                public class KorenKvadrat {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    double a = input.nextDouble();
+                    double y;
+                    if (a &gt; 0)
+                        y = Math.sqrt(a);
+                    else
+                        y = a * a;
+                    System.out.println("y = " + y);
+                    input.close();
+                    }
+                }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 67: (AritmetickiIzraz)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete realne vrednosti a i b izračunava z prema izrazu<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665261928123.jpg" alt="" width="347" height="157" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                    
+                import java.util.Scanner;
+                
+                public class AritmetickiIzraz {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    double a = input.nextDouble();
+                    System.out.print("Unesite vrednost za b: ");
+                    double b = input.nextDouble();
+                    double z;
+                    if (a &gt; b)
+                        z = 2 * a + b;
+                    else
+                        z = a - 2 * b;
+                    System.out.println("z = " + z);
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 68: (Deljivost)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava z prema izrazu<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665261939383.jpg" alt="" width="674" height="174" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+            
+                import java.util.Scanner;
+                
+                public class Deljivost {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    int a = input.nextInt();
+                    System.out.print("Unesite vrednost za b: ");
+                    int b = input.nextInt();
+                    int z;
+                    if (a % 2 == 0 &amp;&amp; b % 3 == 0)
+                        z = a + b;
+                    else
+                        z = a - b;
+                    System.out.println("z = " + z);
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 69: (Provera)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava z prema izrazu<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665262047518.jpg" alt="" width="560" height="154" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    package RazgranataStruktura;
+                                    
+                import java.util.Scanner;
+                
+                public class Provera {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    int a = input.nextInt();
+                    System.out.print("Unesite vrednost za b: ");
+                    int b = input.nextInt();
+                    int z;
+                    if ((a % 2 != 0) &amp;&amp; (b % 2 == 0))
+                        z = a + b;
+                    else
+                        z = a * b;
+                    System.out.println("z = " + z);
+                    input.close();
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 70: (Nula)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za unete vrednosti a i b izračunava z prema izrazu<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665434126224.jpg" alt="" width="476" height="143" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">    
+                package RazgranataStruktura;
+                import java.util.Scanner;
+                
+                public class Nula {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    int a = input.nextInt();
+                    System.out.print("Unesite vrednost za b: ");
+                    int b = input.nextInt();
+                    if (b != 0)
+                        System.out.println(a / b);
+                    else
+                        System.out.println("Deljenje nulom");
+                    input.close();
+                    }
+                }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 71: (NajveciBroj)</strong></p>
+    <ul>
+    <li>Napisati program kojim se od tri učitana broja a, b i c nalazi najveći broj.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                                
+                import java.io.*;
+            
+                public class NajveciBroj {
+                    public static void main(String[] args) throws Exception {
+                    // Deklarisanje promenljivih
+                    double a, b, c, max;
+                    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+                    
+                    // Unos podataka
+                    System.out.println("Unesite a: ");
+                    a = Double.parseDouble(input.readLine());
+                    System.out.println("Unesite b: ");
+                    b = Double.parseDouble(input.readLine());
+                    System.out.println("Unesite c: ");
+                    c = Double.parseDouble(input.readLine());
+            
+                    // Izracunavanje
+                    max = a;
+                    // Slucaj kada su svi uneti brojevi isti
+                    if (max == b &amp;&amp; max == c)
+                        System.out.println("Nema najveceg broja jer su svi brojevi isti!");
+            
+                    else {
+                        if (max &lt; b)
+                        max = b;
+                        if (max &lt; c)
+                        max = c;
+                        // Stampanje najveceg broja od unetih
+                        System.out.println("Najveci broj je: " + max);
+                    }
+            
+                    }
+                }
+                    </pre>
+    <hr />
+    <p><strong>Zadatak 72: (NajmanjiBroj)</strong></p>
+    <ul>
+    <li>Napisati program kojim se od tri učitana broja a, b i c nalazi najmanji broj.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                                
+                import java.util.Scanner;
+                
+                public class NajmanjiBroj {
+                    public static void main(String[] args) throws Exception {
+                    // Deklarisanje promenljivih
+                    double a, b, c, min;
+                
+                    // Unos podataka
+                    Scanner input = new Scanner(System.in);
+                    System.out.println("Unesi vrednost a: ");
+                    a = input.nextDouble();
+                    System.out.println("Unesi vrednost a: ");
+                    b = input.nextDouble();
+                    System.out.println("Unesi vrednost a: ");
+                    c = input.nextDouble();
+                
+                    
+                    // Izracunavanje
+                    min = a;
+                
+                    // Slucaj kada se unesu iste cifre za a,b i c
+                    if (min == b &amp;&amp; min == c)
+                        System.out.println("Nema najmanjeg broja jer su svi uneti brojevi isti!");
+                    else {
+                        if (min &gt; b)
+                        min = b;
+                        if (min &gt; c)
+                        min = c;
+                        // Stampanje rezultata
+                        System.out.println("Najmanji broj je: " + min);
+                    }
+                    input.close();
+                
+                    }
+                }
+                    </pre>
+    <hr />
+    <p><strong>Zadatak 73: (ReciprocnaVrednost)</strong></p>
+    <ul>
+    <li>Napisati program kojim se od tri učitana broja a, b i c ispisuje recipročna vrednost najmanjeg broja, a ako je min = 0 ispisuje se 3.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                                
+                import java.util.Scanner;
+                
+                public class ReciprocnaVrednost {
+                    public static void main(String[] args) {
+                    
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite vrednost za a: ");
+                    int a = input.nextInt();
+                    System.out.print("Unesite vrednost za b: ");
+                    int b = input.nextInt();
+                    System.out.print("Unesite vrednostza c: ");
+                    int c = input.nextInt();
+                    double r = 0;
+                    double min = a;
+                    if (b &lt; min)
+                        min = b;
+                    if (c &lt; min)
+                        min = c;
+                    System.out.println("Najmanji broj je " + min);
+                    if (min == 0)
+                        r = 3;
+                    else
+                        r = 1 / min;
+                    System.out.println("r = " + r);
+                    input.close();
+                    }
+                }
+                    </pre>
+    <hr />
+    <p><strong>Zadatak 74: (Oblast)</strong></p>
+    <ul>
+    <li>Napisati program kojim se proverava da li je uneta tačka unutar pravougaonika.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665436361866.jpg" alt="" width="621" height="418" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                                
+                import java.util.Scanner;
+                
+                public class Oblast {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Unesite koordinatu x tačke: ");
+                    double x = input.nextDouble();
+                    System.out.print("Unesite koordinatu y tačke: ");
+                    double y = input.nextDouble();
+                    System.out.print("Unesite koordinatu x1 pravougaonika: ");
+                    double x1 = input.nextDouble();
+                    System.out.print("Unesite koordinatu x2 pravougaonika: ");
+                    double x2 = input.nextDouble();
+                    System.out.print("Unesite koordinatu y1 pravougaonika: ");
+                    double y1 = input.nextDouble();
+                    System.out.print("Unesite koordinatu y2 pravougaonika: ");
+                    double y2 = input.nextDouble();
+                    if ((x &gt; x1) &amp;&amp; (x &lt; x2) &amp;&amp; (y &gt; y1) &amp;&amp; (y &lt; y2))
+                        System.out.print("Tačka je unutar pravougaonika.");
+                    else
+                        System.out.print("Tačka nije unutar pravougaonika.");
+                
+                    input.close();
+                    }
+                }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 75: (Broj)</strong></p>
+    <ul>
+    <li>Napisati program kojim se za uneti trocifreni broj dobija najveći mogući broj sastavljen od te tri cifre.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                            
+                import java.util.Scanner;
+                
+                public class Broj {
+                    public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+                    int broj, j, d, s, rezultat;
+                    System.out.print("Unesite trocifren broj:");
+                    broj = input.nextInt();
+                    j = broj % 10;
+                    d = (broj / 10);
+                    d = d % 10;
+                    s = broj / 100;
+                    if (j &gt; d) {
+                        int t = j;
+                        j = d;
+                        d = t;
+                    }
+                    if (j &gt; s) {
+                        int t = j;
+                        j = s;
+                        s = t;
+                    }
+                    if (d &gt; s) {
+                        int t = d;
+                        d = s;
+                        s = t;
+                    }
+                    rezultat = s * 100 + d * 10 + j;
+                    System.out.print("Rezultat: " + rezultat);
+                    input.close();
+                    }
+                }
+                        </pre>
+    <hr />
+    <p><strong>Zadatak 76: (RazgranataStruktura1)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program kojim se za date realne brojeve x i y izračunava vrednost funkcije f(x, y) po formuli prikazanoj na slici. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665438255736.jpg" alt="" width="325" height="112" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                
+                import java.io.*;
+                import java.text.DecimalFormat;
+                
+                public class RazgranataStruktura1 {
+                    public static void main(String[] args) throws Exception {
+                    double x, y, f;
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.print("Unesite vrednost za x: ");
+                    x = Double.parseDouble(ulaz.readLine());
+                    System.out.print("Unesite vrednost za y: ");
+                    y = Double.parseDouble(ulaz.readLine());
+                    if (x &gt; y)
+                        f = Math.sqrt((x - 0.2) / (2 + y));
+                    else
+                        f = Math.sqrt((y - 0.2) / (2 + x));
+                    System.out.println("Vrednost funkcije je " + df.format(f));
+                    }
+                }
+                        </pre>
+    <hr />
+    <p><strong>Zadatak 77: (RazgranataStruktura2)</strong></p>
+    <ul>
+    <li>Neka su zadati odsečci sa dužinama a, b i c. Sastaviti algoritam i napisati program za ispitivanje da li zadati odsečci mogu konstruisati trougao i ako mogu izračunati povr&scaron;inu trougla po formuli:<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665439798661.jpg" alt="" width="616" height="110" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+            
+                import java.io.*;
+                
+                public class RazgranataStruktura2 {
+                    public static void main(String[] args) throws Exception {
+                    double a, b, c;
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.print("Unesite dužinu odsečka a: ");
+                    a = Double.parseDouble(ulaz.readLine());
+                    System.out.print("Unesite dužinu odsečka b: ");
+                    b = Double.parseDouble(ulaz.readLine());
+                    System.out.print("Unesite dužinu odsečka c: ");
+                    c = Double.parseDouble(ulaz.readLine());
+                    if ((a + b &gt; c) &amp;&amp; (a + c &gt; b) &amp;&amp; (b + c &gt; a)) {
+                        double p = 0.25 * Math.sqrt((a + b + c) * (b + c - a) * (a + c - b) * (a + b - c));
+                        System.out.println("Povr&scaron;ina trougla je " + p);
+                    } else
+                        System.out.println("Unete stranice ne čine trougao.");
+                    }
+                }
+                        </pre>
+    <hr />
+    <p><strong>Zadatak 78: (RazgranataStruktura3)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost funkcije prikazane na slici na osnovu unetih vrednosti promenljivih x, y i z, pri čemu važi 2x &ne; y. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665440202506.jpg" alt="" width="326" height="108" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+            
+                import java.io.*;
+                import java.text.DecimalFormat;
+                
+                public class RazgranataStruktura3 {
+                    public static void main(String[] args) throws Exception {
+                    // Deklarisanje podataka
+                    double x, y, z, f;
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    // Unos podataka
+                    System.out.print("Unesite vrednost za x: ");
+                    x = Double.parseDouble(ulaz.readLine());
+                    System.out.print("Unesite vrednost za y: ");
+                    y = Double.parseDouble(ulaz.readLine());
+                    System.out.print("Unesite vrednost za z: ");
+                    z = Double.parseDouble(ulaz.readLine());
+                    
+                    if (2 * x != y) {
+                        // Izračunavanje vrednosti funkcije f
+                        f = (x + y) * (x + z) / (2 * x - y);
+                        // &Scaron;tampanje rezultata
+                        System.out.println("Vrednost funkcije f je " + df.format(f));
+                    } else {
+                        // &Scaron;tampanje poruke korisniku o pogre&scaron;nom unosu podataka
+                        System.out.println("Unos podataka nije ispravan (y se mora razlikovati od 2x).");
+                    }
+                
+                    }
+                }
+                </pre>
+    <hr />
+    <p><strong>Zadatak 79: (RazgranataStruktura4)</strong></p>
+    <ul>
+    <li>Napisati program kojim se izračunava vrednost funkcije prikazane na slici na osnovu unete vrednosti promenljive x, pri čemu je x &gt;= 1. Na izlazu &scaron;tampati vrednost funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665441074220.jpg" alt="" width="428" height="104" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+                
+                import java.io.*;
+                
+                public class RazgranataStruktura4 {
+                    public static void main(String[] args) throws Exception {
+                    // Deklarisanje podataka
+                    double x;
+                    boolean y;
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    // Unos podatka x
+                    System.out.print("Unesite vrednost za x: ");
+                    x = Double.parseDouble(ulaz.readLine());
+                    if (x &gt;= 1) {
+                        // Izračunavanje vrednosti funkcije y
+                        y = Math.sqrt((2 + x - Math.pow(x, 3)) / (x + 2)) &gt; 0 || Math.exp(x) &lt; x - 1 &amp;&amp; Math.sqrt(x - 1) &lt;= 0;
+                        // &Scaron;tampanje rezultata
+                        System.out.println("Vrednost funkcije y je " + y);
+                    } else
+                        // &Scaron;tampanje poruke korisniku o pogre&scaron;nom unosu podataka
+                        System.out.println("Unos vrednosti za podatak x nije ispravan (x mora biti različito od 1).");
+                    }
+                }
+                
+                </pre>
+    <hr />
+    <p><strong>Zadatak 80: (RazgranataStruktura5)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program za izračunavanje vrednosti funkcije sa argumentima q, r i s<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665441514107.jpg" alt="" width="441" height="106" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+            
+                import java.io.*;
+                
+                public class RazgranataStruktura5 {
+                    public static void main(String[] args) throws Exception {
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                // Unos podataka 
+                    System.out.print("Unesite vrednost za q: ");
+                    int q = Integer.parseInt(ulaz.readLine());
+                    System.out.print("Unesite vrednost za r: ");
+                    int r = Integer.parseInt(ulaz.readLine());
+                    System.out.print("Unesite vrednost za s: ");
+                    int s = Integer.parseInt(ulaz.readLine());
+                // Izračunavanje vrednosti funkcije 
+                    int y = (r &gt; s) ? r : s;
+                    if (q &lt; y)
+                        y = q;
+                // &Scaron;tampanje rezultata 
+                    System.out.println("Vrednost funkcije y je " + y);
+                    }
+                }
+                    
+                
+                </pre>
+    <hr />
+    <p><strong>Zadatak 81: (IfStruktura)</strong></p>
+    <ul>
+    <li>Sastaviti algoritam i napisati program za izračunavanje vrednosti funkcije sa vrednostima x, y, p i q<br /><img src="https://miteam.mi.sanu.ac.rs/content/mf4ubncPvYC2uKSDC_1665442457656.jpg" alt="" width="523" height="87" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package RazgranataStruktura;
+            
+            import java.io.*;
+            
+            public class IfStruktura {
+                public static void main(String[] args) throws Exception {
+                BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                System.out.print("Unesite vrednost za x: ");
+                int x = Integer.parseInt(ulaz.readLine());
+                System.out.print("Unesite vrednost za y: ");
+                int y = Integer.parseInt(ulaz.readLine());
+                System.out.print("Unesite vrednost za p: ");
+                int p = Integer.parseInt(ulaz.readLine());
+                System.out.print("Unesite vrednost za q: ");
+                int q = Integer.parseInt(ulaz.readLine());
+                int f = (p &lt; q) ? p : q;
+                if (y &gt; f)
+                    f = y;
+                if (x &lt; f)
+                    f = x;
+                System.out.println("Vrednost funkcije f je " + f);
+                }
+            }      
+                
+                </pre>
+    <hr />
+    <p><strong>Zadatak 82: (IF0)</strong></p>
+    <ul>
+    <li>Napisati program koji unete brojeve x i y upoređuje i ispisuje koji je veći od ta dva.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package RazgranataStruktura;
+        
+            import java.util.Scanner;
+        
+            public class IF0 {
+        
+            public static void main(String[] args) {
+            // Deklarisanje promenljivih
+            int x, y;
+        
+            // 1 deo: Unos podataka
+            Scanner input = new Scanner(System.in);
+            System.out.println("Unesite vrednost za x: ");
+            x = input.nextInt();
+            System.out.println("Unesite vrednost za y: ");
+            y = input.nextInt();
+        
+            // 2 deo: Obrada podataka
+            if (x &gt; y)
+                System.out.println("X(" + x + ") je veće od Y(" + y + ").");
+            else {
+                System.out.println("X(" + x + ") je manje od Y(" + y + ").");
+            }
+        
+            input.close();
+        
+            }
+        
+        }
+        
+            </pre>
+    <hr />
+    <p><strong>Zadatak 83: (IF1)</strong></p>
+    <ul>
+    <li>Za uneti broj napisati program koji proverava da li je unet pozitivan, negativan broj ili nula.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package RazgranataStruktura;
+            
+            import java.util.Scanner;
+            
+            public class IF0 {
+            
+                public static void main(String[] args) {
+                // Deklarisanje promenljivih
+                int x, y;
+            
+                // 1 deo: Unos podataka
+                Scanner input = new Scanner(System.in);
+                System.out.println("Unesite vrednost za x: ");
+                x = input.nextInt();
+                System.out.println("Unesite vrednost za y: ");
+                y = input.nextInt();
+            
+                // 2 deo: Obrada podataka
+                if (x &gt; y)
+                    System.out.println("X(" + x + ") je veće od Y(" + y + ").");
+                else {
+                    System.out.println("X(" + x + ") je manje od Y(" + y + ").");
+                }
+            
+                input.close();
+            
+                }
+            
+            }
+        
+            </pre>
+    <hr />
+    <p><strong>Zadatak 84: (IF2)</strong></p>
+    <ul>
+    <li>Za uneti broj napisati program i ispitati da li je deljiv brojem 2 i brojem 3.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package RazgranataStruktura;
+        
+            import java.io.*;
+            
+            public class IF2 {
+            
+                public static void main(String[] args) throws Exception {
+                /* Za uneti broj ispitati da li je deljiv brojem 2 i brojem 3. */
+            
+                int broj;
+            
+                BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            
+                System.out.println("Unesite broj: ");
+            
+                broj = Integer.parseInt(ulaz.readLine());
+            
+                if ((broj % 2 == 0) &amp;&amp; (broj % 3 == 0)) {
+                    System.out.println("Uneti broj " + broj + " je deljiv i brojem 2 i brojem 3.");
+                } else
+                    System.out.println("Uneti broj " + broj + " nije deljiv sa 2 i 3.");
+                }
+            
+            }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 85: (IF3)</strong></p>
+    <ul>
+    <li>Ispisati program koji proverava da li je uneti broj paran.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+                package RazgranataStruktura;
+        
+                import java.util.Scanner;
+                
+                public class IF3 {
+                
+                    public static void main(String[] args) {
+                
+                    /* Ispitati da li je broj paran. */
+                    int broj;
+                
+                    Scanner sc1 = new Scanner(System.in);
+                
+                    System.out.println("Unesite broj: ");
+                    broj = sc1.nextInt();
+                
+                    /* Razgranata struktura */
+                    if (broj == 0) {
+                        System.out.println("Uneli ste 0.");
+                    } else if (broj % 2 == 0)
+                        System.out.println("Broj je paran.");
+                    else
+                        System.out.println("Broj nije paran.");
+                    sc1.close();
+                    }
+                
+                }
+            </pre>
+    <hr />
+    <p><strong>Zadatak 86: (IF4)</strong></p>
+    <ul>
+    <li>Napisati program kojim se utvrđuje da li je uneti znak malo ili veliko slovo, cifra ili specijalni znak. Izlazni rezultati:<br /><br /><em>Unesite znak:</em> ( <strong><br />Uneti znak je specijalni znak</strong></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package RazgranataStruktura;
+        
+            import java.util.Scanner;
+        
+            public class IF6 {
+        
+                public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+        
+                char x;
+        
+                /* Unos podataka */
+                System.out.println("Unesite x: ");
+                x = sc.next().charAt(0);
+        
+                /* Obrada podataka */
+        
+                if (x &gt;= 'a' &amp;&amp; x &lt;= 'z')
+                    System.out.println("Uneti karakter " + x + " je malo slovo.");
+                else if (x &gt;= 'A' &amp;&amp; x &lt;= 'Z')
+                    System.out.println("Uneti karakter " + x + " je veliko slovo.");
+                else if (x &gt;= '0' &amp;&amp; x &lt;= '9')
+                    System.out.println("Uneti karakter " + x + " je broj.");
+        
+                else
+                    System.out.println("Uneti karakter " + x + " je specijalni znak.");
+        
+                sc.close();
+                }
+        
+            }
+        
+            </pre>
+    <hr />
+    <p><strong>Zadatak 87: (IF5)</strong></p>
+    <ul>
+    <li>Napisati naredbu uslovnog prelaska kojom se za dato x izračunava y po formuli:<br /><img src="https://miteam.mi.sanu.ac.rs/content/RGzBnQ3uxqgL5WehP_1665699165836.jpg" alt="" width="248" height="112" /><br /><img src="https://miteam.mi.sanu.ac.rs/content/gd425zBBSkmBuTz7h_1665698875711.jpg" alt="" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+    
+        import java.util.Scanner;
+    
+        public class IF5 {
+    
+        public static void main(String[] args) {
+        double x, y;
+    
+        // Unos podataka
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite vrednost za x: ");
+    
+        x = ulaz.nextDouble();
+    
+        // Obrada podataka
+    
+        if (x &lt; 0) {
+            y = 5;
+    
+        } else if (x &gt;= 0 &amp;&amp; x &lt; 1) {
+            y = x + 2;
+        } else if (x &gt;= 1 &amp;&amp; x &lt; 5) {
+            y = 3 * x - 1;
+        } else {
+            y = 2 * x;
+        }
+    
+        // &Scaron;tampanje rezultata
+        System.out.println("Za uneto x = " + x + " vrednost funkcije y iznosi: " + y);
+    
+        ulaz.close();
+        }
+    
+    }
+    
+        
+            </pre>
+    <hr />
+    <p><strong>Zadatak 88: (IF6)</strong></p>
+    <ul>
+    <li>Napisati naredbu uslovnog prelaska kojom se za dato x izračunava y po formuli<br /><img src="https://miteam.mi.sanu.ac.rs/content/RGzBnQ3uxqgL5WehP_1665699851985.jpg" alt="" width="270" height="130" /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+    
+        import java.util.Scanner;
+        
+        public class IF6 {
+            public static void main(String[] args) {
+            /* Deklarisanje promenljivih */ double x, y;
+            Scanner sc = new Scanner(System.in);
+        
+            /* Unos podataka x i y */ System.out.println("Unesite vrednost za x: ");
+            x = sc.nextDouble();
+        
+            /* Razgranata struktura */
+            if (x &lt; 0) {
+                y = -1;
+            } else if (x == 0) {
+                y = 0;
+            } else {
+                y = +1;
+            }
+        
+            /* &Scaron;tampanje izlaznog rezultata */
+            System.out.println("Vrednost funkcije y je " + y);
+            sc.close();
+            }
+        }
+    
+    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 89: (IF7)</strong></p>
+    <ul>
+    <li>Napisati naredbu uslovnog prelaska kojom se za dato x izračunava y po formuli<br /><img src="https://miteam.mi.sanu.ac.rs/content/RGzBnQ3uxqgL5WehP_1665700066646.jpg" alt="" width="409" height="170" /><br /><br /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+    
+    import java.util.Scanner;
+    
+    public class IF7 {
+    
+        public static void main(String[] args) {
+        /* Deklarisanje promenljivih */ double x, y;
+        Scanner sc = new Scanner(System.in);
+    
+        /* Unos podataka x i y */ System.out.println("Unesite vrednost za x: ");
+        x = sc.nextDouble();
+    
+        /* Razgranata struktura */
+        if (x &gt; -2 &amp;&amp; x &lt;= 2) {
+            y = 2 * x;
+        } else if (x &gt;= 5 &amp;&amp; x &lt; 7) {
+            y = 3 * -1;
+        } else {
+            y = 1 / x;
+        }
+    
+        // &Scaron;tampanje izlaznog rezultata
+        System.out.println("Vrednost y = " + y);
+        sc.close();
+        }
+    
+    }
+    
+    
+    
+        </pre>
+
+
+        <hr />
+    <p><strong>Zadatak 90: (IF8)</strong></p>
+    <ul>
+    <li>Napisati program kojim se utvrđuje da li je godina prestupna ili nije. Na primer, 1972. godina
+        je prestupna.<br><br>
+        Rešenje: Godina je prestupna ako je deljiva sa 4(svaka četvrta godina je prestupna) i nije deljiva
+        sa 100(svaka 100 godina nije prestupna) ili je deljiva sa 400 (svaka 400. godina je prestupna).</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+
+    public class IF8 {
+
+        public static void main(String[] args) {
+        /* Deklarisanje promenljivih */
+        int godina;
+        Scanner sc = new Scanner(System.in);
+
+        /* Unos podataka */
+        System.out.println("Unesite godinu: ");
+        godina = sc.nextInt();
+
+        /* Obrada podatka */
+        if (godina % 4 == 0 && !(godina % 100 == 0) || godina % 400 == 0) {
+            System.out.println("Uneta godina " + godina + " je prestupna.");
+        } else {
+            System.out.println("Uneta godina " + godina + " nije prestupna.");
+        }
+
+        sc.close();
+        }
+
+    }
+
+        </pre>
+
+        <hr />
+<p><strong>Zadatak 91: (IF9)</strong></p>
+<ul>
+<li>Napisati program koji predstavlja skalu ocenjivanja. <br />- od 0 do 49 - je ocena 1 <br />- od 50 do 60 - je ocena 2 <br />- od 61 do 69 - je ocena 3 <br />- od 70 do 80 - je ocena 4 <br />- preko 81 je ocena 5</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+
+        import java.util.Scanner;
+        
+        public class IF9 {
+        
+            public static void main(String[] args) {
+            /*
+             * Test ocenjivanja skala: od 0 do 49 bodova je ocena 1 od 50 do 60 je 2 od 61
+             * do 69 je 3 od 70 do 80 je 4 preko 81 do 100 je 5 sve izvan je greska
+             */
+        
+            int bodovi;
+            Scanner sc = new Scanner(System.in);
+        
+            /* Unos podataka */
+            System.out.println("Unesite ocenu: ");
+            bodovi = sc.nextInt();
+        
+            // Obrada i &scaron;tampanje izlaznog rezultata
+            if (bodovi &lt; 0) {
+                System.out.println("Nepravilan unos.");
+            } else if (bodovi &gt;= 0 &amp;&amp; bodovi &lt; 50) {
+                System.out.println("Ocena je 1");
+            } else if (bodovi &gt;= 50 &amp;&amp; bodovi &lt; 60) {
+                System.out.println("Ocena je 2");
+            } else if (bodovi &gt;= 61 &amp;&amp; bodovi &lt; 70) {
+                System.out.println("Ocena je 3");
+            } else if (bodovi &gt;= 71 &amp;&amp; bodovi &lt; 80) {
+                System.out.println("Ocena je 4");
+            } else if (bodovi &gt;= 81 &amp;&amp; bodovi &lt;= 100) {
+                System.out.println("Ocena je 5");
+            } else {
+                System.out.println("Ne moze se osvojiti preko 100 bodova!");
+            }
+            sc.close();
+            }
+        
+        }
+        
+
+        </pre>
+    <hr />
+   
+
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/sJWgvmuPGD9qinjEu_1666131441514.jpg" alt="" width="780" height="304" /></p>
+    <br>
+    <hr>
+    <p><strong>Zadatak 92: (SwitchCase0)</strong></p>
+    <ul>
+    <li>Napisati naredbu case kojom se na osnovu brojnih ocena 5, 4, 3, 2, 1 ispisuju opisne Ocene
+        “odlican”, “vrlo dobar”, “dobar”, “dovoljan”, “nedovoljan”. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase0 {
+    
+        public static void main(String[] args) {
+        int ocena;
+    
+        // Unos podataka
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Unesite ocenu: ");
+        ocena = sc.nextInt();
+        sc.close();
+    
+        // Obrada podataka
+        switch (ocena) {
+        case 5:
+            System.out.println("Odlican.");
+            break;
+        case 4:
+            System.out.println("Vrlo dobar.");
+            break;
+        case 3:
+            System.out.println("Dobar.");
+            break;
+        case 2:
+            System.out.println("Dovoljan.");
+            break;
+        case 1:
+            System.out.println("Nedovoljan");
+            break;
+        default:
+            System.out.println("Pogresan unos.");
+    
+        }
+    }
+    
+    }
+    
+    </pre>
+    <hr>
+    <p><strong>Zadatak 93: (SwitchCase1)</strong></p>
+    <ul>
+    <li>Napisati program koji za dati redni broj dana u nedelji štampa ime dana. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase1 {
+    
+        public static void main(String[] args) {
+        int redniBrojDana;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite redni broj dana: ");
+        redniBrojDana = ulaz.nextInt();
+    
+        /* 2. deo: Obrada podataka */
+        switch (redniBrojDana) {
+        case 1:
+            System.out.println("Ponedeljak");
+            break;
+        case 2:
+            System.out.println("Utorak");
+            break;
+        case 3:
+            System.out.println("Sreda");
+            break;
+        case 4:
+            System.out.println("Četvrtak");
+            break;
+        case 5:
+            System.out.println("Petak");
+            break;
+        case 6:
+            System.out.println("Subota");
+            break;
+        case 7:
+            System.out.println("Nedelja");
+            break;
+        default:
+            System.out.println("Greska");
+    
+        }
+    
+        ulaz.close();
+        }
+    
+    }
+        
+    
+    </pre>
+
+
+    <hr>
+    <p><strong>Zadatak 94: (SwitchCase2)</strong></p>
+    <ul>
+    <li>Napisati program koji za uneti karakter stampa da li je samoglasnik ili suglasnik. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase2 {
+    
+        public static void main(String[] args) {
+        char karakter;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite slovo: ");
+        karakter = ulaz.next().charAt(0);
+    
+        /* 2. deo: Obrada podataka */
+    
+        if (karakter >= 'a' && karakter <= 'z' || karakter >= 'A' && karakter <= 'Z') {
+    
+            switch (karakter) {
+            case 'a':
+            case 'A':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'e':
+            case 'E':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'i':
+            case 'I':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'o':
+            case 'O':
+            System.out.println("Samoglasnik.");
+            break;
+            case 'u':
+            case 'U':
+            System.out.println("Samoglasnik.");
+            break;
+            default:
+            System.out.println("Suglasnik!");
+    
+            }
+            ulaz.close();
+    
+        } else
+    
+        {
+            System.out.println("Unesite veliko ili malo slovo.\nSpecijalni znakovi ili brojevi nisu dozvoljeni!");
+        }
+    
+        }
+    }
+    
+
+    </pre>
+    
+    <hr />
+    <p><strong>Zadatak 95: (SwitchCase3)</strong></p>
+    <ul>
+    <li>Napisati program kojim se ispisuju moguće vrednosti koordinata x i y zavisno od broja
+        kvadranta koji se unosi. </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+    
+    public class SwitchCase3 {
+    
+        public static void main(String[] args) {
+        int ugao;
+    
+        /* 1. deo: Unos podataka */
+    
+        Scanner ulaz = new Scanner(System.in);
+    
+        System.out.println("Unesite ugao: ");
+        ugao = ulaz.nextInt();
+    
+        /* 2. deo: Obrada podataka */
+        if (ugao > 0 && ugao < 90) {
+            System.out.println("Prvi kvadrant.");
+        } else if (ugao > 90 && ugao < 180) {
+            System.out.println("Drugi kvadrant.");
+        } else if (ugao > 180 && ugao < 270) {
+            System.out.println("Treći kvadrant.");
+        } else if (ugao > 270 && ugao < 360) {
+            System.out.println("Četvrti kvadrant.");
+        } else {
+            System.out.println("Unet ugao se nalazi na x ili y osi.");
+        }
+        ulaz.close();
+        }
+    
+    }  
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 96: (SwitchCase4)</strong></p>
+    <ul>
+    <li>Napisati program koji za nalaženje ekvivalentnog kapaciteta dva kondenzatora kapaciteta C1=
+        10nF i C2 = 15 nF ako su vezana: <br><br>
+        <b>a)</b> Redno<br>
+        <b>b)</b> Paralelno<br>
+        <em>Rešenje: Ekvivalnentni kapacitet redne veze izračunava se po formuli Ce= C1*C2/(C1+C2), a
+            paralelne veze po formuli: Ce = C1 + C2.</em>
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+    import java.util.Scanner;
+    import java.text.DecimalFormat;
+
+    public class SwitchCase4 {
+
+        public static void main(String[] args) {
+        double c1, c2;
+        String veza;
+
+        /* 1. deo: Unos podataka */
+        DecimalFormat df = new DecimalFormat("#.##");
+        Scanner ulaz = new Scanner(System.in);
+
+        System.out.println("Unesite da li je 'Redno' ili 'Paralelno' vezivanje: ");
+        veza = ulaz.nextLine();
+        System.out.println("Unesite vrednost za c1: ");
+        c1 = ulaz.nextInt();
+        System.out.println("Unesite vrednost za c2: ");
+        c2 = ulaz.nextInt();
+
+        /* 2. deo: Obrada podataka IF-ELSE */
+        if (veza.equalsIgnoreCase("Redno")) {
+            System.out.println("Ekvivalnentni kapacitet redne veze: " + df.format(c1 * c2 / (c1 + c2)));
+        } else if (veza.equalsIgnoreCase("Paralelno")) {
+            System.out.println("Paralelna veza: " + df.format((c1 + c2)));
+        } else {
+            System.out.println("Pogrešan unos!");
+        }
+
+        ulaz.close();
+
+        }
+
+    }
+
+    </pre>
+    
+
+    <hr />
+    <p><strong>Zadatak 97: (SwitchCase5)</strong></p>
+    <ul>
+    <li>Napisati program koji se učita znak za operaciju (+,-,*,/) i dva realna operanda, a zatim štampa
+        rezultat. 
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+
+    public class SwitchCase5 {
+
+        public static void main(String[] args) {
+        double x, y;
+        char operator;
+
+        /* 1. deo: Unos podataka */
+        Scanner ulaz = new Scanner(System.in);
+
+        System.out.println("Unesite željeni operator: ");
+        operator = ulaz.next().charAt(0);
+        System.out.println("Unesite operand x: ");
+        x = ulaz.nextDouble();
+        System.out.println("Unesite operand y: ");
+        y = ulaz.nextDouble();
+
+        /* 2. deo: Obrada podataka */
+        System.out.println("Rešenje sa SWITCH:");
+        switch (operator) {
+        case '+':
+            System.out.println("X + Y = " + (x + y));
+            break;
+        case '-':
+            System.out.println("X - Y = " + (x - y));
+            break;
+        case '*':
+            System.out.println("X * Y = " + (x * y));
+            break;
+        case '/':
+            System.out.println("X / Y = " + (x / y));
+        }
+
+        /* 2. deo: Obrada podataka sa IF/ELSE */
+        System.out.println("\nRešenje sa ELSE/IF: ");
+        if (operator == '+') {
+            System.out.println("X + Y = " + (x + y));
+        } else if (operator == '-') {
+            System.out.println("X - Y = " + (x - y));
+        } else if (operator == '*') {
+            System.out.println("X * Y = " + (x * y));
+        } else if (operator == '/') {
+            System.out.println("X / Y = " + (x / y));
+        } else {
+            System.out.println("Nepravilan unos.");
+        }
+
+        ulaz.close();
+        }
+
+    }
+    </pre>
+
+    <hr />
+    <p><strong>Zadatak 98: (SwitchCase6)</strong></p>
+    <ul>
+    <li>Ako se sa ulaza učitavaju tri prirodna broja k1, k2, k3 koji označavaju redni broj dana u godini,
+        ispitati da li označavaju isti dan u nedelji. Na primer, isti dan iznačavaju: 2, 16 i 30 ili 344, 351, i
+        358.  
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package RazgranataStruktura;
+
+        import java.util.Scanner;
+        
+        public class SwitchCase6 {
+        
+            public static void main(String[] args) {
+            int k1, k2, k3, boolToInt;
+            boolean i;
+        
+            /* 1. deo: Unos podataka */
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite vrednost za k1: ");
+            k1 = ulaz.nextInt();
+            System.out.println("Unesite vrednost za k2: ");
+            k2 = ulaz.nextInt();
+            System.out.println("Unesite vrednost za k3: ");
+            k3 = ulaz.nextInt();
+        
+            i = ((k2 - k1) % 7 == 0 && (k3 - k1) % 7 == 0);
+        
+            boolToInt = i ? 1 : 0;
+        
+            /* SA SWITCH 2. deo: Obrada podataka */
+            System.out.println("Rešenje sa SWITCH:");
+            switch (boolToInt) {
+            case 1:
+                System.out.println("Isti dan u nedelji!");
+                break;
+            case 0:
+                System.out.println("Nije isti dan u nedelji!");
+                break;
+            default:
+                System.out.println("Pogresan unos!");
+            }
+        
+            /* SA IF/ELSE 2. deo: Obrada podataka */
+            System.out.println("\nRešenje sa If/Else:");
+            if ((k2 - k1) % 7 == 0 && (k3 - k1) % 7 == 0) {
+                System.out.println("Isti dan u nedelji!");
+            } else {
+                System.out.println("Nije isti dan u nedelji!");
+            }
+            ulaz.close();
+            }
+        
+        }
+        
+    </pre>
+
+
+    <hr />
+    <p><strong>Zadatak 99: (SwitchCase7)</strong></p>
+    <ul>
+    <li>Napisati program koji ispisuje koliko mesec Februar ima dana na osnovu unete godine.  
+    </li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package RazgranataStruktura;
+
+    import java.util.Scanner;
+
+    public class SwitchCase7 {
+
+        public static void main(String[] args) {
+        /* Deklarisanje promenljivih */
+        int godina;
+        Scanner sc = new Scanner(System.in);
+
+        /* Unos podataka */
+        System.out.println("Unesite godinu: ");
+        godina = sc.nextInt();
+
+        /* Obrada podatka */
+        if (godina % 4 == 0 && !(godina % 100 == 0) || godina % 400 == 0) {
+            System.out.println("Februar: 29 dana");
+        } else {
+            System.out.println("Februar: 28 dana");
+        }
+
+        sc.close();
+        }
+
+    }
+    </pre>
+
+    
+    <hr />
+   
+
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/NmWe6QSAAp8shv3wi_1666255293366.jpg" alt="" width="780" height="304" /></p>
+    <p>&nbsp;</p>
+    <hr />
+    <p><strong>Zadatak 100: (UgnjezdeniIF1)</strong></p>
+    <ul>
+    <li>Za uneta tri broja, ispisati najveci broj.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package UgnjezdeniIF;
+    
+            import java.util.Scanner;
+            
+            public class UgnjezdeniIF1 {
+            
+                public static void main(String[] args) {
+            
+                int najveciBroj;
+                // 1. deo algoritma: Unos podataka
+                Scanner sc = new Scanner(System.in);
+            
+                System.out.println("Unesite prvo broj: ");
+                int br1 = sc.nextInt();
+            
+                System.out.println("Unesite drugi broj: ");
+                int br2 = sc.nextInt();
+            
+                System.out.println("Unesite treci broj: ");
+                int br3 = sc.nextInt();
+                sc.close();
+                // 2. deo algoritma: Obrada podataka
+                if (br1 &gt; br2) {
+                    if (br1 &gt; br3) {
+                    najveciBroj = br1;
+                    } else {
+                    najveciBroj = br3;
+                    }
+                } else {
+                    if (br2 &gt; br3) {
+                    najveciBroj = br2;
+                    } else {
+                    najveciBroj = br3;
+                    }
+                }
+            
+                // 3. deo algoritma: Ispisivanje vrednosti
+                System.out.println("Najveci od unetih brojeva je: " + najveciBroj);
+                }
+            
+            }
+            
+        </pre>
+    <hr />
+    <p><strong>Zadatak 101: (UgnjezdeniIF2)</strong></p>
+    <ul>
+    <li>Za unetu kategoriju vozačke dozvole, ispisati kojom vrstom vozila je moguće upravljati. (IFELSE).</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+    
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF2 {
+    
+        public static void main(String[] args) {
+    
+        char n;
+    
+        // 1. deo algoritma: Unos podataka
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite kategoriju: ");
+        n = sc.nextLine().charAt(0);
+        sc.close();
+    
+        // 2. deo algoritma: Obrada podataka
+        if (n == 'A' || n == 'a') {
+            System.out.println("Mozete voziti Motor.");
+        } else if (n == 'B' || n == 'b') {
+            System.out.println("Mozete voziti Automobil.");
+        } else if (n == 'C' || n == 'c') {
+            System.out.println("Mozete voziti Auto i Kamion");
+        } else if (n == 'D' || n == 'd') {
+            System.out.println("Mozete voziti Autobus, Kamion i Auto.");
+        } else if (n == 'E' || n == 'e') {
+            System.out.println("Mozete voziti Auto, Kamion i Autobus.");
+        } else {
+            System.out.println("Neispravan unos!");
+        }
+    
+        }
+    
+    }
+    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 102: (UgnjezdeniIF3)</strong></p>
+    <ul>
+    <li>Za unetu kategoriju vozačke dozvole, ispisati kojom vrstom vozila je moguće upravljati. (SWITCH-CASE)</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF3 {
+    
+        public static void main(String[] args) {
+    
+        char n;
+    
+        // 1. deo algoritma: Unos podataka
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite kategoriju: ");
+        n = sc.nextLine().charAt(0);
+        sc.close();
+    
+        // 2. deo algoritma: Obrada podataka
+        switch (n) {
+        case 'A':
+        case 'a':
+            System.out.println("Mozete voziti Motor.");
+            break;
+        case 'B':
+        case 'b':
+            System.out.println("Mozete voziti Automobil.");
+            break;
+        case 'C':
+        case 'c':
+            System.out.println("Mozete voziti Auto i Kamion");
+            break;
+        case 'D':
+        case 'd':
+            System.out.println("Mozete voziti Autobus, Kamion i Auto.");
+            break;
+        case 'E':
+        case 'e':
+            System.out.println("Mozete voziti Auto, Kamion i Autobus.");
+            break;
+        default:
+            System.out.println("Neispravan unos!");
+    
+        }
+    
+        }
+    
+    }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 103: (UgnjezdeniIF4)</strong></p>
+    <ul>
+    <li>Napi&scaron;ite program SEDMIDAN koji za uneti datum određuje koji datum će biti kroz 7 dana. Sa standardnog ulaza se unose tri pozitivna cela broja(svaki u zasebnom redu) koji predstavljaju dan, mesec i godinu jednog ispravnog datuma. Na standardni izlaz ispisati tri cela broja koja predstavljaju dan, mesec i godinu datuma koji će nastupiti kroz 7 dana. Svi brojevi se ispisuju u jednom redu, a iza svakog broja navodi se tačka. <br /><br /><strong>Ulaz:</strong><br />25<br />2<br />2018<br />Izlaz: 4.3.2018</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package UgnjezdeniIF;
+
+        import java.util.Scanner;
+        
+        public class UgnjezdeniIF4 {
+            public static void main(String[] args) {
+            // 0. deo: Deklarisanje promenljivih
+        
+            Scanner ulaz = new Scanner(System.in);
+            int dan, mesec, godina, limit;
+            limit = 0;
+        
+            // 1.deo: Unos podataka
+            System.out.println("Unesite dan: ");
+            dan = ulaz.nextInt();
+            System.out.println("Unesite mesec: ");
+            mesec = ulaz.nextInt();
+            System.out.println("Unesite godinu: ");
+            godina = ulaz.nextInt();
+            ulaz.close();
+        
+            // 2. deo: Obrada podataka
+            switch (mesec) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+        
+                limit = 31;
+        
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+        
+                limit = 30;
+        
+                break;
+        
+            case 2:
+                if (godina % 4 == 0) {
+                limit = 29;
+                } else {
+                limit = 28;
+                }
+                break;
+        
+            }
+            if (dan + 7 > limit) {
+                dan = dan + 7 - limit;
+                mesec = mesec + 1;
+        
+                if (mesec > 12) {
+                mesec = 1;
+                godina = godina + 1;
+                }
+        
+            } else {
+                dan = dan + 7;
+        
+            }
+        
+            // 3. deo: Stampanje izlaznog podatka
+            System.out.println("Datum koji ce biti za 7 dana je " + dan + "." + mesec + "." + godina);
+        
+            }
+        
+        }
+        
+
+        </pre>
+   
+
+    <hr />
+    <p><strong>Zadatak 104: (UgnjezdeniIF5)</strong></p>
+    <ul>
+    <li>Napisati program koji omogucuje da za uneti naziv meseca i broj dana ispise horoskopski znak.
+        
+        <br /><br />Unesite mesec rodjenja: Oktobar<br />Unesite dan rodjenja: 18<br /> Vaga<br /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF5 {
+    
+        public static void main(String[] args) {
+        // Deklarisanje promenljivih
+        String mesec = "", horoskopskiZnak = "";
+        int dan, redniBrojZnaka = 0;
+    
+        Scanner sc = new Scanner(System.in);
+    
+        // 1. deo algoritma: Unos podataka
+        System.out.println("Unesite mesec rođenja: ");
+        mesec = sc.nextLine();
+        System.out.println("Unesite dan rođenja: ");
+        dan = sc.nextInt();
+        sc.close(); // zatvaranje otvorenog skenera kako ne bi doslo do "curenja" podataka
+    
+        /* 2. deo algoritma: Obrada podataka */
+        if (mesec.equalsIgnoreCase("januar")) {
+            redniBrojZnaka = 1;
+        } else if (mesec.equalsIgnoreCase("februar")) {
+            redniBrojZnaka = 2;
+        } else if (mesec.equalsIgnoreCase("mart")) {
+            redniBrojZnaka = 3;
+        } else if (mesec.equalsIgnoreCase("april")) {
+            redniBrojZnaka = 4;
+        } else if (mesec.equalsIgnoreCase("maj")) {
+            redniBrojZnaka = 5;
+        } else if (mesec.equalsIgnoreCase("jun")) {
+            redniBrojZnaka = 6;
+        } else if (mesec.equalsIgnoreCase("jul")) {
+            redniBrojZnaka = 7;
+        } else if (mesec.equalsIgnoreCase("avgust")) {
+            redniBrojZnaka = 8;
+        } else if (mesec.equalsIgnoreCase("septembar")) {
+            redniBrojZnaka = 9;
+        } else if (mesec.equalsIgnoreCase("oktobar")) {
+            redniBrojZnaka = 10;
+        } else if (mesec.equalsIgnoreCase("novembar")) {
+            redniBrojZnaka = 11;
+        } else if (mesec.equalsIgnoreCase("novembar")) {
+            redniBrojZnaka = 11;
+        } else if (mesec.equalsIgnoreCase("decembar")) {
+            redniBrojZnaka = 12;
+        }
+    
+        // Provera da li je unet broj dana u rasponu od 1 do 31
+        if (dan >= 1 && dan <= 31) {
+            /*
+                * Skretnica utvrdjivanja horoskopskog znaka zavisno od unetog meseca i dana
+                */
+            switch (redniBrojZnaka) {
+            case 1:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Jarac";
+            } else if (dan >= 21 && dan <= 31) {
+                horoskopskiZnak = "Vodolija";
+            }
+            break;
+            case 2:
+            if (dan >= 1 && dan <= 19) {
+                horoskopskiZnak = "Vodolija";
+            } else if (dan >= 20 && dan <= 28) {
+                horoskopskiZnak = "Ribe";
+            }
+            break;
+            case 3:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Ribe";
+            } else if (dan >= 21 && dan <= 31) {
+                horoskopskiZnak = "Ovan";
+            }
+            break;
+            case 4:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Ovan";
+            } else if (dan >= 21 && dan <= 30) {
+                horoskopskiZnak = "Bik";
+            }
+            break;
+            case 5:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Bik";
+            } else if (dan >= 22 && dan <= 31) {
+                horoskopskiZnak = "Blizanci";
+            }
+            break;
+            case 6:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Blizanci";
+            } else if (dan >= 22 && dan <= 30) {
+                horoskopskiZnak = "Rak";
+            }
+            break;
+            case 7:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Rak";
+            } else if (dan >= 23 && dan <= 31) {
+                horoskopskiZnak = "Lav";
+            }
+            break;
+            case 8:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Lav";
+            } else if (dan >= 23 && dan <= 31) {
+                horoskopskiZnak = "Devica";
+            }
+            break;
+            case 9:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Devica";
+            } else if (dan >= 23 && dan <= 30) {
+                horoskopskiZnak = "Vaga";
+            }
+            break;
+            case 10:
+            if (dan >= 1 && dan <= 23) {
+                horoskopskiZnak = "Vaga";
+            } else if (dan >= 24 && dan <= 31) {
+                horoskopskiZnak = "Škorpija";
+            }
+            break;
+            case 11:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Vaga";
+            } else if (dan >= 23 && dan <= 30) {
+                horoskopskiZnak = "Strelac";
+            }
+            break;
+            case 12:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Strelac";
+            } else if (dan >= 22 && dan <= 31) {
+                horoskopskiZnak = "Jarac";
+            }
+            break;
+            }
+    
+        } else {
+            // Upozorenje u slucaju unosenja neocekivanih vrednosti
+            System.out.println("Nepravilan unos!");
+        }
+    
+        // 3. deo algoritma: Štampanje horoskopskog znaka
+        System.out.println("Horoskopski znak: " + horoskopskiZnak);
+    
+        }
+    
+    }
+    
+        </pre>
+    <hr />
+
+
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><em>by Dejan Bajović</em></div>
+    <p>&nbsp;</p>
+</body>
+</html>

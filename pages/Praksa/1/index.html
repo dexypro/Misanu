@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>Serijalizacija i Deserijalizacija</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Серијализација и десеријализација објекта</h2>
+    <p class="centered">
+        Опис задатка: Имплементација задатка подразумева:<br>
+        Користећи коментаре у програмском коду, одговорићете на следећа
+        питања:<br>
+        Због чега се ради серијализација и десеријализација објекта?<br>
+        Које класе омогућују серијализацију и десеријализацију објеката?<br>
+        Интерфејс Serializable – објаснити и имплементирати.<br>
+        Податак serialVersionID објаснити и имплементирати.<br>
+        Креирање фајла коришћењем серијализације објекта
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="Serijalizacija-i-deserijalizacija-objekta-main.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+    <h3 class="centered">Klasa: SerijalizacijaDeserijalizacija</h3>
+
+    <pre><code class="java">
+package task2;
+
+import java.io.*;
+
+/*1. Због чега се ради серијализација и десеријализација објекта?
+ * - Čuvanje trenutnog stanja objekta u fajlu, koji se kasnije može učitati 
+     u memoriju i ponovno kreirati isti objekat sa istim stanjem.
+ * - Objekti se često moraju slati iz jedne aplikacije u drugu. 
+     Serijalizacija omogućava da se objekti lako prenose kroz mrežu.
+ * - Serijalizacija se može koristiti za keširanje podataka tako što se objekti 
+     sačuvaju u memoriji ili na disku, a zatim se brzo učitavaju kada su potrebni.
+ * - Serijalizacija može biti korišćena za duboko kopiranje objekata tako što se objekat 
+     serijalizuje, a zatim deserijalizuje. Ovo će rezultirati novim objektom sa istim stanjem, 
+     ali sa novom referencom u memoriji.
+ * */
+public class SerijalizacijaDeserijalizacija {
+
+    public static void serijalizacijaObjekta() {
+        Korisnik korisnik = new Korisnik();
+        korisnik.korisnickiID = 2545;
+        korisnik.ime = "Dejan";
+        korisnik.email = "dejan91@gmail.com";
+
+        try {
+            /*
+             * Fajlovi sa ekstenzijom .ser su serijalizovani fajlovi u Javi. Kada se objekti
+             * serijalizuju, tj. konvertuju u binarni format kako bi se čuvali na disku ili
+             * prenosili preko mreže, obično se čuvaju u fajlovima sa ekstenzijom .ser.
+             */
+            FileOutputStream fos = new FileOutputStream("korisnik.ser");
+            /*//@formatter:on
+             * 2a. Koja klasa omogućuje serijalizaciju? 
+             * 
+             * U Javi, serijalizacija se omogućava
+             * putem java.io.ObjectOutputStream
+             *///@formatter:off
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            /*//@formatter:on
+             * 5. - Креирање фајла коришћењем серијализације објекта.
+            
+             * 
+             * Metoda writeObject() se koristi za serijalizaciju objekta Korisnik i čuvanje
+             * tog objekta u fajlu. Ova metoda je deo klase java.io.ObjectOutputStream, koja
+             * je zadužena za serijalizaciju objekata u Javi.
+             *///@formatter:off
+            oos.writeObject(korisnik);
+            oos.close();
+            System.out.println("Serijalizovani podaci su sačuvani u korisnik.ser fajl!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void deserijalizacijaObjekta() throws IOException, ClassNotFoundException {
+        Korisnik korisnik = null;
+    
+        try {
+            FileInputStream fis = new FileInputStream("korisnik.ser");
+            /*
+             * 2b. Koja klasa omogućuje deserijalizaciju? java.io.ObjectInputStream klasa je
+             * za deserijalizaciju objekata.
+             */
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            korisnik = (Korisnik) ois.readObject();
+            ois.close();
+            fis.close();
+        } finally {
+            System.out.println("Deserijalizacija Korisnika...");
+            System.out.println("Korisnički ID: " + korisnik.korisnickiID);
+            System.out.println("Ime korisnika: " + korisnik.ime);
+            System.out.println("Korisnički email: " + korisnik.email);
+        }
+    }
+    
+    public static void main(String[] args) throws ClassNotFoundException, IOException {
+        serijalizacijaObjekta();
+        deserijalizacijaObjekta();
+    }
+}
+</code></pre>
+
+    <br>
+    <hr>
+    <br>
+    <h3 class="centered">Klasa: Korisnik</h3>
+    <pre><code class="java">
+    package task2;
+
+    import java.io.Serializable;
+    
+    //@formatter:on
+    /*3. Интерфејс Serializable – објаснити и имплементирати.
+    
+    Interfejs Serializable u Javi je marker interfejs koji omogućava
+    serijalizaciju objekta. Kada objekat implementira Serializable interfejs,
+    to znači da objekat može biti pretvoren u niz bajtova koji se zatim mogu
+    sačuvati na disku, preneti preko mreže ili koristiti za druge svrhe, kao
+    što je duboko kopiranje
+    /
+    //@formatter:off
+    public class Korisnik implements Serializable {
+    //@formatter:on
+    /*
+    Податак serialVersionID објаснити и имплементирати.
+    serialVersionUID je statički finalni podatak (konstanta) tipa long u klasama
+    koje implementiraju Serializable interfejs. Ovaj podatak se koristi kao
+    verzija identifikatora za serijalizovanu klasu. serialVersionUID služi da
+    osigura kompatibilnost između različitih verzija serijalizovane klase
+    prilikom deserijalizacije.
+    *///@formatter:off
+    private static final long serialVersionUID = 468458623484232034L;
+    public int korisnickiID;
+    public String ime;public String email;
+}
+</code></pre>
+
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

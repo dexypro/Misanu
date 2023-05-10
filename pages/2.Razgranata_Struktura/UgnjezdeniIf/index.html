@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/NmWe6QSAAp8shv3wi_1666255293366.jpg" alt="" width="780" height="304" /></p>
+    <p>&nbsp;</p>
+    <hr />
+    <p><strong>Zadatak 100: (UgnjezdeniIF1)</strong></p>
+    <ul>
+    <li>Za uneta tri broja, ispisati najveci broj.</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+            package UgnjezdeniIF;
+    
+            import java.util.Scanner;
+            
+            public class UgnjezdeniIF1 {
+            
+                public static void main(String[] args) {
+            
+                int najveciBroj;
+                // 1. deo algoritma: Unos podataka
+                Scanner sc = new Scanner(System.in);
+            
+                System.out.println("Unesite prvo broj: ");
+                int br1 = sc.nextInt();
+            
+                System.out.println("Unesite drugi broj: ");
+                int br2 = sc.nextInt();
+            
+                System.out.println("Unesite treci broj: ");
+                int br3 = sc.nextInt();
+                sc.close();
+                // 2. deo algoritma: Obrada podataka
+                if (br1 &gt; br2) {
+                    if (br1 &gt; br3) {
+                    najveciBroj = br1;
+                    } else {
+                    najveciBroj = br3;
+                    }
+                } else {
+                    if (br2 &gt; br3) {
+                    najveciBroj = br2;
+                    } else {
+                    najveciBroj = br3;
+                    }
+                }
+            
+                // 3. deo algoritma: Ispisivanje vrednosti
+                System.out.println("Najveci od unetih brojeva je: " + najveciBroj);
+                }
+            
+            }
+            
+        </pre>
+    <hr />
+    <p><strong>Zadatak 101: (UgnjezdeniIF2)</strong></p>
+    <ul>
+    <li>Za unetu kategoriju vozačke dozvole, ispisati kojom vrstom vozila je moguće upravljati. (IFELSE).</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+    
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF2 {
+    
+        public static void main(String[] args) {
+    
+        char n;
+    
+        // 1. deo algoritma: Unos podataka
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite kategoriju: ");
+        n = sc.nextLine().charAt(0);
+        sc.close();
+    
+        // 2. deo algoritma: Obrada podataka
+        if (n == 'A' || n == 'a') {
+            System.out.println("Mozete voziti Motor.");
+        } else if (n == 'B' || n == 'b') {
+            System.out.println("Mozete voziti Automobil.");
+        } else if (n == 'C' || n == 'c') {
+            System.out.println("Mozete voziti Auto i Kamion");
+        } else if (n == 'D' || n == 'd') {
+            System.out.println("Mozete voziti Autobus, Kamion i Auto.");
+        } else if (n == 'E' || n == 'e') {
+            System.out.println("Mozete voziti Auto, Kamion i Autobus.");
+        } else {
+            System.out.println("Neispravan unos!");
+        }
+    
+        }
+    
+    }
+    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 102: (UgnjezdeniIF3)</strong></p>
+    <ul>
+    <li>Za unetu kategoriju vozačke dozvole, ispisati kojom vrstom vozila je moguće upravljati. (SWITCH-CASE)</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF3 {
+    
+        public static void main(String[] args) {
+    
+        char n;
+    
+        // 1. deo algoritma: Unos podataka
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite kategoriju: ");
+        n = sc.nextLine().charAt(0);
+        sc.close();
+    
+        // 2. deo algoritma: Obrada podataka
+        switch (n) {
+        case 'A':
+        case 'a':
+            System.out.println("Mozete voziti Motor.");
+            break;
+        case 'B':
+        case 'b':
+            System.out.println("Mozete voziti Automobil.");
+            break;
+        case 'C':
+        case 'c':
+            System.out.println("Mozete voziti Auto i Kamion");
+            break;
+        case 'D':
+        case 'd':
+            System.out.println("Mozete voziti Autobus, Kamion i Auto.");
+            break;
+        case 'E':
+        case 'e':
+            System.out.println("Mozete voziti Auto, Kamion i Autobus.");
+            break;
+        default:
+            System.out.println("Neispravan unos!");
+    
+        }
+    
+        }
+    
+    }
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 103: (UgnjezdeniIF4)</strong></p>
+    <ul>
+    <li>Napi&scaron;ite program SEDMIDAN koji za uneti datum određuje koji datum će biti kroz 7 dana. Sa standardnog ulaza se unose tri pozitivna cela broja(svaki u zasebnom redu) koji predstavljaju dan, mesec i godinu jednog ispravnog datuma. Na standardni izlaz ispisati tri cela broja koja predstavljaju dan, mesec i godinu datuma koji će nastupiti kroz 7 dana. Svi brojevi se ispisuju u jednom redu, a iza svakog broja navodi se tačka. <br /><br /><strong>Ulaz:</strong><br />25<br />2<br />2018<br />Izlaz: 4.3.2018</li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package UgnjezdeniIF;
+
+        import java.util.Scanner;
+        
+        public class UgnjezdeniIF4 {
+            public static void main(String[] args) {
+            // 0. deo: Deklarisanje promenljivih
+        
+            Scanner ulaz = new Scanner(System.in);
+            int dan, mesec, godina, limit;
+            limit = 0;
+        
+            // 1.deo: Unos podataka
+            System.out.println("Unesite dan: ");
+            dan = ulaz.nextInt();
+            System.out.println("Unesite mesec: ");
+            mesec = ulaz.nextInt();
+            System.out.println("Unesite godinu: ");
+            godina = ulaz.nextInt();
+            ulaz.close();
+        
+            // 2. deo: Obrada podataka
+            switch (mesec) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+        
+                limit = 31;
+        
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+        
+                limit = 30;
+        
+                break;
+        
+            case 2:
+                if (godina % 4 == 0) {
+                limit = 29;
+                } else {
+                limit = 28;
+                }
+                break;
+        
+            }
+            if (dan + 7 > limit) {
+                dan = dan + 7 - limit;
+                mesec = mesec + 1;
+        
+                if (mesec > 12) {
+                mesec = 1;
+                godina = godina + 1;
+                }
+        
+            } else {
+                dan = dan + 7;
+        
+            }
+        
+            // 3. deo: Stampanje izlaznog podatka
+            System.out.println("Datum koji ce biti za 7 dana je " + dan + "." + mesec + "." + godina);
+        
+            }
+        
+        }
+        
+
+        </pre>
+   
+
+    <hr />
+    <p><strong>Zadatak 104: (UgnjezdeniIF5)</strong></p>
+    <ul>
+    <li>Napisati program koji omogucuje da za uneti naziv meseca i broj dana ispise horoskopski znak.
+        
+        <br /><br />Unesite mesec rodjenja: Oktobar<br />Unesite dan rodjenja: 18<br /> Vaga<br /></li>
+    </ul>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+    package UgnjezdeniIF;
+
+    import java.util.Scanner;
+    
+    public class UgnjezdeniIF5 {
+    
+        public static void main(String[] args) {
+        // Deklarisanje promenljivih
+        String mesec = "", horoskopskiZnak = "";
+        int dan, redniBrojZnaka = 0;
+    
+        Scanner sc = new Scanner(System.in);
+    
+        // 1. deo algoritma: Unos podataka
+        System.out.println("Unesite mesec rođenja: ");
+        mesec = sc.nextLine();
+        System.out.println("Unesite dan rođenja: ");
+        dan = sc.nextInt();
+        sc.close(); // zatvaranje otvorenog skenera kako ne bi doslo do "curenja" podataka
+    
+        /* 2. deo algoritma: Obrada podataka */
+        if (mesec.equalsIgnoreCase("januar")) {
+            redniBrojZnaka = 1;
+        } else if (mesec.equalsIgnoreCase("februar")) {
+            redniBrojZnaka = 2;
+        } else if (mesec.equalsIgnoreCase("mart")) {
+            redniBrojZnaka = 3;
+        } else if (mesec.equalsIgnoreCase("april")) {
+            redniBrojZnaka = 4;
+        } else if (mesec.equalsIgnoreCase("maj")) {
+            redniBrojZnaka = 5;
+        } else if (mesec.equalsIgnoreCase("jun")) {
+            redniBrojZnaka = 6;
+        } else if (mesec.equalsIgnoreCase("jul")) {
+            redniBrojZnaka = 7;
+        } else if (mesec.equalsIgnoreCase("avgust")) {
+            redniBrojZnaka = 8;
+        } else if (mesec.equalsIgnoreCase("septembar")) {
+            redniBrojZnaka = 9;
+        } else if (mesec.equalsIgnoreCase("oktobar")) {
+            redniBrojZnaka = 10;
+        } else if (mesec.equalsIgnoreCase("novembar")) {
+            redniBrojZnaka = 11;
+        } else if (mesec.equalsIgnoreCase("novembar")) {
+            redniBrojZnaka = 11;
+        } else if (mesec.equalsIgnoreCase("decembar")) {
+            redniBrojZnaka = 12;
+        }
+    
+        // Provera da li je unet broj dana u rasponu od 1 do 31
+        if (dan >= 1 && dan <= 31) {
+            /*
+                * Skretnica utvrdjivanja horoskopskog znaka zavisno od unetog meseca i dana
+                */
+            switch (redniBrojZnaka) {
+            case 1:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Jarac";
+            } else if (dan >= 21 && dan <= 31) {
+                horoskopskiZnak = "Vodolija";
+            }
+            break;
+            case 2:
+            if (dan >= 1 && dan <= 19) {
+                horoskopskiZnak = "Vodolija";
+            } else if (dan >= 20 && dan <= 28) {
+                horoskopskiZnak = "Ribe";
+            }
+            break;
+            case 3:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Ribe";
+            } else if (dan >= 21 && dan <= 31) {
+                horoskopskiZnak = "Ovan";
+            }
+            break;
+            case 4:
+            if (dan >= 1 && dan <= 20) {
+                horoskopskiZnak = "Ovan";
+            } else if (dan >= 21 && dan <= 30) {
+                horoskopskiZnak = "Bik";
+            }
+            break;
+            case 5:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Bik";
+            } else if (dan >= 22 && dan <= 31) {
+                horoskopskiZnak = "Blizanci";
+            }
+            break;
+            case 6:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Blizanci";
+            } else if (dan >= 22 && dan <= 30) {
+                horoskopskiZnak = "Rak";
+            }
+            break;
+            case 7:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Rak";
+            } else if (dan >= 23 && dan <= 31) {
+                horoskopskiZnak = "Lav";
+            }
+            break;
+            case 8:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Lav";
+            } else if (dan >= 23 && dan <= 31) {
+                horoskopskiZnak = "Devica";
+            }
+            break;
+            case 9:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Devica";
+            } else if (dan >= 23 && dan <= 30) {
+                horoskopskiZnak = "Vaga";
+            }
+            break;
+            case 10:
+            if (dan >= 1 && dan <= 23) {
+                horoskopskiZnak = "Vaga";
+            } else if (dan >= 24 && dan <= 31) {
+                horoskopskiZnak = "Škorpija";
+            }
+            break;
+            case 11:
+            if (dan >= 1 && dan <= 22) {
+                horoskopskiZnak = "Vaga";
+            } else if (dan >= 23 && dan <= 30) {
+                horoskopskiZnak = "Strelac";
+            }
+            break;
+            case 12:
+            if (dan >= 1 && dan <= 21) {
+                horoskopskiZnak = "Strelac";
+            } else if (dan >= 22 && dan <= 31) {
+                horoskopskiZnak = "Jarac";
+            }
+            break;
+            }
+    
+        } else {
+            // Upozorenje u slucaju unosenja neocekivanih vrednosti
+            System.out.println("Nepravilan unos!");
+        }
+    
+        // 3. deo algoritma: Štampanje horoskopskog znaka
+        System.out.println("Horoskopski znak: " + horoskopskiZnak);
+    
+        }
+    
+    }
+    
+        </pre>
+    <hr />
+
+
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><em>by Dejan Bajović</em></div>
+    <p>&nbsp;</p>
+</body>
+</html>

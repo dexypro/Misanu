@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lambda izrazi i Genericki tipovi</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/9MtxY5iAgJ88YA83L_1675165439210.gif" alt="" width="600" height="200" /></p>
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 358: (LambdaIzraz01)</strong></p>
+<pre style="text-align: justify;">Definisati funkcionalni interfejs <strong style="color: #09c6e3;">TestirajBroj</strong> sa apstraktnom metodom tipa <strong>boolean</strong>
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati <em>lambda izraz</em> koji proverava da li je broj paran
+- obraditi da li je broj 10 paran ili ne i ispisati u konzoli
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #09c6e3;">Interfejs:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">package lambdaIzraz01;
+
+public interface TestirajBroj  <span style="color: azure;">/* funcionalni interfejs*/</span> {
+  <span style="color: azure;">/* Ispitati da li je broj paran */</span>
+
+    <span style="color: azure;">/* Deklaracija metode */</span>
+
+    boolean test(int n); <span style="color: azure;">/* apstraktna metoda */</span>
+}
+        
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">package lambdaIzraz01;
+
+public class Main {
+
+    public static void main(String[] args) {
+      <span style="color: azure;">// TestirajBroj paranBroj = /* ovde dolazi lambda izraz */
+      // levaStranaLambdaIzraza -&gt; DesnaStranaLambdaIzraza
+      // () -&gt; 123.45</span>
+
+      TestirajBroj paranBroj = (n) -&gt; (n % 2) == 0;
+
+      if (paranBroj.test(10)) {
+          System.out.println("Broj 10 je paran broj.");
+      } else {
+          System.out.println("Broj nije paran!");
+      }
+    }
+
+}
+ 
+   </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">Broj 10 je paran broj.
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 359: (LambdaIzraz02)</strong></p>
+<pre style="text-align: justify;">Definisati funkcionalni interfejs <strong style="color: #09c6e3;">ProveraDeljivosti</strong> sa apstraktnom metodom koja uzima 2 parametra tipa <b>int</b>.
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati <em>lambda izraz</em> koji proverava da li prvi uneti je broj deljiv sa drugim.
+- proveriti za brojeve 10 i 2.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #09c6e3;">Interfejs:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package lambdaIzraz02;
+
+public interface ProveraDeljivosti {
+    boolean test(int n, int d); 
+    <span style="color: azure;">/* da bi interfejs bio funkcionalan mora da ima apstraktnu metodu*/</span>
+}
+
+          
+    </pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package lambdaIzraz02;
+public class Main {
+
+  public static void main(String[] args) {
+    ProveraDeljivosti pd = (n, d) -> (n % d) == 0;
+  
+    if (pd.test(10, 2)) {
+        System.out.println("Broj 10 deljiv je brojem 2.");
+    } else {
+        System.out.println("Broj nije deljiv.");
+  
+    }
+
+  }
+
+}</pre>
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+Broj 10 deljiv je brojem 2.
+</pre>
+  </div>
+  </div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 360: (LambdaIzraz03)</strong></p>
+<pre style="text-align: justify;">Definisati funkcionalni interfejs <strong style="color: #09c6e3;">OkreniString</strong> sa apstraktnom metodom koja uzima promenljivu tipa <b style="color: #0984e3;">String</b>.
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati <em>lambda izraz</em> koji uneti skrin okrece u obrnutom redosledu.
+- ispisati rezultat.</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #09c6e3;">Interfejs:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package lambdaIzraz03;
+
+public interface OkreniString {
+    String okreni(String s);
+}</pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package lambdaIzraz03;
+
+public class Main {
+
+    public static void main(String[] args) {
+      OkreniString os = (str) -> {
+          String rezultat = "";
+          for (int i = str.length() - 1; i >= 0; i--) {
+            System.out.print(str.charAt(i));
+          }
+          return rezultat;
+
+      };
+
+      System.out.print("12345 : ");
+      System.out.println(os.okreni("12345"));
+    }
+
+}
+    </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+12345 : 54321
+</pre>
+  </div>
+  </div>
+
+
+
+
+  <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 361: (GenerickiTip01)</strong></p>
+<pre style="text-align: justify;">Definisati generičku klasu <strong style="color: #0984e3;">A</strong>  i u njoj:
+- atribut <b>ob</b> generičkog tipa.
+- parametarizovani konstruktor koji prima promenljivu <b>ob</b> generičkog tipa koju koristi da postavi vrednost atributu <b>ob</b>.
+- metodu <strong style="color: #44bd32;">getOb</strong> za hvatanje vrednosti promenljive <b>ob</b>.
+- metodu <strong style="color: #44bd32;">setOb</strong> za postavljanje vrednosti promenljive <b>ob</b>.
+- metodu <strong style="color: #44bd32;">prikaziTip</strong> koja ispisuje koji je generički tip unet primenom metoda <strong style="color: #44bd32;">.getClass()</strong> i <strong style="color: #44bd32;">.getName()</strong>
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <strong>intObjekat</strong> tipa <b>Integer</b>.
+- kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <strong>stringObjekat</strong> tipa <strong style="color: #0984e3;">String</strong>.
+- pozvati metodu <strong style="color: #44bd32;">prikaziTip</strong> objekta <b>intObjekat</b>.
+- pozvati metodu <strong style="color: #44bd32;">prikaziTip</strong> objekta <b>stringObjekat</b>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package generickiTip01;
+
+public class A<T> { 
+  <span style="color: azure;">/* Genericka klasa. Ovde je T parametar tipa, 
+  koji ce biti zamenjen stvarnim tipom kada se napravi 
+  objekat tipa A*/</span>
+
+    T ob; <span style="color: azure;">// T zamena za bilo koji tip koji moze doci!</span>
+
+    A(T o) {
+      ob = o;
+    }
+
+    public void setOb(T ob) {
+      this.ob = ob;
+    }
+
+    public T getOb() {
+      return ob;
+    }
+
+    void prikaziTip() {
+      System.out.println("Tip T je: " + ob.getClass().getName());
+    }
+}
+    </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package generickiTip01;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    <span style="color: azure;">// Pravi objekat A klase za tip Integer</span>
+    A<Integer> intObjekat = new A<Integer>(100);
+    intObjekat.prikaziTip();
+    int vrednostIntObjekat = intObjekat.getOb();
+    System.out.println("Vrednost: " + vrednostIntObjekat);
+
+    System.out.println("\n");
+
+    <span style="color: azure;">// Pravi objekat A klase za tip String</span>
+    A<String> stringObjekat = new A<String>("tekst");
+    stringObjekat.prikaziTip();
+    String str = stringObjekat.getOb();
+    System.out.println("Vrednost: " + str);
+  }
+
+}<span style="color: azure;">/* Zakljucak" T je zamena za stvarni tip koji ce biti zadat u trenutku kreiranja objekta klase A. */</span>
+    </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+Tip T je: java.lang.Integer
+Vrednost: 100
+
+
+Tip T je: java.lang.String
+Vrednost: tekst
+</pre>
+  </div>
+  </div>
+
+
+    <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 362: (GenerickiTip02)</strong></p>
+<pre style="text-align: justify;">Definisati generičku klasu <strong style="color: #0984e3;">A</strong>  i u njoj:
+- atribut <b>obj1</b> generičkog tipa T.
+- atribut <b>obj2</b> generičkog tipa V.
+- parametarizovani konstruktor koji prima promenljivu <b>obj1</b> i <b>obj2</b> generičkog tipa koju koristi da postavi vrednost atributu <b>obj1</b> i <b>obj2</b>.
+- metodu <strong style="color: #44bd32;">getObj1</strong> za hvatanje vrednosti promenljive <b>obj1</b>.
+- metodu <strong style="color: #44bd32;">getObj2</strong> za hvatanje vrednosti promenljive <b>obj2</b>.
+- metodu <strong style="color: #44bd32;">setObj1</strong> za postavljanje vrednosti promenljive <b>obj1</b>.
+- metodu <strong style="color: #44bd32;">setObj2</strong> za postavljanje vrednosti promenljive <b>obj2</b>.
+- metodu <strong style="color: #44bd32;">prikaziTip</strong> koja ispisuje koji je generički tip <b>obj1</b> i <b>obj2</b> unet primenom metoda <strong style="color: #44bd32;">.getClass()</strong> i <strong style="color: #44bd32;">.getName()</strong>
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <strong>objekat1</strong> tipa <b>Integer</b> i <strong style="color: #0984e3;">String</strong>.
+- kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <strong>objekat2</strong> tipa <strong style="color: #0984e3;">String</strong> i <b>Double</b>.
+- kreirati objekat klase <strong style="color: #0984e3;">A</strong> pod nazivom <strong>objekat3</strong> tipa <b>Boolean</b> i <b>Integer</b>.
+- pozvati metodu <strong style="color: #44bd32;">prikaziTip</strong> za objekte <b>objekat1</b>, <b>objekat2</b> i <b>objekat3</b>.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package generickiTip02;
+
+public class A<T, V> {
+    T obj1;
+    V obj2;
+
+    A(T o1, V o2) {
+      obj1 = o1;
+      obj2 = o2;
+    }
+
+    public T getObj1() {
+      return obj1;
+    }
+
+    public void setObj1(T obj1) {
+      this.obj1 = obj1;
+    }
+
+    public V getObj2() {
+      return obj2;
+    }
+
+    public void setObj2(V obj2) {
+      this.obj2 = obj2;
+    }
+
+    void prikaziTip() {
+      System.out.println("Tip T je: " + obj1.getClass().getName());
+      System.out.println("Tip V je: " + obj2.getClass().getName());
+    }
+}
+    </pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package generickiTip02;
+
+public class Main {
+
+  public static void main(String[] args) {
+    A<Integer, String> objekat1 = new A<Integer, String>(100, "Java");
+    objekat1.prikaziTip();
+  
+    int intVrednost = objekat1.getObj1();
+    System.out.println("Vrednost: " + intVrednost);
+  
+    String strVrednost = objekat1.getObj2();
+    System.out.println("Vrednost: " + strVrednost);
+  
+    <span style="color: azure;">/*Kreiranje drugog objekta klase A tipa String, Double*/</span>
+    System.out.println();
+    A<String, Double> objekat2 = new A<String, Double>("tekst123", 123.45);
+    objekat2.prikaziTip();
+    String s2 = objekat2.getObj1();
+    System.out.println("Vrednost: " + s2);
+    double d2 = objekat2.getObj2();
+    System.out.println("Vrednost: " + d2);
+  
+    System.out.println();
+    A<Boolean, Integer> objekat3 = new A<Boolean, Integer>(true, 101);
+  
+    objekat3.prikaziTip();
+  
+    Boolean b3 = objekat3.getObj1();
+    System.out.println("Vrednost: " + b3);
+    int i3 = objekat3.getObj2();
+    System.out.println("Vrednost: " + i3);
+  }
+
+}
+    <span style="color: azure;">/* Zakljucak" T je zamena za stvarni tip koji ce biti zadat u trenutku kreiranja objekta klase A. */</span>
+      </pre>
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+Tip T je: java.lang.Integer
+Tip V je: java.lang.String
+Vrednost: 100
+Vrednost: Java
+
+Tip T je: java.lang.String
+Tip V je: java.lang.Double
+Vrednost: tekst123
+Vrednost: 123.45
+
+Tip T je: java.lang.Boolean
+Tip V je: java.lang.Integer
+Vrednost: true
+Vrednost: 101
+  </pre>
+    </div>
+    </div>
+
+
+
+      <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 363: (GenerickiTip03)</strong></p>
+<pre style="text-align: justify;">Definisati klasu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- napisati javnu statičku metodu generičkog tipa <strong style="color: #44bd32;">stampajNiz</strong> kojoj se kao parametar prosleđuje niz generičkog tipa.
+- definisati pokretačku metodu <strong style="color: #0984e3;">Main</strong> i u njoj:
+- nizove tipa <b>Integer</b>, <b>Double</b>, <b>Character</b> sa odgovarajuim vrednostima u rastućem redosledu.
+- pozvati metodu <strong style="color: #44bd32;">stampajNiz</strong> za stampanje sva tri niza.
+</pre>
+<hr style="width: 90%;" />
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+package generickiTip03;
+
+public class Main {
+
+    public static <T> void stampajNiz(T[] pocetniNiz) {
+          for (T element : pocetniNiz) {
+              System.out.printf("%s ", element);
+          }
+        }
+    
+    public static void main(String[] args) {
+      Integer[] i = { 1, 2, 3, 4, 5, 6, 7 };
+      Double[] d = { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7 };
+      Character[] c = { 'a', 'b', 'c', 'd', 'e' };
+    
+      System.out.println("Sadrzaj celobrojnog niza: ");
+      stampajNiz(i);
+    
+      System.out.println("\n\nSadrzaj double niza: ");
+      stampajNiz(d);
+    
+      System.out.println("\n\nSadrzaj niza karaktera: ");
+      stampajNiz(c);
+    }
+
+}<span style="color: azure;">/* Zakljucak" T je zamena za stvarni tip koji ce biti zadat u trenutku kreiranja objekta klase A. */</span>
+</pre>
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #222f3e; color: #fa6ded; width: max-content; padding-right: 60px; padding: 15px;">
+Sadrzaj celobrojnog niza: 
+1 2 3 4 5 6 7 
+
+Sadrzaj double niza: 
+1.1 2.2 3.3 4.4 5.5 6.6 7.7 
+
+Sadrzaj niza karaktera: 
+a b c d e 
+</pre>
+</div>
+</div>
+
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p>&nbsp;</p>
+  <div style="clear: both; width: 100%; text-align: center;"><em>by Dejan Bajović</em></div>
+  <p>&nbsp;</p>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

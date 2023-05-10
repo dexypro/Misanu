@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polja</title>
+</head>
+<body>
+    <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/miJkTduQQnWwt8WFY_1668561156499.jpg" alt="" width="644" height="296" /></p>
+    <p>&nbsp;</p>
+    <hr />
+    <p><strong>Zadatak 177: (JDN01a)</strong></p>
+    <p>Napisati program kojim se učitavaju i &scaron;tampaju članovi niza X od N elemenata.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+    
+        public class JDN01a {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        // Rezervisanje prostora za niz od n članova 
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        // &Scaron;tampanje članove niza 
+            for (int i = 0; i &lt; x.length; i++)
+                System.out.println(x[i]);
+            ulaz.close();
+            }
+        }                         
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12</strong>
+        X[2] = <strong style="color: aliceblue;">4</strong>
+        X[3] = <strong style="color: aliceblue;">-6</strong>
+        X[4] = <strong style="color: aliceblue;">23</strong>
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 178: (JDN01b)</strong></p>
+    <p>Napisati program kojim se učitavaju i &scaron;tampaju članovi niza X od N elemenata.</p>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN01b {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        // Rezervisanje prostora za niz od n članova 
+            int x[] = new int[100];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        // &Scaron;tampanje članove niza 
+            for (int i = 0; i &lt; n; i++)
+                System.out.println(x[i]);
+            ulaz.close();
+            }
+        }                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12</strong>
+        X[2] = <strong style="color: aliceblue;">4</strong>
+        X[3] = <strong style="color: aliceblue;">-6</strong>
+        X[4] = <strong style="color: aliceblue;">23</strong>
+        
+        12
+        4
+        -6
+        23
+        </pre>
+    <hr />
+    <p><strong>Zadatak 179: (JDN02)</strong></p>
+    <pre>Napisati program kojim se izračunava proizvod članova niza X od N elemenata čija je vrednost u intervalu &nbsp;[3, 9].
+                    
+                    Obja&scaron;njenje:
+                    x = {1, 7, -6, 5, 2}
+                    [3, 9] = {7, 5}
+                    7 * 5 = 35 
+            </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN02 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.print("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            int p = 1;
+            for (int i = 0; i &lt; x.length; i++)
+                if (x[i] &gt;= 3 &amp;&amp; x[i] &lt;= 9)
+                p *= x[i];
+            System.out.println("P = " + p);
+            ulaz.close();
+            }
+        }                   
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12</strong>
+        X[2] = <strong style="color: aliceblue;">9</strong>
+        X[3] = <strong style="color: aliceblue;">6</strong>
+        X[4] = <strong style="color: aliceblue;">18</strong>
+    
+        P = 54
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 180: (JDN03)</strong></p>
+    <pre>Napisati program kojim se ispisuju susedni članovi niza X od N elemenata čija je suma parna.
+    
+        Obja&scaron;njenje:
+        
+        Provera se izvr&scaron;ava naredbom&nbsp;if( (x[i - 1] + x[i]) % 2 == 0)&nbsp;u kojoj se izvodi sabiranje dva susedna člana niza&nbsp;
+        x[i - 1] +    x[i]&nbsp;a naredbom&nbsp;% 2 == 0&nbsp;se proverava parnost sume.
+        
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+    
+        public class JDN03 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            for (int i = 1; i &lt; n; i++)
+                if ((x[i - 1] + x[i]) % 2 == 0)
+                System.out.println(x[i - 1] + " " + x[i]);
+            ulaz.close();
+            }
+        }                  
+            </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">3</strong>
+        X[2] = <strong style="color: aliceblue;">2</strong>
+        X[3] = <strong style="color: aliceblue;">4</strong>
+        X[3] = <strong style="color: aliceblue;">1</strong>
+        X[4] = <strong style="color: aliceblue;">9</strong>
+    
+        2 4
+        1 9
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 181: (JDN04a)</strong></p>
+    <pre>Napisati program kojim se izračunava i ispisuje proizvod članova niza X od N elemenata koji nisu deljivi sa 4.
+    
+            Obja&scaron;njenje:
+            x = {1, 4, 8, 3, 6}
+            P = 1 * 3 * 6 = 18
+            
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN04a {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            int p = 1;
+            for (int i = 0; i &lt; x.length; i++)
+                if (x[i] % 4 != 0)
+                p *= x[i];
+            System.out.println("P = " + p);
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12</strong>
+        X[2] = <strong style="color: aliceblue;">3</strong>
+        X[3] = <strong style="color: aliceblue;">6</strong>
+        X[4] = <strong style="color: aliceblue;">8</strong>
+        X[5] = <strong style="color: aliceblue;">10</strong>
+    
+        P = 180
+        </pre>
+    <hr />
+    <p><strong>Zadatak 182: (JDN04b)</strong></p>
+    <pre>Napisati program kojim se izračunava i ispisuje proizvod članova niza X od N elemenata koji nisu deljivi sa 4.
+    
+            Obja&scaron;njenje:
+            x = {1, 4, 8, 3, 6}
+            P = 1 * 3 * 6 = 18
+            
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN04a {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            int p = 1;
+            for (int i = 0; i &lt; x.length; i++)
+                if (x[i] % 4 != 0)
+                p *= x[i];
+            System.out.println("P = " + p);
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12</strong>
+        X[2] = <strong style="color: aliceblue;">3</strong>
+        X[3] = <strong style="color: aliceblue;">6</strong>
+        X[4] = <strong style="color: aliceblue;">8</strong>
+        X[5] = <strong style="color: aliceblue;">10</strong>
+    
+        P = 180
+        </pre>
+    <hr />
+    <p><strong>Zadatak 183: (JDN05)</strong></p>
+    <pre>Napisati program kojim se ispisuje najveća cifra članova niza X od N elemenata.
+    
+            Obja&scaron;njenje:
+            x = {123, 452, 567, 890}
+            123 -&gt; 3
+            452 -&gt; 5
+            567 -&gt; 7
+            890 -&gt; 9       
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN05 {
+            public static void main(String[] args) {
+        
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            int cifra;
+            for (int i = 0; i &lt; x.length; i++) {
+                int max = 0, a = x[i];
+                while (a != 0) {
+                cifra = a % 10;
+                if (cifra &gt; max)
+                    max = cifra;
+                a /= 10;
+                }
+                // Dodatak: naci proizvod maximalnih cifara
+                System.out.println("Najveća cifra člana niza " + x[i] + " je " + max);
+            }
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">156</strong>
+        X[2] = <strong style="color: aliceblue;">238</strong>
+        X[3] = <strong style="color: aliceblue;">984</strong>
+        X[4] = <strong style="color: aliceblue;">123</strong>
+        Najveća cifra člana niza 156 je 6
+        Najveća cifra člana niza 238 je 8
+        Najveća cifra člana niza 984 je 9
+        Najveća cifra člana niza 123 je 3   
+        </pre>
+    <hr />
+    <p><strong>Zadatak 184: (JDN06)</strong></p>
+    <pre>Napisati program kojim se ispisuje proizvod cifara članova niza X od N elemenata.
+    
+            Obja&scaron;njenje:
+            x = {123, 654, 234}
+            123 -&gt; 1 * 2 * 3 = 6
+            654 -&gt; 6 * 5 * 4 = 120
+            234 -&gt; 2 * 3* 4 = 24
+                  
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN06 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+            int cifra;
+            for (int i = 0; i &lt; x.length; i++) {
+                int p = 1;
+                int a = x[i];
+                while (a &gt; 0) {
+                cifra = a % 10;
+                p *= cifra;
+                a /= 10;
+                }
+                System.out.println("Proizvod cifara člana niza " + x[i] + " je " + p);
+            }
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">123</strong>
+        X[2] = <strong style="color: aliceblue;">567</strong>
+        X[3] = <strong style="color: aliceblue;">894</strong>
+        X[4] = <strong style="color: aliceblue;">222</strong>
+        Proizvod cifara člana niza 123 je 6
+        Proizvod cifara člana niza 567 je 210
+        Proizvod cifara člana niza 894 je 288
+        Proizvod cifara člana niza 222 je 8   
+        </pre>
+    <hr />
+    <p><strong>Zadatak 185: (JDN07)</strong></p>
+    <pre>Napisati program kojim se ispisuje suma članova niza X od N elemenata čija je cifra jedinica 5.
+    
+            Obja&scaron;njenje:
+            x = {125, 236, 105, 658}
+            125 + 105 = 230              
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN07 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        
+            int s = 0;
+            for (int i = 0; i &lt; x.length; i++)
+                if (x[i] % 10 == 5)
+                s += x[i];
+        
+            System.out.println("Suma je " + s);
+        
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">23</strong>
+        X[2] = <strong style="color: aliceblue;">15</strong>
+        X[3] = <strong style="color: aliceblue;">25</strong>
+        X[4] = <strong style="color: aliceblue;">3</strong>
+        Suma je 40   
+        </pre>
+    <hr />
+    <p><strong>Zadatak 186: (JDN08)</strong></p>
+    <pre>Napisati program kojim se ispisuje recipročna vrednost člana niza X od N elemenata ako je on paran, </pre>
+    <pre>a ako je neparan ispisuje se njegov kvadrat, pri čemu se ne unosi nula za člana niza X.</pre>
+    <pre>Opis re&scaron;enja: Zadatak se može opisati kori&scaron;ćenjem sledeće formule &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img style="float: left;" src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731488172.jpg" alt="" width="320" height="127" /></pre>
+    <pre>&nbsp;</pre>
+    <pre>&nbsp;</pre>
+    <pre>&nbsp;</pre>
+    <pre>&nbsp;</pre>
+    <pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN08 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        
+            double y;
+            for (int i = 0; i &lt; x.length; i++) {
+                if (x[i] % 2 == 0)
+                y = (double) 1 / x[i];
+                else
+                y = x[i] * x[i];
+        
+                System.out.println("Za " + x[i] + " dobija se y = " + y);
+            }
+        
+            ulaz.close();
+            }
+        }</pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">5</strong>
+        X[2] = <strong style="color: aliceblue;">2</strong>
+        X[3] = <strong style="color: aliceblue;">8</strong>
+        X[4] = <strong style="color: aliceblue;">11</strong>
+        Za 5 dobija se y = 25.0
+        Za 2 dobija se y = 0.5
+        Za 8 dobija se y = 0.125
+        Za 11 dobija se y = 121.0   
+        </pre>
+    <hr />
+    <p><strong>Zadatak 187: (JDN09)</strong></p>
+    <pre>Sastaviti algoritam i napisati program za izračunavanje standardne devijacije</pre>
+    <pre>Vrednost n i niz xi, i = 1, ..., n, unose se na ulazu. 
+    <br /><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731520934.jpg" alt="" width="436" height="162" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN09 {
+            public static void main(String[] args) throws Exception {
+            double[] x = new double[100];
+            double s, s1 = 0, s2 = 0;
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije niza 
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza 
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        // Izračunavanje odgovarajućih suma 
+            for (int i = 1; i &lt;= n; i++) {
+                s1 += x[i] * x[i];
+                s2 += x[i];
+            }
+        //Izračunavanje standardne devijacije 
+            s = Math.sqrt(s1 / n - Math.pow(s2 / n, 2));
+        
+        //&Scaron;tampanje rezultata 
+            System.out.println("Standardna devijacija je " + s);
+            }
+        }
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">12.3</strong>
+        X[2] = <strong style="color: aliceblue;">2.3</strong>
+        X[3] = <strong style="color: aliceblue;">0.23</strong>
+        X[4] = <strong style="color: aliceblue;">-2.5</strong>
+        X[5] = <strong style="color: aliceblue;">1.5</strong>
+        Standardna devijacija je 5.037442208105221
+        </pre>
+    <hr />
+    <p><strong>Zadatak 188: (JDN10)</strong></p>
+    <pre>Sastaviti algoritam i napisati program kojim se određuje maksimalni i minimalni element u celobrojnom nizu X od N elemenata.
+    
+            Obja&scaron;njenje:
+                   1   2  3  4 &lt;- indeksi elemenata niza
+            x = {3, 6, 2, 8}
+            min = max = 3 = x[1]
+            I korak 6 &gt; 3 max = 6; 6 &lt; 3 min = 3
+            II korak 2 &gt; 6 max = 6; 2 &lt; 3 min = 2
+            III korak 8 &gt; 6 max = 8; 8 &lt; 2 min = 2                  
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN09 {
+            public static void main(String[] args) throws Exception {
+            double[] x = new double[100];
+            double s, s1 = 0, s2 = 0;
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije niza 
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza 
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        // Izračunavanje odgovarajućih suma 
+            for (int i = 1; i &lt;= n; i++) {
+                s1 += x[i] * x[i];
+                s2 += x[i];
+            }
+        //Izračunavanje standardne devijacije 
+            s = Math.sqrt(s1 / n - Math.pow(s2 / n, 2));
+        
+        //&Scaron;tampanje rezultata 
+            System.out.println("Standardna devijacija je " + s);
+            }
+        }     
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">4</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">25</strong>
+        X[2] = <strong style="color: aliceblue;">-26</strong>
+        X[3] = <strong style="color: aliceblue;">98</strong>
+        X[4] = <strong style="color: aliceblue;">23</strong>
+        Maksimalni element je 98
+        Minimalni element je -26
+        </pre>
+    <hr />
+    <p><strong>Zadatak 189: (JDN11a)</strong></p>
+    <pre>Napisati program kojim se određuje maksimalni element i njegov redni broj u celobrojnom vektoru X od N elemenata.
+                     
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN11a {
+            public static void main(String[] args) throws Exception {
+            int[] x = new int[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Integer.parseInt(ulaz.readLine());
+            }
+        
+            int imax = 1, max = x[1];
+            for (int i = 2; i &lt;= n; i++)
+                if (x[i] &gt; max) {
+                imax = i;
+                max = x[i];
+                }
+            System.out.println("Indeks maksimalnog elementa ( " + max + " ) je " + imax);
+            }
+        }            
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">56</strong>
+        X[2] = <strong style="color: aliceblue;">28</strong>
+        X[3] = <strong style="color: aliceblue;">-23</strong>
+        X[4] = <strong style="color: aliceblue;">98</strong>
+        X[5] = <strong style="color: aliceblue;">15</strong>
+        Indeks maksimalnog elementa ( 98 ) je 4  
+        </pre>
+    <hr />
+    <p><strong>Zadatak 190: (JDN11b)</strong></p>
+    <pre>Napisati program kojim se određuje maksimalni element i njegov redni broj u celobrojnom vektoru X od N elemenata.
+                     
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN11b {
+            public static void main(String[] args) throws Exception {
+            int[] x = new int[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Integer.parseInt(ulaz.readLine());
+            }
+        
+            int imax = 1;
+            for (int i = 2; i &lt;= n; i++)
+                if (x[i] &gt; x[imax])
+                imax = i;
+        
+            System.out.println("Indeks maksimalnog elementa ( " + x[imax] + " ) je " + imax);
+            }
+        }            
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza: 
+        X[1] = <strong style="color: aliceblue;">56</strong>
+        X[2] = <strong style="color: aliceblue;">28</strong>
+        X[3] = <strong style="color: aliceblue;">-23</strong>
+        X[4] = <strong style="color: aliceblue;">98</strong>
+        X[5] = <strong style="color: aliceblue;">15</strong>
+        Indeks maksimalnog elementa ( 98 ) je 4  
+        </pre>
+    <hr />
+    <p><strong>Zadatak 191: (JDN12a)</strong></p>
+    <pre>Dati su sledeći celi brojevi: 25, 31, 12, -7, 14, 24, 121, -35, 42, 15. 
+            Sastaviti algoritam i napisati program pomoću koga će se od ovog niza brojeva formirati dva nova niza. 
+            U prvom treba da budu članovi datog niza koji su deljivi sa 2, a u drugom članovi datog niza koji su deljivi sa 5. 
+            Od&scaron;tampati članove sva tri niza brojeva.
+    
+            Obja&scaron;njenje:
+             x = {25, 31, 12, -7, 14, 24, 121, -35, 42, 15} i = 10
+            x2 = {12, 14, 24, 42} i2 = 4
+            x5 = {25, -35, 15} i5 = 3      
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        public class JDN12a {
+            public static void main(String[] args) {
+        // k - zadati niz brojeva
+        // k2 - niz brojeva deljivih sa 2
+        // k5 - niz brojeva deljivih sa 5
+        // n2 - brojač brojeva deljivih sa 2
+        // n5 - brojač brojeva deljivih sa 5
+            int[] k = { 25, 31, 12, -7, 14, 24, 121, -35, 42, 15 };
+            int[] k2 = new int[100];
+            int[] k5 = new int[100];
+            int n2 = 0, n5 = 0;
+        
+            for (int i = 0; i &lt; 10; i++) {
+        // Ispitivanje da li je broj deljiv sa 2
+                if (k[i] % 2 == 0) {
+                n2++;
+                k2[n2] = k[i];
+                }
+        
+        // Ispitivanje da li je broj deljiv sa 5
+                if (k[i] % 5 == 0) {
+                n5++;
+                k5[n5] = k[i];
+                }
+            }
+        
+        // &Scaron;tampanje rezultata
+            System.out.println("Zadati niz brojeva: ");
+            for (int i = 0; i &lt; 10; i++)
+                System.out.print(k[i] + " ");
+        
+            System.out.println("\nNiz brojeva deljivih sa 2: ");
+            for (int i = 1; i &lt;= n2; i++)
+                System.out.print(k2[i] + " ");
+        
+            System.out.println("\nNiz brojeva deljivih sa 5: ");
+            for (int i = 1; i &lt;= n5; i++)
+                System.out.print(k5[i] + " ");
+            }
+        }                    
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Zadati niz brojeva: 
+        25 31 12 -7 14 24 121 -35 42 15 
+        Niz brojeva deljivih sa 2: 
+        12 14 24 42 
+        Niz brojeva deljivih sa 5: 
+        25 -35 15         
+        </pre>
+    <hr />
+    <p><strong>Zadatak 191: (JDN12b)</strong></p>
+    <pre>Dati su sledeći celi brojevi: 25, 31, 12, -7, 14, 24, 121, -35, 42, 15. 
+            Sastaviti algoritam i napisati program pomoću koga će se od ovog niza brojeva formirati dva nova niza. 
+            U prvom treba da budu članovi datog niza koji su deljivi sa 2, a u drugom članovi datog niza koji su deljivi sa 5. 
+            Od&scaron;tampati članove sva tri niza brojeva.
+    
+            Obja&scaron;njenje:
+             x = {25, 31, 12, -7, 14, 24, 121, -35, 42, 15} i = 10
+            x2 = {12, 14, 24, 42} i2 = 4
+            x5 = {25, -35, 15} i5 = 3      
+    </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        public class JDN12b {
+            public static void main(String[] args) {
+        // k - zadati niz brojeva
+        // k2 - niz brojeva deljivih sa 2
+        // k5 - niz brojeva deljivih sa 5
+        // n2 - brojač brojeva deljivih sa 2
+        // n5 - brojač brojeva deljivih sa 5
+            int[] k = { 25, 31, 12, -7, 14, 24, 121, -35, 42, 15 };
+            int[] k2 = new int[100];
+            int[] k5 = new int[100];
+            int n2 = 0, n5 = 0;
+        
+            for (int i = 0; i &lt; 10; i++) {
+        // Ispitivanje da li je broj deljiv sa 2
+                if (k[i] % 2 == 0)
+                k2[n2++] = k[i];
+        
+        // Ispitivanje da li je broj deljiv sa 5
+                if (k[i] % 5 == 0)
+                k5[n5++] = k[i];
+            }
+        
+        //&Scaron;tampanje rezultata
+            System.out.println("Zadati niz brojeva: ");
+            for (int i = 0; i &lt; 10; i++)
+                System.out.print(k[i] + " ");
+        
+            System.out.println("\nNiz brojeva deljivih sa 2: ");
+            for (int i = 0; i &lt; n2; i++)
+                System.out.print(k2[i] + " ");
+        
+            System.out.println("\nNiz brojeva deljivih sa 5: ");
+            for (int i = 0; i &lt; n5; i++)
+                System.out.print(k5[i] + " ");
+            }
+        }                        
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Zadati niz brojeva: 
+        25 31 12 -7 14 24 121 -35 42 15 
+        Niz brojeva deljivih sa 2: 
+        12 14 24 42 
+        Niz brojeva deljivih sa 5: 
+        25 -35 15         
+        </pre>
+    <hr />
+    <p><strong>Zadatak 192: (JDN13a)</strong></p>
+    <pre>Napisati program kojim se za date nizove x i y od n elemenata izračunava vrednost funkcije   </pre>
+    <pre>f=[𝑥_𝑖, 𝑦_𝑖 ], 𝑖=1, &hellip;,𝑛 po formuli na slici. Na izlazu &scaron;tampati vrednost funkcije. &nbsp; &nbsp; &nbsp;<img style="float: left;" src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731548158.jpg" alt="" width="514" height="136" /> &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN13a {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            double x[] = new double[n];
+            double y[] = new double[n];
+            System.out.println("Unesite članove niza x:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+            }
+        
+            System.out.println("Unesite članove niza y:");
+            for (int i = 0; i &lt; y.length; i++) {
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+            }
+        
+            double f;
+            for (int i = 0; i &lt; x.length; i++) {
+                f = Math.sqrt((Math.max(x[i], y[i]) - 0.2) / (2 + Math.min(x[i], y[i])));
+        
+                System.out.println("Za " + x[i] + " i " + y[i] + " dobija se f = " + f);
+            }
+        
+            ulaz.close();
+            }
+        }                       
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite članove niza x: 
+        X[0] = <strong style="color: aliceblue;">12</strong>
+        X[1] = <strong style="color: aliceblue;">-6</strong>
+        X[2] = <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza y: 
+        Y[0] = <strong style="color: aliceblue;">4</strong>
+        Y[1] = <strong style="color: aliceblue;">-3</strong>
+        Y[2] = <strong style="color: aliceblue;">8</strong>
+        Za 12.0 i 4.0 dobija se f = 1.4023789311975088
+        Za -6.0 i -3.0 dobija se f = 0.8944271909999159
+        Za 5.0 i 8.0 dobija se f = 1.0555973258234952
+        </pre>
+    <hr />
+    <p><strong>Zadatak 193: (JDN13b)</strong></p>
+    <pre>Napisati program kojim se za date nizove x i y od n elemenata izračunava vrednost funkcije   
+        f=[𝑥_𝑖, 𝑦_𝑖 ], 𝑖=1, &hellip;,𝑛 po formuli na slici. Na izlazu &scaron;tampati vrednost funkcije. 
+    </pre>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731569368.jpg" alt="" width="514" height="136" /> &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN13b {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            double x[] = new double[n];
+            double y[] = new double[n];
+            System.out.println("Unesite članove niza x:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+            }
+        
+            System.out.println("Unesite članove niza y:");
+            for (int i = 0; i &lt; y.length; i++) {
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+            }
+        
+            double f;
+            for (int i = 0; i &lt; x.length; i++) {
+                if (x[i] &gt; y[i])
+                f = Math.sqrt((x[i] - 0.2) / (2 + y[i]));
+                else
+                f = Math.sqrt((y[i] - 0.2) / (2 + x[i]));
+        
+                System.out.println("Za " + x[i] + " i " + y[i] + " dobija se f = " + f);
+            }
+        
+            ulaz.close();
+            }
+        }                              
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite članove niza x: 
+        X[0] = <strong style="color: aliceblue;">12</strong>
+        X[1] = <strong style="color: aliceblue;">-6</strong>
+        X[2] = <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza y: 
+        Y[0] = <strong style="color: aliceblue;">4</strong>
+        Y[1] = <strong style="color: aliceblue;">-3</strong>
+        Y[2] = <strong style="color: aliceblue;">8</strong>
+        Za 12.0 i 4.0 dobija se f = 1.4023789311975088
+        Za -6.0 i -3.0 dobija se f = 0.8944271909999159
+        Za 5.0 i 8.0 dobija se f = 1.0555973258234952
+        </pre>
+    <hr />
+    <p><strong>Zadatak 194: (JDN14)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731635091.jpg" alt="" width="800" height="354" /> </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN14 {
+            public static void main(String[] args) throws Exception {
+            double[] lagerovPolinom = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            System.out.println("Unesite vrednost za x: ");
+            double x = Double.parseDouble(ulaz.readLine());
+        
+            lagerovPolinom[0] = 1;
+            lagerovPolinom[1] = 1 - x;
+        
+            for (int n = 1; n &lt;= 9; n++)
+                lagerovPolinom[n + 1] = (2 * n - 1 - x) * lagerovPolinom[n] - n * n * lagerovPolinom[n - 1];
+        
+            for (int n = 0; n &lt;= 9; n++)
+                System.out.println("L(" + n + ") = " + df.format(lagerovPolinom[n]));
+            }
+        }                                
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vednost za x: <strong style="color: aliceblue;">0.5</strong>
+        L(0) = 1
+        L(1) = 0.5
+        L(2) = -0.75
+        L(3) = -3.875
+        L(4) = -10.688
+        L(5) = -7.469
+        L(6) = 203.703
+        L(7) = 2407.758
+        L(8) = 20115.52
+        L(9) = 137578.533
+        </pre>
+    <hr />
+    <p><strong>Zadatak 195: (JDN15)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731662900.jpg" alt="" width="800" height="213" /> &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN15 {
+            public static void main(String[] args) throws Exception {
+            double[] lazandrovPolinom = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            System.out.println("Unesite vrednost za x: ");
+            double x = Double.parseDouble(ulaz.readLine());
+        
+            lazandrovPolinom[0] = 1;
+            lazandrovPolinom[1] = x;
+        
+            for (int n = 1; n &lt;= 9; n++)
+                lazandrovPolinom[n + 1] = (2 * n + 1) * lazandrovPolinom[n] / (n + 1)
+                    - n * lazandrovPolinom[n - 1] / (n + 1);
+        
+            for (int n = 0; n &lt;= 9; n++)
+                System.out.println("L(" + n + ") = " + df.format(lazandrovPolinom[n]));
+            }
+        }                                         
+    </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vednost za x: <strong style="color: aliceblue;">0.5</strong>
+        L(0) = 1
+        L(1) = 0.5
+        L(2) = -0.75
+        L(3) = -3.875
+        L(4) = -10.688
+        L(5) = -7.469
+        L(6) = 203.703
+        L(7) = 2407.758
+        L(8) = 20115.52
+        L(9) = 137578.533
+        </pre>
+    <hr />
+    <p><strong>Zadatak 196: (JDN16)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731703867.jpg" alt="" width="700" height="226" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN16 {
+            public static void main(String[] args) throws Exception {
+            int[] a = new int[100];
+            int[] b = new int[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite vrednost za k: ");
+            int k = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite vrednost za a[0]: ");
+            a[0] = Integer.parseInt(ulaz.readLine());
+            System.out.println("Unesite vrednost za b[0]: ");
+            b[0] = Integer.parseInt(ulaz.readLine());
+        
+            for (int i = 1; i &lt;= k; i++) {
+                a[i] = a[i - 1] + b[i - 1];
+                b[i] = a[i - 1] * b[i - 1];
+            }
+        
+            System.out.println("a[" + k + "] = " + a[k] + "\t b[" + k + "] = " + b[k]);
+            }
+        }                                                
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vednost za k: <strong style="color: aliceblue;">3</strong>
+        Unesite vednost za a[0]: <strong style="color: aliceblue;">1</strong>
+        Unesite vednost za b[0]: <strong style="color: aliceblue;">2</strong>
+        a[3] = 11   b[3] = 30
+        </pre>
+    <hr />
+    <p><strong>Zadatak 197: (JDN17)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731749174.jpg" alt="" width="600" height="234" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN17 {
+            public static void main(String[] args) throws Exception {
+            double[] f = new double[1001];
+            double s;
+            int i, n, broj;
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj izmedju 1 i 1000: ");
+            broj = Integer.parseInt(ulaz.readLine());
+        
+            if (broj &lt; 1 || broj &gt; 1000)
+                System.out.println("Gre&scaron;ka.");
+            else {
+                f[1] = 0.5;
+                for (n = 2; n &lt;= broj; n++) {
+                s = 0;
+                for (i = 1; i &lt;= n - 1; i++)
+                    s += f[i] * f[n - i];
+        
+                f[n] = s;
+                }
+        
+                System.out.println("F(" + broj + ") = " + f[broj]);
+            }
+            }
+        }                                                    
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj izmedju 1 i 1000:<strong style="color: aliceblue;">10</strong>
+        F(10) = 4.748046875
+        </pre>
+    <hr />
+    <p><strong>Zadatak 198: (JDN18)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731774047.jpg" alt="" width="650" height="248" /></pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN18 {
+            public static void main(String[] args) throws Exception {
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            double s = 0, s1 = 0, p = 1;
+        
+        // Kreiranje celobrojnog niza x
+            double[] x = new double[100];
+        
+        // Unos vrednosti promenljive n 
+            System.out.print("Unesite broj elemenata n niza x: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+            for (int i = 1; i &lt;= n; i++) {
+                s += x[i] * x[i];
+                s1 += x[i];
+                p *= x[i];
+            }
+        
+            s = Math.sqrt(s / n - Math.pow(s1 / n, 2));
+            p = Math.pow(p, 1. / n);
+        
+            System.out.print("S = " + s + "\t P = " + p);
+            }
+        }                                                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza x: <strong style="color: aliceblue;">5</strong>
+        Unesite elemente niza x: 
+        X[1] = <strong style="color: aliceblue;">15</strong>
+        X[2] = <strong style="color: aliceblue;">36</strong>
+        X[3] = <strong style="color: aliceblue;">4</strong>
+        X[4] = <strong style="color: aliceblue;">12</strong>
+        X[5] = <strong style="color: aliceblue;">6</strong>
+        S = 11.412274094149684  P = 10.923385218156483
+        </pre>
+    <hr />
+    <p><strong>Zadatak 199: (JDN19)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668731802863.jpg" alt="" width="650" height="249" /></pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+    
+        public class JDN19 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+    
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+    
+            double x[] = new double[n];
+            double y[] = new double[n];
+            System.out.println("Unesite članove niza x:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+            }
+    
+            System.out.println("Unesite članove niza y:");
+            for (int i = 0; i &lt; y.length; i++) {
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+            }
+    
+            double f;
+            for (int i = 0; i &lt; x.length; i++) {
+                f = (x[i] + y[i]) * (x[i] - y[i]);
+    
+                System.out.println("Za " + x[i] + " i " + y[i] + " dobija se f = " + f);
+            }
+    
+            ulaz.close();
+            }
+        }
+                                                                
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite članove niza x: 
+        X[0] = <strong style="color: aliceblue;">12</strong>
+        X[1] = <strong style="color: aliceblue;">3</strong>
+        X[2] = <strong style="color: aliceblue;">5</strong>
+        Unesite članove niza y:
+        Y[0] = <strong style="color: aliceblue;">-6</strong>
+        Y[1] = <strong style="color: aliceblue;">4</strong>
+        Y[2] = <strong style="color: aliceblue;">58</strong>
+        Za 12.0 i -6.0 dobija se f = 108.0
+        Za 3.0 i 4.0 dobija se f = -7.0
+        Za 5.0 i 58.0 dobija se f = -3339.0    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 200: (JDN20)</strong></p>
+    <pre>Napisati program kojim se ispisuje proizvod najvećih cifara članova niza X od N elemenata.
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN20 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        
+            int cifra, p = 1;
+            for (int i = 0; i &lt; x.length; i++) {
+                int max = 0, a = x[i];
+                while (a != 0) {
+                cifra = a % 10;
+                if (cifra &gt; max)
+                    max = cifra;
+        
+                a /= 10;
+                }
+                p *= max;
+                System.out.println("Najveća cifra člana niza " + x[i] + " je " + max);
+            }
+        
+            System.out.println(p);
+        
+            ulaz.close();
+            }
+        }                                                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite članove niza: 
+        X[0] = <strong style="color: aliceblue;">125</strong>
+        X[1] = <strong style="color: aliceblue;">658</strong>
+        X[2] = <strong style="color: aliceblue;">924</strong>
+        Najveća cifra člana niza 125 je 5
+        Najveća cifra člana niza 658 je 8
+        Najveća cifra člana niza 924 je 9
+        360    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 201: (JDN21)</strong></p>
+    <pre>Napisati program kojim se ispisuje najmanja cifra članova niza X od N elemenata.
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN21 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            int x[] = new int[n];
+            System.out.println("Unesite članove niza:");
+            for (int i = 0; i &lt; x.length; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextInt();
+            }
+        
+            int cifra;
+            for (int i = 0; i &lt; x.length; i++) {
+                int min = 10, a = x[i];
+                while (a != 0) {
+                cifra = a % 10;
+                if (cifra &lt; min)
+                    min = cifra;
+        
+                a /= 10;
+                }
+        
+                System.out.println("Najmanja cifra člana niza " + x[i] + " je " + min);
+            }
+        
+            ulaz.close();
+            }
+        }                                                                 
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite članove niza: 
+        X[0] = <strong style="color: aliceblue;">128</strong>
+        X[1] = <strong style="color: aliceblue;">654</strong>
+        X[2] = <strong style="color: aliceblue;">523</strong>
+        Najmanja cifra člana niza 128 je 1
+        Najmanja cifra člana niza 654 je 4
+        Najmanja cifra člana niza 523 je 2 
+        </pre>
+    <hr />
+    <p><strong>Zadatak 202: (JDN22)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732346878.jpg" alt="" width="650" height="251" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN22 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            System.out.println("Unesite broj članova niza n: ");
+            int n = ulaz.nextInt();
+        
+            double x[] = new double[100];
+            double y[] = new double[100];
+            System.out.println("Unesite koordinate tačaka x i y:");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+            }
+        
+            x[0] = x[n];
+            x[n + 1] = x[1];
+            y[0] = y[n];
+            y[n + 1] = y[1];
+            double s = 0;
+        
+            for (int i = 1; i &lt;= n; i++)
+                s += y[i] * (x[i - 1] - x[i + 1]);
+        
+            double p = 0.5 * s;
+        
+            System.out.println("Povr&scaron;ina parcele je " + p);
+        
+            ulaz.close();
+            }
+        }                                                                
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj članova niza n: <strong style="color: aliceblue;">3</strong>
+        Unesite koordinate tačaka x i y:
+        X[1] = <strong style="color: aliceblue;">5</strong>
+        Y[1] = <strong style="color: aliceblue;">0</strong>
+        X[2] = <strong style="color: aliceblue;">5</strong>
+        Y[2] = <strong style="color: aliceblue;">5</strong>
+        X[3] = <strong style="color: aliceblue;">0</strong>
+        Y[3] = <strong style="color: aliceblue;">5</strong>
+        Povr&scaron;ina parcele je 12.5
+        </pre>
+    <hr />
+    <p><strong>Zadatak 203: (JDN23)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732372406.jpg" alt="" width="700" height="317" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN23 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            double x[] = new double[100];
+            double y[] = new double[100];
+            char oblast[] = new char[100];
+        
+            System.out.println("Unesite broj tačaka n: ");
+            int n = ulaz.nextInt();
+        
+            System.out.println("Unesite koordinate tačaka x i y:");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+        
+                boolean k1 = Math.pow(x[i] - 1, 2) + Math.pow(y[i], 2) &lt;= 1;
+                boolean k2 = Math.pow(x[i] - 2, 2) + Math.pow(y[i], 2) &lt;= 1;
+        
+                if (k1 &amp;&amp; !k2)
+                oblast[i] = '1';
+                else if (k1 &amp;&amp; k2)
+                oblast[i] = '2';
+                else if (!k1 &amp;&amp; k2)
+                oblast[i] = '3';
+                else
+                oblast[i] = '*';
+            }
+        
+            System.out.println("R. BR.\tX\tY\tOBLAST");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.println(i + "\t" + x[i] + "\t" + y[i] + "\t" + oblast[i]);
+        
+            ulaz.close();
+            }
+        }                                                                    
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj tačaka n: <strong style="color: aliceblue;">5</strong>
+        Unesite koordinate tačaka x i y:
+        X[1] = <strong style="color: aliceblue;">0.5</strong>
+        Y[1] = <strong style="color: aliceblue;">0.3</strong>
+        X[2] = <strong style="color: aliceblue;">1.2</strong>
+        Y[2] = <strong style="color: aliceblue;">-0.1</strong>
+        X[3] = <strong style="color: aliceblue;">2.5</strong>
+        Y[3] = <strong style="color: aliceblue;">0.6</strong>
+        X[4] = <strong style="color: aliceblue;">3.0</strong>
+        Y[4] = <strong style="color: aliceblue;">0.8</strong>
+        X[5] = <strong style="color: aliceblue;">5.6</strong>
+        Y[5] = <strong style="color: aliceblue;">-2.5</strong>
+        R. BR.      X       Y       OBLAST
+        1           0.5     0.3     1
+        2           1.2     -0.1    2
+        3           2.5     0.6     3
+        4           3.0     0.8     *
+        5           5.6     -2.5    *
+        </pre>
+    <hr />
+    <p><strong>Zadatak 204: (JDN24a)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732392962.jpg" alt="" width="700" height="309" /> &nbsp; &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN24a {
+            public static void main(String[] args) throws Exception {
+            double[] nizA = new double[100];
+            double[] x = new double[100];
+            double[] y = new double[100];
+            double a = 0.0, xt = 0.0, yt = 0.0;
+        
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije nizova
+            System.out.println("Unesite broj elemenata nizova: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza a
+            System.out.println("Unesite elemente niza a: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("a[" + i + "] = ");
+                nizA[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        //Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        //Unos elemenata niza y
+            System.out.println("Unesite elemente niza y: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("y[" + i + "] = ");
+                y[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+            for (int i = 1; i &lt;= n; i++) {
+                a += nizA[i];
+                xt += nizA[i] * x[i];
+                yt += nizA[i] * y[i];
+            }
+        
+            xt /= a;
+            yt /= a;
+        
+        //&Scaron;tampanje rezultata
+            System.out.println("A = " + df.format(a) + "\nXT = " + df.format(xt) + "\nYT = " + df.format(yt));
+            }
+        }                                                                       
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata nizova: <strong style="color: aliceblue;">3</strong>
+        Unesite elemente niza a:
+        a[1] = <strong style="color: aliceblue;">1.2</strong>
+        a[2] = <strong style="color: aliceblue;">2.5</strong>
+        a[3] = <strong style="color: aliceblue;">-1.4</strong>
+        Unesite elemente niza x:
+        x[1] = <strong style="color: aliceblue;">3.7</strong>
+        x[2] = <strong style="color: aliceblue;">4.5</strong>
+        x[3] = <strong style="color: aliceblue;">6.8</strong>
+        Unesite elemente niza y:
+        y[1] = <strong style="color: aliceblue;">2.7</strong>
+        y[2] = <strong style="color: aliceblue;">1.2</strong>
+        y[3] = <strong style="color: aliceblue;">3.5</strong>
+        A = 2.3
+        XT = 2.683
+        YT = 0.583
+        </pre>
+    <hr />
+    <p><strong>Zadatak 205: (JDN24b)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732418783.jpg" alt="" width="700" height="309" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN24b {
+            public static void main(String[] args) throws Exception {
+            double[] nizA = new double[100];
+            double[] x = new double[100];
+            double[] y = new double[100];
+            double a = 0.0, xt = 0.0, yt = 0.0;
+        
+            DecimalFormat df = new DecimalFormat("#.###");
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj elemenata nizova: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite elemente niza a, x, y: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("a[" + i + "] = ");
+                nizA[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("y[" + i + "] = ");
+                y[i] = Double.parseDouble(ulaz.readLine());
+        
+                a += nizA[i];
+                xt += nizA[i] * x[i];
+                yt += nizA[i] * y[i];
+            }
+            xt /= a;
+            yt /= a;
+        
+        //&Scaron;tampanje rezultata
+            System.out.println("A = " + df.format(a) + "\nXT = " + df.format(xt) + "\nYT = " + df.format(yt));
+            }
+        }                                                                         
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata nizova: <strong style="color: aliceblue;">3</strong>
+        Unesite elemente niza a:
+        a[1] = <strong style="color: aliceblue;">1.2</strong>
+        x[1] = <strong style="color: aliceblue;">3.7</strong>
+        y[1] = <strong style="color: aliceblue;">2.7</strong>
+        a[2] = <strong style="color: aliceblue;">2.5</strong>
+        x[2] = <strong style="color: aliceblue;">4.5</strong>
+        y[2] = <strong style="color: aliceblue;">1.2</strong>
+        a[3] = <strong style="color: aliceblue;">-1.4</strong>
+        x[3] = <strong style="color: aliceblue;">6.8</strong>
+        y[3] = <strong style="color: aliceblue;">3.5</strong>
+        A = 2.3
+        XT = 2.683
+        YT = 0.583
+        </pre>
+    <hr />
+    <p><strong>Zadatak 206: (JDN25)</strong></p>
+    <p>Sastaviti algoritam i napisati program kojim se uređuju elementi niza A u rastući redosled. Broj elemenata niza A je N. &Scaron;tampati niz A pre i posle sortiranja.<br /><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732445711.jpg" alt="" width="490" height="471" /></p>
+    <pre> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN25 {
+            public static void main(String[] args) throws Exception {
+            int[] a = new int[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije niza
+            System.out.println("Unesite broj elemenata n niza a:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza a
+            System.out.println("Unesite elemente niza a: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("a[" + i + "] = ");
+                a[i] = Integer.parseInt(ulaz.readLine());
+            }
+        
+        // &Scaron;tampanje niza pre sortiranja
+            System.out.println("Niz a pre sortiranja: ");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.print(a[i] + " ");
+        
+        //Sortiranje elemenata niza
+            for (int i = 1; i &lt;= n - 1; i++)
+                for (int j = i + 1; j &lt;= n; j++) {
+                if (a[i] &gt; a[j]) {
+        //Zamena elemenata niza a
+                    int pom = a[i];
+                    a[i] = a[j];
+                    a[j] = pom;
+                }
+                }
+        
+        //&Scaron;tampanje niza posle sortiranja
+            System.out.println("\nNiz a posle sortiranja: ");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.print(a[i] + " ");
+            }
+        }                                                                               
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza a: <strong style="color: aliceblue;">5</strong>
+        Unesite elemente niza a:
+        a[1] = <strong style="color: aliceblue;">2</strong>
+        a[2] = <strong style="color: aliceblue;">7</strong>
+        a[3] = <strong style="color: aliceblue;">5</strong>
+        a[4] = <strong style="color: aliceblue;">8</strong>
+        a[5] = <strong style="color: aliceblue;">1</strong>
+        Niz a pre sortiranja: 
+        2 7 5 8 1 
+        Niz a posle sortiranja: 
+        1 2 5 7 8 
+        
+        </pre>
+    <hr />
+    <p><strong>Zadatak 207: (JDN26)</strong></p>
+    <pre>Sastaviti algoritam i napisati program kojim se uređuju elementi niza A u nerastući redosled. </pre>
+    <pre>Broj elemenata niza A je N. &Scaron;tampati niz A pre i posle sortiranja.
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN26 {
+            public static void main(String[] args) throws Exception {
+            int[] a = new int[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije niza
+            System.out.println("Unesite broj elemenata n niza a:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza a
+            System.out.println("Unesite elemente niza a: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("a[" + i + "] = ");
+                a[i] = Integer.parseInt(ulaz.readLine());
+            }
+        
+        // &Scaron;tampanje niza pre sortiranja
+            System.out.println("Niz a pre sortiranja: ");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.print(a[i] + " ");
+        
+        //Sortiranje elemenata niza
+            for (int i = 1; i &lt;= n - 1; i++)
+                for (int j = i + 1; j &lt;= n; j++) {
+                if (a[i] &lt;= a[j]) {
+        //Zamena elemenata niza a
+                    int pom = a[i];
+                    a[i] = a[j];
+                    a[j] = pom;
+                }
+                }
+        
+        //&Scaron;tampanje niza posle sortiranja
+            System.out.println("\nNiz a posle sortiranja: ");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.print(a[i] + " ");
+            }
+        }                                                                                     
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza a: <strong style="color: aliceblue;">5</strong>
+        Unesite elemente niza a:
+        a[1] = <strong style="color: aliceblue;">2</strong>
+        a[2] = <strong style="color: aliceblue;">7</strong>
+        a[3] = <strong style="color: aliceblue;">5</strong>
+        a[4] = <strong style="color: aliceblue;">8</strong>
+        a[5] = <strong style="color: aliceblue;">1</strong>
+        Niz a pre sortiranja: 
+        2 7 5 8 1 
+        Niz a posle sortiranja: 
+        1 2 5 7 8     
+        </pre>
+    <hr />
+    <p><strong>Zadatak 208: (JDN27)</strong></p>
+    <pre>Tri pozitivna broja x, y, z predstavljaju stranice trougla ako zadovoljavaju uslove:
+    
+            x + y &gt; z  i  |x - y| &lt; z
+    
+        Sastaviti algoritam i napisati program kojim se za svaku od n trojki brojeva (ai, bi, ci, i = 1, ..., n) 
+        ispituje da li predstavlja stranice trougla. &Scaron;tampati ai, bi, ci i odgovor &ldquo;da&rdquo; (ukoliko čine trougao) 
+        ili &rdquo;ne&rdquo; (ukoliko ne čine trougao). 
+    
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN27 {
+            public static void main(String[] args) throws Exception {
+            double[] a = new double[100];
+            double[] b = new double[100];
+            double[] c = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos podatka n
+            System.out.println("Unesite broj trojki stranica n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos stranica trougla 
+            System.out.println("Unesite stranice trougla a, b, c: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.println("Moguće stranice " + i + ". trougla: ");
+                System.out.print("a = ");
+                a[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("b = ");
+                b[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("c = ");
+                c[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        //&Scaron;tampanje zaglavlja 
+            System.out.println("\ta\tb\tc\todgovor ");
+        
+        //&Scaron;tampanje rezultata 
+            for (int i = 1; i &lt;= n; i++) {
+                if (a[i] + b[i] &gt; c[i] &amp;&amp; Math.abs(a[i] - b[i]) &lt; c[i])
+                System.out.println("\t" + a[i] + "\t" + b[i] + "\t" + c[i] + "\t" + "da");
+                else
+                System.out.println("\t" + a[i] + "\t" + b[i] + "\t" + c[i] + "\t" + "ne");
+            }
+            }
+        }                                                                                            
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj trojki stranica n: <strong style="color: aliceblue;">3</strong>
+        Unesite stranice trougla a, b, c: 
+        Moguće stranice 1. trougla:
+        a = <strong style="color: aliceblue;">3</strong>
+        b = <strong style="color: aliceblue;">4</strong>
+        c = <strong style="color: aliceblue;">5</strong>
+        Moguće stranice 2. trougla:
+        a = <strong style="color: aliceblue;">1</strong>
+        b = <strong style="color: aliceblue;">1</strong>
+        c = <strong style="color: aliceblue;">2</strong>
+        Moguće stranice 3. trougla:
+        a = <strong style="color: aliceblue;">3.4</strong>
+        b = <strong style="color: aliceblue;">2.3</strong>
+        c = <strong style="color: aliceblue;">5.6</strong>
+        a	    b	    c	    odgovor 
+        3.0	    4.0	    5.0	    da
+        1.0	    1.0	    2.0	    ne
+        3.4	    2.3	    5.6	    da 
+        </pre>
+    <hr />
+    <p><strong>Zadatak 209: (JDN28)</strong></p>
+    <pre>Po&scaron;tar ide ulicom i treba da rasporedi po&scaron;iljke. Odlučio je da prvo obiđe jednu stranu ulice
+        (na kojoj su kuće sa parnim brojevima), a da u povratku obiđe drugu stranu ulice 
+        (na kojoj su kuće sa neparnim brojevima). Napisati program koji za unete brojeve kuća određuje koje su na parnoj, 
+        a koje na neparnoj strani ulice.
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN28 {
+            public static void main(String[] args) throws Exception {
+        // Niz parnih i niz neparnih brojeva i njihove trenutne dužine 
+            int[] parni = new int[100];
+            int[] neparni = new int[100];
+            int p = 0, n = 0;
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Učitavamo broj elemenata
+            System.out.println("Unesite vrednost za k: ");
+            int k = Integer.parseInt(ulaz.readLine());
+        
+            for (int i = 1; i &lt;= k; i++) {
+        // Učitavamo naredni element 
+                int x = Integer.parseInt(ulaz.readLine());
+                if (x % 2 == 0) // ako je paran
+                parni[p++] = x; // sme&scaron;tamo ga u niz parnih
+                else // u suprotnom
+                neparni[n++] = x;
+            }
+        
+            System.out.println("Parni brojevi kuća");
+            for (int i = 0; i &lt; p; i++)
+                System.out.println(parni[i]);
+        
+            System.out.println("Neparni brojevi kuća");
+            for (int i = 0; i &lt; n; i++)
+                System.out.println(neparni[i]);
+            }
+        }                                                                                                
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vrednost za k: <strong style="color: aliceblue;">5</strong>
+        <strong style="color: aliceblue;">1</strong>
+        <strong style="color: aliceblue;">2</strong>
+        <strong style="color: aliceblue;">3</strong>
+        <strong style="color: aliceblue;">4</strong>
+        <strong style="color: aliceblue;">5</strong>
+        Parni brojevi kuća
+        2
+        4
+        Neparni brojevi kuća
+        1
+        3
+        5    
+        </pre>
+    <hr />
+    <p><strong>Zadatak 210: (JDN29)</strong></p>
+    <pre>Dat je niz brojeva sa vrednostima između 0 i 99. Prebrojati koliko puta se pojavljuje svaka cifra dekadnog brojnog sistema u nizu brojeva kao značajna cifra, kao i na kom mestu (desetica i jedinica). Na izlazu &scaron;tampati listu sledećeg oblika
+            
+            Cifra	Kao desetica	Kao jedinica
+              0	    XXXX		     XXXX
+    
+              9	    XXXX		     XXXX
+    
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN29 {
+            public static void main(String[] args) throws Exception {
+        // bj - vektor jedinica
+        // bd - vektor desetica
+        // n - željeni broj unetih cifara
+        // broj - vrednost broja koja se unosi
+            int[] bj = new int[10];
+            int[] bd = new int[10];
+            int broj, j, d;
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            for (int i = 0; i &lt;= 9; i++) {
+                bj[i] = 0;
+                bd[i] = 0;
+            }
+        
+            System.out.println("Koliko brojeva želite da unesete? ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite brojeve: ");
+            for (int i = 1; i &lt;= n; i++) {
+                broj = Integer.parseInt(ulaz.readLine());
+        
+                if (broj &gt;= 0 &amp;&amp; broj &lt;= 99) {
+                if (broj &lt; 10)
+                    j = broj;
+                else {
+                    d = broj / 10;
+                    bd[d]++;
+                    j = broj - 10 * d;
+                }
+                bj[j]++;
+                }
+            }
+        
+            System.out.println("\tCifra\tKao desetica\tKao jedinica ");
+            for (int i = 0; i &lt;= 9; i++)
+                System.out.println("\t" + i + "\t" + bd[i] + "\t" + bj[i]);
+            }
+        }                                                                                                     
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Koliko brojeva želite da unesete? <strong style="color: aliceblue;">5</strong>
+        Unesite brojeve: 
+        <strong style="color: aliceblue;">12</strong>
+        <strong style="color: aliceblue;">8</strong>
+        <strong style="color: aliceblue;">99</strong>
+        <strong style="color: aliceblue;">18</strong>
+        <strong style="color: aliceblue;">23</strong>
+        Cifra	Kao desetica	Kao jedinica 
+        0	    0	            0
+        1	    2	            0
+        2	    1	            1
+        3	    0	            1
+        4	    0	            0
+        5	    0	            0
+        6	    0	            0
+        7	    0	            0
+        8	    0	            2
+        9	    1	            1  
+        </pre>
+    <hr />
+    <p><strong>Zadatak 211: (JDN30)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732513869.jpg" alt="" width="700" height="264" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN30 {
+            public static void main(String[] args) throws Exception {
+            double[] b = new double[100];
+            double[] h = new double[100];
+            double[] L = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Unesite broj &scaron;tapova m: ");
+            int m = Integer.parseInt(ulaz.readLine());
+        
+            System.out.println("Unesite dimenzije poprečnog preseka b i h i dužinu &scaron;tapa L: ");
+            for (int i = 1; i &lt;= m; i++) {
+                System.out.println(i + ". &scaron;tap: ");
+                System.out.print("b = ");
+                b[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("h = ");
+                h[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("L = ");
+                L[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+            System.out.println("\tb\th\tL\tvitkost ");
+        
+            for (int i = 1; i &lt;= m; i++) {
+                double Imin = Math.pow(b[i], 3) * h[i] / 12;
+                double f = b[i] * h[i];
+                double imin = Math.sqrt(Imin / f);
+                double vitkost = L[i] / imin;
+        
+                if (vitkost &gt; 50)
+                System.out.println("\t" + b[i] + "\t" + h[i] + "\t" + L[i] + "\t" + vitkost);
+            }
+            }
+        }                                                                                                        
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;"><span style="color: #78e08f;">    
+        Unesite broj &scaron;tapova m: <strong style="color: aliceblue;">2</strong>
+        Unesite dimenzije poprečnog preseka b i h i dužinu &scaron;tapa L: 
+        1. &scaron;tap:
+        b = </span><span style="color: #f0f8ff;"><strong>2.8</strong></span><span style="color: #78e08f;">
+        h = </span><strong style="color: aliceblue;">3.5</strong><span style="color: #78e08f;">
+        L = </span><strong style="color: aliceblue;">200</strong><span style="color: #78e08f;">
+        2. &scaron;tap:
+        b = </span><strong style="color: aliceblue;">0.25</strong><span style="color: #78e08f;">
+        h = </span><strong style="color: aliceblue;">5.9</strong><span style="color: #78e08f;">
+        L = </span><strong style="color: aliceblue;">150</strong><span style="color: #78e08f;">
+        b       h       L           vitkost 
+        2.8     3.5     200.0       247.43582965269678
+        0.25    5.9     150.0       2078.460969082653
+        </span></pre>
+    <hr />
+    <p><strong>Zadatak 212: (JDN31)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732625845.jpg" alt="" width="700" height="234" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN31 {
+            public static void main(String[] args) throws Exception {
+            double[] f = new double[1001];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            f[0] = 0;
+            f[1] = 1;
+        
+            for (int i = 2; i &lt;= n; i++)
+                f[i] = 3 * f[i - 1] - 2 * f[i - 2] + f[i - 1] * f[i - 2];
+        
+            System.out.println("F(" + n + ") = " + f[n]);
+            }
+        }                                                                                                            
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj n: <strong style="color: aliceblue;">5</strong>
+        F(5) = 682.0
+        </pre>
+    <hr />
+    <p><strong>Zadatak 213: (JDN32a)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732679009.jpg" alt="" width="700" height="271" /></pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN32a {
+            public static void main(String[] args) throws Exception {
+            double[] a = new double[100];
+            double[] b = new double[100];
+            double[] c = new double[100];
+            double[] x = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos podatka n
+            System.out.println("Unesite broj n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.println(i + ". unos podataka: ");
+                System.out.print("a = ");
+                a[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("b = ");
+                b[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("c = ");
+                c[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+            double s = 0;
+            for (int i = 1; i &lt;= n; i++) {
+                if (a[i] + b[i] &gt; c[i])
+                x[i] = a[i] * a[i] + b[i] * b[i] + c[i] * c[i];
+                else if (a[i] + b[i] == c[i])
+                x[i] = a[i] + 2 * b[i] * c[i];
+                else
+                x[i] = a[i] + b[i] - c[i];
+                s += x[i];
+            }
+        
+            System.out.println("Zbir " + n + " sabiraka je: \nS = " + s);
+            }
+        }                                                                                                                 
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj n: <strong style="color: aliceblue;">3</strong>
+        1. unos podataka:
+        a = <strong style="color: aliceblue;">1.2</strong>
+        b = <strong style="color: aliceblue;">3.6</strong>
+        c = <strong style="color: aliceblue;">2.8</strong>
+        2. unos podataka:
+        a = <strong style="color: aliceblue;">0.4</strong>
+        b = <strong style="color: aliceblue;">5.1</strong>
+        c = <strong style="color: aliceblue;">6.3</strong>
+        3. unos podataka:
+        a = <strong style="color: aliceblue;">9.4</strong>
+        b = <strong style="color: aliceblue;">8.7</strong>
+        c = <strong style="color: aliceblue;">7.6</strong>
+        Zbir 3 sabiraka je: 
+        S = 243.25
+        </pre>
+    <hr />
+    <p><strong>Zadatak 214: (JDN32b)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732719883.jpg" alt="" width="700" height="271" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN32b {
+            public static void main(String[] args) throws Exception {
+            double[] a = new double[100];
+            double[] b = new double[100];
+            double[] c = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+            System.out.println("Unesite broj n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            double s = 0;
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.println(i + ". unos podataka: ");
+                System.out.print("a = ");
+                a[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("b = ");
+                b[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("c = ");
+                c[i] = Double.parseDouble(ulaz.readLine());
+        
+                if (a[i] + b[i] &gt; c[i])
+                s += a[i] * a[i] + b[i] * b[i] + c[i] * c[i];
+                else if (a[i] + b[i] == c[i])
+                s += a[i] + 2 * b[i] * c[i];
+                else
+                s += a[i] + b[i] - c[i];
+            }
+        
+            System.out.println("Zbir " + n + " sabiraka je: \n S = " + s);
+            }
+        }                                                                                                                     
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj n: <strong style="color: aliceblue;">3</strong>
+        1. unos podataka:
+        a = <strong style="color: aliceblue;">1.2</strong>
+        b = <strong style="color: aliceblue;">3.6</strong>
+        c = <strong style="color: aliceblue;">2.8</strong>
+        2. unos podataka:
+        a = <strong style="color: aliceblue;">0.4</strong>
+        b = <strong style="color: aliceblue;">5.1</strong>
+        c = <strong style="color: aliceblue;">6.3</strong>
+        3. unos podataka:
+        a = <strong style="color: aliceblue;">9.4</strong>
+        b = <strong style="color: aliceblue;">8.7</strong>
+        c = <strong style="color: aliceblue;">7.6</strong>
+        Zbir 3 sabiraka je: 
+        S = 243.25
+        </pre>
+    <hr />
+    <p><strong>Zadatak 215: (JDN33)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732748469.jpg" alt="" width="650" height="279" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN33 {
+            public static void main(String[] args) throws Exception {
+            double[] x = new double[100];
+            double eps = 1.0E-5;
+        
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos dimenzije niza x
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        // &Scaron;tampanje zaglavlja
+            System.out.println("\tI\tX\tS(X(I))");
+        
+            for (int i = 1; i &lt;= n; i++) {
+        // Izračunavanje vrednosti sume
+                int k = 1;
+                double s = (Math.abs(Math.sin(x[i] / k) - Math.pow(Math.cos(x[i]), 2))) / (k * k + 1);
+        
+                while (Math.abs(s) &lt;= eps) {
+                k++;
+                s += (Math.abs(Math.sin(x[i] / k) - Math.pow(Math.cos(x[i]), 2))) / (k * k + 1);
+                }
+        
+        // &Scaron;tampanje rezultata
+                System.out.println("\t" + i + "\t" + df.format(x[i]) + "\t" + df.format(s));
+            }
+            }
+        }                                                                                                                          
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza x: <strong style="color: aliceblue;">3</strong>
+        Unesite elemente niza x: 
+        x[1] = <strong style="color: aliceblue;">26.8</strong>
+        x[2] = <strong style="color: aliceblue;">-2.6</strong>
+        x[3] = <strong style="color: aliceblue;">88.7</strong>
+        I	X	S(X(I))
+        1	26.8	0.493
+        2	-2.6	0.625
+        3	88.7	0.06
+        </pre>
+    <hr />
+    <p><strong>Zadatak 216: (JDN34)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732785780.jpg" alt="" width="700" height="337" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN34 {
+            public static void main(String[] args) throws Exception {
+            double[] x = new double[100];
+        
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos podataka a i n
+            System.out.println("Unesite vrednost za a: ");
+            double a = Double.parseDouble(ulaz.readLine());
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        //Izračunavanje verižnog razlomka 
+            double ver = n * Math.sqrt(a);
+            for (int i = n - 1; i &gt;= 1; i--)
+                ver = i * Math.sqrt(a) + (x[i] - x[i + 1]) / ver;
+        
+        //&Scaron;tampanje rezultata 
+            System.out.println("Vrednost verižnog razlomka je " + df.format(ver));
+            }
+        }                                                                                                                               
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vrednost za a: <strong style="color: aliceblue;">2</strong>
+        Unesite broj elemenata n niza x:<strong style="color: aliceblue;">3</strong>
+        Unesite elemente niza x: 
+        x[1] = <strong style="color: aliceblue;">1.8</strong>
+        x[2] = <strong style="color: aliceblue;">2.6</strong>
+        x[3] = <strong style="color: aliceblue;">6.8</strong>
+        Vrednost verižnog razlomka je 0.979
+        </pre>
+    <hr />
+    <p><strong>Zadatak 217: (JDN35)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732801939.jpg" alt="" width="700" height="397" /> &nbsp; &nbsp;</pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN34 {
+            public static void main(String[] args) throws Exception {
+            double[] x = new double[100];
+        
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Unos podataka a i n
+            System.out.println("Unesite vrednost za a: ");
+            double a = Double.parseDouble(ulaz.readLine());
+            System.out.println("Unesite broj elemenata n niza x:");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+        //Izračunavanje verižnog razlomka 
+            double ver = n * Math.sqrt(a);
+            for (int i = n - 1; i &gt;= 1; i--)
+                ver = i * Math.sqrt(a) + (x[i] - x[i + 1]) / ver;
+        
+        //&Scaron;tampanje rezultata 
+            System.out.println("Vrednost verižnog razlomka je " + df.format(ver));
+            }
+        }                                                                                                                               
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza za a:<strong style="color: aliceblue;">3</strong>
+        Unesite elemente niza a: 
+        a[1] = <strong style="color: aliceblue;">1.8</strong>
+        a[2] = <strong style="color: aliceblue;">6.7</strong>
+        a[3] = <strong style="color: aliceblue;">5.4</strong>
+        Unesite vrednost promenljive x:<strong style="color: aliceblue;">2.7</strong>
+        Vrednost verižnog razlomka je 0.436
+        </pre>
+    <hr />
+    <p><strong>Zadatak 218: (JDN36)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732823604.jpg" alt="" width="700" height="309" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        
+        public class JDN36 {
+            public static void main(String[] args) throws Exception {
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        
+        // Kreiranje realnog niza x
+            double[] x = new double[100];
+        
+        // Unos vrednosti promenljive n 
+            System.out.print("Unesite broj elemenata n niza x: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+        // Unos elemenata niza x
+            System.out.println("Unesite elemente niza x: ");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+            double xsr = 0;
+            for (int i = 1; i &lt;= n; i++)
+                xsr += x[i];
+        
+            xsr /= n;
+        
+            double v = 0;
+            for (int i = 1; i &lt;= n; i++)
+                v += (x[i] - xsr) * (x[i] - xsr);
+        
+            v /= (n - 1);
+        
+            System.out.print("V = " + v);
+            }
+        }                                                                                                                                   
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj elemenata n niza za x:<strong style="color: aliceblue;">5</strong>
+        Unesite elemente niza x: 
+        x[1] = <strong style="color: aliceblue;">1.2</strong>
+        x[2] = <strong style="color: aliceblue;">5.6</strong>
+        x[3] = <strong style="color: aliceblue;">7.8</strong>
+        x[4] = <strong style="color: aliceblue;">4.3</strong>
+        x[5] = <strong style="color: aliceblue;">0.8</strong>
+        V = 8.787999999999998
+        </pre>
+    <hr />
+    <p><strong>Zadatak 219: (JDN37)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732857411.jpg" alt="" width="700" height="303" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.io.*;
+        import java.text.DecimalFormat;
+        
+        public class JDN37 {
+            public static void main(String[] args) throws Exception {
+            double[] a = new double[100];
+            double[] x = new double[100];
+            double[] y = new double[100];
+        
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+            DecimalFormat df = new DecimalFormat("#.###");
+        
+        // Unos podatka n
+            System.out.println("Unesite broj n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.println(i + ". unos podataka: ");
+                System.out.print("a = ");
+                a[i] = Double.parseDouble(ulaz.readLine());
+                System.out.print("x = ");
+                x[i] = Double.parseDouble(ulaz.readLine());
+            }
+        
+            y[1] = 0;
+            for (int i = 2; i &lt;= n; i++)
+                if (x[i] &gt; 0)
+                y[i] = a[i] * x[i];
+                else
+                y[i] = y[i - 1];
+        
+        // &Scaron;tampanje zaglavlja
+            System.out.println("\tR.BR.\tA\tX\tY");
+        
+            for (int i = 1; i &lt;= n; i++)
+                System.out.println("\t" + i + "\t" + a[i] + "\t" + x[i] + "\t" + df.format(y[i]));
+            }
+        }                                                                                                                                         
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj n: <strong style="color: aliceblue;">3</strong>
+        1. unos podataka:
+        a = <strong style="color: aliceblue;">1.2</strong>
+        x = <strong style="color: aliceblue;">6.7</strong>
+        2. unos podataka:
+        a = <strong style="color: aliceblue;">-1.8</strong>
+        x = <strong style="color: aliceblue;">6.4</strong>
+        3. unos podataka:
+        a = <strong style="color: aliceblue;">9.5</strong>
+        x = <strong style="color: aliceblue;">3.4</strong>
+        R.BR.	A       X       Y
+        1   	1.2     6.7     0
+        2       -1.8    6.4     -11.52
+        3       9.5     3.4     32.3
+        </pre>
+    <hr />
+    <p><strong>Zadatak 220: (JDN38)</strong></p>
+    <pre>Sastaviti algoritam i napisati program za izračunavanje ličnog dohotka radnika. 
+        Najpre se učitava vrednost boda, a zatim podaci o svakom radniku i to: ime, broj bodova, 
+        rata kredita i ukupna vrednost svih članarina koje se odbijaju radniku. 
+        &Scaron;tampati koliko treba isplatiti svakom radniku i ukupnu sumu za isplatu.
+    
+        </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package E_JDN;
+
+    import java.io.*;
+
+    public class JDN38 {
+        public static void main(String[] args) throws Exception {
+        double suma = 0, vrednostBoda;
+        String[] ime = new String[20];
+        double[] brojBodova = new double[20];
+        double[] kredit = new double[20];
+        double[] clanarina = new double[20];
+        double[] licniDohodak = new double[20];
+        int brojRadnika;
+
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+
+    // Unos podataka 
+        System.out.println("Unesite vrednost boda: ");
+        vrednostBoda = Double.parseDouble(ulaz.readLine());
+        System.out.println("Unesite broj radnika: ");
+        brojRadnika = Integer.parseInt(ulaz.readLine());
+        System.out.println("Unesite podatke o radnicima: ime, broj bodova, ratu kredita i članarinu: ");
+        for (int i = 1; i <= brojRadnika; i++) {
+            System.out.println("Podaci za " + i + ". radnika");
+            System.out.print("Ime: ");
+            ime[i] = ulaz.readLine();
+            System.out.print("Broj bodova: ");
+            brojBodova[i] = Double.parseDouble(ulaz.readLine());
+
+            System.out.print("Rata kredita: ");
+            kredit[i] = Double.parseDouble(ulaz.readLine());
+            System.out.print("Članarina: ");
+            clanarina[i] = Double.parseDouble(ulaz.readLine());
+
+    // Izračunavanje ličnog dohotka radnika i ukupnog iznosa za isplatu 
+            licniDohodak[i] = brojBodova[i] * vrednostBoda - kredit[i] - clanarina[i];
+            suma += licniDohodak[i];
+        }
+
+    // Štampanje zaglavlja 
+        System.out.println("Ime\tBroj bodova\tKredit\tČlanarina\tPlata ");
+
+    // Štampanje rezultata 
+        for (int i = 1; i <= brojRadnika; i++)
+            System.out.println(ime[i] + "\t" + brojBodova[i] + "\t\t" + kredit[i] + "\t" + clanarina[i] + "\t\t"
+                + licniDohodak[i]);
+
+        System.out.println("===================================================");
+        System.out.println("Ukupno za isplatu: \t\t\t" + suma);
+        }
+    }
+
+                                                                                                                                     
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite vrednost boda:<strong style="color: aliceblue;">20.5</strong> 
+        Unesite broj radnika: <strong style="color: aliceblue;">2</strong> 
+        Unesite podatke o radnicima: ime, broj bodova, ratu kredita i članarinu: 
+        Podaci za 1. radnika
+        Ime: <strong style="color: aliceblue;">Mika</strong>
+        Broj bodova: <strong style="color: aliceblue;">3450</strong>
+        Rata kredita: <strong style="color: aliceblue;">22.8</strong>
+        Članarina: <strong style="color: aliceblue;">3.5</strong>
+        Podaci za 2. radnika
+        Ime: <strong style="color: aliceblue;">Žika</strong>
+        Broj bodova: <strong style="color: aliceblue;">645</strong>
+        Rata kredita: <strong style="color: aliceblue;">112.5</strong>
+        Članarina: <strong style="color: aliceblue;">45.8</strong>
+            Ime	    Broj bodova	    Kredit	    Članarina	    Plata 
+            Mika    3450.0          22.8	    3.5	            70698.7
+            Žika    645.0           112.5	    45.8	    13064.2
+        ===================================================
+        Ukupno za isplatu: 83762.9
+        </pre>
+    <hr />
+    <p><strong>Zadatak 221: (JDN39)</strong></p>
+    <pre><img src="https://miteam.mi.sanu.ac.rs/content/vxnKEjMEezEjrKXAn_1668732884143.jpg" alt="" width="700" height="313" /> &nbsp; &nbsp; </pre>
+    <p><strong>Kod:</strong></p>
+    <pre style="color: #4cd137;">        
+        package JDN;
+    
+        import java.util.Scanner;
+        
+        public class JDN39 {
+            public static void main(String[] args) {
+            Scanner ulaz = new Scanner(System.in);
+        
+            double x[] = new double[100];
+            double y[] = new double[100];
+            char oblast[] = new char[100];
+        
+            System.out.println("Unesite broj tačaka n: ");
+            int n = ulaz.nextInt();
+        
+            System.out.println("Unesite koordinate tačaka x i y:");
+            for (int i = 1; i &lt;= n; i++) {
+                System.out.print("x[" + i + "] = ");
+                x[i] = ulaz.nextDouble();
+                System.out.print("y[" + i + "] = ");
+                y[i] = ulaz.nextDouble();
+        
+                boolean k1 = Math.pow(x[i] - 1, 2) + Math.pow(y[i], 2) &lt;= 1;
+                boolean k2 = Math.pow(x[i] - 1, 2) + Math.pow(y[i] - 1, 2) &lt;= 1;
+                boolean k3 = Math.pow(x[i], 2) + Math.pow(y[i] - 1, 2) &lt;= 1;
+        
+                if (k1 &amp;&amp; !k2 &amp;&amp; k3)
+                oblast[i] = 'A';
+                else if (k1 &amp;&amp; k2 &amp;&amp; !k3)
+                oblast[i] = 'B';
+                else if (!k1 &amp;&amp; k2 &amp;&amp; k3)
+                oblast[i] = 'C';
+                else
+                oblast[i] = '*';
+            }
+        
+            System.out.println("R. BR.\tX\tY\tOBLAST");
+            for (int i = 1; i &lt;= n; i++)
+                System.out.println(i + "\t" + x[i] + "\t" + y[i] + "\t" + oblast[i]);
+        
+            ulaz.close();
+            }
+        }                                                                                                                                               
+        </pre>
+    <pre style="background-color: #222f3e; color: #78e08f; width: max-content; padding-right: 60px;">    
+        Unesite broj tačaka n:<strong style="color: aliceblue;">4</strong> 
+        x[1] = <strong style="color: aliceblue;">0.1</strong>
+        y[1] = <strong style="color: aliceblue;">0.1</strong> 
+        x[2] = <strong style="color: aliceblue;">1.0</strong> 
+        y[2] = <strong style="color: aliceblue;">0.4</strong> 
+        x[3] = <strong style="color: aliceblue;">0.5</strong> 
+        y[3] = <strong style="color: aliceblue;">1.0</strong> 
+        x[4] = <strong style="color: aliceblue;">10</strong>  
+        y[4] = <strong style="color: aliceblue;">10</strong> 
+        R. BR.	    X	    Y	    OBLAST
+        1	    0.1	    0.1	    A
+        2	    1.0	    0.4	    B
+        3	    0.5	    1.0	    C
+        4	    10.0    10.0    *
+        </pre>
+    <hr />
+    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    <p>&nbsp;</p>
+    <div style="text-align: center;"><em>by Dejan Bajović</em></div>
+    <p>&nbsp;</p>
+</body>
+</html>

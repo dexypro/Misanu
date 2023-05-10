@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritamsko rešavanje problema u javi</title>
+</head>
+<body>
+    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/9WCqTngeqk7vEPGec_1666735496460.jpg" alt="" width="780" height="304" /></p>
+<p>&nbsp;</p>
+<hr />
+<p><strong>Zadatak 105: (ForPetlja01)</strong></p>
+<ul>
+<li>Napisati program koji ispisuje sve cifre.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja01 {
+                
+                    public static void main(String[] args) {
+                    int i;
+                
+                    System.out.println("I način: ");
+                    for (i = 0; i &lt;= 9; i++) {
+                        System.out.println(i);
+                    }
+                
+                    System.out.println("\nII način: ");
+                
+                    for (int c = 9; c &gt;= 0; c--) {
+                        System.out.println(c);
+                    }
+                    }
+                
+                }
+                
+                        
+                </pre>
+<hr />
+<p><strong>Zadatak 106: (ForPetlja02)</strong></p>
+<ul>
+<li>Napisati program koji računa kvadrat i kub brojeva od 1 do 5.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja02 {
+                
+                    public static void main(String[] args) {
+                    System.out.printf("%8s%8s%8s \n", "Broj", "Kvadrat", "Kub");
+                
+                    for (int broj = 1; broj &lt;= 5; broj++) {
+                        System.out.printf("%8d%8d%8d \n", broj, broj * broj, broj * broj * broj);
+                    }
+                    }
+                
+                }
+                
+                </pre>
+<hr />
+<p><strong>Zadatak 107: (ForPetlja03)</strong></p>
+<ul>
+<li>Napisati program za računanje zbira brojeva od 1 do 10.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja03 {
+                
+                    public static void main(String[] args) {
+                
+                    int zbir = 0; /* 0 predstavlja neutral prilikom sabiranja */
+                    for (int i = 1; i &lt;= 10; i++) {
+                        zbir = zbir + i; // zbir += i;
+                
+                    }
+                    System.out.println("Zbir brojeva iznosi: " + zbir);
+                    }
+                
+                }
+                    
+                
+                </pre>
+<hr />
+<p><strong>Zadatak 108: (ForPetlja04)</strong></p>
+<ul>
+<li>Napisati program koji sabira zadati broj sabiraka.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                
+                public class ForPetlja04 {
+                
+                    public static void main(String[] args) {
+                    // 4. Napisati program koji sabira zadati broj sabiraka.
+                
+                    // Deklaracija promenljivih
+                    double a, b, zbir = 0d;
+                
+                    Scanner ulaz = new Scanner(System.in);
+                
+                    // 1. Unos podataka
+                    System.out.println("Unesite prvi broj: ");
+                    a = ulaz.nextDouble();
+                    System.out.println("Unesite poslednji broj: ");
+                    b = ulaz.nextDouble();
+                
+                    // 2. Obrada podataka primenom for petlje
+                    for (double i = a; i &lt;= b; i++) {
+                        System.out.println("Unesite " + i + ". broj: ");
+                        double j = ulaz.nextDouble();
+                        zbir += j;
+                    }
+                    System.out.println("Zbir ovih brojeva je " + zbir);
+                    ulaz.close(); // Zatvaranje skenera kako bi se izbeglo "curenje" podataka
+                    }
+                
+                }</pre>
+<hr />
+<p><strong>Zadatak 109: (ForPetlja05)</strong></p>
+<ul>
+<li>Napisati niz naredbi kojim se izračunava kvadrata prirodnih brojeva od 15 do 25.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja05 {
+                
+                    public static void main(String[] args) {
+                    // Deklarisanje promenljivih
+                    int i;
+                
+                    // Obrada podataka
+                    for (i = 15; i &lt;= 26; i++) {
+                        System.out.println("Kvadrat broja " + i + " je " + (int) (Math.pow(i, 2)));
+                    }
+                
+                    }
+                
+                }</pre>
+<hr />
+<p><strong>Zadatak 110: (ForPetlja06)</strong></p>
+<ul>
+<li>Napisati naredbe kojima se za dato n izračunava faktorijel prirodnog broja n: fakt = n! = 1*2*3*...*n.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                
+                public class ForPetlja06 {
+                
+                    public static void main(String[] args) {
+                    // Deklarisanje podataka
+                    int n;
+                    int faktorijel = 1;
+                
+                    Scanner ulaz = new Scanner(System.in);
+                    System.out.println("Unesite broj za koji izracunavamo faktorijel: ");
+                
+                    // Unos podataka
+                    n = ulaz.nextInt();
+                
+                    // Obrada podataka
+                    for (int i = 2; i &lt;= n; i++) {
+                        faktorijel *= i;
+                    }
+                    System.out.println("Faktorijel prirodnog broja je " + n + " je " + faktorijel);
+                    ulaz.close();
+                    }
+                
+                }</pre>
+<hr />
+<p><strong>Zadatak 111: (ForPetlja07)</strong></p>
+<ul>
+<li>Napisati program kojim se za date prirodne brojeve m i n, izračunava: <br /><br />
+<p style="text-align: center;">S = n*(n+m)*(n+2m)*(n+3m)...*(n+m*m)</p>
+</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                
+                public class ForPetlja07 {
+                
+                    public static void main(String[] args) {
+                    
+                    /* Unos podataka */
+                    int n, m, s = 1;
+                
+                    Scanner ulaz = new Scanner(System.in);
+                    System.out.println("Unesite vrednost za n: ");
+                    n = ulaz.nextInt();
+                    System.out.println("Unesite vrednost za m: ");
+                    m = ulaz.nextInt();
+                    ulaz.close();
+                
+                    /* Obrada podataka */
+                    for (int i = 1; i &lt;= m; i++) {
+                        s *= n + i * m;
+                    }
+                
+                    /* Ispisivanje izlaznog rezultata za S */
+                    System.out.println("Vrednost za S je: " + (n * s));
+                
+                    }
+                
+                }</pre>
+<hr />
+<p><strong>Zadatak 112: (ForPetlja08)</strong></p>
+<ul>
+<li>Koristeci for petlju ispisati velika slova alfabeta</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja08 {
+                
+                    public static void main(String[] args) {
+                    // Koristeci for petlju ispisati velika slova alfabeta
+                
+                    // Unos podataka
+                    char slovo = 'A';
+                    // Obrada podataka
+                    for (int i = 1; i &lt;= 26; i++) {
+                
+                        if (slovo &gt;= 'A' &amp;&amp; slovo &lt;= 'Z') {
+                        System.out.println(slovo);
+                        slovo++;
+                        }
+                    }
+                    }
+                
+                }  
+                </pre>
+<hr />
+<p><strong>Zadatak 113: (ForPetlja09)</strong></p>
+<ul>
+<li>U intervalu brojeva od 1 .. 100 ispitati sve parne brojeve.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja09 {
+                
+                    public static void main(String[] args) {
+                    // 9. U intervalu brojeva od 1 .. 100 ispitati sve parne brojeve.
+                
+                    // Deklarisanje promenljivih
+                
+                    // Prvi nacin
+                    System.out.println("Prvi nacin: ");
+                    for (int i = 1; i &lt;= 100; i++) {
+                        if (i % 2 == 0) {
+                        System.out.print(i + " ");
+                        }
+                    }
+                
+                    System.out.println("\n\nDrugi nacin: ");
+                    // Drugi nacin
+                    for (int i = 2; i &lt;= 100; i += 2) {
+                
+                        System.out.print(i + " ");
+                
+                    }
+                    }
+                
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 114: (ForPetlja10)</strong></p>
+<ul>
+<li>U zadatom intervalu ispitati i ispisati sve brojeve deljive brojem 3.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                
+                public class ForPetlja10 {
+                
+                    public static void main(String[] args) {
+                    // U zadatom intervalu ispitati i ispisati sve brojeve deljive brojem 3.
+                    // Deklarisanje podataka
+                    int a, b;
+                
+                    // Unos podataka
+                    Scanner ulaz = new Scanner(System.in);
+                    System.out.println("Unesite prvi broj opsega intervala: ");
+                    a = ulaz.nextInt();
+                    System.out.println("Unesite poslednji broj opsega intervala: ");
+                    b = ulaz.nextInt();
+                    ulaz.close();
+                
+                    // Obrada podataka
+                    for (int i = a; i &lt;= b; i++) {
+                        if (i % 3 == 0) {
+                        System.out.print(i + " ");
+                        }
+                    }
+                
+                    }
+                
+                }  
+                </pre>
+<hr />
+<p><strong>Zadatak 115: (ForPetlja11)</strong></p>
+<ul>
+<li>Napisati program kojim se &scaron;tampaju Amstrongovi brojevi. Broj je Armstrongov ako je jednak zbiru kubova svojih cifara.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja11 {
+                
+                    public static void main(String[] args) {
+                    // Napisati program kojim se &scaron;tampaju Amstrongovi brojevi. Broj je Armstrongov
+                    // ako je jednak zbiru kubova svojih cifara.
+                
+                    int broj, s, d, j;
+                
+                    // Obrada podataka
+                    for (int i = 100; i &lt; 1000; i++) {
+                
+                        broj = i;
+                        s = broj / 100;
+                        d = (broj / 10) % 10;
+                        j = broj % 10;
+                
+                        if (broj == (s * s * s + d * d * d + j * j * j)) {
+                        System.out.println("Dati broj " + broj + " je Armstrongov broj.");
+                        }
+                    }
+                    }
+                }   
+                </pre>
+<hr />
+<p><strong>Zadatak 116: (ForPetlja12)</strong></p>
+<ul>
+<li>Napisati program koji prebrojava brojeve od 1 .. 20 koji su deljivi brojem 3.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                public class ForPetlja12 {
+                
+                    public static void main(String[] args) {
+                    // Napisati program koji prebrojava brojeve od 1 .. 20 koji su deljivi brojem 3.
+                    int brojac = 0;
+                    // Unos podataka
+                    for (int i = 1; i &lt;= 20; i++) {
+                        if (i % 3 == 0) {
+                        brojac++;
+                        }
+                    }
+                    System.out.println("Izmedju 1 i 20 ima " + brojac + " brojeva deljivih sa brojem 3.");
+                
+                    }
+                
+                }   
+                </pre>
+<hr />
+<p><strong>Zadatak 117: (ForPetlja13)</strong></p>
+<ul>
+<li>Napisati program za izračunavanje aritmetičke sredine unetih brojeva.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                import java.text.DecimalFormat;
+                
+                public class ForPetlja13 {
+                
+                    public static void main(String[] args) {
+                    // Deklaracija promenljivih
+                    double imenilac, brojilac = 0d;
+                
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    Scanner ulaz = new Scanner(System.in);
+                
+                    // 1. Unos podataka
+                    System.out.println("Koliko cifara zelite da unesete? ");
+                    imenilac = ulaz.nextDouble();
+                
+                    // 2. Obrada podataka primenom for petlje
+                    for (int i = 1; i &lt;= imenilac; i++) {
+                        System.out.println("Unesite " + i + ". cifru: ");
+                        double j = ulaz.nextDouble();
+                        brojilac += j;
+                    }
+                
+                    // Stampanje izlaznog rezultata
+                    System.out.println("Aritmeticka sredina je " + df.format((brojilac / imenilac)));
+                    ulaz.close(); // Zatvarenja skenera kako bi se izbeglo "curenje" podataka
+                
+                    }
+                
+                }   
+                </pre>
+<hr />
+<p><strong>Zadatak 118: (ForPetlja14)</strong></p>
+<ul>
+<li>Napisati program zy izračunavanje aritmetičke sredine parnih brojeva.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                import java.text.DecimalFormat;
+                
+                public class ForPetlja13 {
+                
+                    public static void main(String[] args) {
+                    // Deklaracija promenljivih
+                    double imenilac, brojilac = 0d;
+                
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    Scanner ulaz = new Scanner(System.in);
+                
+                    // 1. Unos podataka
+                    System.out.println("Koliko cifara zelite da unesete? ");
+                    imenilac = ulaz.nextDouble();
+                
+                    // 2. Obrada podataka primenom for petlje
+                    for (int i = 1; i &lt;= imenilac; i++) {
+                        System.out.println("Unesite " + i + ". cifru: ");
+                        double j = ulaz.nextDouble();
+                        brojilac += j;
+                    }
+                
+                    // Stampanje izlaznog rezultata
+                    System.out.println("Aritmeticka sredina je " + df.format((brojilac / imenilac)));
+                    ulaz.close(); // Zatvarenja skenera kako bi se izbeglo "curenje" podataka
+                
+                    }
+                
+                }     
+                </pre>
+<hr />
+<p><strong>Zadatak 119: (ForPetlja15)</strong></p>
+<ul>
+<li>Napisati program koji učitava 10 brojeva i ispisuje koliko ima negativnih, nula i pozitivnih brojeva.</li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.util.Scanner;
+                
+                public class ForPetlja15 {
+                
+                    public static void main(String[] args) {
+                    // 1. Inicijalizacija promenljivih
+                    int negativni = 0, pozitivni = 0, nule = 0;
+                
+                    Scanner ulaz = new Scanner(System.in);
+                
+                    // 2. Obrada podataka primenom for petlje
+                    for (int i = 1; i &lt;= 10; i++) {
+                        System.out.println("Unesite " + i + ". broj: ");
+                        double j = ulaz.nextDouble();
+                        if (j == 0) {
+                        nule++;
+                        } else if (j &gt; 0) {
+                        pozitivni++;
+                        } else {
+                        negativni++;
+                        }
+                
+                    }
+                    // 3. Stampanje izlaznog rezultata
+                    System.out.println("Pozitivni brojevi: " + pozitivni + "\nNegativni brojeva: " + negativni + "\nNule: " + nule);
+                    ulaz.close();
+                    }
+                
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 120: (ForPetlja16)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti sume<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666811703579.jpg" alt="" width="226" height="97" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.text.DecimalFormat;
+                
+                    public class ForPetlja16 {
+                        public static void main(String[] args) {
+                        DecimalFormat df = new DecimalFormat("#.###");
+                    // Inicijalizacija promenljive s 
+                        double s = 0;
+                    // Izračunavanje vrednosti sume 
+                        for (int n = 1; n &lt;= 50; n++)
+                            s += (n + 2.5) / (n * n + 1.2);
+                    // &Scaron;tampanje izlaznog rezultata 
+                        System.out.println("Dobijena vrednost sume je " + df.format(s));
+                        }
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 121: (ForPetlja17)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti sume prikazanoj na slici za unetu vrednost n &lt; 100.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666812104139.jpg" alt="" width="167" height="108" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.io.*;
+                import java.text.*;
+                
+                public class ForPetlja17 {
+                    public static void main(String[] args) throws Exception {
+                    DecimalFormat df = new DecimalFormat("#.###");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                // Inicijalizacija promenljive s 
+                    double s = 0;
+                // Unos vrednosti promenljive n 
+                    System.out.print("Unesite vrednost za n: ");
+                    int n = Integer.parseInt(ulaz.readLine());
+                    if (n &lt; 100) {
+                        // Izračunavanje vrednosti sume
+                        for (int i = 1; i &lt;= n; i++)
+                        if (i != 3)
+                            s += (i + 3.5) / (i - 3.0);
+                        // &Scaron;tampanje izlaznog rezultata
+                        System.out.println("Dobijena vrednost sume je " + df.format(s));
+                    }
+                    }
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 122: (ForPetlja18)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti sume<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666812262757.jpg" alt="" width="184" height="93" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.io.*;
+                import java.text.DecimalFormat;
+                
+                public class ForPetlja18 {
+                    public static void main(String[] args) throws Exception {
+                    double s = 0, s1;
+                    DecimalFormat df = new DecimalFormat("###,##0.00");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.print("Unesite vrednost za n: ");
+                    int n = Integer.parseInt(ulaz.readLine());
+                    for (int i = 1; i &lt;= n; i++) {
+                        s1 = 0;
+                        for (int j = 1; j &lt;= n; j++) {
+                        if (j != 3)
+                            s1 += (j + 3.5) / (j - 3.0);
+                        }
+                        s += s1;
+                    }
+                    System.out.println("Dobijena vrednost sume je " + df.format(s));
+                    }
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 123: (ForPetlja19)</strong></p>
+<ul>
+<li>Napisati program za izračunavanje vrednosti sume<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666812529440.jpg" alt="" width="525" height="278" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+        
+                import java.io.*;
+                import java.text.DecimalFormat;
+                
+                public class ForPetlja19 {
+                    public static void main(String[] args) throws Exception {
+                    double suma = 0;
+                    DecimalFormat df = new DecimalFormat("#.###");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.print("Unesite vrednost za n: ");
+                    int n = Integer.parseInt(ulaz.readLine());
+                    for (int i = 1; i &lt;= n; i++)
+                        suma += (double) i / (i + 1);
+                    System.out.println("Dobijena vrednost sume je " + df.format(suma));
+                    }
+                }
+            </pre>
+<hr />
+<p><strong>Zadatak 124: (ForPetlja20)</strong></p>
+<ul>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti izraza ispisanog na slici ako se koren primeni n puta.</li>
+</ul>
+</ul>
+<p><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666812700819.jpg" alt="" width="299" height="82" /></p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+                
+                import java.io.*;
+                import java.text.*;
+                
+                public class ForPetlja20 {
+                    public static void main(String[] args) throws Exception {
+                    DecimalFormat df = new DecimalFormat("#.###");
+                    BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+                // Inicijalizacija promenljive s 
+                    double s = 0;
+                // Unos vrednosti promenljive n 
+                    System.out.print("Unesite vrednost za n: ");
+                    int n = Integer.parseInt(ulaz.readLine());
+                // Izračunavanje vrednosti sume 
+                    for (int i = 1; i &lt;= n; i++)
+                        s = Math.sqrt(6 + s);
+                // &Scaron;tampanje izlaznog rezultata 
+                    System.out.println("Dobijena vrednost sume je " + df.format(s));
+                    }
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 125: (ForPetlja21)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti proizvoda.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666812955558.jpg" alt="" width="187" height="90" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+                package CiklicnaStruktura;
+        
+                import java.text.*;
+                
+                public class ForPetlja21 {
+                    public static void main(String[] args) {
+                    DecimalFormat df = new DecimalFormat("#.###");
+                // Inicijalizacija promenljive p 
+                    double p = 1;
+                // Izračunavanje vrednosti proizvoda 
+                    for (int n = 1; n &lt;= 5; n++)
+                        p *= (double) (n + 2.5) / (n * n + 1.2);
+                
+                // &Scaron;tampanje izlaznog rezultata 
+                
+                    System.out.println("Dobijena vrednost proizvoda je " + df.format(p));
+                    }
+                }
+                </pre>
+<hr />
+<p><strong>Zadatak 126: (ForPetlja22)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti proizvoda prikazano kao na slici za unetu vrednost n &lt; 100.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666813337069.jpg" alt="" width="348" height="90" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+        
+        import java.io.*;
+        import java.text.*;
+        
+        public class ForPetlja22 {
+            public static void main(String[] args) throws Exception {
+            DecimalFormat df = new DecimalFormat("#.###");
+            BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        // Inicijalizacija promenljiva p i q 
+            double p = 1, q = 1;
+        // Unos vrednosti promenljive n 
+            System.out.print("Unesite vrednost za n: ");
+            int n = Integer.parseInt(ulaz.readLine());
+        // Izračunavanje vrednosti proizvoda 
+            for (int i = 2; i &lt;= n; i++) {
+                q *= i;
+                p *= (1 + 1 / q);
+            }
+        // &Scaron;tampanje izlaznog rezultata 
+            System.out.println("Dobijena vrednost proizvoda je " + df.format(p));
+            }
+        }</pre>
+<hr />
+<p><strong>Zadatak 127: (ForPetlja23)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za izračunavanje vrednosti funkcije prikazane na slici za x = 1,00(0,2)2,00. <br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666813637964.jpg" alt="" width="244" height="54" /><br /><br />Problem re&scaron;iti pomoću <strong>for</strong> ciklusa. Izlazna lista neka izgleda kao na slici.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666813646148.jpg" alt="" width="285" height="123" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+        package CiklicnaStruktura;
+    
+        import java.text.DecimalFormat;
+        
+        public class ForPetlja23 {
+            public static void main(String[] args) {
+            DecimalFormat df = new DecimalFormat("###,##0.00");
+            /* &Scaron;tampanje zaglavlja */
+            System.out.println("\tX\tF(X)");
+            double f, x;
+            for (x = 1.0; x &lt;= 2.0; x += 0.2) {
+                f = 41.926 * Math.sqrt(1 + Math.pow(x, 3)) + Math.pow(x, 1.0 / 3.0) * Math.exp(x);
+                System.out.println("\t" + df.format(x) + "\t" + df.format(f));
+            }
+            }
+        }
+            </pre>
+<hr />
+<p><strong>Zadatak 128: (ForPetlja24)</strong></p>
+<ul>
+<li>Napisati program kojim se za n unetih vrednosti za a i b izračunava y prema formuli<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666813844475.jpg" alt="" width="292" height="143" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class ForPetlja24 {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double a, b, y;
+        System.out.println("Unesite vrednost za n: ");
+        int n = input.nextInt();
+        for (int i = 1; i &lt;= n; i++) {
+            System.out.println("Unesite vrednost broja a: ");
+            a = input.nextDouble();
+            System.out.println("Unesite vrednost broja b: ");
+            b = input.nextDouble();
+            if (a &gt;= 0)
+            y = (1 - Math.min(a, b)) / (1 + Math.max(a, b));
+            else
+            y = Math.min(a, b) / (Math.min(a * a, b * b) + 3);
+            System.out.println("Za unete vrednosti a = " + a + " i b = " + b + " dobija se y = " + y);
+        }
+        input.close();
+        }
+    }
+    </pre>
+<hr />
+<p><strong>Zadatak 129: (ForPetlja25)</strong></p>
+<ul>
+<li>Napisati program kojim se za n unetih vrednosti a ispisuje njegov koren, a ako je negativan njegov kvadrat.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666814005250.jpg" alt="" width="171" height="105" /></li>
+</ul>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    import java.util.Scanner;
+    
+    public class ForPetlja25 {
+        public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Unesite vrednost za n: ");
+        int n = input.nextInt();
+        for (int i = 1; i &lt;= n; i++) {
+            System.out.print("Unesite vrednost za a: ");
+            double a = input.nextDouble();
+            double y;
+            if (a &gt; 0)
+            y = Math.sqrt(a);
+            else
+            y = a * a;
+            System.out.println("Za unetu vrednost a = " + a + " dobija se y = " + y);
+        }
+        input.close();
+        }
+    }
+    </pre>
+<hr />
+<p><strong>Zadatak 130: (ForPetlja26)</strong></p>
+<ul>
+<li>Neka je zadato n odsečaka sa dužinama a, b i c. Sastaviti algoritam i napisati program za ispitivanje da li zadati odsečci mogu konstruisati trougao i ako mogu izračunati povr&scaron;inu trougla po formuli:<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666814124147.jpg" alt="" width="475" height="75" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    import java.io.*;
+    
+    public class ForPetlja26 {
+        public static void main(String[] args) throws Exception {
+        /* Deklarisanje odsečaka */
+        double a, b, c;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Unesite vrednost za n: ");
+        int n = Integer.parseInt(ulaz.readLine());
+        for (int i = 1; i &lt;= n; i++) {
+            // Unos podataka
+            System.out.print("Unesite dužinu odsečka a: ");
+            a = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite dužinu odsečka b: ");
+            b = Double.parseDouble(ulaz.readLine());
+            System.out.print("Unesite dužinu odsečka c: ");
+            c = Double.parseDouble(ulaz.readLine());
+            if (a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; c &gt; 0) {
+            /* Razgranata struktura */
+            if ((a + b &gt; c) &amp;&amp; (a + c &gt; b) &amp;&amp; (b + c &gt; a)) {
+                double p = 0.25 * Math.sqrt((a + b + c) * (b + c - a) * (a + c - b) * (a + b - c));
+                /* &Scaron;tampanje rezultata */
+                System.out.println("Povr&scaron;ina trougla je " + p);
+            } else
+                System.out.println("Unete stranice ne čine trougao.");
+            } else {
+            System.out.println("Unesite pozitivne vrednosti odsecaka!");
+            }
+        }
+        }
+    }
+    </pre>
+<hr />
+<p><strong>Zadatak 131: (ForPetlja27)</strong></p>
+<ul>
+<li><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666814303512.jpg" alt="" width="789" height="257" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    public class ForPetlja27 {
+        public static void main(String[] args) {
+        // Stampanje zaglavlja
+        System.out.println("\tT\tS1\tS2\tS=|S1 - S2|");
+        for (int t = 0; t &lt;= 15; t++) {
+            // Izračunavanje predjenih puteva
+            double s1 = 2 * Math.pow(t, 3) + Math.pow(t, 2);
+            double s2 = 2 * Math.pow(t, 2) + 5 * t;
+            double s = Math.abs(s1 - s2);
+            // &Scaron;tampanje rezultata
+            System.out.println("\t" + t + "\t" + s1 + "\t" + s2 + "\t" + s);
+        }
+        }
+    }
+    </pre>
+<hr />
+<p><strong>Zadatak 132: (ForPetlja28)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program kojim se &scaron;tampaju svi trocifreni Armstrongovi brojevi.<sup>(drugi način re&scaron;enja u odnosu na Zadatak 115)</sup><br /><br /><strong>Napomena:</strong><br />Broj je Armstrongov ako je jednak zbiru kubova svojih cifara (primer: 153)</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    public class ForPetlja28 {
+        public static void main(String[] args) {
+        /* m - trocifreni broj */
+        /* s - cifra stotice broja */
+        /* d - cifra desetice broja */
+        /* j - cifra jedinice broja */
+        int m, s, d, j;
+        System.out.println("Armstrongovi brojevi od 100 do 999 su: ");
+        for (s = 1; s &lt;= 9; s++)
+            for (d = 0; d &lt;= 9; d++)
+            for (j = 0; j &lt;= 9; j++) {
+                /* Traženje Armstrongovog broja */
+                m = 100 * s + 10 * d + j;
+                if (m == Math.pow(s, 3) + Math.pow(d, 3) + Math.pow(j, 3))
+                System.out.println(m);
+            }
+        }
+    }
+    </pre>
+<hr />
+<p><strong>Zadatak 133: (ForPetlja29)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program kojim se &scaron;tampaju svi trocifreni brojevi koji su istovremeno deljivi i sa 2 i sa 3.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    public class ForPetlja29 {
+    
+        public static void main(String[] args) {
+    
+        // Obrada podataka
+        for (int i = 100; i &lt; 1000; i++) {
+            if (i % 2 == 0 &amp;&amp; i % 3 == 0) {
+            System.out.println(i);
+    
+            }
+        }
+    
+        }
+    
+    }</pre>
+<hr />
+<p><strong>Zadatak 134: (ForPetlja30)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program kojim se &scaron;tampaju svi trocifreni brojevi koji su istovremeno deljivi i sa 2 i sa 3.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    public class ForPetlja30 {
+        public static void main(String[] args) {
+    // m - trocifreni broj
+    // s - cifra stotice broja
+    // d - cifra desetice broja
+    // j - cifra jedinice broja
+        int m, s, d, j;
+        System.out.println("Celi trocifreni brojevi deljivi sa 2 i 3 su: ");
+        for (s = 1; s &lt;= 9; s++)
+            for (d = 0; d &lt;= 9; d++)
+            for (j = 0; j &lt;= 9; j++) {
+                m = 100 * s + 10 * d + j;
+                if (m % 2 == 0 &amp;&amp; m % 3 == 0)
+                System.out.println(m);
+            }
+        
+        /* DRUGI NAČIN
+            * 
+            * // m - trocifreni broj
+                System.out.println("Celi trocifreni brojevi deljivisa 2 i 3 su: ");
+                for (int m = 100; m &lt;= 999; m++)
+                    if(m % 2 == 0 &amp;&amp; m % 3 == 0)
+                        System.out.println(m);
+            * 
+            * */
+        }
+    }</pre>
+<hr />
+<p><strong>Zadatak 135: (ForPetlja31)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program kojim se učitava n celih brojeva, a zatim se izračunava i &scaron;tampa suma svih pozitivnih i suma svih negativnih učitanih brojeva.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    import java.io.*;
+    
+    public class ForPetlja31 {
+        public static void main(String[] args) throws Exception {
+        // Inicijalizacija podataka o sumama pozitivnih i negativnih celih brojeva
+        int sp = 0, sn = 0;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        // Unos podatka o celim brojevima
+        System.out.println("Unesite vrednost za n: ");
+        int n = Integer.parseInt(ulaz.readLine());
+        System.out.println("Unos celih brojeva: ");
+        for (int i = 1; i &lt;= n; i++) {
+            // Unos celih brojeva
+            System.out.println(i + ". broj");
+            int m = Integer.parseInt(ulaz.readLine());
+            // Izracunavanje sume
+            if (m &gt; 0)
+            sp += m;
+            else
+            sn += m;
+        }
+        // &Scaron;tampanje rezultata
+        System.out.println("Zbir pozitivnih brojeva je " + sp + " a negativnih " + sn);
+        }
+    }</pre>
+<hr />
+<p><strong>Zadatak 136: (ForPetlja32)</strong></p>
+<ul>
+<li><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666815342236.jpg" alt="" width="690" height="369" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+    
+    import java.text.DecimalFormat;
+    
+    public class ForPetlja32 {
+        public static void main(String[] args) {
+        // Deklarisanje podataka
+        double x, y, z;
+        // Inicijalizacija rednog broja
+        int i = 0;
+        DecimalFormat df = new DecimalFormat("#.##");
+        // &Scaron;tampanje zaglavlja
+        System.out.println("\tR.br.\tX\tY\tZ");
+        for (x = 0.0; x &lt;= 10.0; x += 1.0) {
+            // Izračunavanje vrednosti funkcija
+            y = Math.sqrt(x) + 0.2 * x - Math.pow(x, 2) / (x + 1.);
+            z = y - 0.3 * Math.pow(y, 2) / (y + 1.);
+            // Uvećanje rednog broja
+            i++;
+            // &Scaron;tampanje rezultata
+            System.out.println("\t" + i + "\t" + df.format(x) + "\t" + df.format(y) + "\t" + df.format(z));
+        }
+        }
+    }</pre>
+<hr />
+<p><strong>Zadatak 137: (ForPetlja33)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program za tabeliranje vrednosti funkcija ispisanih na slici ako su a 0.1(0.1)0.5 i b=0.1(0.1)0.2<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666816472139.jpg" alt="" width="581" height="82" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+
+    import java.text.DecimalFormat;
+    
+    public class ForPetlja33 {
+        public static void main(String[] args) {
+        // Deklarisanje promenljivih a i b
+        double a, b;
+        DecimalFormat df = new DecimalFormat("###,###0.000");
+        // &Scaron;tampanje zaglavlja
+        System.out.println("\ta\tb\tcos(a) - cos(b)\t-2 * sin(a + b) / 2 * sin(a - b) / 2");
+        for (a = 0.1; a &lt;= 0.5; a += 0.1)
+            for (b = 0.1; b &lt;= 0.2; b += 0.1) {
+            // Izračunavanje vrednosti funkcija
+            double p = Math.cos(a) - Math.cos(b);
+            double q = -2 * Math.sin((a + b) / 2) * Math.sin((a - b) / 2);
+            // &Scaron;tampanje izlaznog rezultata
+            System.out
+                .println("\t" + df.format(a) + "\t" + df.format(b) + "\t" + df.format(p) + "\t" + df.format(q));
+            }
+        }
+    }</pre>
+<hr />
+<p><strong>Zadatak 138: (ForPetlja34)</strong></p>
+<ul>
+<li>Sastaviti algoritam i napisati program kojim se izračunava vrednost funkcije prikazane na slici za 5 različitih vrednosti argumenta x &scaron;tampati vrednosti argumenta i vrednosti funkcije.<br /><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666816690706.jpg" alt="" width="246" height="133" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+    package CiklicnaStruktura;
+
+    import java.io.*;
+    
+    public class ForPetlja34 {
+        public static void main(String[] args) throws Exception {
+        // Deklarisanje promenljivih x i y
+        double x, y;
+        BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 1; i &lt;= 5; i++) {
+            // Unos vrednosti promenljive x
+            System.out.println("Unesite " + i + ". vrednost za x: ");
+            x = Double.parseDouble(ulaz.readLine());
+            // Razgranata struktura
+            if (x &lt; 2)
+            y = x;
+            else if (x &lt; 3)
+            y = 2.0;
+            else
+            y = x - 1;
+            // &Scaron;tampanje izlaznog rezultata
+            System.out.println("Za uneto X = " + x + " dobija se Y = " + y);
+        }
+        }
+    }</pre>
+<hr />
+<p><strong>Zadatak 139: (ForPetlja35)</strong></p>
+<ul>
+<li><img src="https://miteam.mi.sanu.ac.rs/content/4oJLzGaL832i8kj85_1666816833083.jpg" alt="" width="773" height="391" /></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Kod:</strong></p>
+<pre style="color: #4cd137;">        
+package CiklicnaStruktura;
+
+import java.io.*;
+import java.text.DecimalFormat;
+
+public class ForPetlja35 {
+    public static void main(String[] args) throws Exception {
+	// q0 - trougaono opterecenje
+	// L - duzina grede
+	// m - napadni moment
+	// ft - transverzalna sila
+	double q0, L, m, ft;
+	DecimalFormat df = new DecimalFormat("#.##");
+	BufferedReader ulaz = new BufferedReader(new InputStreamReader(System.in));
+	// Unos podataka
+	System.out.print("Unesite vrednost za trougaono opterecenje q0: ");
+	q0 = Double.parseDouble(ulaz.readLine());
+	System.out.print("Unesite vrednost za duzinu grede L: ");
+	L = Double.parseDouble(ulaz.readLine());
+	// Stampanje zaglavlja
+	System.out.println("\tz\tFt\tM");
+	// Tabeliranje vrednosti transverzalne sile i napadnog momenta
+	for (double z = 2.5; z &lt; 3.5; z += 0.1) {
+	    ft = q0 * (L / 3.0 - z * z / L) / 2.0;
+	    m = q0 * L * L * (z / L - Math.pow(z / L, 3.0)) / 6.0;
+	    System.out.println("\t" + df.format(z) + "\t" + df.format(ft) + "\t" + df.format(m));
+	}
+}
+}</pre>
+<hr />
+<p>&nbsp;</p>
+<div style="text-align: center;"><em>by Dejan Bajović</em></div>
+<p>&nbsp;</p>
+</body>
+</html>

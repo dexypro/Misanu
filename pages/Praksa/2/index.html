@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>Kolekcije i Regex</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Kolekcije: List, Map<br>
+        Regular expressions (REGEX)
+
+    </h2>
+    <p class="centered">
+        Опис задатка: Имплементација задатка подразумева:<br>
+        - Теоријско упознавање са наведеним темама. <br>
+        Том приликом је потребно креирати пројекат, где ће на примеру бити приказан поступак <br>
+        креирања листе, мапе и употреба регуларних израза(у одвојеним пројектима). Приказати на примерима<br>
+        поступке креирања као и примену уграђеним функција.
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="Kolekcije-Regex-main.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h1 class="centered">LIST</h1>
+    <h3 class="centered">ArrayListPrimer</h3>
+
+    <pre><code class="java">
+package List;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ArrayListPrimer {
+    public static void main(String[] args) {
+        System.out.println("-----------------");
+        System.out.println("--- ArrayList ---");
+        System.out.println("-----------------");
+        ArrayList<String> poslasticarnica = new ArrayList<>();
+
+        // Funkcija dodavanja elemenata .add
+        poslasticarnica.add("Baklava");
+        poslasticarnica.add("Tiramisu");
+        poslasticarnica.add("Voćni sladoled");
+        poslasticarnica.add("Čokoladni sladoled");
+
+        // Dodavanje elementa na odredjeni index
+        System.out.println(".add() --> Dodavanje elementa 'Pita sa jabukama' na indexu 1.");
+        poslasticarnica.add(1, "Pita sa jabukama");
+
+        // Dohvatanje elemenata na odredjenom indexu
+        String poslasticaNaIndeksu2 = poslasticarnica.get(2);
+        System.out.println(".get() --> Poslastica na indeksu 2: " + poslasticaNaIndeksu2);
+
+        // Brisanje elemenata na odredjenom indexu
+        poslasticarnica.remove(1);
+        System.out.println(".remove() --> Lista nakon uklanjanja elementa na indeksu 1: " + poslasticarnica);
+
+        // Zamenjivanje elementa na odredjenom indexu
+        poslasticarnica.set(2, "Palačinke sa nutelom");
+        System.out.println(".set() --> Lista nakon postavljanja novog elementa na indeksu 2: " + poslasticarnica);
+
+        // Pretraga da li lista sadrzi odredjeni element
+        System.out.println(".contains() --> Lista sadrži 'Baklava': " + poslasticarnica.contains("Baklava"));
+
+        // Pronalaženje indexa na mestu odredjenog elementa
+        int baklavaIndeks = poslasticarnica.indexOf("Baklava");
+        System.out.println(".indexOf() --> Indeks 'Baklava': " + baklavaIndeks);
+
+        // Dužina liste
+        System.out.println(".size() --> Veličina liste: " + poslasticarnica.size());
+
+        // Provera da li je lista prazna
+        System.out.println(".isEmpty() --> Lista je prazna: " + poslasticarnica.isEmpty());
+
+        // Brisanje svih elemenata
+        poslasticarnica.clear();
+        System.out.println(".clear() --> Lista nakon čišćenja: " + poslasticarnica);
+
+        // Kreiranje nove ArrayList-e sa dodatnim poslasticama
+        ArrayList<String> dodatnePoslastice = new ArrayList<>();
+        dodatnePoslastice.add("Krofna");
+        dodatnePoslastice.add("Rafaelo");
+
+        // Dodavanje svih elemenata iz dodatnePoslastice u poslasticarnica koristeći
+        // .addAll()
+        poslasticarnica.addAll(dodatnePoslastice);
+        System.out.println(".addAll() --> Lista nakon dodavanja dodatnih poslastica: " + poslasticarnica);
+
+        // Konvertovanje ArrayList-a u niz koristeći .toArray()
+        String[] nizPoslastica = new String[poslasticarnica.size()];
+        nizPoslastica = poslasticarnica.toArray(nizPoslastica);
+        System.out.println(".toArray() --> Niz nakon konvertovanja ArrayList-a: " + Arrays.toString(nizPoslastica));
+
+        // Sortiranje elemenata liste
+        Collections.sort(poslasticarnica);
+        System.out.println(".sort() --> Lista nakon sortiranja: " + poslasticarnica);
+
+        // Pretraga elemenata u sortiranoj listi
+        int index = Collections.binarySearch(poslasticarnica, "Baklava");
+        System.out.println(".binarySearch() --> Indeks 'Baklava': " + index);
+
+        // Obrtanje redosleda elemenata u listi
+        Collections.reverse(poslasticarnica);
+        System.out.println(".reverse() --> Lista nakon obrtanja redosleda: " + poslasticarnica);
+
+        // Mešanje elemenata u listi
+        Collections.shuffle(poslasticarnica);
+        System.out.println(".shuffle() --> Lista nakon mešanja elemenata: " + poslasticarnica);
+    }
+}
+        
+</code></pre>
+
+    <br>
+    <br>
+    <h3 class="centered">LinkedListPrimer</h3>
+    <pre><code class="java">
+package List;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class LinkedListPrimer {
+    public static void main(String[] args) {
+        System.out.println("------------------");
+        System.out.println("--- LinkedList ---");
+        System.out.println("------------------");
+        LinkedList<String> salonAutomobila = new LinkedList<>();
+
+        // Dodavanje elementa na početak liste
+        salonAutomobila.addFirst("Audi A4");
+        salonAutomobila.add("BMW M3");
+        salonAutomobila.add("Mercedes C-Klase");
+        salonAutomobila.add("Volkswagen Passat");
+
+        // Dodavanje elementa na kraj liste
+        salonAutomobila.addLast("Tesla Model 3");
+
+        // Dohvatanje prvog elementa
+        System.out.println(".getFirst() --> Prvi element liste: " + salonAutomobila.getFirst());
+
+        // Dohvatanje poslednjeg elementa
+        System.out.println(".getLast() --> Poslednji element liste: " + salonAutomobila.getLast());
+
+        // Pronalaženje poslednjeg indeksa određenog elementa
+        salonAutomobila.add("BMW M3");
+        int poslednjiIndeksBMWM3 = salonAutomobila.lastIndexOf("BMW M3");
+        System.out.println(".lastIndexOf() --> Poslednji indeks 'BMW M3': " + poslednjiIndeksBMWM3);
+
+        // Iterator
+        System.out.print(".iterator() --> Iteracija kroz listu: ");
+        Iterator<String> iterator = salonAutomobila.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + ", ");
+        }
+
+        // ListIterator
+        System.out.print("\n.listIterator() --> ListIterator: ");
+        ListIterator<String> listIterator = salonAutomobila.listIterator();
+        while (listIterator.hasNext()) {
+            System.out.print(listIterator.next() + ",");
+        }
+
+        // Uklanjanje prvog elementa
+        salonAutomobila.removeFirst();
+        System.out.println("\n.removeFirst() --> Lista nakon uklanjanja prvog elementa: " + salonAutomobila);
+
+        // Uklanjanje poslednjeg elementa
+        salonAutomobila.removeLast();
+        System.out.println(".removeLast() --> Lista nakon uklanjanja poslednjeg elementa: " + salonAutomobila);
+
+        // Pretvaranje liste u niz
+        String[] nizAutomobila = salonAutomobila.toArray(new String[0]);
+        System.out.print(".toArray() --> Niz automobila: ");
+        for (String auto : nizAutomobila) {
+            System.out.print(auto + " | ");
+        }
+    }
+}
+
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">VektorPrimer</h3>
+    <pre><code class="java">
+package List;
+
+import java.util.Iterator;
+import java.util.Vector;
+
+public class VektorPrimer {
+    public static void main(String[] args) {
+        System.out.println("--------------");
+        System.out.println("--- Vektor ---");
+        System.out.println("--------------");
+        Vector<String> hobi = new Vector<>();
+
+        // Dodavanje elementa u Vektor
+        hobi.add("Plivanje");
+        hobi.add("Trčanje");
+        hobi.add("Planinarenje");
+        hobi.add("Vožnja bicikla");
+
+        // Dodavanje elemenata na odredjeni index
+        System.out.println(".add() --> Dodavanje 'Joga' na indexu 1.");
+        hobi.add(1, "Joga");
+
+        // Dohvatanje elemenata na odredjenom indexu
+        String HobiNaIndeksu2 = hobi.get(2);
+        System.out.println(".get() --> Hobi na indeksu 2: " + HobiNaIndeksu2);
+
+        // Brisanje elemenata na odredjenom indexu
+        hobi.remove(1);
+        System.out.println(".remove() --> Vektor nakon uklanjanja elementa na indeksu 1: " + hobi);
+
+        // Zamena elementa odredjenom indexu
+        hobi.set(2, "Tenis");
+        System.out.println(".set() --> Vektor nakon postavljanja novog elementa na indeksu 2: " + hobi);
+
+        // Provera da li vektor sadrži odredjeni element
+        System.out.println(".contains() --> Vektor sadrži 'Plivanje': " + hobi.contains("Plivanje"));
+
+        // Pronalaženje indexa odredjenog elementa
+        int plivanjeIndeks = hobi.indexOf("Plivanje");
+        System.out.println(".indexOf() --> Indeks 'Plivanje': " + plivanjeIndeks);
+
+        // Veličina
+        System.out.println(".size() --> Veličina vektora: " + hobi.size());
+
+        // Provera da li je vektor prazan
+        System.out.println(".isEmpty() --> Vektor je prazan: " + hobi.isEmpty());
+
+        // Iterator
+        System.out.print(".iterator() --> Iteracija kroz vektor: ");
+        Iterator<String> iterator = hobi.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + ", ");
+        }
+
+        // Brisanje
+        hobi.clear();
+        System.out.println("\n.clear() --> Vektor nakon čišćenja: " + hobi);
+
+    }
+}        
+
+</code></pre>
+    <br>
+    <br>
+    <h1 class="centered">MAP</h1>
+    <h3 class="centered">HashMapPrimer</h3>
+    <pre><code class="java">
+package Map;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+public class HashMapPrimer {
+	public static void main(String[] args) {
+		System.out.println("--------------------");
+		System.out.println("--- Države i glavni gradovi ---");
+		System.out.println("--------------------");
+		HashMap<String, String> drzaveIPrestonice = new HashMap<>();
+
+		// Dodavanje elemenata
+		drzaveIPrestonice.put("Srbija", "Beograd");
+		drzaveIPrestonice.put("Francuska", "Pariz");
+		drzaveIPrestonice.put("Nemačka", "Berlin");
+		drzaveIPrestonice.put("Italija", "Rim");
+
+		// Dohvatanje elementa
+		String prestonica = drzaveIPrestonice.get("Nemačka");
+		System.out.println(".get() --> Prestonica Nemačke: " + prestonica);
+
+		// Brisanje elementa
+		drzaveIPrestonice.remove("Italija");
+		System.out.println(".remove() --> HashMap nakon uklanjanja Italije: " + drzaveIPrestonice);
+
+		// Provera da li postoji određeni element
+		System.out.println(".containsKey() --> HashMap sadrži 'Srbija': " + drzaveIPrestonice.containsKey("Srbija"));
+
+		// Provera da li postoji određena vrednost
+		System.out.println(
+				".containsValue() --> HashMap sadrži 'Beograd': " + drzaveIPrestonice.containsValue("Beograd"));
+
+		// Veličina HashMap
+		System.out.println(".size() --> Veličina HashMap: " + drzaveIPrestonice.size());
+
+		// Provera da li je prazan HashMap
+		System.out.println(".isEmpty() --> HashMap je prazan: " + drzaveIPrestonice.isEmpty());
+
+		// Iteracija kroz ključeve i vrednosti u tabeli
+		Iterator<Entry<String, String>> iterator = drzaveIPrestonice.entrySet().iterator();
+		System.out.println(".iterator() -->");
+		while (iterator.hasNext()) {
+			Entry<String, String> entry = iterator.next();
+			System.out.println("Država: " + entry.getKey() + ", Glavni grad: " + entry.getValue());
+		}
+
+		// Kopiranje elemenata iz jednog HashMapa u drugi
+		HashMap<String, String> noveDrzave = new HashMap<>();
+		noveDrzave.put("Španija", "Madrid");
+		noveDrzave.put("Portugal", "Lisabon");
+
+		drzaveIPrestonice.putAll(noveDrzave);
+		System.out.println(".putAll() --> HashMap nakon kopiranja elemenata: " + drzaveIPrestonice);
+
+	}
+}
+        </code></pre>
+    <br>
+    <br>
+    <h3 class="centered">HashTablePrimer</h3>
+    <pre><code class="java">
+package Map;
+
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+public class HashTablePrimer {
+    public static void main(String[] args) {
+        System.out.println("-----------------");
+        System.out.println("--- Hashtable ---");
+        System.out.println("-----------------");
+        Hashtable<String, Integer> knjige = new Hashtable<>();
+
+        // Dodavanje elementa u knjige
+        knjige.put("Harry Potter i Kamen mudrosti", 1997);
+        knjige.put("Gospodar prstenova", 1954);
+        knjige.put("Da Vincijev kod", 2003);
+        knjige.put("1984", 1949);
+
+        // Dohvatanje elementa
+        Integer godinaIzdavanja = knjige.get("Da Vincijev kod");
+        System.out.println(".get() --> Godina izdavanja Da Vincijev kod: " + godinaIzdavanja);
+
+        // Brisanje elementa
+        knjige.remove("1984");
+        System.out.println(".remove() --> Hashtable nakon uklanjanja '1984': " + knjige);
+
+        // Provera da li postoji odredjeni element
+        System.out.println(".containsKey() --> Hashtable sadrži 'Gospodar prstenova': "
+                + knjige.containsKey("Gospodar prstenova"));
+
+        // Provera da li postoji odredjena vrednost
+        System.out.println(".containsValue() --> Hashtable sadrži 1997: " + knjige.containsValue(1997));
+
+        // Veličina Hashtable
+        System.out.println(".size() --> Veličina Hashtable: " + knjige.size());
+
+        // Provera da li je prazan Hashtable
+        System.out.println(".isEmpty() --> Hashtable je prazan: " + knjige.isEmpty());
+
+        // Iteracija kroz ključeve u tabeli
+        Enumeration<String> kljucevi = knjige.keys();
+        System.out.print(".keys() --> ");
+        while (kljucevi.hasMoreElements()) {
+            String kljuc = kljucevi.nextElement();
+            System.out.print("Ključ: " + kljuc + ", ");
+        }
+
+        // Iteracija kroz vrednosti u tabeli
+        Enumeration<Integer> vrednosti = knjige.elements();
+        System.out.print("\n.elements() --> ");
+        while (vrednosti.hasMoreElements()) {
+            Integer vrednost = vrednosti.nextElement();
+            System.out.print("Vrednost: " + vrednost + ", ");
+        }
+
+        // Brisanje Hashtable
+        knjige.clear();
+        System.out.println("\n.clear() --> Hashtable nakon čišćenja: " + knjige);
+
+        // Kopiranje elemenata iz jednog Hashtablea u drugi
+        Hashtable<String, Integer> noveKnjige = new Hashtable<>();
+        noveKnjige.put("Alhemičar", 1988);
+        noveKnjige.put("Majstor i Margarita", 1967);
+
+        knjige.putAll(noveKnjige);
+        System.out.println(".putAll() --> Hashtable nakon kopiranja elemenata: " + knjige);
+
+        // Provera da li Hashtable sadrži određenu vrednost
+        System.out.println(".contains() --> Hashtable sadrži 1954: " + knjige.contains(1954));
+    }
+}
+    </code></pre>
+    <br>
+    <br>
+    <h3 class="centered">SortedMapPrimer</h3>
+    <pre><code class="java">
+package Map;
+
+import java.util.Iterator;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.Map.Entry;
+
+public class SortedMapPrimer {
+    public static void main(String[] args) {
+        System.out.println("--------------------------------");
+        System.out.println("--- Životinje i životne dobi ---");
+        System.out.println("--------------------------------");
+        SortedMap<String, Integer> zivotinjeIZivotneDobi = new TreeMap<>();
+
+        // Dodavanje elemenata u zivotinjeIZivotneDobi
+        zivotinjeIZivotneDobi.put("Slon", 70);
+        zivotinjeIZivotneDobi.put("Zebra", 25);
+        zivotinjeIZivotneDobi.put("Tigar", 26);
+        zivotinjeIZivotneDobi.put("Krokodil", 70);
+
+        System.out.println("SortedMap: " + zivotinjeIZivotneDobi);
+
+        // Dohvatanje prvog ključa i poslednjeg ključa
+        String prviKljuc = zivotinjeIZivotneDobi.firstKey();
+        String poslednjiKljuc = zivotinjeIZivotneDobi.lastKey();
+        System.out.println(".firstKey() --> Prvi ključ: " + prviKljuc);
+        System.out.println(".lastKey() --> Poslednji ključ: " + poslednjiKljuc);
+
+        // Iteracija kroz ključeve i vrednosti u tabeli
+        Iterator<Entry<String, Integer>> iterator = zivotinjeIZivotneDobi.entrySet().iterator();
+        System.out.print(".iterator() --> ");
+        while (iterator.hasNext()) {
+            Entry<String, Integer> entry = iterator.next();
+            System.out.print("Životinja: " + entry.getKey() + ", Životna dob: " + entry.getValue() + " | ");
+        }
+    }
+}
+
+</code></pre>
+    <br>
+    <br>
+    <h3 class="centered">TreeMapPrimer</h3>
+    <pre><code class="java">
+package Map;
+
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
+public class TreeMapPrimer {
+    public static void main(String[] args) {
+        System.out.println("-----------------------------------");
+        System.out.println("--- Voće i kalorijske vrednosti ---");
+        System.out.println("-----------------------------------");
+        TreeMap<String, Integer> voceIKalorije = new TreeMap<>();
+
+        // Dodavanje elemenata u voceIKalorije
+        voceIKalorije.put("Jabuka", 52);
+        voceIKalorije.put("Banana", 89);
+        voceIKalorije.put("Kivi", 61);
+        voceIKalorije.put("Ananas", 50);
+
+        System.out.println("TreeMap: " + voceIKalorije);
+
+        // Dohvatanje prvog ključa
+        String prviKljuc = voceIKalorije.firstKey();
+        System.out.println(".firstKey() --> Prvi ključ: " + prviKljuc);
+
+        // Dohvatanje poslednjeg ključa
+        String poslednjiKljuc = voceIKalorije.lastKey();
+        System.out.println(".lastKey() --> Poslednji ključ: " + poslednjiKljuc);
+
+        // Iteracija kroz ključeve i vrednosti u tabeli
+        System.out.println(".iterator() --> ");
+        Iterator<Entry<String, Integer>> iterator = voceIKalorije.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Entry<String, Integer> entry = iterator.next();
+            System.out.println("Voće: " + entry.getKey() + ", Kalorijska vrednost: " + entry.getValue());
+        }
+    }
+}
+
+
+</code></pre>
+
+    <br>
+    <br>
+    <h1 class="centered">REGEX</h1>
+    <h3 class="centered">RegexPrimer</h3>
+    <pre><code class="java">
+package Regex;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexPrimer {
+    public static void main(String[] args) {
+        String tekst = "Opis zadatka: Implementacija zadatka podrazumeva:\n"
+                + "- Teorijsko upoznavanje sa navedenim temama." 
+                + "Tom prilikom je potrebno kreirati projekat, gde će na primeru biti prikazan postupak kreiranja liste,"
+                + "mape i upotreba regularnih izraza(u odvojenim projektima). Prikazati na primerima postupke kreiranja"
+                + "kao i primenu ugrađenim funkcija.\n"
+                + "\n" + "Datum postavljanja zadatka: 20-04-2023\n" + "Email radnika: bajovicdejan91@gmail.com\n"
+                + "Github radnika: https://github.com/dexypro";
+
+        // Datum šablon (u formatu dd-mm-yyyy)
+        String datumRegex = "\\b\\d{2}-\\d{2}-\\d{4}\\b";
+        Pattern datumSablon = Pattern.compile(datumRegex);
+        Matcher datumPretrazi = datumSablon.matcher(tekst);
+
+        System.out.println("Pronađeni datumi:");
+        while (datumPretrazi.find()) {
+            System.out.println(datumPretrazi.group());
+        }
+
+        // Email šablon
+        String emailRegex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}";
+        Pattern emailSablon = Pattern.compile(emailRegex);
+        Matcher emailPretrazi = emailSablon.matcher(tekst);
+
+        System.out.println("\nPronađene email adrese:");
+        while (emailPretrazi.find()) {
+            System.out.println(emailPretrazi.group());
+        }
+
+        // GitHub URL šablon
+        String githubUrlRegex = "https://github.com/[a-zA-Z0-9._-]+";
+        Pattern githubUrlSablon = Pattern.compile(githubUrlRegex);
+        Matcher githubUrlPretrazi = githubUrlSablon.matcher(tekst);
+
+        System.out.println("\nPronađeni GitHub URL-ovi:");
+        while (githubUrlPretrazi.find()) {
+            System.out.println(githubUrlPretrazi.group());
+        }
+    }
+}
+    </code></pre>
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

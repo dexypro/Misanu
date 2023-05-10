@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>Grafovi</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">Графови.</h2>
+    <p class="centered">
+        Приказан поступак креирања графа и имплементација основних метода графа<br>
+        (број чворова, број грана, ...). Користећи коментаре у програмском коду, <br>
+        описаћете поступак имплементације графова.
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="grafovi.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3 class="centered">Grafovi</h3>
+
+    <pre><code class="java">
+package grafovi;
+
+import java.util.LinkedList;
+
+public class Graf {
+    // Broj čvorova u grafu
+    private int brojCvorova;
+
+    // Lista susedstva za čuvanje veza između čvorova
+    private LinkedList<Integer>[] listaSusedstva;
+
+    public Graf(int brojCvorova) {
+        this.brojCvorova = brojCvorova;
+        listaSusedstva = new LinkedList[brojCvorova];
+
+        for (int i = 0; i < brojCvorova; i++) {
+            listaSusedstva[i] = new LinkedList<>();
+        }
+    }
+
+    // Dodavanje grane između dva čvora u grafu
+    public void dodajGranu(int u, int v) {
+        listaSusedstva[u].add(v);
+        listaSusedstva[v].add(u);
+    }
+
+    // Vraća broj čvorova u grafu
+    public int brojCvorova() {
+        return brojCvorova;
+    }
+
+    // Vraća broj grana u grafu
+    public int brojGrana() {
+        int brojGrana = 0;
+        for (int i = 0; i < brojCvorova; i++) {
+            brojGrana += listaSusedstva[i].size();
+        }
+        // Delimo sa 2, jer je svaka grana prebrojana dva puta (jednom za svaki čvor)
+        return brojGrana / 2;
+    }
+
+    // Vraća listu susednih čvorova za zadati čvor
+    public LinkedList<Integer> susedniCvorovi(int cvor) {
+        return listaSusedstva[cvor];
+    }
+
+    public static void main(String[] args) {
+        // Kreiramo graf sa 5 čvorova
+        Graf graf = new Graf(5);
+
+        // Dodajemo grane između čvorova
+        graf.dodajGranu(0, 1);
+        graf.dodajGranu(0, 4);
+        graf.dodajGranu(1, 3);
+        graf.dodajGranu(1, 4);
+        graf.dodajGranu(2, 3);
+        graf.dodajGranu(3, 4);
+
+        System.out.println("Broj čvorova: " + graf.brojCvorova());
+        System.out.println("Broj grana: " + graf.brojGrana());
+
+        for (int i = 0; i < graf.brojCvorova(); i++) {
+            LinkedList<Integer> susedi = graf.susedniCvorovi(i);
+            System.out.print("Susedi čvora " + i + ":");
+            for (Integer sused : susedi) {
+                System.out.print(" " + sused);
+            }
+            System.out.println();
+        }
+    }
+
+}        
+</code></pre>
+
+
+
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

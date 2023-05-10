@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osnove visenitnog i konkurentnog programiranja</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/ACx7tBEvu5BDLPKWT_1675210592969.gif" alt="" width="600" height="200" /></p>
+
+
+      <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 364: (Thread01)</strong></p>
+<pre style="text-align: justify;">Uraditi sledeće:
+- pozvati statičku metodu <strong style="color: #44bd32;">.currentThread()</strong> klase <strong style="color: #0984e3;">Thread</strong>.
+- ispisati <b>id</b>,<b>ime</b>,<b>prioritet</b> korišćenjem <strong style="color: #44bd32;">.getId()</strong>, <strong style="color: #44bd32;">.getName()</strong> i <strong style="color: #44bd32;">.getPriority()</strong>
+</pre>
+<hr style="width: 90%;" />
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread01;
+
+public class Thread1 {
+
+  public static void main(String[] args) {
+
+    <span style="color: azure;">// Prilikom pokretanja Java programa, jedna programska nit odmah
+    // pocinje da se izvrsava. To je glavna ili inicijalna nit.
+
+    // Upravljanje glavnom niti radi se preko objekta tipa Thread, pozivom
+    // metode currentThread() klase Thread.</span>
+
+    System.out.println(Thread.currentThread().getId());
+    System.out.println(Thread.currentThread().getName());
+    System.out.println(Thread.currentThread().getPriority());
+    System.out.println(Thread.currentThread());
+
+    <span style="color: azure;">// [ime niti, prioritet, ime grupe kojoj pripada nit]
+    // podrazumevano ime glavne niti je main. Njen prioritet je 5, sto je takodje
+    // podrazumevana vrednost.
+    // (treci parametar) main je ime grupe niti kojoj ta nit pripada.
+    // grupa niti je struktura podataka koja upravlja stanjem kolekcije niti kao celinom.</span>
+  }
+
+}</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+1
+main
+5
+Thread[main,5,main]
+</pre>
+</div>
+</div>
+
+
+ <!-- SLEDECI ZADATAK -->
+ <div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 365: (Thread01b)</strong></p>
+<pre style="text-align: justify;">Uraditi sledeće:
+- kreirati objekat <b>t</b> klase <strong style="color: #0984e3;">Thread</strong> i objasniti:
+- statičku metodu <strong style="color: #44bd32;">.currentThread()</strong> klase <strong style="color: #0984e3;">Thread</strong>.
+- metode <strong style="color: #44bd32;">.getId()</strong>, <strong style="color: #44bd32;">.getName()</strong> i <strong style="color: #44bd32;">.getPriority()</strong>
+</pre>
+<hr style="width: 90%;" />
+
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread01;
+
+public class KVP01 {
+
+    public static void main(String[] args) {
+
+      <span style="color: azure;">// Prilikom pokretanja Java programa, jedna programska nit odmah
+      // pocinje da se izvrsava. To je glavna ili inicijalna nit.
+
+      // Upravljanje glavnom niti radi se preko objekta tipa Thread, pozivom
+      // metode currentThread() klase Thread.</span>
+
+      Thread t = Thread.currentThread();
+
+      System.out.println("Trenutna nit: " + t);
+
+      <span style="color: azure;">// getName() - vraca ime niti</span>
+      System.out.println("Naziv niti: " + Thread.currentThread().getName());
+
+      <span style="color: azure;">// getPriority() - vraca prioritet niti</span>
+      System.out.println("Prioritet niti: " + Thread.currentThread().getPriority());
+
+      <span style="color: azure;">// [ime niti, prioritet, ime grupe kojoj pripada nit]
+      // podrazumevano ime glavne niti je main. Njen prioritet je 5, sto je takodje
+      // podrazumevana vrednost.
+      // (treci parametar) main je ime grupe niti kojoj ta nit pripada.
+      // grupa niti je struktura podataka koja upravlja stanjem kolekcije niti kao celinom.</span>
+
+    }
+
+}
+  </pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Trenutna nit: Thread[main,5,main]
+Naziv niti: main
+Prioritet niti: 5
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 366: (Thread02)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A</strong> koja implementira interfejs <strong style="color: #5ef9fc;">Runnable</strong> i u toj klasi:
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> koja tri puta ispisuje trenutnu nit i njeno ime.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekat <b>a</b> klase <strong style="color: #5ef9fc;">A</strong>.
+- kreirati objekte <b>t1, t2, t3</b> klase <strong style="color: #0984e3;">Thread</strong>, pokrenuti svaki od kreiranih niti metodom <strong style="color: #44bd32;">.start()</strong>
+- (opciono) pokrenuti neophodne metode iz klase <strong style="color: #0984e3;">Runtime</strong> za proveru koliko procesora sadrži računar.
+</pre>
+  <hr style="width: 90%;" />
+
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;;">Klasa:</h3>
+  <pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread02;
+
+<span style="color: azure;">// Nit se moze napraviti za svaki objekat koji implementira interfejs Runnable.
+// Da bi klasa implementirala interfejs Runnable, potrebno je samo da ima metodu
+// run(), deklarisana u sledecem obliku: public void run()
+// U metodi run() zadajete kod koji treba da se izvrsava u novoj niti.
+// Kada se izvrsi metoda run() nit se unistava.</span>
+
+public class A implements Runnable {
+    public void run() {
+      for (int i = 1; i <= 3; i++) {
+          System.out.println(Thread.currentThread().getName());
+      }
+    }    
+}</pre>
+
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Nit2
+Nit2
+Nit2
+Nit1
+Nit1
+Nit1
+16 procesora ima računar.
+Nit3
+Nit3
+Nit3
+</pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread02;
+<span style="color: azure;">// Pokretanje nove niti
+// Novu nit pokrecete tako sto napravite instancu objekta tipa Thread
+// To se moze uraditi na dva nacina:
+// 1. Implementacija interfejsa Runnable
+// 2. Prosirivanjem klase Thread.
+
+// U main klasi:
+// Nakon kreiranja kalse koja implementira interfejs Runnable, potrebno je 
+// napraviti instancu ibjekta tima Thread</span>
+public class Main {
+
+    public static void main(String[] args) {
+      A a = new A();
+
+      <span style="color: azure;"> // ***
+      // Oblik konstruktora:
+      // Thread(Runnable objekatNit, String imeNiti)
+      // objekatNit je instanca klase koja implementira interfejs Runnable
+      // Definise mesto gde zapocinje nit.
+
+      // imeNiti - predstavlja ime nove niti (koje vi zadajete)</span>
+
+      Thread t1 = new Thread(a, "Nit1");
+      Thread t2 = new Thread(a, "Nit2");
+      Thread t3 = new Thread(a, "Nit3");
+
+      t1.start(); <span style="color: azure;"> // metoda start() poziva metodu run()</span>
+      t2.start();
+      t3.start();
+
+      <span style="color: azure;"> // 1 main glavna nit i 3 nove niti = 4 niti!</span>
+
+      System.out.println(Runtime.getRuntime().availableProcessors() + " procesora ima računar.");<span style="color: azure;"> // Provera procesora na kompu</span>
+    }
+
+}
+    </pre>
+
+</div>
+</div>
+  
+  
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 367: (Thread03)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Thread</strong> i u toj klasi:
+- parametarizovan konsturktor sa unosom promenljive <b>s</b> tipa <strong style="color: #0984e3;">String</strong> sa pozivanjem konstruktora nadklase.
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> koja četiri puta ispisuje trenutnu nit i njeno ime.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekat <b>a1, a2 i a3</b> klase <strong style="color: #5ef9fc;">A</strong>.
+- pokrenuti metode <strong style="color: #44bd32;">.start()</strong> za svaki od kreiranih objekata.
+</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;;">Klasa:</h3>
+  <pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread03;
+
+<span style="color: azure;">// Nit se moze napraviti i kada klasu Thread prosirite novom nasledjenom klasom,
+// a zatim napravite instancu te klase.
+
+// Nova potklasa mora da redefinise metodu run</span>
+  public class A extends Thread {
+      A(String s) {
+        super(s); <span style="color: azure;">// poziva konsturktor Thread sledeceg oblika: 
+            // public Thread(String imeNiti)</span>
+      }
+
+      public void run() {
+        for (int i = 1; i <= 4; i++) {
+            System.out.println(getName());
+        }
+    }
+}
+    </pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread03;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      A a1 = new A("Nit1");
+      A a2 = new A("Nit2");
+      A a3 = new A("Nit3");
+
+      a1.start(); <span style="color: azure;">// zapocinje izvrsavanje niti pozivanjem njene metode run()</span>
+      a2.start();
+      a3.start();
+
+    }
+
+}</pre>
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Nit1
+Nit1
+Nit1
+Nit1
+Nit3
+Nit3
+Nit3
+Nit3
+Nit2
+Nit2
+Nit2
+Nit2
+</pre>
+</div>
+</div>
+  
+  
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 368: (Thread04)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A, B, C</strong> koje nasledjuje klasu <strong style="color: #0984e3;">Thread</strong> i u tim klasama:
+- parametarizovan konsturktor sa unosom promenljive <b>s</b> tipa <strong style="color: #0984e3;">String</strong> sa pozivanjem konstruktora nadklase.
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> koja četiri puta ispisuje poruku kojoj niti pripada.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekte kreiranih klasa <strong style="color: #5ef9fc;">A, B, C</strong>.
+- pokrenuti metode <strong style="color: #44bd32;">.start()</strong> za svaki od kreiranih objekata.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa A:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class A extends Thread {
+    A(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 1; i <= 10; i++) {
+        System.out.println(getName());
+    }
+  }
+}</pre>
+</div>
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa B:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class B extends Thread {
+    B(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 1; i <= 10; i++) {
+        System.out.println(getName());
+    }
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa C:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class C extends Thread {
+    C(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 1; i <= 10; i++) {
+        System.out.println(getName());
+    }
+  }
+}
+</pre>
+</div>
+
+
+<div style="float: left; width:50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class Main {
+    public static void main(String[] args) {
+      A a = new A("NitA");
+      B b = new B("NitB");
+      C c = new C("NitC");
+      a.start();
+      b.start();
+      c.start();
+    }
+}
+
+<span style="color: azure;">/*
+- Kreiramo klase A,B,C.
+- Neka te klase nasledjuju klasu Thread
+- (Za domaci Runnable)
+- Implementirati metode run()
+- U pokretackoj klasi Main kreirati objekte tih klasa i pokrenuti threadove tih klasa*/</span></pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Nit1
+Nit1
+Nit1
+Nit1
+Nit3
+Nit3
+Nit3
+Nit3
+Nit2
+Nit2
+Nit2
+Nit2
+</pre>
+</div>
+</div>
+  
+  
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 369: (Thread05)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A, B, C</strong> koje nasledjuje klasu <strong style="color: #0984e3;">Thread</strong> i u tim klasama:
+- parametarizovan konsturktor sa unosom promenljive <b>s</b> tipa <strong style="color: #0984e3;">String</strong> sa pozivanjem konstruktora nadklase.
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> koja tri puta ispisuje poruku kojoj niti pripada.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekte kreiranih klasa <strong style="color: #5ef9fc;">A, B, C</strong>.
+- pokrenuti metode <strong style="color: #44bd32;">.start()</strong> za svaki od kreiranih objekata.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;;">Klasa A:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread06;
+
+public class A extends Thread {
+    public void run() {
+    for (int i = 1; i <= 3; i++) {
+        System.out.println("Nit A: " + i);
+    }
+    ystem.out.println("Kraj izvrsavanja niti A. ");
+    }
+}
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;;">Klasa B:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread06;
+
+public class B extends Thread {
+    public void run() {
+      for (int i = 1; i <= 15; i++) {
+          System.out.println("Nit B: " + i);
+    }
+      System.out.println("Kraj izvrsavanja niti B. ");
+    }
+} 
+</pre>
+</div>
+
+<div style="clear:both;float: left; width:50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread06;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+      A a = new A();
+      B b = new B();
+
+      <span style="color: azure;">// Kada odredjenoj niti zelite da dodate prioritet izvrsavanja,
+      // pozovite metodu setPriority() koja je clan klase Thread.
+      // void setPriority(nivo)
+      // Parametrom "nivo" zadajete nivo prioriteta niti za koju je metoda pozvana.
+      // Vrednost mora biti u opsegu izmedju MIN_PRIORITY i MAX_PRIORITY
+      // a vrednosti tih konstanti su izmedju 1 i 10.
+      // Podrazumevana vrednost iznosi 5, a moze se zadati preko NORM_PRIORITY.</span>
+
+      a.setPriority(Thread.MAX_PRIORITY);
+      b.setPriority(Thread.MIN_PRIORITY);
+
+      a.start();
+      b.start();
+
+      System.out.println("Kraj glavne niti. ");
+    }
+
+}
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Nit C klase
+Nit C klase
+Nit C klase
+Nit C klase
+Nit C klase
+Nit B klase
+Nit B klase
+Nit B klase
+Nit B klase
+Nit B klase
+Nit A klase
+Nit A klase
+Nit A klase
+Nit A klase
+Nit A klase
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 370: (Thread06)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A, B</strong> koje nasledjuje klasu <strong style="color: #0984e3;">Thread</strong> i u tim klasama:
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> koja pet puta ispisuje poruku kojoj niti pripada, a prilikom završetka ispisuje kraj izvršanja niti kojoj pripada.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekte kreiranih klasa <strong style="color: #5ef9fc;">A, B</strong>.
+- postaviti prioritet nitima <a>a i b</a> na maksimalni i minimalni prioritet.
+- pokrenuti metode <strong style="color: #44bd32;">.start()</strong> za svaki od kreiranih objekata.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa A:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class A extends Thread {
+    A(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 0; i < 5; i++) {
+        System.out.println(getName());
+    }
+  }
+}</pre>
+</div>
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa B:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class B extends Thread {
+    B(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 0; i < 5; i++) {
+        System.out.println(getName());
+    }
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 33%;">
+<h3 style="color: #0984e3;;">Klasa C:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread04;
+
+public class C extends Thread {
+    C(String s) {
+      super(s);
+    }
+
+    public void run() {
+      for (int i = 0; i < 5; i++) {
+        System.out.println(getName());
+    }
+  }
+}
+</pre>
+</div>
+
+
+<div style="float: left; width:50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread05;
+
+public class Main {
+    public static void main(String[] args) {
+      A obKlaseA = new A();
+      B obKlaseB = new B();
+      C obKlaseC = new C();
+      Thread t1 = new Thread(obKlaseA, "Nit 1");
+      Thread t2 = new Thread(obKlaseB, "Nit 2");
+      Thread t3 = new Thread(obKlaseC, "Nit 3");
+      t1.start();
+      t2.start();
+      t3.start();
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Kraj glavne niti. 
+Nit B: 1
+Nit B: 2
+Nit B: 3
+Nit B: 4
+Nit A: 1
+Nit A: 2
+Nit A: 3
+Kraj izvrsavanja niti B. 
+Nit A: 4
+Kraj izvrsavanja niti A. 
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 371: (Thread07)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A</strong> koje nasledjuje klasu <strong style="color: #0984e3;">Thread</strong> i u toj klasi:
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> u kojoj se  <b>try / catch</b> blokom testira metoda <strong style="color: #44bd32;">.sleep()</strong> klase <strong style="color: #0984e3;">Thread</strong>.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekat kreirane klase <strong style="color: #5ef9fc;">A</strong>.
+- kreirati niz <b>korpaVoca</b> sa sledećim elementima <i>"Limun", "Mandarina", "Jabuka"</i> i ištampati taj niz uz kašnjenje prilikom ispisivanja od pola sekunde.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread07;
+
+public class A extends Thread {
+    public void run() {
+      int i = 1;
+
+      while (i <= 5) {
+          System.out.println("i: " + i);
+          // sleep (vrednostUMilisekundama)
+
+          try {
+            Thread.sleep(500);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+          i++;
+      }
+    }
+    <span style="color: azure;">// sleep(milisekunde) - privremeno zaustavlja (suspenduje) izvrsavanje niti
+    // argument metode sleep() je interval cekanja u milisekundama 
+
+    // Metoda sleep() u klasi Thread moze da izazove izuzetak InterruptedException
+    // Desice se izuzetak ukoliko neka druga nit pozeli da prekine ovu suspendovanu nit.</pre>
+}
+  </pre>
+</div>
+
+
+<div style="float: left; width:50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread07;
+public class Main {
+
+  public static void main(String[] args) throws InterruptedException {
+    A a = new A();
+  
+    a.start();
+  
+    String[] korpaVoca = { "Limun", "Mandarina", "Jabuka" };
+    for (String vocka : korpaVoca) {
+        System.out.println(vocka);
+        Thread.sleep(500);
+    }
+
+  }
+
+}
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Limun
+i: 1
+Mandarina
+i: 2
+Jabuka
+i: 3
+i: 4
+i: 5
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 372: (Thread08)</strong></p>
+  <pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">A</strong> koje implementira interfejsu <strong style="color: #09e3df;">Runnable</strong> i u toj klasi:
+- promenljivu <b>ime</b> tipa <strong style="color: #0984e3;">String</strong> koja će predstavljati ime niti.
+- objekat <b>t</b> klase <strong style="color: #0984e3;">Thread</strong>.
+- parametarizovan konstruktor koji kreira objekat klase <strong style="color: #0984e3;">Thread</strong> i pokrece metodu <strong style="color: #44bd32;">.start()</strong> datog objekta.
+- neophodnu metodu <strong style="color: #44bd32;">run</strong> u kojoj se  <b>try / catch</b> blokom testira metoda <strong style="color: #44bd32;">.sleep()</strong> klase <strong style="color: #0984e3;">Thread</strong>.
+
+Definisati pokretačku klasu i u njoj:
+- kreirati objekte <b>a1, a2 i a3</b> kreirane klase <strong style="color: #5ef9fc;">A</strong>.
+- simulirati spajanje niti <b>a1, a2 i a3</b> metodom <strong style="color: #44bd32;">.join()</strong> 
+- ispisati koliko dugo svaka nit "živi" (koliko se puta pokreće).
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;;">Klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread08;
+
+public class A implements Runnable {
+
+    String ime;//ime niti
+    Thread t;
+
+    A(String name) { // A je nova nit
+      ime = name;
+      t = new Thread(this, ime);
+      t.start();
+    }
+
+    @Override
+    public void run() {
+      for (int i = 1; i <= 5; i++) {
+          System.out.println(ime + " = " + i);
+          try {
+            Thread.sleep(500);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+      }
+  }
+}</pre>
+</div>
+
+
+<div style="float: left; width:50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+package Thread07;
+public class Main {
+
+  public static void main(String[] args) throws InterruptedException {
+    A a = new A();
+  
+    a.start();
+  
+    String[] korpaVoca = { "Limun", "Mandarina", "Jabuka" };
+    for (String vocka : korpaVoca) {
+        System.out.println(vocka);
+        Thread.sleep(500);
+    }
+
+  }
+
+}
+  </pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #222f3e; color: #ffe2b1; width: max-content; padding-right: 60px; padding: 15px;">
+Prva nit se izvrsava: true
+Prva nit = 1
+Druga nit se izvrsava: true
+Druga nit = 1
+Treca nit se izvrsava: true
+Treca nit = 1
+Treca nit = 2
+Druga nit = 2
+Prva nit = 2
+Treca nit = 3
+Druga nit = 3
+Prva nit = 3
+Prva nit se izvrsava: false
+Druga nit se izvrsava: false
+</pre>
+</div>
+</div>
+  
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p>&nbsp;</p>
+  <div style="clear: both; width: 100%; text-align: center;"><em>by Dejan Bajović</em></div>
+  <p>&nbsp;</p>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

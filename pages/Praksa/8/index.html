@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <title>MVC arhitektura</title>
+</head>
+
+<body>
+    <p> <a href="#" onclick="javascript:history.back();"
+            style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+    </p>
+    <h2 class="centered">MVC arhitektura</h2>
+    <p class="centered">
+        Приказан поступак креирања пакета и подела класа између model-view-controller-a<br>
+        и имплементација потребних метода. Користећи коментаре у програмском коду, <br>
+        описаћете поступак развоја пројекта. Задатак можете приказати на произвољном примеру<br>
+        или користећи пројекат са часа/вежби/домаћег задатка.
+    </p>
+    <div style="display:flex; justify-content:center;">
+        <a href="mvc.zip" download
+            style="display:inline-block; padding:10px 20px; background-color:#d32f2f; color:#fff; font-size:18px; text-align:center; text-decoration:none; border-radius:5px;">Preuzmi
+            projekat</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <h3 class="centered">Proizvod</h3>
+
+    <pre><code class="java">
+package MVC;
+
+public class Proizvod {
+    private int id;
+    private String ime;
+    private double cena;
+
+    public Proizvod(int id, String ime, double cena) {
+        this.id = id;
+        this.ime = ime;
+        this.cena = cena;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+}        
+</code></pre>
+    <h3 class="centered">ProizvodView</h3>
+
+    <pre><code class="java">
+package MVC;
+
+import java.util.List;
+
+public class ProizvodView {
+    public void prikaziProizvod(Proizvod proizvod) {
+        System.out.println("Proizvod:");
+        System.out.println("ID: " + proizvod.getId());
+        System.out.println("Ime: " + proizvod.getIme());
+        System.out.println("Cena: " + proizvod.getCena());
+    }
+
+    public void prikaziProizvode(List<Proizvod> proizvodi) {
+        System.out.println("\nProizvodi:");
+        for (Proizvod proizvod : proizvodi) {
+            prikaziProizvod(proizvod);
+            System.out.println();
+        }
+    }
+}        
+</code></pre>
+
+
+    <h3 class="centered">ProizvodController</h3>
+
+    <pre><code class="java">
+package MVC;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProizvodController {
+    private List<Proizvod> proizvodi;
+    private ProizvodView view;
+
+    public ProizvodController(ProizvodView view) {
+        this.proizvodi = new ArrayList<>();
+        this.view = view;
+    }
+
+    public void dodajProizvod(int id, String ime, double cena) {
+        Proizvod proizvod = new Proizvod(id, ime, cena);
+        proizvodi.add(proizvod);
+    }
+
+    public Proizvod pronadjiProizvod(int id) {
+        for (Proizvod proizvod : proizvodi) {
+            if (proizvod.getId() == id) {
+                return proizvod;
+            }
+        }
+        return null;
+    }
+
+    public void azurirajProizvod(int id, String ime, double cena) {
+        Proizvod proizvod = pronadjiProizvod(id);
+        if (proizvod != null) {
+            proizvod.setIme(ime);
+            proizvod.setCena(cena);
+        }
+    }
+
+    public void obrisiProizvod(int id) {
+        Proizvod proizvod = pronadjiProizvod(id);
+        if (proizvod != null) {
+            proizvodi.remove(proizvod);
+        }
+    }
+
+    public void prikaziProizvod(int id) {
+        Proizvod proizvod = pronadjiProizvod(id);
+        if (proizvod != null) {
+            view.prikaziProizvod(proizvod);
+        } else {
+            System.out.println("Proizvod sa ID " + id + " nije pronađen.");
+        }
+    }
+
+    public void prikaziSveProizvode() {
+        view.prikaziProizvode(proizvodi);
+    }
+
+}
+        
+</code></pre>
+
+
+    <h3 class="centered">MVCMain</h3>
+
+    <pre><code class="java">
+package MVC;
+
+public class MVCMain {
+    public static void main(String[] args) {
+        // Kreiranje view-a
+        ProizvodView view = new ProizvodView();
+
+        // Kreiranje controller-a
+        ProizvodController controller = new ProizvodController(view);
+
+        // Dodavanje proizvoda
+        controller.dodajProizvod(1, "Televizor", 500);
+        controller.dodajProizvod(2, "Laptop", 1000);
+        controller.dodajProizvod(3, "Mobilni telefon", 800);
+
+        // Prikaz svih proizvoda
+        controller.prikaziSveProizvode();
+
+        // Ažuriranje proizvoda
+        controller.azurirajProizvod(2, "Gaming Laptop", 1200);
+
+        // Prikaz ažuriranog proizvoda
+        controller.prikaziProizvod(2);
+
+        // Brisanje proizvoda
+        controller.obrisiProizvod(1);
+
+        // Prikaz svih proizvoda nakon brisanja
+        controller.prikaziSveProizvode();
+    }
+}  
+    
+</code></pre>
+
+</body>
+<footer>
+    <p>Copyright @ 2023 © Matematički institut SANU</p>
+</footer>
+
+</html>

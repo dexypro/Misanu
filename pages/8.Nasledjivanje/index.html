@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nasledjivanje</title>
+  </head>
+
+<body>
+  <p>    <a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+<img style="display: block; margin-left: auto; margin-right: auto;" src="https://miteam.mi.sanu.ac.rs/content/hdoFYDJtfCzkgd8zH_1675638086461.gif" alt="" width="600" height="200" /></p>
+  <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 373: (Nasledjivanje01)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Pas</strong> i u njoj sledeće:
+- javni podatak <strong>frekvencijaLaveza</strong> tipa <b>int</b>.
+- javni podatak <strong>brzinaDahtanja</strong> tipa <b>int</b>.
+- javnu metodu <strong style="color: #44bd32;">laj</strong>.
+- javnu metodu <strong style="color: #44bd32;">dahci</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">LhasaApso</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Pas</strong> i u njoj:
+- podatak <strong>efikasnostCuvanja</strong> tipa <b>int</b>.
+- metodu <strong style="color: #44bd32;">cuvaj</strong>.
+   
+Definisati klasu <strong style="color: #0984e3;">ZlatniRetriver</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Pas</strong> i u njoj:
+- podatak <strong>brzinaAportiranja</strong> tipa <b>int</b>.
+- metodu <strong style="color: #44bd32;">aportiraj</strong>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestPas</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Pas, ZlatniRetriver i LhasaApso</strong>.
+- testirati sve definisane metode kreiranih objekta.
+</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje01;
+
+public class Pas {
+    // Atributi 
+    int frekvencijaLaveza;
+    int brzinaDahtanja;
+
+    // Ponašanja 
+    public void laj() {
+      System.out.println("Pas laje");
+    }
+
+    public void dahci() {
+      System.out.println("Pas dahće");
+    }
+}
+    
+    
+    </pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  package Nasledjivanje01;
+
+  public class LhasaApso extends Pas {
+      int efikasnostCuvanja;
+  
+      public void cuvaj() {
+        System.out.println("Lhasa Apso čuva");
+      }
+  }</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje01;
+
+public class ZlatniRetriver extends Pas {
+    int brzinaAportiranja;
+
+    public void aportiraj() {
+      System.out.println("Zlatni retriver aportira");
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje01;
+
+public class TestPas {
+
+    public static void main(String[] args) {
+      Pas p = new Pas();
+      System.out.println("Klasa Pas");
+      p.laj();
+      p.dahci();
+
+      ZlatniRetriver zr = new ZlatniRetriver();
+      System.out.println("Klasa ZlatniRetriver");
+      zr.laj();
+      zr.dahci();
+      zr.aportiraj();
+
+      LhasaApso la = new LhasaApso();
+      System.out.println("LhasaApso");
+      la.dahci();
+      la.laj();
+      la.cuvaj();
+    }
+}</pre>
+  </div>
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Klasa Pas
+Pas laje
+Pas dahće
+Klasa ZlatniRetriver
+Pas laje
+Pas dahće
+Zlatni retriver aportira
+LhasaApso
+Pas dahće
+Pas laje
+Lhasa Apso čuva</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 374: (Nasledjivanje02)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Sisar</strong> i u njoj sledeće:
+- privatni podatak <strong>bojaOciju</strong> tipa <b>int</b> sa vrednošću 54.
+- javnu metodu <strong style="color: #44bd32;">uzmiBojuOciju</strong> koja uzima navedeni podatak.
+
+Definisati klasu <strong style="color: #0984e3;">Pas</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Sisar</strong> i u njoj:
+- podatak <strong>frekvencijaLaveza</strong> tipa <b>int</b>.
+- metodu <strong style="color: #44bd32;">lajati</strong>.
+    
+Definisati klasu <strong style="color: #0984e3;">Macka</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Sisar</strong> i u njoj:
+- privatni podatak <strong>mjaukFrekvencija</strong> tipa <b>int</b> sa vrednošću 8.
+- metodu <strong style="color: #44bd32;">mjaukati</strong>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestSisar</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Pas i Macka</strong>.
+- testirati sve definisane metode kreiranih objekta.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje02;
+
+public class Sisar {
+    private int bojaOciju = 54;
+
+    public int uzmiBojuOciju() {
+      return bojaOciju;
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje02;
+
+public class Pas extends Sisar {
+    int frekvencijaLaveza;
+
+    public void lajati() {
+     System.out.println("Pas laje");
+    }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje02;
+
+public class Macka extends Sisar {
+    private int mjaukFrekvencija = 8;
+
+    public void mjaukati() {
+      System.out.println("Mačka mjauče! frekvencijom od " + mjaukFrekvencija);
+    }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje02;
+
+public class TestSisar {
+    public static void main(String[] args) {
+      Sisar s = new Sisar();
+      System.out.println(s.uzmiBojuOciju());
+
+      Pas p = new Pas();
+      p.lajati();
+      Macka m = new Macka();
+      m.mjaukati();
+    }
+}</pre>
+</div>
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+54
+Pas laje
+Mačka mjauče! frekvencijom od 8
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 375: (Nasledjivanje03)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj sledeće:
+- apstraktnu metodu <strong style="color: #44bd32;">crtaj</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">Krug</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+- javnu metodu <strong style="color: #44bd32;">crtaj()</strong>.
+    
+Definisati klasu <strong style="color: #0984e3;">Pravouganik</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+- javnu metodu <strong style="color: #44bd32;">crtaj()</strong>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestOblik</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Krug i Pravougaonik</strong>.
+- testirati sve definisane metode kreiranih objekta.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje03;
+
+public abstract class Oblik {
+    public abstract void crtaj();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje03;
+
+public class Krug extends Oblik {
+  public void crtaj() {
+    System.out.println("Nacrtaj krug");
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje03;
+
+public class Pravougaonik extends Oblik {
+  public void crtaj() {
+    System.out.println("Nacrtaj pravouganik");
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje03;
+
+public class TestOblik {
+  public static void main(String[] args) {
+    Krug k = new Krug();
+    k.crtaj();
+    Pravougaonik p = new Pravougaonik();
+    p.crtaj();
+  }
+}</pre>
+</div>
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Nacrtaj krug
+Nacrtaj pravouganik  
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 376: (Nasledjivanje04)</strong></p>
+  <pre style="text-align: justify;">
+  Definisati apstraktnu klasu <strong style="color: #0984e3;">Zivotinja</strong> i u njoj sledeće:
+  - privatni podatak <strong>vrsta</strong> tipa <strong style="color: #0984e3;">String</strong>.
+  - konstruktor bez parametara.
+  - parametarizovan konstruktor.
+  - redefinisasnu metodu <strong style="color: #44bd32;">toString()</strong> koja ispisuje koja je vrsta date zivotinje.
+
+  Definisati klasu <strong style="color: #0984e3;">Pas</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Zivotinja</strong> i u njoj:
+  - privatni podatak <strong>ime</strong> tipa <strong style="color: #0984e3;">String</strong>.
+  - privatni podatak <strong>rasa</strong> tipa <strong style="color: #0984e3;">String</strong>.
+  - parametarizovan konstruktor koji poziva konstruktor nadklase i prosledjuje ime psa i postavlja rasu psa.
+  - parametarizovan konstruktor koji prima ime i rasu kao parametre.
+  - redefinisasnu metodu <strong style="color: #44bd32;">toString()</strong> koja ispisuje koja je vrsta date zivotinje.
+  
+  Definisati pokretačku klasu <strong style="color: #0984e3;">TestZivotinja</strong> i u njoj:
+  - kreirati objekte klasa <strong style="color: #0984e3;">Pas</strong>.
+  - testirati sve konstruktore klase Pas.</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje04;
+
+public class Zivotinja {
+  private String vrsta;
+
+  public Zivotinja() {
+  }
+
+  public Zivotinja(String vrsta) {
+    this.vrsta = new String(vrsta);
+  }
+
+  public String toString() {
+    return "Ovo je " + vrsta;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje04;
+
+public class Pas extends Zivotinja {
+  private String ime;
+  private String rasa;
+
+  public Pas(String ime) {
+    super("pas");
+    this.ime = ime;
+    rasa = "bernardinac";
+  }
+
+  public Pas(String ime, String rasa) {
+    super("pas");
+    this.ime = ime;
+    this.rasa = rasa;
+  }
+
+  public String toString() {
+    return super.toString() + " " + ime + ", " + rasa + ".";
+  }
+}</pre>
+</div>
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje04;
+
+public class TestZivotinja {
+  public static void main(String[] args) {
+    Pas pas = new Pas("Meda", "labrador");
+    Pas poznatPas = new Pas("Astor");
+    System.out.println(pas);
+    System.out.println(poznatPas);
+  }
+}</pre>
+  </div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Ovo je pas Meda, labrador.
+Ovo je pas Astor, bernardinac.    
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 377: (Nasledjivanje05)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">GeometrijskaFigura</strong> i u njoj sledeće:
+- javni podatak <strong>povrsina</strong> tipa <b>double</b>.
+- javni podatak <strong>obim</strong> tipa <b>double</b>.
+- javnu apstraktnu metodu <strong style="color: #44bd32;">izracunajPovrsinu()</strong>.
+- javnu apstraktnu metodu <strong style="color: #44bd32;">izracunajObim()</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">Kvadrat</strong> koja nasledjuje klasu <strong style="color: #0984e3;">GeometrijskaFigura</strong> i u njoj:
+- podatak <strong>stranica</strong> tipa <b>double</b>.
+- parametarizovan konstruktor koj ispituje da li je stranica veća od 0.
+- javnu metodu <strong style="color: #44bd32;">izracunajPovrsinu()</strong> koja vraća površinu.
+- javnu metodu <strong style="color: #44bd32;">izracunajObim()</strong> koja vraća obim kvadrata.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestGeometrijskaFigura</strong> i u njoj:
+- kreirati niz tipa <strong style="color: #0984e3;">Kvadrat</strong>.
+- uneti tri objekta u dati niz i pokrenuti kreirane metode za svaki od kreiranih elementa, tj. objekata niza.</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje05;
+
+public abstract class GeometrijskaFigura {
+  public double povrsina;
+  public double obim;
+
+  public abstract double izracunajPovrsinu();
+
+  public abstract double izracunajObim();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje05;
+
+public class Kvadrat extends GeometrijskaFigura {
+  double stranica;
+
+  public Kvadrat(double stranica) {
+    if (stranica > 0.0)
+        this.stranica = stranica;
+    else
+        System.out.println("Greška: Vrednost podatka stranica mora biti veća od 0.");
+      }
+
+      public double izracunajPovrsinu() {
+        return stranica * stranica;
+      }
+
+      public double izracunajObim() {
+        return 4 * stranica;
+  }
+}</pre>
+</div>
+
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje05;
+
+public class TestGeometrijskaFigura {
+  public static void main(String[] args) {
+    Kvadrat[] k = new Kvadrat[3];
+    k[0] = new Kvadrat(25.5);
+    k[1] = new Kvadrat(10.5);
+    k[2] = new Kvadrat(5.0);
+    for (int i = 0; i < k.length; i++) {
+        System.out.println("Površina " + i + ". kvadrata je " + k[i].izracunajPovrsinu());
+        System.out.println("Obim " + i + ". kvadrata je " + k[i].izracunajObim());
+    }
+  }
+}</pre>
+  </div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Površina 0. kvadrata je 650.25
+Obim 0. kvadrata je 102.0
+Površina 1. kvadrata je 110.25
+Obim 1. kvadrata je 42.0
+Površina 2. kvadrata je 25.0
+Obim 2. kvadrata je 20.0  
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 378: (Nasledjivanje06)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktna klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj sledeće:
+- javnu apstraktnu  metodu <strong style="color: #44bd32;">crtaj()</strong>.
+  
+Definisati klasu <strong style="color: #0984e3;">Zvezda</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+- javnu metodu <strong style="color: #44bd32;">crtaj()</strong> koja ispisuje "Crtam zvezdu".
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestOblik</strong> i u njoj:
+- kreirati objekat tipa <strong style="color: #0984e3;">Zvezda</strong>.
+- pokrenuti metodu  <strong style="color: #44bd32;">crtaj()</strong>.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje06;
+
+public abstract class Oblik {
+  public abstract void crtaj();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje06;
+
+public class Zvezda extends Oblik {
+  public void crtaj() {
+    System.out.println("Crtam zvezdu");
+  }
+}</pre>
+</div>
+  
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje06;
+
+public class TestOblik {
+  public static void main(String[] args) {
+    Zvezda zvezda = new Zvezda();
+    zvezda.crtaj();
+  }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Crtam zvezdu
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 379: (Nasledjivanje07)</strong></p>
+<pre style="text-align: justify;">Za ovaj zadatak koristiti klase  <strong style="color: #0984e3;">Krug i Pravougaonik</strong> iz ranijih zadatka.
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestOblik</strong> i u njoj:
+- kreirati objekte tipa <strong style="color: #0984e3;">Krug i Pravouganik</strong>.
+- pokrenuti metode  <strong style="color: #44bd32;">uzmiPovrsinu()</strong> za oba objekta.</pre>
+<hr style="width: 90%;" />
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje07;
+
+import Nasledjivanje08.Krug;
+import Nasledjivanje08.Pravougaonik;
+
+public class TestOblik {
+  public static void main(String[] args) {
+    Krug k = new Krug(1);
+    System.out.println("Površina kruga je " + k.uzmiPovrsinu());
+    Pravougaonik p = new Pravougaonik(4, 5);
+    System.out.println("Površina pravougaonika je " + p.uzmiPovrsinu());
+  }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Površina kruga je 3.141592653589793
+Površina pravougaonika je 20.0  
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 380: (Nasledjivanje08)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj sledeće:
+- zaštićeni podatak <b>povrsina</b> tipa <b>double</b>.
+- apstraktnu metodu <strong style="color: #44bd32;">uzmiPovrsinu()<</strong>.
+  
+Definisati klasu <strong style="color: #0984e3;">Krug</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+- podatak <b>poluprecnik</b> tipa <b>double</b>.
+- parametarizovan konstruktor koji unosi vrednost <b>poluprecnik</b>
+- javnu metodu <strong style="color: #44bd32;">uzmiPovrsinu()</strong> koji vraća povrsinu.
+
+Definisati klasu <strong style="color: #0984e3;">Pravougaonik</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+- podatak <b>duzina</b> tipa <b>double</b>.
+- podatak <b>sirina</b> tipa <b>double</b>.
+- parametarizovan konstruktor koji unosi vrednosti <b>duzina i sirina</b>.
+- javnu metodu <strong style="color: #44bd32;">uzmiPovrsinu()</strong> koja vraća povrsinu.
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestOblik</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Krug i Pravougaonik</strong>.
+- Kreirati objekat klase <strong style="color: #0984e3;">Stack</strong> i dodati kreirane objekte i izvršiti iteraciju.
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje08;
+
+public abstract class Oblik {
+  protected double povrsina;
+
+  public abstract double uzmiPovrsinu();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje08;
+
+public class Krug extends Oblik {
+  double poluprecnik;
+
+  public Krug(double r) {
+    poluprecnik = r;
+  }
+
+  public double uzmiPovrsinu() {
+    povrsina = Math.PI * (poluprecnik * poluprecnik);
+    return povrsina;
+  }
+}</pre>
+  </div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje08;
+
+public class Pravougaonik extends Oblik {
+  double duzina;
+  double sirina;
+
+  public Pravougaonik(double d, double s) {
+    duzina = d;
+    sirina = s;
+  }
+
+  public double uzmiPovrsinu() {
+    povrsina = duzina * sirina;
+    return povrsina;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje08;
+
+import java.util.Stack;
+
+public class TestOblik {
+    public static void main(String[] args) {
+    Krug krug = new Krug(1);
+    Pravougaonik pravougaonik = new Pravougaonik(4, 5);
+    Stack<Oblik> stek = new Stack<Oblik>();
+    stek.push(krug);
+    stek.push(pravougaonik);
+    while (!stek.empty()) {
+      Oblik oblik = (Oblik) stek.pop();
+      System.out.println("Površina je " + oblik.uzmiPovrsinu());
+    }
+  }
+}</pre>
+  </div>
+  
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Površina je 20.0
+Površina je 3.141592653589793 
+</pre>
+</div>
+</div>
+
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 381: (Nasledjivanje09)</strong></p>
+  <pre style="text-align: justify;">
+  Definisati klasu <strong style="color: #0984e3;">Taksista</strong> i u njoj sledeće:
+  - privatni statički podatak <b>imeKompanije</b> tipa  <strong style="color: #0984e3;">String</strong> sa textom "Žuti taksi".
+  - privatni podatak <b>ime</b> tipa <strong style="color: #0984e3;">String</strong>.
+  - podrazumevani konstruktor
+  - parametarizovan konstruktor za inicijalizaciju polja <b>ime</b>.
+  - odgovarajuće <b>get i set</b> metode za uzimanje i postavljanje polja <b>ime i imeKompanije</b>.
+  - javna metoda <strong style="color: #44bd32;">zadajPravac()</strong> za ispsivanje "Pravac".
+  - privatna metoda <strong style="color: #44bd32;">skreniLevo()</strong> za ispsivanje "Skreni levo".
+  - privatna metoda <strong style="color: #44bd32;">skreniDesno()</strong> za ispsivanje "Skreni desno".
+    
+  Definisati klasu <strong style="color: #0984e3;">HonorarniTaksista</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Taksista</strong> i u njoj:
+  - podatak <b>honorarniSati</b> tipa <b>int</b>.
+  - javnu metodu <strong style="color: #44bd32;">uzmiHonorarneSate()</strong> koja vraća broj <b>honorarniSati</b>.
+  
+  Definisati klasu <strong style="color: #0984e3;">Pravougaonik</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Oblik</strong> i u njoj:
+  - podatak <b>duzina</b> tipa <b>double</b>.
+  - podatak <b>sirina</b> tipa <b>double</b>.
+  - parametarizovan konstruktor koji unosi vrednosti <b>duzina i sirina</b>.
+  - javnu metodu <strong style="color: #44bd32;">uzmiPovrsinu()</strong> koja vraća povrsinu.
+    
+  Definisati pokretačku klasu <strong style="color: #0984e3;">TestOblik</strong> i u njoj:
+  - kreirati objekte klasa <strong style="color: #0984e3;">Krug i Pravougaonik</strong>.
+  - Kreirati objekat klase <strong style="color: #0984e3;">Stack</strong> i dodati kreirane objekte i izvršiti iteraciju.
+  </pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje09;
+
+public class Taksista { // ime kompanije 
+  private static String imeKompanije = "Žuti taksi";
+  private String ime;
+
+  public Taksista() {
+    ime = null;
+  }
+
+  public Taksista(String iIme) {
+    ime = iIme;
+  }
+
+  public void zadajIme(String iIme) {
+    ime = iIme;
+  }
+
+  public String uzmiIme() {
+    return ime;
+  }
+
+  public void zadajPravac() {
+    System.out.println("Pravac");
+  }
+
+  private void skreniDesno() {
+    System.out.println("Skreni desno");
+  }
+
+  private void skreniLevo() {
+    System.out.println("Skreni levo");
+  }
+
+  public static String uzmiImeKompanije() {
+    return imeKompanije;
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje09;
+
+public class HonorarniTaksista extends Taksista {
+  int honorarniSati;
+
+  public void zadajHonorarneSate(int sati) {
+    honorarniSati = sati;
+  }
+
+  public int uzmiHonorarneSate() {
+    return honorarniSati;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje09;
+
+public class TestTaksista {
+  public static void main(String[] args) {
+    HonorarniTaksista ht = new HonorarniTaksista();
+    ht.zadajIme("Žika");
+    System.out.println(ht.uzmiIme());
+    ht.zadajHonorarneSate(20);
+    System.out.println(ht.uzmiHonorarneSate());
+  }
+}</pre>
+</div>
+  
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Žika
+20
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 382: (Nasledjivanje10)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Uredjaj</strong> i u njoj sledeće:
+- podatak <b>marka</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>ukljucen</b> tipa <b>boolean</b>.
+- parametraizovan konstruktor koji ispituje da li je vrednost unetih podataka "null".
+- odgovarajuće metode <b>get i set</b>.
+- javne metode <strong style="color: #44bd32;">ukljuci() i iskljuci()</strong> kojim se uključuje/isključuje uredjaj.
+- javnu metodu <strong style="color: #44bd32;">ispisi()</strong> koja ispisuje informacije o uređaju.   
+
+  
+Definisati klasu <strong style="color: #0984e3;">MasinaZaVes</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Uredjaj</strong> i u njoj:
+- podatak <b>program</b> tipa <b>int</b> sa vrednošću 1.
+- podatak <b>temperatura</b> tipa <b>int</b>.
+- poziva konsturktor svoje nadklase, prosleđuje promenljive <b>marka i ukljucen</b> i proveruje da li je program od 1 do 5 i da li je temperatura iznad 0.
+- podatak <b>honorarniSati</b> tipa <b>int</b>.
+- javnu metodu <strong style="color: #44bd32;">uzmiHonorarneSate()</strong> koja vraća broj <b>honorarniSati</b>.
+- javnu metodu <strong style="color: #44bd32;">promeniProgramNavise()</strong> koji podešava program na viši nivo.
+- javnu metodu <strong style="color: #44bd32;">promeniProgramNanize()</strong> koji podešava program na niži nivo.
+- javnu metodu <strong style="color: #44bd32;">ispisi()</strong> koja poziva metodu iz nadklase primenom ključne reči <b>super</b> i dodatno ispisuje dodatne informacije.
+
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestUredjaj</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Uredjaj i MasinaZaVes</strong>.
+- testirati sve metode kreiranih objekata. 
+</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje10;
+
+public class Uredjaj {
+    String marka;
+    boolean ukljucen;
+
+    public Uredjaj(String marka, boolean ukljucen) {
+      if (marka != null) {
+          this.marka = marka;
+          this.ukljucen = ukljucen;
+      } else
+          System.out.println("Greška: Vrednost podatka marka ne sme biti null.");
+        }
+
+      public String getMarka() {
+        return marka;
+      }
+
+      public void setMarka(String marka) {
+        if (marka != null)
+            this.marka = marka;
+        else
+        System.out.println("Greška: Vrednost podatka marka ne sme biti null.");
+      }
+
+      public void ukljuci() {
+        ukljucen = true;
+      }
+
+      public void iskljuci() {
+        ukljucen = false;
+      }
+
+      public void ispisi() {
+        System.out.println("Marka: " + marka);
+        if (ukljucen)
+          System.out.println("Uređaj je uključen.");
+        else
+          System.out.println("Uređaj je isključen.");
+    }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje10;
+
+public class MasinaZaVes extends Uredjaj {
+  int program = 1;
+  int temperatura;
+
+  public MasinaZaVes(String marka, boolean ukljucen, int program, int temperatura) {
+    super(marka, ukljucen);
+    if (program >= 1 && program <= 5)
+        this.program = program;
+    else
+        System.out.println("Greška: Vrednost podatka program mora biti između 1 i 5.");
+    if (temperatura >= 0)
+        this.temperatura = temperatura;
+    else
+        System.out.println("Greška: Vrednost podatka temperatura mora biti veća od nule.");
+    }
+
+    public void promeniProgramNavise() {
+      if (program < 5)
+          program++;
+      else
+          program = 1;
+    }
+
+    public void promeniProgramNanize() {
+      if (program > 1)
+          program--;
+      else
+          program = 5;
+    }
+
+  public void ispisi() {
+    super.ispisi();
+    System.out.println("Trenutno je pokrenut " + program + 
+    ". program i podešena temperatura " + temperatura);
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje10;
+
+public class TestUredjaj {
+    public static void main(String[] args) { // Kreiranje objekta klase Uredjaj 
+      Uredjaj u = new Uredjaj("Samsung", true);
+      // Kreiranje objekta klase MasinaZaVes 
+      MasinaZaVes k = new MasinaZaVes("Gorenje", false, 2, 30);
+      u.iskljuci(); // Štampanje podataka o uredjaju 
+      System.out.println("Podaci o uredjaju: ");
+      u.ispisi();
+      k.ukljuci();
+      k.promeniProgramNavise(); // Štampanje podataka o mašini za veš 
+      System.out.println("\nPodaci o mašini za veš: ");
+      k.ispisi();
+    }
+}  </pre>
+</div>
+  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Podaci o uredjaju: 
+Marka: Samsung
+Uređaj je isključen.
+
+Podaci o mašini za veš: 
+Marka: Gorenje
+Uređaj je uključen.
+Trenutno je pokrenut 3. program i podešena temperatura 30
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 383: (Nasledjivanje11)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Osoba</strong> i u njoj sledeće:
+- podatak <b>ime</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>prezime</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>maticniBroj</b> tipa <strong style="color: #0984e3;">String</strong>.
+- odgovarajuće <b>get i set</b> metode za sve podatke uz proveru da li su vrednosti "null".
+  
+Definisati klasu <strong style="color: #0984e3;">Zaposleni</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Osoba</strong> i u njoj:
+- podatak <b>brojRadneKnjizice</b> tipa <b>int</b>.
+- podatak <b>prosecnaZarada</b> tipa <b>int</b>.
+- odgovarajuće <b>get i set</b> metode za sve podatke.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestOsoba</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Osoba i Zaposleni</strong>.
+- postaviti informacije i pokrenuti metode datih objekata.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje11;
+
+public class Osoba {
+  // Deklarisanje i inicijalizacija podataka ime i prezime 
+  String ime = "N";
+  String prezime = "N";
+  String maticniBroj;
+
+  // Metoda za pristup podatku ime 
+  public String getIme() {
+    return ime;
+  }
+
+  // Metoda za postavljanje podatka ime 
+  public void setIme(String ime) {
+    if (ime.isBlank() || ime.isEmpty())
+        System.out.println("Greška: vrednost " + 
+    "podatka ime ne sme biti null.");
+    else
+    this.ime = ime;
+  }
+
+  // Metoda za pristup podatku prezime 
+  public String getPrezime() {
+    return prezime;
+  }
+
+  //Metoda za postavljanje podatka prezime 
+  public void setPrezime(String prezime) {
+    if (prezime.isBlank() || prezime.isEmpty())
+        System.out.println("Greška: vrednost podatka " + 
+    "prezime ne sme biti null.");
+    else
+    this.prezime = prezime;
+  }
+
+  //Metoda za pristup podatku maticni broj 
+  public String getMaticniBroj() {
+    return maticniBroj;
+  }
+
+  //Metoda za postavljanje podatka maticniBroj 
+  public void setMaticniBroj(String maticniBroj) {
+    if (maticniBroj.isBlank() || maticniBroj.isEmpty())
+        System.out.println("Greška: vrednost podatka " + 
+    "matični broj ne sme biti null.");
+    else
+    this.maticniBroj = maticniBroj;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje11;
+
+public class Zaposleni extends Osoba {
+  // Deklarisanje podataka 
+  int brojRadneKnjizice;
+  double prosecnaZarada;
+
+  // Metoda za pristup podatku brojRadneKnjizice 
+  public int getBrojRadneKnjizice() {
+    return brojRadneKnjizice;
+  }
+
+  // Metoda za postavljanje podatka brojRadneKnjizice 
+  public void setBrojRadneKnjizice(int brojRadneKnjizice) {
+    this.brojRadneKnjizice = brojRadneKnjizice;
+  }
+
+  // Metoda za pristup podatku prosecnaZarada 
+  public double getProsecnaZarada() {
+    return prosecnaZarada;
+  }
+
+  // Metoda za postavljanje podatka prosecnaZarada 
+  public void setProsecnaZarada(double prosecnaZarada) {
+    if (prosecnaZarada > 0.0)
+      this.prosecnaZarada = prosecnaZarada;
+    else
+      System.out.println("Greška: vrednost podatka"
+        + " prosečna zarada mora biti veća od nule.");
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje11;
+
+public class TestOsoba {
+  public static void main(String[] args) {
+    // Kreiranje objekta klase Osoba 
+    Osoba os = new Osoba();
+    // Postavljanje podataka o osobi 
+    os.setIme("Laza");
+    os.setPrezime("Lazić");
+    os.setMaticniBroj("1110977105617");
+    // Štampanje podataka o osobi 
+    System.out.println("Podaci o osobi: ");
+    System.out.println("Ime osobe: " + os.getIme());
+    System.out.println("Prezime osobe: " + os.getPrezime());
+    System.out.println("Matični broj osobe: " + os.getMaticniBroj());
+    // Kreiranje objekta klase Zaposleni 
+    Zaposleni z = new Zaposleni();
+    // Postavljanje podataka o zaposlenom 
+    z.setIme("Mika");
+    z.setPrezime("Mikić");
+    z.setMaticniBroj("1010988725376");
+    z.setProsecnaZarada(18000);
+    //Štampanje podataka o zaposlenom 
+    System.out.println("\nPodaci o zaposlenom: ");
+    System.out.println("Ime zaposlenog: " + z.getIme());
+    System.out.println("Prezime zaposlenog: " + z.getPrezime());
+    System.out.println("Matični broj zaposlenog: " + z.getMaticniBroj());
+    System.out.println("Prosečna zarada zaposlenog: " + z.getProsecnaZarada());
+  }
+}
+</pre>
+</div>
+  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Podaci o osobi: 
+Ime osobe: Laza
+Prezime osobe: Lazić
+Matični broj osobe: 1110977105617
+
+Podaci o zaposlenom: 
+Ime zaposlenog: Mika
+Prezime zaposlenog: Mikić
+Matični broj zaposlenog: 1010988725376
+Prosečna zarada zaposlenog: 18000.0
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 384: (Nasledjivanje12)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">GeometrijskoTelo</strong> i u njoj sledeće:
+- apstraktnu metodu <strong style="color: #44bd32;">izracunajPovrsinu()</strong>. 
+- apstraktnu metodu <strong style="color: #44bd32;">izracunajZapreminu()</strong>. 
+  
+Definisati klasu <strong style="color: #0984e3;">Kocka</strong> koja nasledjuje klasu <strong style="color: #0984e3;">GeometrijskoTelo</strong> i u njoj:
+- podatak <b>stranica</b> tipa <b>double</b>.
+- parametarizovan konstruktor koji unosi <b>stranica</b> i proverava da li je vrednost manja od 0.
+- javnu metodu <strong style="color: #44bd32;">izracunajPovrsinu()</strong> koja vraća površinu kocke.
+- javnu metodu <strong style="color: #44bd32;">izracunajZapreminu()</strong> koja vraća zapreminu kocke.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestGeometrijskoTelo</strong> i u njoj:
+- kreirati niz i kao njegove elemente ubaciti objekte klase <strong style="color: #0984e3;">Kocka</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti iteraciju kroz navedeni niz sa pozivanjem kreiranih metoda.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje12;
+
+public abstract class GeometrijskoTelo { 
+  public abstract double izracunajPovrsinu();
+
+  public abstract double izracunajZapreminu();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje12;
+
+public class Kocka extends GeometrijskoTelo {
+  double stranica;
+
+  public Kocka(double stranica) {
+    if (stranica > 0.0)
+    this.stranica = stranica;
+    else
+    System.out.println("Greška: vrednost podatka stranica mora biti veća od 0.");
+  }
+
+  public double izracunajPovrsinu() {
+    return stranica * stranica * 6;
+  }
+
+  public double izracunajZapreminu() {
+    return stranica * stranica * stranica;
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje12;
+
+public class TestGeometrijskoTelo {
+  public static void main(String[] args) {
+    /* Kreiranje niza objekata klase */
+    Kocka[] k = new Kocka[3];
+    k[0] = new Kocka(25.5);
+    k[1] = new Kocka(10.5);
+    k[2] = new Kocka(5.0);
+    /* Štampanje rezultata */
+    for (int i = 0; i < k.length; i++) {
+        System.out.println("Površina " + i + ". kocke je " + k[i].izracunajPovrsinu());
+        System.out.println("Zapremina " + i + ". kocke je " + k[i].izracunajZapreminu());
+    }
+  }
+}
+</pre>
+</div>
+    
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Površina 0. kocke je 3901.5
+Zapremina 0. kocke je 16581.375
+Površina 1. kocke je 661.5
+Zapremina 1. kocke je 1157.625
+Površina 2. kocke je 150.0
+Zapremina 2. kocke je 125.0
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 385: (Nasledjivanje13)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Uredjaj</strong> i u njoj sledeće:
+- podatak <b>marka</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>ukljucen</b> tipa <b>boolean</b>.
+- parametarizovan konstruktor koji uzima vrednosti za promenljive <b>marka i ukljucen</b> i proverava dal su null.
+- odgovarajuće <b>get i set</b> za promenljive.
+- metode <strong style="color: #44bd32;">ukljuci() i iksljuci()</strong> za podesavanje promenljive <b>ukljucen</b>
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojm se ispisuje koje je marke uredjaj kao i da li je ukljucen ili iskljucen.
+
+Definisati klasu <strong style="color: #0984e3;">KlimaUredjaj</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Uredjaj</strong> i u njoj:
+- promenljiva <b>temperatura</b> tipa <b>int</b> sa vrednošću 18.
+- parametarizovan konstruktor koji unosi <b>marka, ukljucen i temperaturu</b> a konstruktoru svoje nadklase prosledjuje <b>marka i ukljucen</b>.
+- u konstruktoru se proverava da li je temperatura u dozvoljenom opsegu (od 18 i 30).
+- javnu metodu <strong style="color: #44bd32;">povecajTemperaturu()</strong> koja povećava temperaturu za 1.
+- javnu metodu <strong style="color: #44bd32;">smanjiTemperaturu()</strong> koja smanjuje temperaturu za 1.
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojm se poziva metoda preko ključne reči <b>super</b> i dodantno se ispisuje temperatura.
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestUredjaj</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Uredjaj i KlimaUredjaj</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreiranih metoda.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje13;
+
+public class Uredjaj {
+  /* Deklarisanje podataka */
+  String marka;
+  boolean ukljucen;
+
+  // Parametrizovan konstruktor */
+  public Uredjaj(String marka, boolean ukljucen) {
+  if (marka.isBlank() || marka.isEmpty())
+      System.out.println("Greška: vrednost podatka marka ne sme biti null.");
+  else {
+      this.marka = marka;
+      this.ukljucen = ukljucen;
+  }
+  }
+
+  /* Metoda za pristup podatku marka*/
+  public String getMarka() {
+    return marka;
+  } /* Metoda za postavljanje podatka marka */
+
+  public void setMarka(String marka) {
+    if (marka.isBlank() || marka.isEmpty())
+        System.out.println("Greška: vrednost podatka marka ne sme biti null.");
+    else
+        this.marka = marka;
+  } /* Metoda koja vraca true ako je uredjaj uključen */
+
+  public void ukljuci() {
+    ukljucen = true;
+  } /* Metoda koja vraca true ako je uredjaj isključen */
+
+  public void iskljuci() {
+    ukljucen = false;
+  } /* Metoda za ispisivanje podataka o uredjaju */
+
+  public void ispisi() {
+    System.out.println("Marka: " + marka);
+    if (ukljucen)
+        System.out.println("Uredjaj je uključen.");
+    else
+    System.out.println("Uredjaj je isključen.");
+  }
+}
+</pre>
+</div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+    package Nasledjivanje13;
+
+    public class KlimaUredjaj extends Uredjaj {
+        /* Inicijalizacija podatka temperatura */
+        int temperatura = 18; /* Parametrizovan konstruktor*/
+    
+        public KlimaUredjaj(String marka, boolean ukljucen,
+          int temperatura) { /* Nasledjivanje parametrizovanog konstruktora klase Uredjaj*/
+      super(marka, ukljucen);
+      if (temperatura >= 18 && temperatura <= 30)
+          this.temperatura = temperatura;
+      else
+          System.out.println("Greška: vrednost podatka temperatura mora biti izmedju 18 i 30");
+        } /* Metoda za povecanje vrednosti podatka temperatura za jedan */
+    
+        public void povecajTemperaturu() {
+      if (temperatura < 30)
+          temperatura++;
+      else
+          temperatura = 18;
+        } /* Metoda za smanjenje vrednosti podatka temperatura za jedan */
+    
+        public void smanjiTemperaturu() {
+      if (temperatura > 18)
+          temperatura--;
+      else
+          temperatura = 30;
+        } /* Metoda za ispisivanje podataka o klima uredjaju*/
+    
+        public void ispisi() { /* Nasledjivanje metode ispisi klase Uredjaj */
+      super.ispisi();
+      System.out.println("Trenutna temperatura je " + temperatura);
+        }
+    }</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje13;
+
+public class TestUredjaj {
+    public static void main(String[] args) {
+      /* Kreiranje objekta klase Uredjaj */
+      Uredjaj u = new Uredjaj("Samsung", true); 
+      KlimaUredjaj k = new KlimaUredjaj("Gorenje", false, 25);
+      u.iskljuci(); /* Štampanje podataka o uredjaju */
+      System.out.println("Podaci o uredjaju: ");
+      u.ispisi();
+      k.ukljuci();
+      k.povecajTemperaturu(); /* Štampanje podataka o klima uredjaju */
+      System.out.println("\nPodaci o klima uredjaju: ");
+      k.ispisi();
+    }
+}
+</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Podaci o uredjaju: 
+Marka: Samsung
+Uredjaj je isključen.
+
+Podaci o klima uredjaju: 
+Marka: Gorenje
+Uredjaj je uključen.
+Trenutna temperatura je 26
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 386: (Nasledjivanje14)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Kartica</strong> i u njoj sledeće:
+- zaštićeni podatak <b>tipKartice</b> tipa <strong style="color: #0984e3;">String</strong>.
+- zaštićeni podatak <b>imeVlasnika</b> tipa <strong style="color: #0984e3;">String</strong>.
+- parametarizovan konstruktor koji uzima vrednosti za promenljive <b>tipKartice i imeVlasnika</b> i proverava dal su null.
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojm se ispisuju podaci o kartici.
+
+Definisati klasu <strong style="color: #0984e3;">Master</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Kartica</strong> i u njoj:
+- podatak <b>pinKod</b> tipa <b>int</b>.
+- parametarizovan konstruktor koji unosi <b>tipKartice, imeVlasnika i pinKod</b> a konstruktoru svoje nadklase prosledjuje <b>tipKartice i imeVlasnika</b>.
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojm se poziva metoda preko ključne reči <b>super</b> i dodantno se ispisuje temperatura.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestKartica</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Master</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreirane metode.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje14;
+
+public class Kartica {
+  /* Deklarisanje zasticenih podataka*/
+  protected String tipKartice;
+  protected String imeVlasnika;
+
+  /* Parametrizovan konstruktor */
+  Kartica(String tipKartice, String imeVlasnika) {
+    this.tipKartice = tipKartice;
+    this.imeVlasnika = imeVlasnika;
+  }
+
+  /* Metoda za ispisivanje podataka o kartici */
+  public void ispisi() {
+    System.out.println("Tip kartice: " + tipKartice);
+    System.out.println("Ime vlasnika: " + imeVlasnika);
+  }
+}</pre>
+  </div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje14;
+
+public class Master extends Kartica {
+  /* Deklarisanje podatka pinKod */
+  int pinKod;
+
+  /* Parametrizovan konstruktor */
+  Master(String tipKartice, String imeVlasnika, int pinKod) {
+  /* Nasledjivanje parametrizovanog konstruktora klase Kartica */
+  super(tipKartice, imeVlasnika);
+  this.pinKod = pinKod;
+  }
+
+  public void ispisi() {
+  /* Nasledjivanje metode ispisi klase Kartica */
+  super.ispisi();
+  System.out.println("Pin kod: " + pinKod);
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje14;
+
+public class TestKartica {
+  public static void main(String[] args) {
+    /* Kreiranje objekta klase Master */
+    Master m = new Master("kreditna", "Milan Gocic", 121314);
+    /* Štampanje podataka o master kartici */
+    System.out.println("Podaci o master kartici: ");
+    m.ispisi();
+  }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Podaci o master kartici: 
+Tip kartice: kreditna
+Ime vlasnika: Milan Gocic
+Pin kod: 121314    
+</pre>
+</div>
+</div>
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 387: (Nasledjivanje15)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">Figura</strong> i u njoj sledeće:
+- zaštićeni podatak <b>xRef</b> tipa <b>double</b>>.
+- zaštićeni podatak <b>yRef</b> tipa <b>double</b>>.
+- parametarizovan konstruktor koji uzima vrednosti za promenljive <b>xRef i yRef</b> i proverava dal su jednaki 0.
+- apstraktnu metodu <strong style="color: #44bd32;">obim()</strong>.
+- apstraktnu metodu <strong style="color: #44bd32;">povrsina()</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">Pravougaonik</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Figura</strong> i u njoj:
+- parametarizovan konstruktor koji unosi promenljive <b>duzina i sirina</b> i prosledjuje ih konsturktoru svoje nadklase.
+- metodu <strong style="color: #44bd32;">obim()</strong> koja vraca obim pravougaonika.
+- metodu <strong style="color: #44bd32;">povrsina()</strong> koja vraca povrsinu pravougaonika.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestKartica</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Master</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreirane metode.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje15;
+
+public abstract class Figura {
+  /* Deklarisanje zaštićenih podataka */
+  protected double xRef;
+  protected double yRef;
+
+  /* Parametrizovan konstruktor */
+  Figura(double xRef, double yRef) {
+  if (xRef != 0 || yRef != 0) {
+      this.xRef = xRef;
+      this.yRef = yRef;
+  } else
+      System.out.println("Greška: vrednosti podataka ne mogu biti 0.0");
+  }
+
+  /* Deklarisanje apstraktnih metoda obim i površina */
+  abstract double obim();
+
+  abstract double povrsina();
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje15;
+
+public class Pravougaonik extends Figura {
+  /* Parametrizovan konstruktor */
+  Pravougaonik(double duzina, double sirina) {
+    super(duzina, sirina);
+  }
+
+  /* Metoda za izračunavanje obima pravougaonika */
+  double obim() {
+    return 2 * xRef + 2 * yRef;
+  }
+
+  /* Metoda za izračunavanje površine pravougaonika */
+  double povrsina() {
+    return xRef * yRef;
+  }
+}
+  </pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje15;
+
+public class TestPravougaonik {
+    public static void main(String[] args) {
+      /* Kreiranje objekta klase Pravougaonik */
+      Pravougaonik p = new Pravougaonik(3.2, 4.1);
+      /* Štampanje rezultata */
+      System.out.println("Obim pravougaonika je " + p.obim());
+      System.out.println("Površina pravougaonika je " + p.povrsina());
+    }
+}
+</pre>
+  </div>  
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  Podaci o master kartici: 
+  Tip kartice: kreditna
+  Ime vlasnika: Milan Gocic
+  Pin kod: 121314    
+  </pre>
+  </div>
+  </div>
+
+  <!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 388: (Nasledjivanje16)</strong></p>
+<pre style="text-align: justify;">
+Definisati apstraktnu klasu <strong style="color: #0984e3;">Zaposleni</strong> i u njoj sledeće:
+- podatak <b>brojRadnihSati</b> tipa <b>double</b>.
+- podatak <b>cenaRadnogSata</b> tipa <b>double</b>.
+- apstraktnu metodu <strong style="color: #44bd32;">izracunajPlatu()</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">Referent</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Zaposleni</strong> i u njoj:
+- podatak <b>bonus</b> tipa <b>double</b>.
+- parametarizovan konstruktor koji unosi promenljive <b>brojRadnihSati, cenaRadnogSata i bonus</b>.
+- metodu <strong style="color: #44bd32;">izracunajPlatu</strong>.
+
+Definisati klasu <strong style="color: #0984e3;">Programer</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Zaposleni</strong> i u njoj:
+- podatak <b>bonus</b> tipa <b>double</b>.
+- podatak <b>prekovremeniRad</b> tipa <b>double</b>.
+- parametarizovan konstruktor koji unosi promenljive <b>brojRadnihSati, cenaRadnogSata, bonus i prekovremeniRad</b>.
+- metodu <strong style="color: #44bd32;">izracunajPlatu</strong>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestZaposleni</strong> i u njoj:
+- kreirati objekte klasa <strong style="color: #0984e3;">Referent i Programer</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreirane metode.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje16;
+
+public abstract class Zaposleni { /* Deklarisanje podataka */
+  double brojRadnihSati;
+  double cenaRadnogSata; /* Deklarisanje apstraktne metode */
+
+  public abstract double izracunajPlatu();
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje16;
+
+public class Referent extends Zaposleni {
+  /* Deklarisanje podatka bonus */
+  double bonus; /* Parametrizovan konstruktor */
+
+  Referent(double brojRadnihSati, double cenaRadnogSata, double bonus) {
+    this.brojRadnihSati = brojRadnihSati;
+    this.cenaRadnogSata = cenaRadnogSata;
+    this.bonus = bonus;
+  }
+
+  /* Metoda za izračunavanje plate referenta */
+  public double izracunajPlatu() {
+    return brojRadnihSati * cenaRadnogSata + bonus;
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje16;
+
+public class Programer extends Zaposleni {
+  /* Deklarisanje podataka */
+  double bonus;
+  double prekovremeniRad;
+
+  /* Parametrizovan konstruktor */
+  Programer(double brojRadnihSati, double cenaRadnogSata, double bonus, double prekovremeniRad) {
+    this.brojRadnihSati = brojRadnihSati;
+    this.cenaRadnogSata = cenaRadnogSata;
+    this.bonus = bonus;
+    this.prekovremeniRad = prekovremeniRad;
+  }
+
+  /* Metoda za izračunavanje plate programera */
+  public double izracunajPlatu() {
+    return brojRadnihSati * cenaRadnogSata + bonus + prekovremeniRad;
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje16;
+
+public class TestZaposleni {
+  public static void main(String[] args) {
+    /* Kreiranje objekta klase Referent*/
+    Referent r = new Referent(160.0, 100.0, 10000.0);
+    /* Kreiranje objekta klase Programer*/
+    Programer p = new Programer(160.0, 120.0, 8200.0, 1500.0);
+    /* Štampanje rezultata */
+    System.out.println("Plata referenta je " + r.izracunajPlatu());
+    System.out.println("Plata programera je " + p.izracunajPlatu());
+  }
+}</pre>
+</div>  
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Plata referenta je 26000.0
+Plata programera je 28900.0    
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 389: (Nasledjivanje17)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Auto</strong> i u njoj sledeće:
+- zaštićeni podatak <b>naziv</b> tipa <strong style="color: #0984e3;">String</strong>.
+- zaštićeni podatak <b>boja</b> tipa <strong style="color: #0984e3;">String</strong>.
+- zaštićeni podatak <b>brojVrata</b> tipa <b>int</b>.
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojom se ispisuju informacije o automobilu.
+ 
+Definisati klasu <strong style="color: #0984e3;">Opel</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Auto</strong> i u njoj:
+- javna metodu <strong style="color: #44bd32;">otvoriVrata()</strong> čijim pozivom se 'Otvaraju vrata'.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestAuto</strong> i u njoj:
+- kreirati objekat klasa <strong style="color: #0984e3;">Opel</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreirane metode.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje17;
+
+public class Auto {
+  protected String naziv;
+  protected String boja;
+  protected int brojVrata;
+
+  public void postaviVrednosti(String naziv, String boja, int vrata) {
+    this.naziv = naziv;
+    this.boja = boja;
+    brojVrata = vrata;
+  }
+
+  public void ispisi() {
+    System.out.println("Naziv auta: " + naziv);
+    System.out.println("Boja: " + boja);
+    System.out.println("Broj vrata: " + brojVrata);
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje17;
+
+public class Opel extends Auto {
+  public void otvoriVrata() {
+    System.out.println("Vrata su otvorena");
+  }
+}</pre>
+</div>
+  
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje17;
+
+public class TestAuto {
+  public static void main(String[] args) {
+    Opel o = new Opel();
+    o.postaviVrednosti("Opel", "bela", 4);
+    o.otvoriVrata();
+    o.ispisi();
+  }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Vrata su otvorena
+Naziv auta: Opel
+Boja: bela
+Broj vrata: 4    
+</pre>
+</div>
+</div>
+
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 390: (Nasledjivanje18)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Voce</strong> i u njoj sledeće:
+- zaštićeni podatak <b>naziv</b> tipa <strong style="color: #0984e3;">String</strong>.
+- zaštićeni podatak <b>boja</b> tipa <strong style="color: #0984e3;">String</strong>.
+- zaštićeni podatak <b>cena</b> tipa <b>double</b>.
+- zaštićeni podatak <b>kolicina</b> tipa <b>double</b>.
+- parametarizovan konstruktor za inicijalizaciju svih navedenih polja
+
+Definisati klasu <strong style="color: #0984e3;">Jabuka</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Voce</strong> i u njoj:
+- zaštićeni podatak <b>vrsta</b> tipa <strong style="color: #0984e3;">String</strong>.
+- parametarizovan konstruktor za inicijalizaciju polja <b>vrsta</b> i prenos svih ostalih polja konsturktoru nadklase.
+- javna metodu <strong style="color: #44bd32;">izracunajZaUplatu()</strong> koja vraća koliko treba da se plati.
+  
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestVoce</strong> i u njoj:
+- kreirati objekat klasa <strong style="color: #0984e3;">Jabuka</strong>.
+- prolsediti argumente prilikom kreiranja objekta i izvršiti pozivanje kreirane metode.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje18;
+
+public class Voce {
+  protected String naziv;
+  protected String boja;
+  protected double cena;
+  protected double kolicina;
+
+  public Voce(String naziv, String boja, double cena, double kolicina) {
+    this.naziv = naziv;
+    this.boja = boja;
+    this.cena = cena;
+    this.kolicina = kolicina;
+  }
+}</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje18;
+
+public class Jabuka extends Voce {
+  protected String vrsta;
+
+  public Jabuka(String naziv, String boja, double cena, double kolicina, String vrsta) {
+    super(naziv, boja, cena, kolicina);
+    this.vrsta = vrsta;
+  }
+
+  public double izracunajZaUplatu() {
+    return cena * kolicina;
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje18;
+
+public class TestVoce {
+  public static void main(String[] args) {
+    Jabuka j = new Jabuka("jabuka", "crvena", 55.70, 10, "delišes");
+    System.out.println("Ukupno za plaćanje: " + j.izracunajZaUplatu());
+  }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Ukupno za plaćanje: 557.0
+</pre>
+</div>
+</div>
+
+
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 391: (Nasledjivanje19)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Osoba</strong> i u njoj sledeće:
+- podatak <b>ime</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>prezime</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>starost</b> tipa <b>int</b> vrednosti 0.
+- odgovarajuće <b>get i set</b> za promenljive <b>ime, prezime i starost</b>.
+
+Definisati klasu <strong style="color: #0984e3;">Student</strong> i u njoj sledeće:
+- podatak <b>ispit</b> tipa <strong style="color: #0984e3;">String</strong>.
+- odgovarajuće <b>get i set</b> za promenljive <b>ispit</b>.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestStudent</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">Student</strong>.
+- postaviti podatke i izvršiti pozivanje kreiranih metoda.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje19;
+
+public class Osoba {
+  /* Deklarisanje i inicijalizacija podataka ime i prezime */
+  String ime = "N";
+  String prezime = "N";
+  int starost = 0;
+
+  /* Metoda za pristup podatku ime */
+  public String getIme() {
+    return ime;
+  }
+
+  /* Metoda za postavljanje podatka ime */
+  public void setIme(String ime) {
+    if (ime.isBlank() || ime.isEmpty())
+        System.out.println("Greška: vrednost podatka ime ne sme biti null.");
+    else
+        this.ime = ime;
+  }
+
+  /* Metoda za pristup podatku prezime public */
+  String getPrezime() {
+    return prezime;
+  }
+
+  /* Metoda za postavljanje podatka prezime */
+  public void setPrezime(String prezime) {
+    if (prezime.isBlank() || prezime.isEmpty())
+        System.out.println("Greška: vrednost podatka prezime ne sme biti null.");
+    else
+        this.prezime = prezime;
+  }
+
+  /* Metoda za pristup podatku starost */
+  public int getStarost() {
+    return starost;
+  }
+
+  /* Metoda za postavljanje podatka starost */
+  public void setStarost(int starost) {
+    if (starost <= 0)
+        System.out.println("Greška: vrednost podatka starost mora biti veća od nule.");
+    else
+        this.starost = starost;
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje19;
+
+public class Student extends Osoba {
+  /* Deklarisanje podataka */
+  String ispit;
+
+  /* Metoda za pristup podatku ispit */
+  public String getIspit() {
+    return ispit;
+  }
+
+  /* Metoda za postavljanje podatka ispit */
+  public void setIspit(String ispit) {
+    this.ispit = ispit;
+  }
+}
+</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje19;
+
+public class TestStudent {
+    public static void main(String[] args) {
+      Student s = new Student();
+      s.setIme("Pera");
+      s.setPrezime("Perić");
+      s.setStarost(20);
+      s.setIspit("Programiranje");
+      System.out.println("Ime: " + s.getIme());
+      System.out.println("Prezime: " + s.getPrezime());
+      System.out.println("Starost: " + s.getStarost());
+      System.out.println("Ispit: " + s.getIspit());
+    }
+}</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Ime: Pera
+Prezime: Perić
+Starost: 20
+Ispit: Programiranje
+</pre>
+</div>
+</div>
+
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p><strong>Zadatak 391: (Nasledjivanje19)</strong></p>
+  <pre style="text-align: justify;">
+  Definisati klasu <strong style="color: #0984e3;">Osoba</strong> i u njoj sledeće:
+  - podatak <b>ime</b> tipa <strong style="color: #0984e3;">String</strong>.
+  - podatak <b>prezime</b> tipa <strong style="color: #0984e3;">String</strong>.
+  - podatak <b>starost</b> tipa <b>int</b> vrednosti 0.
+  - odgovarajuće <b>get i set</b> za promenljive <b>ime, prezime i starost</b>.
+  
+  Definisati klasu <strong style="color: #0984e3;">Student</strong> i u njoj sledeće:
+  - podatak <b>ispit</b> tipa <strong style="color: #0984e3;">String</strong>.
+  - odgovarajuće <b>get i set</b> za promenljive <b>ispit</b>.
+  
+  Definisati pokretačku klasu <strong style="color: #0984e3;">TestStudent</strong> i u njoj:
+  - kreirati objekat klase <strong style="color: #0984e3;">Student</strong>.
+  - postaviti podatke i izvršiti pozivanje kreiranih metoda.</pre>
+  <hr style="width: 90%;" />
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  package Nasledjivanje19;
+  
+  public class Osoba {
+    /* Deklarisanje i inicijalizacija podataka ime i prezime */
+    String ime = "N";
+    String prezime = "N";
+    int starost = 0;
+  
+    /* Metoda za pristup podatku ime */
+    public String getIme() {
+      return ime;
+    }
+  
+    /* Metoda za postavljanje podatka ime */
+    public void setIme(String ime) {
+      if (ime.isBlank() || ime.isEmpty())
+          System.out.println("Greška: vrednost podatka ime ne sme biti null.");
+      else
+          this.ime = ime;
+    }
+  
+    /* Metoda za pristup podatku prezime public */
+    String getPrezime() {
+      return prezime;
+    }
+  
+    /* Metoda za postavljanje podatka prezime */
+    public void setPrezime(String prezime) {
+      if (prezime.isBlank() || prezime.isEmpty())
+          System.out.println("Greška: vrednost podatka prezime ne sme biti null.");
+      else
+          this.prezime = prezime;
+    }
+  
+    /* Metoda za pristup podatku starost */
+    public int getStarost() {
+      return starost;
+    }
+  
+    /* Metoda za postavljanje podatka starost */
+    public void setStarost(int starost) {
+      if (starost <= 0)
+          System.out.println("Greška: vrednost podatka starost mora biti veća od nule.");
+      else
+          this.starost = starost;
+    }
+  }
+  </pre>
+  </div>
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #0984e3;">Klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  package Nasledjivanje19;
+  
+  public class Student extends Osoba {
+    /* Deklarisanje podataka */
+    String ispit;
+  
+    /* Metoda za pristup podatku ispit */
+    public String getIspit() {
+      return ispit;
+    }
+  
+    /* Metoda za postavljanje podatka ispit */
+    public void setIspit(String ispit) {
+      this.ispit = ispit;
+    }
+  }
+  </pre>
+  </div>
+  <div style="clear:both;float: left; width: 50%;">
+  <h3 style="color: #d63031;">Pokretačka klasa:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  package Nasledjivanje19;
+  
+  public class TestStudent {
+      public static void main(String[] args) {
+        Student s = new Student();
+        s.setIme("Pera");
+        s.setPrezime("Perić");
+        s.setStarost(20);
+        s.setIspit("Programiranje");
+        System.out.println("Ime: " + s.getIme());
+        System.out.println("Prezime: " + s.getPrezime());
+        System.out.println("Starost: " + s.getStarost());
+        System.out.println("Ispit: " + s.getIspit());
+      }
+  }</pre>
+  </div>  
+  <div style="float: left; width: 50%;">
+  <h3 style="color: #000000;">Izlaz:</h3>
+  <pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+  Ime: Pera
+  Prezime: Perić
+  Starost: 20
+  Ispit: Programiranje
+  </pre>
+  </div>
+  </div>
+
+
+  
+<!-- SLEDECI ZADATAK -->
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+<p><strong>Zadatak 392: (Nasledjivanje20)</strong></p>
+<pre style="text-align: justify;">
+Definisati klasu <strong style="color: #0984e3;">Proizvod</strong> i u njoj sledeće:
+- podatak <b>naziv</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>proizvodjac</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podatak <b>rokTrajanja</b> tipa <strong style="color: #0984e3;">String</strong>.
+- podrazumevani konstruktor za postavljanje osnovnih vrednosti
+- parametarizovan konstruktor kojim se proverava da li su ispravno unete vrednosti poljima 
+  
+Definisati klasu <strong style="color: #0984e3;">PrehrambeniProizvod</strong> koja nasledjuje klasu <strong style="color: #0984e3;">Proizvod</strong> i u njoj sledeće:
+- podatak <b>vrsta</b> tipa <strong style="color: #0984e3;">String</strong>.
+- parametarizovan konstruktor kojim se prosledjuju polja konstruktoru nadklase i definiše početna vrednost polju <b>vrsta</b>.
+- metodu <strong style="color: #44bd32;">ispisi()</strong> kojom se ispisuju informacije o prehrambenom proizvodu.
+
+Definisati pokretačku klasu <strong style="color: #0984e3;">TestProizvod</strong> i u njoj:
+- kreirati objekat klase <strong style="color: #0984e3;">PrehrambeniProizvod</strong>.
+- postaviti podatke i izvršiti pozivanje kreiranih metoda.</pre>
+<hr style="width: 90%;" />
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje20;
+
+public class Proizvod {
+  String naziv;
+  String proizvodjac;
+  double cena;
+  String rokTrajanja;
+
+  public Proizvod() {
+    naziv = "nepoznat";
+    proizvodjac = "nepoznat";
+    cena = 0.0;
+    rokTrajanja = "29.12.2022";
+  }
+
+  public Proizvod(String naziv, String proizvodjac, double cena, String rokTrajanja) {
+    if (naziv.isBlank() || naziv.isEmpty())
+        System.out.println("Greška: vrednost podatka naziv ne sme biti null.");
+    else
+        this.naziv = naziv;
+    if (proizvodjac.isBlank() || proizvodjac.isEmpty())
+        System.out.println("Greška: vrednost podatka proizvodjac ne sme biti null.");
+    else
+        this.proizvodjac = proizvodjac;
+    if (cena < 0)
+        System.out.println("Greška: vrednost podatka cena ne sme biti manja od nule.");
+    else
+        this.cena = cena;
+    this.rokTrajanja = rokTrajanja;
+  }
+}
+</pre>
+</div>
+<div style="float: left; width: 50%;">
+<h3 style="color: #0984e3;">Klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje20;
+
+public class PrehrambeniProizvod extends Proizvod {
+  String vrsta;
+
+  public PrehrambeniProizvod(String naziv, String proizvodjac, double cena, String rokTrajanja) {
+    super(naziv, proizvodjac, cena, rokTrajanja);
+    vrsta = "nepoznata";
+  }
+
+  public void ispisi() {
+    System.out.println("Naziv: " + naziv);
+    System.out.println("Proizvodjac: " + proizvodjac);
+    System.out.println("Cena: " + cena);
+    System.out.println("Rok trajanja: " + rokTrajanja);
+  }
+}</pre>
+</div>
+<div style="clear:both;float: left; width: 50%;">
+<h3 style="color: #d63031;">Pokretačka klasa:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+package Nasledjivanje20;
+
+public class TestProizvod {
+    public static void main(String[] args) {
+      PrehrambeniProizvod pp = new PrehrambeniProizvod("hleb", "Moja Pekara", 40.0, "31.12.2022");
+    
+      pp.ispisi();
+    }
+}
+</pre>
+</div>  
+<div style="float: left; width: 50%;">
+<h3 style="color: #000000;">Izlaz:</h3>
+<pre style="background-color: #2b0540; color: #fcf1dd; width: max-content; padding-right: 60px; padding: 15px;">
+Naziv: hleb
+Proizvodjac: Moja Pekara
+Cena: 40.0
+Rok trajanja: 31.12.2022
+</pre>
+</div>
+</div>
+<a href="#" onclick="javascript:history.back();" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px;">Nazad</a>
+
+<div style="clear: both;"><hr style="border: 2px solid #b2bec3; border-radius: 5px;" />
+  <p>&nbsp;</p>
+  <div style="clear: both; width: 100%; text-align: center;"><em>by Dejan Bajović</em></div>
+  <p>&nbsp;</p>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

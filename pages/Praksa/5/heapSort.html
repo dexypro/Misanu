@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Heap Sort Animation</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            margin: 5px;
+        }
+
+        .selected {
+            background-color: #ffcccc;
+        }
+
+        .sorted {
+            background-color: #ccccff;
+        }
+
+        .button1 {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1"></div>
+    <button class="button1" onclick="heapSort()">Start Sorting</button>
+
+    <script>
+        // Initialize the data array
+        let data = [10, 5, 15, 2, 8, 7, 13, 1, 4, 11];
+
+        // Create the blocks in the DOM
+        const container = document.querySelector('.container1');
+        data.forEach((value) => {
+            const block = document.createElement('div');
+            block.classList.add('block');
+            block.style.height = `${value * 10}px`;
+            block.textContent = value;
+            container.appendChild(block);
+        });
+
+        // Heap Sort algorithm implementation
+        async function heapSort() {
+            // Build max heap
+            const n = data.length;
+            for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+                await heapify(n, i);
+            }
+            // Extract elements one by one
+            for (let i = n - 1; i > 0; i--) {
+                // Move current root to end
+                await swap(0, i);
+                container.children[i].classList.add('sorted');
+                // Call max heapify on the reduced heap
+                await heapify(i, 0);
+            }
+            container.children[0].classList.add('sorted');
+        }
+
+        async function heapify(n, i) {
+            let largest = i;
+            let l = 2 * i + 1;
+            let r = 2 * i + 2;
+            if (l < n && data[l] > data[largest]) {
+                largest = l;
+            }
+            if (r < n && data[r] > data[largest]) {
+                largest = r;
+            }
+            if (largest !== i) {
+                await swap(i, largest);
+                await heapify(n, largest);
+            }
+        }
+
+        async function swap(i, j) {
+            container.children[i].classList.add('selected');
+            container.children[j].classList.add('selected');
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            // Swap the values in the data array
+            [data[i], data[j]] = [data[j], data[i]];
+            // Swap the heights of the blocks in the DOM
+            const temp = container.children[i].style.height;
+            container.children[i].style.height = container.children[j].style
+            container.children[j].style.height = temp;
+            container.children[i].textContent = data[i];
+            container.children[j].textContent = data[j];
+            container.children[i].classList.remove('selected');
+            container.children[j].classList.remove('selected');
+        }
+
+        // Get the start button element
+        const startButton = document.querySelector('.button1');
+
+        // Add click event listener to the start button
+        startButton.addEventListener('click', () => {
+            startButton.disabled = true;
+            heapSort().then(() => {
+                startButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
